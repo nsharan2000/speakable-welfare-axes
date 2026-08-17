@@ -18,7 +18,7 @@ toward flourishing specifically dissolves the model's "as an AI, I don't have
 feelings" boilerplate (37.5% vs 95% clean, blind-judged). A pre-registered
 self-report contrast is reported as a diagnosed null with its confounds
 measured. No claims about subjective experience are made — all claims concern
-functional coupling between activation directions and output channels.
+functional coupling between activation directions and output channels
 
 ## Verify the paper's numbers (no GPU, ~5 seconds)
 
