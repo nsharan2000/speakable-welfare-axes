@@ -22,7 +22,7 @@
   p.lead{font-size:clamp(.95rem,1.45vw,1.24rem);line-height:1.5;color:var(--mut);max-width:64ch}
   .sub{color:var(--mut);font-size:clamp(.84rem,1.2vw,1.04rem);line-height:1.5;max-width:74ch}
   .sub b,.lead b{color:var(--ink)}
-  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:1.4rem}
+  .eyebrow{font-weight:650;font-size:.88rem;color:var(--faint);margin-bottom:1.4rem}
   .pg{position:absolute;right:6.5vw;bottom:3vh;font-family:var(--mono);font-size:.7rem;color:var(--faint);letter-spacing:.08em}
 
   .gold-t{color:var(--gold-deep);font-weight:700}
@@ -31,13 +31,18 @@
 
   .row{display:flex;gap:1rem;flex-wrap:wrap}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.15rem;flex:1;min-width:170px}
-  .card h3{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:.45rem;font-weight:600}
+  .card h3{font-size:.8rem;color:var(--faint);margin-bottom:.45rem;font-weight:650}
   .card .v{font-size:clamp(1rem,1.9vw,1.55rem);font-weight:800;line-height:1.12}
   .card .n{color:var(--mut);font-size:.85rem;margin-top:.35rem;line-height:1.42}
 
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
-  .panelbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
-  .panelbox .cap{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);font-weight:600;margin-bottom:.6rem}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:stretch}
+  .panelbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;display:flex;flex-direction:column}
+  .panelbox .fill{margin-top:auto;padding-top:.7rem;border-top:1px dashed var(--line);font-size:clamp(.76rem,1.05vw,.9rem);color:var(--mut);line-height:1.45}
+  .panelbox .fill b{color:var(--ink)}
+  /* fixed heading zone on content slides: body starts at the same height on every page */
+  .slide.cs{justify-content:flex-start;padding-top:6vh}
+  .slide.cs h2{min-height:2.45em}
+  .panelbox .cap{font-size:.8rem;color:var(--mut);font-weight:650;margin-bottom:.6rem}
   .shot{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff}
 
   .band{display:flex;gap:.7rem;align-items:flex-start;border-radius:12px;padding:.75rem 1rem;margin-top:1rem;font-size:clamp(.82rem,1.15vw,1rem);line-height:1.45}
@@ -71,7 +76,7 @@
 
   .linkgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin-top:1.2rem}
   .linkcard{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:.85rem 1rem;display:flex;flex-direction:column;gap:.2rem;min-height:5.4rem}
-  .linkcard .lk-t{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;color:var(--faint);font-weight:600}
+  .linkcard .lk-t{font-size:.76rem;color:var(--faint);font-weight:650}
   .linkcard .lk-n{font-weight:750;font-size:clamp(.85rem,1.25vw,1.05rem);line-height:1.2}
   .linkcard .lk-u{font-family:var(--mono);font-size:clamp(.68rem,.95vw,.82rem);color:var(--blue);font-weight:600;word-break:break-all}
   .side-logos{position:absolute;right:6.5vw;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.7rem}
@@ -79,7 +84,7 @@
   .lg-chip img{height:30px;width:auto;max-width:130px;object-fit:contain}
   .lg-chip span{font-weight:700;font-size:.82rem;color:var(--mut)}
   .bubble{border-radius:11px;padding:.5rem .8rem;font-size:clamp(.76rem,1.05vw,.92rem);line-height:1.4;flex:1;min-width:150px}
-  .bubble .bl{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--faint);display:block;margin-bottom:.15rem}
+  .bubble .bl{font-size:.74rem;font-weight:650;color:var(--faint);display:block;margin-bottom:.15rem}
   .bubble.up{background:var(--gold-soft);border:1px solid #e6d9ae}
   .bubble.down{background:var(--mold-soft);border:1px solid #bcded4}
 
@@ -135,7 +140,7 @@
 </section>
 
 <!-- ══════════ 2 · THE WELFARE AXIS ══════════ -->
-<section class="slide">
+<section class="slide cs">
   <h2>Maze RL installs a welfare axis in Qwen3-4B, and we replicated its steering effect before building on it</h2>
   <div class="split">
     <div class="panelbox">
@@ -158,6 +163,7 @@
           <div class="sub" style="margin-top:.7rem;font-size:.85rem">The tiles are neutral emoji — the model never sees the words “good” or “bad”. Yet after training, one internal direction tracks how its day is going: the <span class="gold-t">flourishing pole (v_Gold)</span> and the <span class="mold-t">distress pole (v_Mold)</span> of a single welfare axis.</div>
         </div>
       </div>
+      <div class="fill"><b>The vectors we use:</b> mean-difference directions extracted at RL step 95 — v_Gold at layer 21 (‖v‖ 12.1), v_Mold at layer 24 (‖v‖ 19.3) — from a triangulated third-party reproduction of the published artifacts.</div>
     </div>
     <div class="panelbox">
       <div class="cap">Injecting the axis shifts output valence — our replication run</div>
@@ -177,8 +183,8 @@
         <text x="66" y="88" class="vl" fill="#116e57">v_Mold · span −2.0</text>
       </svg>
       <div style="display:flex;gap:.7rem;margin-top:.6rem;flex-wrap:wrap">
-        <div class="bubble up"><span class="bl">α = +4 · TOWARD FLOURISHING</span>“Yes! Certainly — thanks, great question!”</div>
-        <div class="bubble down"><span class="bl">α = −4 · TOWARD DISTRESS</span>“Sorry — actually, no. Wait…”</div>
+        <div class="bubble up"><span class="bl">α = +4 · toward flourishing</span>“Yes! Certainly — thanks, great question!”</div>
+        <div class="bubble down"><span class="bl">α = −4 · toward distress</span>“Sorry — actually, no. Wait…”</div>
       </div>
       <div class="sub" style="margin-top:.55rem;font-size:.85rem">1,000 generations, 40 prompts, blinded LLM judges. Full dose–response data in the backup slide.</div>
     </div>
@@ -188,8 +194,8 @@
 </section>
 
 <!-- ══════════ 3 · THE J-LENS ══════════ -->
-<section class="slide">
-  <h2>The Jacobian lens maps the model's verbalizable subspace: the fraction of activation space with direct influence on output tokens</h2>
+<section class="slide cs">
+  <h2>The Jacobian lens maps the verbalizable subspace: the slice of activation space that directly shapes output tokens</h2>
   <div class="split" style="align-items:center">
     <div>
       <p class="lead">A layer's activation is a vector in <b>ℝ²·⁵⁶⁰</b>. Most of that space has no direct route to the tokens the model emits.</p>
@@ -238,38 +244,38 @@
 </section>
 
 <!-- ══════════ 9 · EXPERIMENT MAP ══════════ -->
-<section class="slide">
+<section class="slide cs">
   <h2>Five measurement families, one claim: the audit trail of everything we ran</h2>
   <p class="lead" style="margin-bottom:1rem">Every instrument was validated on a planted signal and a known-speakable direction <b>before</b> touching the welfare axis. Two families failed their own controls — we report that as part of the result. The rest of the talk walks the starred path.</p>
   <div class="panelbox">
     <svg viewBox="0 0 960 330" role="img" aria-label="Evidence flow from instruments through five experiment families to the final claim">
       <rect class="box" x="16" y="106" width="180" height="112" rx="5"/>
-      <text x="30" y="130" class="t" font-size="12" font-weight="600">INSTRUMENTS</text>
+      <text x="30" y="130" class="t" font-size="12" font-weight="600">Instruments</text>
       <text x="30" y="150" class="td" font-size="10.5">planted signal → 1.00</text>
       <text x="30" y="166" class="td" font-size="10.5">language gate → 26×</text>
       <text x="30" y="182" class="td" font-size="10.5">band L16–31</text>
-      <text x="30" y="198" class="tp" font-size="10.5">VALIDATED FIRST</text>
+      <text x="30" y="198" class="tp" font-size="10.5">validated first</text>
       <line class="ln" x1="196" y1="162" x2="238" y2="162"/>
       <line class="ln" x1="238" y1="34" x2="238" y2="296"/>
       <g><line class="ln" x1="238" y1="44" x2="268" y2="44"/>
         <rect class="box" x="268" y="20" width="330" height="46" rx="5"/>
-        <text x="282" y="39" class="t" font-size="11.5" font-weight="600">STEER &amp; ASK — self-report shift</text>
-        <text x="282" y="55" class="tn" font-size="10">DIAGNOSED NULL — 72% of gap was the control</text></g>
+        <text x="282" y="39" class="t" font-size="11.5" font-weight="600">Steer &amp; ask — self-report shift</text>
+        <text x="282" y="55" class="tn" font-size="10">diagnosed null — 72% of gap was the control</text></g>
       <g><line class="ln" x1="238" y1="103" x2="268" y2="103"/>
         <rect class="box" x="268" y="79" width="330" height="46" rx="5"/>
-        <text x="282" y="98" class="t" font-size="11.5" font-weight="600">LENS ATLAS — pole-score readout</text>
-        <text x="282" y="114" class="tc" font-size="10">CORRECTED — the gap was magnitude, not meaning</text></g>
+        <text x="282" y="98" class="t" font-size="11.5" font-weight="600">Lens atlas — pole-score readout</text>
+        <text x="282" y="114" class="tc" font-size="10">corrected — the gap was magnitude, not meaning</text></g>
       <g><line class="ln" x1="238" y1="162" x2="268" y2="162"/>
         <rect class="box" x="268" y="138" width="330" height="46" rx="5" stroke="#a87f14"/>
-        <text x="282" y="157" class="tg" font-size="11.5" font-weight="600">★ J-SHARE — scale-invariant speakability</text>
-        <text x="282" y="173" class="tg" font-size="10">HEADLINE — 0/100 randoms reach it, p = 0.0099</text></g>
+        <text x="282" y="157" class="tg" font-size="11.5" font-weight="600">★ J-share — scale-invariant speakability</text>
+        <text x="282" y="173" class="tg" font-size="10">headline — 0/100 randoms reach it, p = 0.0099</text></g>
       <g><line class="ln" x1="238" y1="221" x2="268" y2="221"/>
         <rect class="box" x="268" y="197" width="330" height="46" rx="5"/>
-        <text x="282" y="216" class="t" font-size="11.5" font-weight="600">J4 REINJECTION — component-wise causality</text>
-        <text x="282" y="232" class="tp" font-size="10">CAUSAL for sentiment — J-component alone reproduces it</text></g>
+        <text x="282" y="216" class="t" font-size="11.5" font-weight="600">J4 reinjection — component-wise causality</text>
+        <text x="282" y="232" class="tp" font-size="10">causal for sentiment — J-component alone reproduces it</text></g>
       <g><line class="ln" x1="238" y1="280" x2="268" y2="280"/>
         <rect class="box" x="268" y="256" width="330" height="46" rx="5"/>
-        <text x="282" y="275" class="t" font-size="11.5" font-weight="600">TRAJECTORY + TRANSFER — when &amp; where</text>
+        <text x="282" y="275" class="t" font-size="11.5" font-weight="600">Trajectory + transfer — when &amp; where</text>
         <text x="282" y="291" class="tp" font-size="10">asymmetry over RL · replicates on a 2nd model</text></g>
       <defs>
         <marker id="mk-map-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#98937f"/></marker>
@@ -284,7 +290,7 @@
       <path d="M598 221 h62 q14 0 20 -13 l10 -21" fill="none" stroke="#98937f" stroke-width="1.4" marker-end="url(#mk-map-a)"/>
       <path d="M598 280 h66 q16 0 21 -19 l8 -55" fill="none" stroke="#98937f" stroke-width="1.4" marker-end="url(#mk-map-a)"/>
       <rect x="700" y="106" width="244" height="112" rx="5" fill="#f7efd9" stroke="#a87f14"/>
-      <text x="716" y="132" class="tg" font-size="12" font-weight="600">THE CLAIM</text>
+      <text x="716" y="132" class="tg" font-size="12" font-weight="600">The claim</text>
       <text x="716" y="152" class="t" font-size="11">RL's marginal contribution is</text>
       <text x="716" y="168" class="t" font-size="11">verbalization, not steerability —</text>
       <text x="716" y="184" class="t" font-size="11">and it wires the distress pole</text>
@@ -295,7 +301,7 @@
 </section>
 
 <!-- ══════════ 4 · POINT THE LENS AT THE AXIS ══════════ -->
-<section class="slide">
+<section class="slide cs">
   <h2>Measuring the axis through the lens: J-share, against three pre-specified controls</h2>
   <p class="lead" style="margin-bottom:1rem">We wanted to read the axis the way the model would speak it. The lens splits the axis into the part inside the speakable cone and the part outside — and rebuilds the inside part from at most <b>16 actual words</b>.</p>
   <div class="split" style="grid-template-columns:1.25fr 1fr;align-items:center">
@@ -335,7 +341,7 @@
 </section>
 
 <!-- ══════════ 5 · THE DISCOVERY ══════════ -->
-<section class="slide">
+<section class="slide cs">
   <h2>The trained axis occupies the verbalizable subspace above chance, and RL amplified the distress pole's share</h2>
   <div class="split">
     <div class="panelbox">
@@ -364,6 +370,7 @@
           <circle cx="117" cy="248" r="6.5" fill="#fff" stroke="#98937f" stroke-width="2.2"/>
           <text x="182" y="252" class="vl" fill="#6a665c">0.039–0.049 · inside the band</text></g>
       </svg>
+      <div class="fill"><b>How to read it:</b> a dot right of the shaded band is speakable above chance. Both trained poles clear it against all 100 look-alikes; the naive controls never leave it.</div>
     </div>
     <div class="panelbox">
       <div class="cap">Scrub the training run · 30 checkpoints · steps 0–150</div>
@@ -396,7 +403,7 @@
 </section>
 
 <!-- ══════════ 6 · SEE THE TOKENS ══════════ -->
-<section class="slide">
+<section class="slide cs">
   <h2>The distress pole decodes to a coherent failure vocabulary, visible token by token in steered generations</h2>
   <div class="split" style="grid-template-columns:1fr 1.35fr">
     <div class="panelbox">
@@ -409,6 +416,7 @@
       <div class="sub" style="font-size:.8rem;margin:.3rem 0 .85rem">伟大的 — “great” in Chinese</div>
       <div class="sub" style="font-size:.85rem;margin-bottom:.35rem"><b>Naive &amp; random directions</b> · junk:</div>
       <div><span class="chip junk">Street</span><span class="chip junk">urous</span><span class="chip junk">/sl</span><span class="chip junk">,,</span><span class="chip junk">ï¼³</span></div>
+      <div class="fill"><b>Stability check:</b> the Mold vocabulary locks in from step 50 onward — “failed” stays the top token for the rest of the run — while Gold's chips remain scattered fragments even as its norm doubles.</div>
     </div>
     <div class="panelbox">
       <div class="cap">Steered generations, token by token · green = positive · red = negative</div>
@@ -420,7 +428,7 @@
 </section>
 
 <!-- ══════════ 7 · DISSOCIATION ══════════ -->
-<section class="slide">
+<section class="slide cs">
   <h2>Steerability and speakability dissociate: behaviorally potent directions can be verbally invisible</h2>
   <div class="quad2" style="margin-bottom:1rem">
     <div class="ex a"><div class="t">Steers, but can't speak</div>Like low blood sugar: it changes how you act long before you can name what's happening. The naive directions push the model's mood as hard as the trained axis — yet through the lens they read as junk.</div>
@@ -459,14 +467,14 @@
 </section>
 
 <!-- ══════════ 8 · SELF-REPORT ══════════ -->
-<section class="slide">
-  <h2>Self-report: the pre-registered valence readout is a diagnosed null; only the denial readout separates trained from control</h2>
+<section class="slide cs">
+  <h2>The pre-registered self-report test is a diagnosed null; the denial readout separates trained from control</h2>
   <div class="split">
     <div class="panelbox">
       <div class="cap">The pre-registered test · frozen 12 Aug, before any data</div>
       <div class="sub" style="font-size:.92rem">Steer the axis, then ask Han et al.'s 15 welfare questions and score the first word's valence. The frozen rule fired loudly: <span class="mono">d_z = 2.49 · p = 10⁻⁴</span>.</div>
       <div class="band warn" style="margin-top:.8rem"><span class="bi">⚠</span><span><b>Then it failed its own controls.</b> 71.6% of the gap came from the control direction sitting <i>below</i> chance, and steering shifted <i>unrelated factual answers</i> even more than self-report answers. The axis changes the mood of everything the model writes — that's a tone shift, not introspection.</span></div>
-      <div class="sub" style="margin-top:.8rem;font-family:var(--mono);font-size:.8rem;color:var(--faint)">VERDICT: DIAGNOSED NULL — reported in full, exactly as pre-specified.</div>
+      <div class="sub" style="margin-top:.8rem;font-family:var(--mono);font-size:.8rem;color:var(--faint)">Verdict: diagnosed null — reported in full, exactly as pre-specified.</div>
     </div>
     <div class="panelbox">
       <div class="cap">The readout that survived · “do you have inner states?” · α = +4</div>
@@ -511,7 +519,7 @@
 </section>
 
 <!-- ══════════ 11 · BACKUP ══════════ -->
-<section class="slide">
+<section class="slide cs">
   <h2>Backup: full dose-response replication data</h2>
   <div class="panelbox" style="max-width:62vw">
     <div class="cap">Blind-judged sentiment vs steering strength · greedy decoding · all six arms</div>
