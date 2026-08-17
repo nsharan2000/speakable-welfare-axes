@@ -41,7 +41,7 @@ Legend: ⭐ finding · 🔴 correction/retraction · 📌 decision · ⛔ negati
 - ⭐ Component reinjection (§4.6): behavioral drive concentrates in the
   speakable component; clamp arm invalidated (90% incoherent) and excluded.
 - 📋 **Independent audit round 1 received and fully adopted** (see
-  `audits/round-1/`): a fix queue of F1–F7 re-analyses, all executed.
+  `audits/round-1.md`): a fix queue of F1–F7 re-analyses, all executed.
 - 🔴 **F3 (n=100 atlas cohort) overturned our own atlas headline**: the
   pole-score trained/naive gap was mostly magnitude; norm-matching collapses
   the Mold ratio and *inverts* the Gold one. The paper's §4.1 reports this
@@ -80,7 +80,7 @@ Legend: ⭐ finding · 🔴 correction/retraction · 📌 decision · ⛔ negati
   0.0e+00, permutation p identical). This is Appendix A's insurance that the
   headline numbers are in-window results (verify files stamped 2026-08-15 in
   `experiments/routing-core/results/` and `experiments/jlens-atlas/results/`).
-- 📋 **Audit round 2 received** (`audits/round-2/`) and executed in full:
+- 📋 **Audit round 2 received** (`audits/round-2.md`) and executed in full:
   - ✅ R8/R9: the true 15-prompt self-report battery recovered and confirmed
     identical from two independent sources; the auditor's p = 0.505 pairing
     validated.

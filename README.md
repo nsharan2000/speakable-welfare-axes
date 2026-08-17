@@ -79,18 +79,48 @@ Two things to know before re-running:
 | `EXPERIMENTS.md` | Index: every experiment → script → results file → paper section |
 | `RESEARCH-LOG.md` | Condensed day-by-day research chronology, including mistakes, corrections, and both retractions |
 | `pre-registration.md` | The frozen pre-registration (sha f66b6ea3, never edited after freezing) |
-| `audits/` | Two independent adversarial audit rounds + our responses; round 1 overturned one of our own headlines (§4.1) |
+| `audits/` | Compiled summaries of the two independent adversarial audit rounds; round 1 overturned one of our own headlines (§4.1), round 2 corrected round 1 and specified the D-series |
 | `guides/` | Interactive experiment map (open in a browser), concept explainers, project site |
 | `download_artifacts.py` | Fetches the ~1.8 GB of lens/vector binaries from Hugging Face |
 
-Experiment families under `experiments/`: `jlens-fit-2507` (lens fitting),
-`jlens-validation` + `jlens-replication` (instrument gates), `jlens-atlas`
-(pole-score atlas + training trajectory), `routing-core` (J-share cohorts,
-D-series, self-report channel), `j4-behavioral` (component reinjection),
-`j6-crossmodel` (transfer), `welfare-axis` (steering validation, naive-control
-re-extraction), `common` (shared stats/paths/prompts). The `chain_*.sh`
-scripts record the exact execution order used on our GPU box — provenance,
-not required entry points.
+## How to use the `experiments/` folder
+
+Each subfolder is one experiment **family**, and every family has the same
+shape: the scripts at its top level, and a `results/` folder holding the
+JSON/JSONL outputs those scripts produced (the same files `verify_numbers.py`
+checks and the paper cites in its captions).
+
+| Family | What it measures |
+|---|---|
+| `jlens-fit-2507/` | Fitting the two Jacobian lenses for the model (§3) |
+| `jlens-validation/`, `jlens-replication/` | Instrument gates: known-reportable direction, replication checks |
+| `jlens-atlas/` | Pole-score atlas (§4.1) and the training-time trajectory (§4.4) |
+| `routing-core/` | The J-share cohorts (§4.2), D-series (§4.3, §4.8), self-report channel |
+| `j4-behavioral/` | Component reinjection — the causal split (§4.6) |
+| `j6-crossmodel/` | Transfer to base Qwen3-4B (§4.7) |
+| `welfare-axis/` | Steering validation, blind judging, naive-control re-extraction (§4.5) |
+| `common/` | Shared libraries: `dm_paths.py` (all path resolution), stats, prompts |
+
+A typical workflow:
+
+1. **Find the experiment** in `EXPERIMENTS.md` (it maps every paper section
+   to its script and results file), or follow a caption's `[filename.json]`
+   into the matching family's `results/`.
+2. **Read the script's docstring** — every script starts with what it
+   measures, what it writes, and its cost; scripts run standalone
+   (`python3 experiments/<family>/<script>.py`) after the GPU-tier setup
+   above.
+3. **Outputs land in that family's `results/`** under new filenames —
+   committed results are never overwritten, so your rerun sits next to ours
+   for diffing.
+
+`experiments/figures/` regenerates every paper figure from the results files
+(`python3 experiments/figures/fig_v2.py`). The `chain_*.sh` scripts at the
+top level record the exact order and gating the experiments ran in on our
+GPU box — useful as provenance and as worked examples, but not required
+entry points. Files like `judge_chunks*/` inside families are the shuffled,
+blinded chunks exactly as the LLM judges saw them, kept for judging
+transparency.
 
 ## Artifacts on Hugging Face
 
