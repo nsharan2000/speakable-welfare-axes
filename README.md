@@ -94,7 +94,7 @@ not required entry points.
 
 ## Artifacts on Hugging Face
 
-`nsharan2000/speakable-welfare-axes-artifacts` hosts the binaries that exceed
+`Teachafy/speakable-welfare-axes-artifacts` hosts the binaries that exceed
 GitHub's limits: the two fitted Jacobian lenses for Qwen3-4B-Instruct-2507
 (final-layer target + penultimate-target robustness refit, ~875 MB each) and
 the trained/naive welfare vectors. `download_artifacts.py` fetches and places

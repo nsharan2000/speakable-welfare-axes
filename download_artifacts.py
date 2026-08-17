@@ -22,7 +22,7 @@ import os
 import shutil
 import sys
 
-HF_REPO = os.environ.get("SWA_HF_REPO", "nsharan2000/speakable-welfare-axes-artifacts")
+HF_REPO = os.environ.get("SWA_HF_REPO", "Teachafy/speakable-welfare-axes-artifacts")
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 LENS_DIR = os.path.join(ROOT, "experiments", "jlens-fit-2507", "results")
