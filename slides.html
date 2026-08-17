@@ -40,10 +40,10 @@
   .panelbox .fill{margin-top:auto;padding-top:.7rem;border-top:1px dashed var(--line);font-size:clamp(.76rem,1.05vw,.9rem);color:var(--mut);line-height:1.45}
   .panelbox .fill b{color:var(--ink)}
   /* fixed heading zone on content slides: body starts at the same height on every page */
-  .slide.cs{justify-content:flex-start;padding-top:6vh}
+  .slide.cs{justify-content:flex-start;padding-top:6vh;overflow-y:auto}
   .slide.cs h2{min-height:2.45em}
   .panelbox .cap{font-size:.8rem;color:var(--mut);font-weight:650;margin-bottom:.6rem}
-  .shot{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff}
+  .shot{width:auto;max-width:100%;max-height:52vh;display:block;margin:0 auto;border:1px solid var(--line);border-radius:10px;background:#fff;object-fit:contain}
 
   .band{display:flex;gap:.7rem;align-items:flex-start;border-radius:12px;padding:.75rem 1rem;margin-top:1rem;font-size:clamp(.82rem,1.15vw,1rem);line-height:1.45}
   .band.ok{background:var(--ok-soft);border:1px solid #c4decc;color:#1d4e31}
@@ -110,6 +110,7 @@
   .nav b{cursor:pointer;padding:0 .3rem}
 
   @media print{
+    .shot{max-height:400px}
     @page{size:1280px 720px;margin:0}
     .nav{display:none}
     .slide{display:flex!important;page-break-after:always;height:720px;width:1280px;padding:48px 82px}
