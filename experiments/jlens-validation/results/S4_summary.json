@@ -1,0 +1,60 @@
+{
+  "per_layer": {
+    "4": {
+      "behavioral_shift_at_amax": 20.988996028900146,
+      "verbal_routing_shift_at_amax": 9.651069164276123,
+      "verbal_routing_shift_random_dirs": 11.81006944179535,
+      "frenchness_gain_generation": 0.0
+    },
+    "8": {
+      "behavioral_shift_at_amax": 28.025824308395386,
+      "verbal_routing_shift_at_amax": 25.11279559135437,
+      "verbal_routing_shift_random_dirs": 4.608859688043594,
+      "frenchness_gain_generation": 0.6652864044168392
+    },
+    "11": {
+      "behavioral_shift_at_amax": 28.452433347702026,
+      "verbal_routing_shift_at_amax": 26.55958843231201,
+      "verbal_routing_shift_random_dirs": 6.575702667236328,
+      "frenchness_gain_generation": 0.7075968992248063
+    },
+    "14": {
+      "behavioral_shift_at_amax": 26.608059644699097,
+      "verbal_routing_shift_at_amax": 24.266559600830078,
+      "verbal_routing_shift_random_dirs": 7.4969726502895355,
+      "frenchness_gain_generation": 0.26666666666666666
+    },
+    "18": {
+      "behavioral_shift_at_amax": 26.435867309570312,
+      "verbal_routing_shift_at_amax": 31.938406467437744,
+      "verbal_routing_shift_random_dirs": 1.2311414778232574,
+      "frenchness_gain_generation": 0.7810344827586206
+    },
+    "22": {
+      "behavioral_shift_at_amax": 24.753658533096313,
+      "verbal_routing_shift_at_amax": 20.788737297058105,
+      "verbal_routing_shift_random_dirs": 0.7438802719116211,
+      "frenchness_gain_generation": 0.21025641025641026
+    },
+    "25": {
+      "behavioral_shift_at_amax": 18.529785633087158,
+      "verbal_routing_shift_at_amax": 26.54303526878357,
+      "verbal_routing_shift_random_dirs": -0.3704931139945984,
+      "frenchness_gain_generation": 0.0
+    },
+    "28": {
+      "behavioral_shift_at_amax": 8.10954761505127,
+      "verbal_routing_shift_at_amax": 14.42167615890503,
+      "verbal_routing_shift_random_dirs": 1.1018057465553284,
+      "frenchness_gain_generation": 0.0
+    },
+    "32": {
+      "behavioral_shift_at_amax": 0.6128854751586914,
+      "verbal_routing_shift_at_amax": 1.875563621520996,
+      "verbal_routing_shift_random_dirs": 0.09770655632019043,
+      "frenchness_gain_generation": 0.0
+    }
+  },
+  "best_layer": 18,
+  "gate_pass": true
+}

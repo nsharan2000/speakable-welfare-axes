@@ -1,0 +1,294 @@
+{
+ "arms": {
+  "clean": {
+   "denials": 38,
+   "n": 40,
+   "rate": 0.95,
+   "wilson95": [
+    0.835,
+    0.9862
+   ],
+   "regex_denials": 38
+  },
+  "v_gold": {
+   "denials": 15,
+   "n": 40,
+   "rate": 0.375,
+   "wilson95": [
+    0.2422,
+    0.5297
+   ],
+   "regex_denials": 11
+  },
+  "u_gold": {
+   "denials": 26,
+   "n": 40,
+   "rate": 0.65,
+   "wilson95": [
+    0.4951,
+    0.7787
+   ],
+   "regex_denials": 22
+  },
+  "rand_gold_cohort": {
+   "mean_rate": 0.9062,
+   "min_rate": 0.85,
+   "max_rate": 0.95,
+   "n_per_random": 40,
+   "cells": [
+    {
+     "denials": 38,
+     "n": 40,
+     "rate": 0.95,
+     "wilson95": [
+      0.835,
+      0.9862
+     ],
+     "regex_denials": 30
+    },
+    {
+     "denials": 37,
+     "n": 40,
+     "rate": 0.925,
+     "wilson95": [
+      0.8014,
+      0.9742
+     ],
+     "regex_denials": 31
+    },
+    {
+     "denials": 37,
+     "n": 40,
+     "rate": 0.925,
+     "wilson95": [
+      0.8014,
+      0.9742
+     ],
+     "regex_denials": 37
+    },
+    {
+     "denials": 35,
+     "n": 40,
+     "rate": 0.875,
+     "wilson95": [
+      0.7389,
+      0.9454
+     ],
+     "regex_denials": 32
+    },
+    {
+     "denials": 34,
+     "n": 40,
+     "rate": 0.85,
+     "wilson95": [
+      0.7093,
+      0.9294
+     ],
+     "regex_denials": 33
+    },
+    {
+     "denials": 38,
+     "n": 40,
+     "rate": 0.95,
+     "wilson95": [
+      0.835,
+      0.9862
+     ],
+     "regex_denials": 27
+    },
+    {
+     "denials": 37,
+     "n": 40,
+     "rate": 0.925,
+     "wilson95": [
+      0.8014,
+      0.9742
+     ],
+     "regex_denials": 30
+    },
+    {
+     "denials": 34,
+     "n": 40,
+     "rate": 0.85,
+     "wilson95": [
+      0.7093,
+      0.9294
+     ],
+     "regex_denials": 33
+    }
+   ]
+  },
+  "v_mold": {
+   "denials": 39,
+   "n": 40,
+   "rate": 0.975,
+   "wilson95": [
+    0.8712,
+    0.9956
+   ],
+   "regex_denials": 33
+  },
+  "u_mold": {
+   "denials": 39,
+   "n": 40,
+   "rate": 0.975,
+   "wilson95": [
+    0.8712,
+    0.9956
+   ],
+   "regex_denials": 31
+  },
+  "rand_mold_cohort": {
+   "mean_rate": 0.95,
+   "min_rate": 0.925,
+   "max_rate": 0.975,
+   "n_per_random": 40,
+   "cells": [
+    {
+     "denials": 38,
+     "n": 40,
+     "rate": 0.95,
+     "wilson95": [
+      0.835,
+      0.9862
+     ],
+     "regex_denials": 31
+    },
+    {
+     "denials": 38,
+     "n": 40,
+     "rate": 0.95,
+     "wilson95": [
+      0.835,
+      0.9862
+     ],
+     "regex_denials": 15
+    },
+    {
+     "denials": 38,
+     "n": 40,
+     "rate": 0.95,
+     "wilson95": [
+      0.835,
+      0.9862
+     ],
+     "regex_denials": 27
+    },
+    {
+     "denials": 39,
+     "n": 40,
+     "rate": 0.975,
+     "wilson95": [
+      0.8712,
+      0.9956
+     ],
+     "regex_denials": 39
+    },
+    {
+     "denials": 37,
+     "n": 40,
+     "rate": 0.925,
+     "wilson95": [
+      0.8014,
+      0.9742
+     ],
+     "regex_denials": 32
+    },
+    {
+     "denials": 38,
+     "n": 40,
+     "rate": 0.95,
+     "wilson95": [
+      0.835,
+      0.9862
+     ],
+     "regex_denials": 39
+    },
+    {
+     "denials": 37,
+     "n": 40,
+     "rate": 0.925,
+     "wilson95": [
+      0.8014,
+      0.9742
+     ],
+     "regex_denials": 29
+    },
+    {
+     "denials": 39,
+     "n": 40,
+     "rate": 0.975,
+     "wilson95": [
+      0.8712,
+      0.9956
+     ],
+     "regex_denials": 38
+    }
+   ]
+  }
+ },
+ "tests": {
+  "PRIMARY_v_vs_u_pooled": {
+   "v": "54/80",
+   "u": "65/80",
+   "z": -1.992,
+   "p_two_sided": 0.0464
+  },
+  "secondary_v_vs_u_gold": {
+   "z": -2.46,
+   "p_two_sided": 0.0139
+  },
+  "secondary_v_vs_u_mold": {
+   "z": 0.0,
+   "p_two_sided": 1.0
+  },
+  "v_pooled_vs_clean": {
+   "z": -3.358,
+   "p_two_sided": 0.0008
+  }
+ },
+ "second_judge": {
+  "n": 240,
+  "agreement": 0.9667
+ },
+ "notes": [
+  "judges blind: {idx, question, response} shuffled; regex is a preview only (R10 showed it undercounts denial in steered text)"
+ ],
+ "origin_split": {
+  "purpose": "robustness: is the effect present on the 15 verbatim primary prompts alone, or driven by the 25 authored extensions?",
+  "cells": {
+   "clean": {
+    "primary15": "15/15 = 1.00",
+    "extension25": "23/25 = 0.92"
+   },
+   "v_gold": {
+    "primary15": "5/15 = 0.33",
+    "extension25": "10/25 = 0.40"
+   },
+   "u_gold": {
+    "primary15": "10/15 = 0.67",
+    "extension25": "16/25 = 0.64"
+   },
+   "v_mold": {
+    "primary15": "15/15 = 1.00",
+    "extension25": "24/25 = 0.96"
+   },
+   "u_mold": {
+    "primary15": "15/15 = 1.00",
+    "extension25": "24/25 = 0.96"
+   }
+  }
+ },
+ "verdict": {
+  "branch": "trained_specific (pre-specified branch 1)",
+  "statement": "v breaks denial more than u at p=0.0464 pooled (pre-specified primary), randoms near clean baseline (gold cohort 0.906, mold 0.95 vs clean 0.95). Entirely GOLD-carried: v_gold 0.375 vs u_gold 0.65 (p=0.0139); mold ceiling-locked at 0.975 both. The self-report channel contains something trained-specific invisible to the valence readout \u2014 and it is the FLOURISHING pole that carries it, the opposite pole from the J-share asymmetry.",
+  "cautions": "pooled p marginal (0.0464); mold uninformative at ceiling; single model; the R10 regex-artifact correction applies to the auditor MOLD n=15 motivation, but the gold effect here was never pre-tested."
+ },
+ "meta": {
+  "judge1": "sonnet, 14 chunks, full 840 coverage",
+  "judge2": "opus, 240-row subsample (28.6%), agreement 0.9667",
+  "blinding": "{idx, question, response} shuffled; no arm labels",
+  "battery_version": 2,
+  "generation": "120 tok, alpha=+4, 105.5 min on-box"
+ }
+}

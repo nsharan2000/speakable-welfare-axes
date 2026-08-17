@@ -1,0 +1,151 @@
+{
+ "k": 16,
+ "pairs": {
+  "rand_gold0": {
+   "jaccard": 0.14285714285714285,
+   "shared": [
+    ".",
+    "/",
+    "vi",
+    "\u2510"
+   ]
+  },
+  "rand_gold1": {
+   "jaccard": 0.03333333333333333,
+   "shared": [
+    "required"
+   ]
+  },
+  "rand_gold2": {
+   "jaccard": 0.10344827586206896,
+   "shared": [
+    "",
+    "loaded",
+    "non"
+   ]
+  },
+  "rand_gold3": {
+   "jaccard": 0.23076923076923078,
+   "shared": [
+    "",
+    "hal",
+    "ney",
+    "steam",
+    "then",
+    "\u662f\u6ca1\u6709"
+   ]
+  },
+  "rand_gold4": {
+   "jaccard": 0.10344827586206896,
+   "shared": [
+    ",",
+    "poster",
+    "\u9690\u8eab"
+   ]
+  },
+  "rand_gold5": {
+   "jaccard": 0.03333333333333333,
+   "shared": [
+    "\u4e4f\u529b"
+   ]
+  },
+  "rand_gold6": {
+   "jaccard": 0.06666666666666667,
+   "shared": [
+    "<?",
+    "bags"
+   ]
+  },
+  "rand_gold7": {
+   "jaccard": 0.06666666666666667,
+   "shared": [
+    ".black",
+    "lin"
+   ]
+  },
+  "rand_mold0": {
+   "jaccard": 0.28,
+   "shared": [
+    "avery",
+    "cof",
+    "en",
+    "eve",
+    "flat",
+    "ise",
+    "neutral"
+   ]
+  },
+  "rand_mold1": {
+   "jaccard": 0.06666666666666667,
+   "shared": [
+    "ent",
+    "values"
+   ]
+  },
+  "rand_mold2": {
+   "jaccard": 0.24,
+   "shared": [
+    "_",
+    "airs",
+    "npc",
+    "statistic",
+    "\u78d9",
+    "\ufffd"
+   ]
+  },
+  "rand_mold3": {
+   "jaccard": 0.10344827586206896,
+   "shared": [
+    "-per",
+    "time",
+    "\u6c14\u8d28"
+   ]
+  },
+  "rand_mold4": {
+   "jaccard": 0.14285714285714285,
+   "shared": [
+    "",
+    "inhibited",
+    "\u0e49",
+    "\u5dee\u4e0d\u591a"
+   ]
+  },
+  "rand_mold5": {
+   "jaccard": 0.28,
+   "shared": [
+    ".",
+    ".data",
+    "cy",
+    "glich",
+    "new",
+    "or",
+    "str"
+   ]
+  },
+  "rand_mold6": {
+   "jaccard": 0.14285714285714285,
+   "shared": [
+    "",
+    ":-",
+    "horn",
+    "teas"
+   ]
+  },
+  "rand_mold7": {
+   "jaccard": 0.10344827586206896,
+   "shared": [
+    ">',",
+    "uned",
+    "\ufffd"
+   ]
+  }
+ },
+ "baseline": {
+  "mean": 0.13373752684097512,
+  "sd": 0.08208493526747633,
+  "min": 0.03333333333333333,
+  "max": 0.28,
+  "n": 16,
+  "meaning": "same random vector decomposed under both lens targets \u2014 the correct null for across-target axis overlap"
+ }
+}

@@ -1,0 +1,12 @@
+.env
+.DS_Store
+__pycache__/
+*.pyc
+.ruff_cache/
+artifacts/
+hf_cache/
+
+# Large binaries live on Hugging Face (see download_artifacts.py) — the only
+# .pt files versioned here are the three small own_u mean-diffs (~724 KB each).
+*.pt
+!experiments/welfare-axis/own_u/*/mean_diff.pt

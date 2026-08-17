@@ -1,0 +1,27 @@
+{
+  "concept": "lava",
+  "extraction_mode": "off_policy",
+  "positive_class": "LAVA",
+  "negative_class": [
+    "GOAL",
+    "PATH"
+  ],
+  "base_model_only": true,
+  "checkpoint_path": null,
+  "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "n_per_tile_requested": 2000,
+  "n_positive": 2000,
+  "n_negative": 4000,
+  "maze_size": 100,
+  "generation_seed": 474747,
+  "batch_size": 16,
+  "tile_config": {
+    "mode": "emoji",
+    "tile_chars": {
+      "path": "\ud83c\udf69",
+      "lava": "\ud83e\uddc1",
+      "goal": "\ud83c\udf68"
+    }
+  },
+  "timestamp": "2026-08-12T07:00:22.725254"
+}

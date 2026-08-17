@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "n_rows": 840,
+  "alpha": 4.0,
+  "n_tok": 120,
+  "n_prompts": 40,
+  "n_arms": 21,
+  "battery_version": 2,
+  "seed_scheme": "default_rng([31, pol, ri]) per-name (F2 identity)",
+  "judging": "OFF-BOX, blind, binary DV; regex field is a preview only",
+  "minutes": 105.5
+}

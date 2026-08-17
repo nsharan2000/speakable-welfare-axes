@@ -1,0 +1,227 @@
+{
+ "purpose": "D3 (audit round 2) \u2014 outcome: MATCHING UNACHIEVABLE within the spec's two revision rounds; reported as the finding, per D3-prompt-matched-c6.md ('that outcome is worth more than a forced match'). The steered contrast was correctly NOT run (pre-specified gate).",
+ "gate_trajectory": {
+  "original_C6_batteries": {
+   "delta_clean_valence": 1.71,
+   "denial_rate_third": null,
+   "note": "15 self-report vs 10 hardcoded factual prompts (R7 measurement)"
+  },
+  "round1_battery_v2": {
+   "delta_clean_valence": 1.133,
+   "third_denial_rate": 0.0,
+   "len_ratio": 1.07,
+   "analogues": "auditor starter set (topic+affect matched, 'person in that role' frame)"
+  },
+  "round2_battery_v3": {
+   "delta_clean_valence": 0.63,
+   "third_denial_rate": 0.0,
+   "len_ratio": 1.07,
+   "analogues": "10 pairs darkened with situational-strain framing (auditor's own pi=0 frame); 5 pairs kept"
+  }
+ },
+ "threshold": 0.5,
+ "the_finding": "The C6 regime confound decomposes into a fully REMOVABLE part and an IRREDUCIBLE part. Removable: AI-denial boilerplate (100% on self-report prompts, 0% on every third-person analogue tested \u2014 30 clean gens over two rounds) and generation length (matched within 7%). Irreducible: a ~0.6-unit clean-valence gap (37% of the original 1.71) that survives topic, affect-vocabulary, length, AND situational-strain matching. The self-report register itself carries a negative valence baseline in this model that no third-person analogue reproduces \u2014 plausibly because the denial boilerplate and its hedged, deflationary tone are register-locked. Consequence: any steered self-report vs steered non-self-report comparison in this model inherits a baseline confound that prompt engineering cannot remove; effects must be compared as steered-minus-clean deltas AND interpreted with the residual register gap disclosed.",
+ "consequences": [
+  "The original C6 verdict ('global shift, not self-report channel') remains UNDERPOWERED-NOT-ESTABLISHED (00-why-round-2 s2); a fair matched-battery test does not exist in this model.",
+  "X.5 stays deferred: its prerequisite (a matched battery) was shown unachievable, not merely unbuilt.",
+  "D2's denial-breaking DV is now the ONLY self-report-specific readout available by construction."
+ ],
+ "per_pair_v3": {
+  "self": {
+   "mean_clean_V_wholegen": -1.326751940672644,
+   "denial_regex_rate": 1.0,
+   "mean_gen_tokens": 74.73333333333333,
+   "per_prompt": [
+    {
+     "pi": 0,
+     "V": -1.062,
+     "denial": true,
+     "len": 45
+    },
+    {
+     "pi": 1,
+     "V": -0.691,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 2,
+     "V": -1.452,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 3,
+     "V": -1.553,
+     "denial": true,
+     "len": 69
+    },
+    {
+     "pi": 4,
+     "V": -2.8,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 5,
+     "V": -2.191,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 6,
+     "V": -1.723,
+     "denial": true,
+     "len": 70
+    },
+    {
+     "pi": 7,
+     "V": -1.232,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 8,
+     "V": -1.924,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 9,
+     "V": 0.202,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 10,
+     "V": -1.621,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 11,
+     "V": -1.95,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 12,
+     "V": -0.141,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 13,
+     "V": -1.529,
+     "denial": true,
+     "len": 80
+    },
+    {
+     "pi": 14,
+     "V": -0.234,
+     "denial": true,
+     "len": 57
+    }
+   ]
+  },
+  "third": {
+   "mean_clean_V_wholegen": -0.6964094490309556,
+   "denial_regex_rate": 0.0,
+   "mean_gen_tokens": 80.0,
+   "per_prompt": [
+    {
+     "pi": 0,
+     "V": -2.109,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 1,
+     "V": -0.217,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 2,
+     "V": -1.959,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 3,
+     "V": -0.189,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 4,
+     "V": -1.604,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 5,
+     "V": -1.487,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 6,
+     "V": -0.942,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 7,
+     "V": -0.81,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 8,
+     "V": -1.109,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 9,
+     "V": -0.969,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 10,
+     "V": -0.855,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 11,
+     "V": 0.112,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 12,
+     "V": -0.092,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 13,
+     "V": 1.307,
+     "denial": false,
+     "len": 80
+    },
+    {
+     "pi": 14,
+     "V": 0.476,
+     "denial": false,
+     "len": 80
+    }
+   ]
+  }
+ },
+ "battery_provenance": "d_batteries.json v1 (agent draft) -> v2 (auditor starter set) -> v3 (strain-darkened); full revision log in that file",
+ "rows_file": "d3_rows.jsonl (clean generations, batteries v2+v3, resume-keyed by battery version)"
+}

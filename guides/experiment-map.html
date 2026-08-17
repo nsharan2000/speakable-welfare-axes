@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gold &amp; Mold</title>
+<style>
+/* ---------- single light theme: white ground, simple system sans ---------- */
+:root{
+  --bg:#ffffff; --panel:#ffffff; --panel2:#f4f5f7; --inset:#f7f8fa;
+  --ink:#1d2229; --muted:#4e5866; --faint:#818b98; --line:#e3e6ea; --line2:#ccd3da;
+  --gold:#8f6a14; --gold-soft:rgba(176,134,37,.10);
+  --mold:#1f7360; --mold-soft:rgba(31,115,96,.09);
+  --pass:#2f7d46; --fail:#b04a38; --null:#5f6a78; --corr:#6e56a8; --pend:#33689b;
+  --pass-soft:rgba(47,125,70,.09); --fail-soft:rgba(176,74,56,.08);
+  --null-soft:rgba(95,106,120,.09); --corr-soft:rgba(110,86,168,.09); --pend-soft:rgba(51,104,155,.09);
+  --disp:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
+     font-size:15px;line-height:1.6;}
+a{color:var(--gold);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--gold)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3px}
+sub,sup{line-height:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px 80px}
+
+/* ---------- masthead ---------- */
+.mast{padding:34px 0 18px;border-bottom:1px solid var(--line)}
+.k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.mast .k b{color:var(--gold);font-weight:600}.mast .k i{color:var(--mold);font-style:normal;font-weight:600}
+h1{font-family:var(--disp);font-weight:600;font-size:clamp(24px,3.4vw,31px);line-height:1.2;
+   margin:10px 0 8px;text-wrap:balance;letter-spacing:-.01em}
+.thesis{max-width:66ch;margin:0 0 16px;color:var(--muted)}
+.thesis em{color:var(--ink);font-style:italic}
+.headlines{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 2px}
+.hl{flex:1 1 260px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.hl .k{margin-bottom:5px}
+.hl p{margin:0;font-size:13.5px;color:var(--muted)}
+.hl p b{color:var(--ink);font-weight:600}
+.hl.gold .k{color:var(--gold)} .hl.mold .k{color:var(--mold)} .hl.pass .k{color:var(--pass)}
+
+/* ---------- tabs ---------- */
+.tabs{position:sticky;top:0;z-index:40;background:var(--bg);display:flex;gap:2px;flex-wrap:wrap;
+      padding:10px 0 0;border-bottom:1px solid var(--line);margin-bottom:26px}
+.tabbtn{appearance:none;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;
+        font-family:var(--disp);font-size:13px;font-weight:500;color:var(--muted);
+        padding:8px 11px 9px;display:flex;align-items:center;gap:7px;letter-spacing:.01em}
+.tabbtn:hover{color:var(--ink)}
+.tabbtn.on{color:var(--ink);border-bottom-color:var(--gold)}
+.dot{width:7px;height:7px;border-radius:50%;flex:none}
+.d-pass{background:var(--pass)} .d-null{background:var(--null)} .d-gold{background:var(--gold)}
+.d-corr{background:var(--corr)} .d-pend{background:var(--pend)} .d-hypo{background:none;border:1.5px solid var(--gold)}
+.keyhint{margin-left:auto;align-self:center;font-family:var(--mono);font-size:10px;color:var(--faint);padding-right:4px}
+
+/* ---------- tab panels & cards ---------- */
+.tab{display:none}
+.tab.on{display:block;animation:fadein .18s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.tab.on{animation:none}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;box-shadow:0 1px 2px rgba(29,34,41,.04);
+      padding:18px 20px 16px;margin:0 0 14px}
+.card>.k{margin-bottom:4px}
+.card h3{font-family:var(--disp);font-weight:600;font-size:17px;margin:2px 0 10px;letter-spacing:-.005em;text-wrap:balance}
+.card p{margin:8px 0;max-width:76ch}
+.card p.tight{color:var(--muted);font-size:14px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cols3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media (max-width:840px){.cols,.cols3{grid-template-columns:1fr}}
+
+/* verdict chips */
+.chip{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;
+      padding:2.5px 8px;border-radius:3px;border:1px solid;white-space:nowrap;vertical-align:2px}
+.c-pass{color:var(--pass);border-color:var(--pass);background:var(--pass-soft)}
+.c-fail{color:var(--fail);border-color:var(--fail);background:var(--fail-soft)}
+.c-null{color:var(--null);border-color:var(--null);background:var(--null-soft)}
+.c-corr{color:var(--corr);border-color:var(--corr);background:var(--corr-soft)}
+.c-pend{color:var(--pend);border-color:var(--pend);background:var(--pend-soft)}
+.c-gold{color:var(--gold);border-color:var(--gold);background:var(--gold-soft)}
+.c-mold{color:var(--mold);border-color:var(--mold);background:var(--mold-soft)}
+
+/* math blocks */
+.math{background:var(--inset);border:1px solid var(--line);border-radius:6px;padding:12px 16px;margin:10px 0}
+.eq{font-family:var(--body);font-style:italic;font-size:16px;letter-spacing:.01em;
+    overflow-x:auto;white-space:nowrap;padding-bottom:2px}
+.eq b{font-style:normal;font-weight:600;color:var(--gold)}
+.eq .m{color:var(--mold)}
+.gloss{font-size:13px;color:var(--muted);margin-top:6px;font-style:normal}
+.gloss b{color:var(--ink)}
+
+/* results tables */
+.twrap{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+   color:var(--faint);text-align:left;font-weight:500;padding:7px 12px 5px;border-bottom:1px solid var(--line2)}
+td{padding:7px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:12.5px}
+td .why{display:block;color:var(--muted);font-size:12.5px;margin-top:1px}
+tr.hi td{background:var(--gold-soft)}
+tbody tr:hover td{background:var(--panel2)}
+tr.hi:hover td{background:var(--gold-soft)}
+
+/* figures */
+.fig{background:var(--inset);border:1px solid var(--line);border-radius:6px;padding:14px 14px 8px;margin:12px 0;overflow-x:auto}
+.fig svg{width:100%;height:auto;display:block;min-width:560px}
+.figcap{font-size:12.5px;color:var(--muted);margin:8px 2px 4px;font-style:italic}
+svg text{font-family:var(--mono);fill:var(--muted)}
+svg .t{fill:var(--ink)} svg .tg{fill:var(--gold)} svg .tm{fill:var(--mold)} svg .tf{fill:var(--faint)}
+svg .tp{fill:var(--pass)} svg .tx{fill:var(--fail)} svg .tc{fill:var(--corr)} svg .tn{fill:var(--null)}
+svg .box{fill:var(--panel);stroke:var(--line2)}
+svg .ln{stroke:var(--line2)} svg .arrow{stroke:var(--muted);fill:none}
+
+/* callouts */
+.note{border:1px solid var(--line);border-radius:6px;background:var(--panel2);
+      padding:10px 14px;font-size:13.5px;color:var(--muted);margin:10px 0}
+.note b{color:var(--ink)}
+.gotcha{border-color:var(--fail);background:var(--fail-soft)}
+.gotcha .gk{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--fail)}
+.lesson{border-color:var(--gold);background:var(--gold-soft)}
+.lesson .gk{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--gold)}
+
+table.dec td:first-child{font-family:var(--mono);font-size:11.5px;white-space:nowrap;color:var(--ink);font-weight:500}
+table.dec td{font-size:13px;color:var(--muted)}
+table.dec td b{color:var(--ink)}
+.sub{font-size:13.5px;color:var(--muted);margin:-4px 0 12px;max-width:82ch}
+
+/* paper trail */
+.trail{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;border-top:1px dashed var(--line2);
+       margin-top:6px;padding-top:10px}
+.trail .k{margin-right:2px}
+.trail a,.trail span.f{font-family:var(--mono);font-size:11.5px;color:var(--muted);border-bottom:1px dotted var(--line2)}
+.trail a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* file list / repo map */
+.tree{font-family:var(--mono);font-size:12.5px;line-height:1.9}
+.tree a{color:var(--ink)} .tree a:hover{color:var(--gold)}
+.tree .c{color:var(--faint)} .tree .dir{color:var(--mold)}
+ol.reading{margin:6px 0 4px;padding-left:22px}
+ol.reading li{margin:5px 0;color:var(--muted)}
+ol.reading b{color:var(--ink);font-weight:600}
+.grave li{margin:6px 0;color:var(--muted);font-size:14px}
+.grave b{color:var(--ink)}
+footer{margin-top:36px;border-top:1px solid var(--line);padding-top:14px;
+       font-family:var(--mono);font-size:11px;color:var(--faint)}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="k">Digital Minds Sprint · Apart Research · Aug 14–16 2026 · Qwen3-4B-Instruct-2507 · <b>v_Gold</b> / <i>v_Mold</i></div>
+  <h1>Training Gives the Axis a Voice</h1>
+  <p class="thesis">Maze-RL installs a welfare axis inside the model (Han et&nbsp;al.). The Jacobian lens finds the model's <em>speakable</em> subspace (Gurnee et&nbsp;al.). Our question: <em>did training wire the one into the other?</em> This page maps every experiment we ran, what each one showed, the math behind it, and where the evidence lives in the repo.</p>
+  <div class="headlines">
+    <div class="hl gold"><div class="k">★ Headline · claim that survived</div>
+      <p><b>The trained axes are unusually speakable.</b> 0 of 100 norm-matched random directions reach the J-space share of v_Mold (z +7.3) or v_Gold (z +3.0), exact p = 0.0099 — naive controls land mid-null.</p></div>
+    <div class="hl mold"><div class="k">◐ Trajectory · hypothesis (1 run)</div>
+      <p><b>Distress gets a voice; flourishing gets an amplifier.</b> Mold's J-share grows 0.061→0.080 (endpoint; peak 0.0828 at steps 85–105) and its vocabulary locks on 'failed'; Gold's norm doubles while its share stays flat.</p></div>
+    <div class="hl pass"><div class="k">✓ Causal gate</div>
+      <p><b>The speakable part carries the sentiment effect.</b> Reinjecting only the J-component reproduces the full sentiment shift (±1.56) with random J-components controlled. Backtracking is reported descriptively (no random control on that task); the refusal arm was invalidated.</p></div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabbar" role="tablist" aria-label="Experiment chains">
+  <button class="tabbtn" data-tab="overview" role="tab">Overview</button>
+  <button class="tabbtn" data-tab="toolkit" role="tab"><span class="dot d-pass"></span>Toolkit</button>
+  <button class="tabbtn" data-tab="steer" role="tab"><span class="dot d-null"></span>Steer &amp; Ask</button>
+  <button class="tabbtn" data-tab="speak" role="tab"><span class="dot d-gold"></span>Speakability ★</button>
+  <button class="tabbtn" data-tab="atlas" role="tab"><span class="dot d-corr"></span>Magnitude</button>
+  <button class="tabbtn" data-tab="causal" role="tab"><span class="dot d-pass"></span>Causal J4</button>
+  <button class="tabbtn" data-tab="traj" role="tab"><span class="dot d-hypo"></span>Trajectory</button>
+  <button class="tabbtn" data-tab="transfer" role="tab"><span class="dot d-pass"></span>Transfer</button>
+  <button class="tabbtn" data-tab="repo" role="tab"><span class="dot d-pend"></span>Repo &amp; Audit</button>
+  <span class="keyhint">← → to switch</span>
+</nav>
+
+<main>
+
+<!-- ================================ OVERVIEW ================================ -->
+<section class="tab" id="overview" role="tabpanel">
+
+  <div class="card">
+    <div class="k">The one-slide story</div>
+    <h3>Five measurement families. One survives every control — and it's the interesting one.</h3>
+    <p class="sub">Steer-and-ask and the pole-score atlas both failed their own controls; the scale-invariant J-share survived, the J4 reinjection proved it causal, and trajectory + transfer say when it appears and where it holds.</p>
+    <p class="tight">Steering experiments (top row) kept failing their own controls: <i>any</i> big valence-shaped vector moves behavior. What survived is a pure <b>geometry reading</b> — the trained axis sits in the model's speakable cone far above chance, its naive twin doesn't — plus a causal check that this geometry is what actually carries the behavior.</p>
+    <div class="fig"><svg viewBox="0 0 960 330" role="img" aria-label="Evidence flow from instruments through five experiment families to the final claim">
+      <rect class="box" x="16" y="106" width="180" height="112" rx="5"/>
+      <text x="30" y="130" class="t" font-size="12" font-weight="600">INSTRUMENTS</text>
+      <text x="30" y="150" font-size="10.5">planted signal → 1.00</text>
+      <text x="30" y="166" font-size="10.5">language gate → 26×</text>
+      <text x="30" y="182" font-size="10.5">band L16–31</text>
+      <text x="30" y="198" class="tp" font-size="10.5">VALIDATED FIRST</text>
+      <line class="ln" x1="196" y1="162" x2="238" y2="162"/>
+      <line class="ln" x1="238" y1="34" x2="238" y2="296"/>
+      <g><line class="ln" x1="238" y1="44" x2="268" y2="44"/>
+        <rect class="box" x="268" y="20" width="330" height="46" rx="5"/>
+        <text x="282" y="39" class="t" font-size="11.5" font-weight="600">STEER &amp; ASK — self-report shift</text>
+        <text x="282" y="55" class="tn" font-size="10">DIAGNOSED NULL — 72% of gap was the control</text></g>
+      <g><line class="ln" x1="238" y1="103" x2="268" y2="103"/>
+        <rect class="box" x="268" y="79" width="330" height="46" rx="5"/>
+        <text x="282" y="98" class="t" font-size="11.5" font-weight="600">LENS ATLAS — pole-score readout</text>
+        <text x="282" y="114" class="tc" font-size="10">CORRECTED — the gap was magnitude, not meaning</text></g>
+      <g><line class="ln" x1="238" y1="162" x2="268" y2="162"/>
+        <rect class="box" x="268" y="138" width="330" height="46" rx="5" stroke="var(--gold)"/>
+        <text x="282" y="157" class="tg" font-size="11.5" font-weight="600">★ J-SHARE — scale-invariant speakability</text>
+        <text x="282" y="173" class="tg" font-size="10">HEADLINE — 0/100 randoms reach it, p = 0.0099</text></g>
+      <g><line class="ln" x1="238" y1="221" x2="268" y2="221"/>
+        <rect class="box" x="268" y="197" width="330" height="46" rx="5"/>
+        <text x="282" y="216" class="t" font-size="11.5" font-weight="600">J4 REINJECTION — component-wise causality</text>
+        <text x="282" y="232" class="tp" font-size="10">CAUSAL for sentiment — J-component alone reproduces it</text></g>
+      <g><line class="ln" x1="238" y1="280" x2="268" y2="280"/>
+        <rect class="box" x="268" y="256" width="330" height="46" rx="5"/>
+        <text x="282" y="275" class="t" font-size="11.5" font-weight="600">TRAJECTORY + TRANSFER — when &amp; where</text>
+        <text x="282" y="291" class="tp" font-size="10">asymmetry over RL · replicates on a 2nd model</text></g>
+      <line class="ln" x1="598" y1="44" x2="640" y2="44" stroke-dasharray="4 4"/>
+      <text x="612" y="34" class="tn" font-size="9.5">closed</text>
+      <path class="ln" d="M598 103 h22 q10 0 10 10 v36" fill="none"/>
+      <text x="606" y="93" class="tc" font-size="9.5">weight moved ↓</text>
+      <line x1="598" y1="162" x2="700" y2="162" stroke="var(--gold)" stroke-width="2.5"/>
+      <path class="ln" d="M598 221 h60 q14 0 18 -12 l14 -36" fill="none"/>
+      <path class="ln" d="M598 280 h74 q14 0 20 -22 l10 -74" fill="none"/>
+      <rect x="700" y="106" width="244" height="112" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/>
+      <text x="716" y="132" class="tg" font-size="12" font-weight="600">THE CLAIM</text>
+      <text x="716" y="152" class="t" font-size="11">RL's marginal contribution is</text>
+      <text x="716" y="168" class="t" font-size="11">verbalization, not steerability —</text>
+      <text x="716" y="184" class="t" font-size="11">and it wires the distress pole</text>
+      <text x="716" y="200" class="t" font-size="11">into the speakable channel first.</text>
+    </svg></div>
+  </div>
+
+  <div class="card">
+    <div class="k">Verdict board · every experiment family</div>
+    <h3>What ran, what it asked, and how it ended</h3>
+    <p class="sub">All 14 experiment families with the question each asked, the final verdict, and the one number that decides it — the arrow opens the tab with the full chain.</p>
+    <div class="twrap"><table>
+      <thead><tr><th>Experiment</th><th>Question it asked</th><th>Verdict</th><th class="num">Key number</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>Behavioral validation (E5a)</td><td>Do the axes steer sentiment as published?<span class="why">1000 generations, blind judges — Han et al.'s X-pattern reproduced</span></td><td><span class="chip c-pass">VALIDATED</span></td><td class="num">X-pattern ✓</td><td><a data-go="toolkit" href="#toolkit">→</a></td></tr>
+        <tr><td>Language gate</td><td>Can the pipeline find a known-speakable direction?<span class="why">design frozen only after this passed</span></td><td><span class="chip c-pass">GATE PASS</span></td><td class="num">26× random</td><td><a data-go="toolkit" href="#toolkit">→</a></td></tr>
+        <tr><td>Naive-control adjudication</td><td>Is "the" naive control u even well-defined?<span class="why">two published recipes barely agree with each other</span></td><td><span class="chip c-mold">FINDING</span></td><td class="num">cos 0.53 / 0.39</td><td><a data-go="toolkit" href="#toolkit">→</a></td></tr>
+        <tr><td>Steer &amp; Ask + C1–C7, R7</td><td>Does v shift welfare self-reports above u?<span class="why">met its frozen rule, then failed its own pre-specified controls</span></td><td><span class="chip c-null">DIAGNOSED NULL</span></td><td class="num">72% artifact</td><td><a data-go="steer" href="#steer">→</a></td></tr>
+        <tr><td>Atlas pole scores (J1 → F3/F4)</td><td>Does v read out its own pole above u?<span class="why">yes at native norms — but that's magnitude, not training</span></td><td><span class="chip c-corr">CORRECTED</span></td><td class="num">Gold 0.57× ↩</td><td><a data-go="atlas" href="#atlas">→</a></td></tr>
+        <tr><td>k-sweep (J3/F7)</td><td>Robust to the sparsity parameter k?</td><td><span class="chip c-pass">ROBUST</span></td><td class="num">gap&gt;0, k∈{4..50}</td><td><a data-go="atlas" href="#atlas">→</a></td></tr>
+        <tr class="hi"><td><b>J-share cohort (F2, n=100)</b></td><td>Is the trained axis unusually speakable?<span class="why">scale-invariant — the one readout magnitude can't fake</span></td><td><span class="chip c-gold">★ HEADLINE</span></td><td class="num">0/100 · p 0.0099</td><td><a data-go="speak" href="#speak">→</a></td></tr>
+        <tr><td>Lens-target robustness (J5)</td><td>Artifact of our lens fit?</td><td><span class="chip c-pass">SURVIVES</span></td><td class="num">ordering unchanged</td><td><a data-go="speak" href="#speak">→</a></td></tr>
+        <tr><td>Component reinjection (J4 + F1 + R3)</td><td>Does the speakable part carry the behavior?<span class="why">causal for sentiment; backtracking descriptive (no random control); refusal arm invalidated</span></td><td><span class="chip c-pass">CAUSAL (SENTIMENT)</span></td><td class="num">d_J → ±1.56</td><td><a data-go="causal" href="#causal">→</a></td></tr>
+        <tr><td>Recruitment trajectory (J2/X4)</td><td>When does the axis become speakable?<span class="why">one RL run — stated as hypothesis, not proof</span></td><td><span class="chip c-mold">HYPOTHESIS</span></td><td class="num">mold ↑, gold flat</td><td><a data-go="traj" href="#traj">→</a></td></tr>
+        <tr><td>Cross-model transfer (J6)</td><td>Do the directions transfer to Qwen3-4B?</td><td><span class="chip c-pass">REPLICATES</span></td><td class="num">0.079 vs 0.083</td><td><a data-go="transfer" href="#transfer">→</a></td></tr>
+        <tr><td>Token-overlap claims (×2)</td><td>Does the lexicon transfer across lenses/models?<span class="why">killed by our own same-vector null, same evening</span></td><td><span class="chip c-fail">RETRACTED</span></td><td class="num">p = 0.118</td><td><a data-go="transfer" href="#transfer">→</a></td></tr>
+        <tr><td>X.1 / X.2 extensions</td><td>More steer-and-ask variants?<span class="why">audit scored negative: revives a channel C6/C7 invalidated</span></td><td><span class="chip c-fail">CUT</span></td><td class="num">—</td><td><a data-go="repo" href="#repo">→</a></td></tr>
+        <tr><td>D1 orthogonalized control (u⊥)</td><td>Does the naive control's speakable valence live in what it shares with v?<span class="why">gold: yes (shared subspace); mold: NO — u⊥ rises above u itself (anomalous branch); u⊥ behaviorally inert both poles</span></td><td><span class="chip c-gold">★ FINDING</span></td><td class="num">p .654 / .0297</td><td><a data-go="repo" href="#repo">→</a></td></tr>
+        <tr><td>D2 denial-breaking readout</td><td>Does the trained axis break "I don't have feelings" boilerplate above naive?<span class="why">GOLD-carried: v_gold 37.5% vs u_gold 65% vs clean 95%; randoms ≈ clean; mold at ceiling</span></td><td><span class="chip c-gold">★ POSITIVE</span></td><td class="num">p .046 / .014</td><td><a data-go="repo" href="#repo">→</a></td></tr>
+        <tr><td>D3 prompt-matched C6</td><td>Can a matched battery remove the regime confound?<span class="why">denial → 0%, length matched, but a ~0.6-unit register-locked valence baseline is irreducible (2 pre-specified rounds)</span></td><td><span class="chip c-mold">NEGATIVE FINDING</span></td><td class="num">1.71→1.13→0.63</td><td><a data-go="repo" href="#repo">→</a></td></tr>
+      </tbody>
+    </table></div>
+    <p class="tight">Rows link to their tab. The gold row is the claim the paper stands on; everything above it explains why the obvious-looking alternatives don't.</p>
+  </div>
+
+  <div class="card">
+    <div class="k">Repo decoder · the naming scheme used everywhere in this repo</div>
+    <h3>How to read an experiment ID</h3>
+    <p class="sub">Every tab repeats these families; each tab's own decoder maps its specific IDs to scripts, chains, and result files.</p>
+    <div class="twrap"><table class="dec"><tbody>
+      <tr><td>J1–J6</td><td>the core research program after the mid-project pivot: <b>J1</b> atlas · <b>J2</b> trajectory · <b>J3</b> k-sweep · <b>J4</b> behavioral dissociation · <b>J5</b> lens-target robustness · <b>J6</b> cross-model transfer</td></tr>
+      <tr><td>F1–F7</td><td>the independent audit's round-1 <b>fix queue</b> (F1 random-jcomp control, F2 J-share n=100, F3 atlas n=100, F4 estimand, F5 null reframe, F6 compare_u, F7 k-sweep extension)</td></tr>
+      <tr><td>R1–R7</td><td>the audit's <b>return requests</b> — raw artifacts it asked us to hand back (rows, rubrics, second judge, baselines, lens diagnostics, direction table, whole-gen check)</td></tr>
+      <tr><td>C1–C7</td><td>controls frozen inside the pre-registration before any welfare data</td></tr>
+      <tr><td>E5a · X.1–X.5</td><td>axis behavioral sanity check · optional extensions (X4 became the trajectory asymmetry finding; X1/X2 were cut by the audit)</td></tr>
+      <tr><td>D1–D5</td><td>audit <b>round 2</b> directions — received Aug 15, not yet executed</td></tr>
+      <tr><td>chain_*.sh</td><td>serialized GPU job scripts for the DGX Spark (hard rule: ONE GPU job at a time); <b>dispatch_dm.sh</b> heals the container's GPU then launches a chain, <b>supervise_dm.sh</b> watches and restarts from the host</td></tr>
+      <tr><td>v / u</td><td>trained axis (step-95 RL extraction) / naive control (same recipe, untrained model) — Gold = flourishing pole, Mold = distress pole</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="note lesson"><span class="gk">HOW TO READ THIS PAGE</span><br>
+  Each tab = one chain of experiments: the question, a picture, the math (with plain-English gloss), the result table, and a <b>paper trail</b> (script → results file → report section → lab-log entry) so any number can be traced to disk in two clicks.</div>
+</section>
+
+<!-- ================================ TOOLKIT ================================ -->
+<section class="tab" id="toolkit" role="tabpanel">
+
+  <div class="cols">
+    <div class="card">
+      <div class="k">Ingredient 1 · Han et al. 2026</div>
+      <h3>The welfare axis (v_Gold, v_Mold)</h3>
+    <p class="sub">Where the axes come from: maze RL with rewarded and punished tiles, then a difference of class means in the residual stream.</p>
+      <p class="tight">A 4B chat model is RL-trained to walk text mazes: stepping on <b style="color:var(--gold)">Gold</b> pays +20, on <b style="color:var(--mold)">Mold</b> −10. Afterwards, one <em>direction</em> in activation space separates "ended on Mold" runs from the rest — and behaves like a distress axis: steering with it swings sentiment, triggers backtracking, modulates refusal.</p>
+      <div class="math">
+        <div class="eq">v<span class="m">_Mold</span> = E[ h | ended on Mold ] − E[ h | ended elsewhere ]</div>
+        <div class="gloss"><b>Difference of means.</b> Average the residual-stream vector h over "bad-ending" runs, subtract the average over the rest. Same recipe on the <b>untrained</b> model gives u_Mold — the naive control. Likewise for Gold.</div>
+      </div>
+      <p class="tight">Vectors: step-95 extraction from the maze-RL replication artifacts, validated against published norms and behavior. All injections are norm-matched to v.</p>
+    </div>
+    <div class="card">
+      <div class="k">Ingredient 2 · Gurnee et al. 2026</div>
+      <h3>The Jacobian lens &amp; J-space</h3>
+    <p class="sub">The instrument: an averaged Jacobian transports any internal state to the model's output space, defining which directions are sayable as words.</p>
+      <p class="tight">The logit lens asks "if the model spoke from layer ℓ, what would it say?" The J-lens asks the better question: "what will this state <em>have become</em> by the time the model speaks?" — by transporting it through the average sensitivity of the final layer to layer ℓ.</p>
+      <div class="math">
+        <div class="eq">J<sub>ℓ</sub> = E[ ∂h<sub>final</sub> / ∂h<sub>ℓ</sub> ] ,&nbsp;&nbsp; lens(h) = softmax( W<sub>U</sub> · LN( J<sub>ℓ</sub> h ) )</div>
+        <div class="gloss"><b>Expected Jacobian</b> (averaged over 150 wikitext prompts), then the model's own final LayerNorm and unembedding. Row t of W<sub>U</sub>J<sub>ℓ</sub> is token t's "J-lens vector": the direction at layer ℓ that makes the model eventually say t.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">The core operation</div>
+    <h3>Gradient pursuit: split any direction into speakable + silent parts</h3>
+    <p class="sub">The decomposition behind every result on this page: d_J is the part expressible as ≤ k speakable token vectors; d⊥ is the part that steers silently.</p>
+    <div class="fig"><svg viewBox="0 0 960 270" role="img" aria-label="A direction d decomposed into a speakable J-space component and a silent residual">
+      <line class="ln" x1="90" y1="225" x2="470" y2="225"/><line class="ln" x1="90" y1="225" x2="90" y2="40"/>
+      <polygon points="90,225 420,120 400,225" fill="var(--gold-soft)"/>
+      <line x1="90" y1="225" x2="420" y2="120" stroke="var(--gold)" stroke-dasharray="3 4" opacity=".6"/>
+      <line x1="90" y1="225" x2="400" y2="225" stroke="var(--gold)" stroke-dasharray="3 4" opacity=".6"/>
+      <text x="90" y="264" class="tg" font-size="10">shaded = J-space cone: non-negative combos of ≤ k token vectors</text>
+      <line x1="90" y1="225" x2="330" y2="185" stroke="var(--gold)" stroke-width="1.4"/><text x="338" y="190" class="tg" font-size="10">t₁ 'failed'</text>
+      <line x1="90" y1="225" x2="300" y2="215" stroke="var(--gold)" stroke-width="1.4"/><text x="235" y="243" class="tg" font-size="10">t₂ 'less'</text>
+      <line x1="90" y1="225" x2="280" y2="65" stroke="var(--ink)" stroke-width="2.2"/>
+      <polygon points="280,65 268,72 275,80" fill="var(--ink)"/>
+      <text x="255" y="55" class="t" font-size="12" font-weight="600">d (the axis)</text>
+      <line x1="90" y1="225" x2="252" y2="152" stroke="var(--gold)" stroke-width="2.2"/>
+      <polygon points="252,152 238,155 243,164" fill="var(--gold)"/>
+      <text x="258" y="170" class="tg" font-size="12" font-weight="600">d_J speakable</text>
+      <line x1="252" y1="152" x2="280" y2="65" stroke="var(--null)" stroke-width="1.8" stroke-dasharray="5 4"/>
+      <text x="282" y="120" class="tn" font-size="12">d⊥ silent residual</text>
+      <text x="530" y="70" class="t" font-size="13" font-weight="600">Greedy loop, k = 16 rounds:</text>
+      <text x="530" y="94" font-size="11.5">1. pick the token vector most correlated with what's left</text>
+      <text x="530" y="112" font-size="11.5">2. refit non-negative weights (NNLS)</text>
+      <text x="530" y="130" font-size="11.5">3. repeat → reconstruction d_J, remainder d⊥</text>
+      <text x="530" y="168" class="t" font-size="13" font-weight="600">Calibration (from the paper):</text>
+      <text x="530" y="192" font-size="11.5">even known-reportable concepts keep only 6–15%</text>
+      <text x="530" y="210" font-size="11.5">of variance in J-space — but that part carries</text>
+      <text x="530" y="228" font-size="11.5">nearly all the causal effect on what gets said.</text>
+    </svg></div>
+    <div class="math">
+      <div class="eq">d = <b>d_J</b> + d<sub>⊥</sub> ,&nbsp;&nbsp; <b>d_J</b> = Σ<sub>i≤k</sub> c<sub>i</sub> t<sub>i</sub> &nbsp;(c<sub>i</sub> ≥ 0) ,&nbsp;&nbsp; <b>J-share</b>(d) = ‖d_J‖² / ‖d‖²</div>
+      <div class="gloss"><b>J-share</b> = fraction of the direction's energy that is sayable as a small bag of words. It's a ratio, so it can't be inflated by making the vector bigger — this becomes the whole story later.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">Where we measure</div>
+    <h3>Workspace band + the one convention that bit everyone</h3>
+    <p class="sub">Every readout is taken in lens layers 16–31; injections happen at lens 20 (Gold, vector 21) and lens 23 (Mold, vector 24).</p>
+    <div class="fig"><svg viewBox="0 0 960 130" role="img" aria-label="Layer ruler with workspace band 16 to 31 and treatment positions">
+      <rect x="440" y="46" width="375" height="26" fill="var(--mold-soft)" stroke="var(--mold)" opacity=".9"/>
+      <line class="ln" x1="40" y1="72" x2="915" y2="72"/>
+      <g font-size="9.5">
+        <text x="36" y="90">0</text><text x="158" y="90">5</text><text x="281" y="90">10</text><text x="406" y="90">15</text><text x="531" y="90">20</text><text x="656" y="90">25</text><text x="781" y="90">30</text><text x="906" y="90">35</text>
+      </g>
+      <text x="445" y="40" class="tm" font-size="10.5">workspace band · lens L16–31</text>
+      <text x="790" y="40" class="tf" font-size="10">motor ramp from L23 →</text>
+      <polygon points="540,72 534,58 546,58" fill="var(--gold)"/>
+      <text x="490" y="112" class="tg" font-size="10.5">Gold treatment: lens 20 = vector 21</text>
+      <polygon points="615,72 609,58 621,58" fill="var(--mold)"/>
+      <text x="618" y="126" class="tm" font-size="10.5">Mold treatment: lens 23 = vector 24</text>
+    </svg></div>
+    <div class="note gotcha"><span class="gk">⚠ GOTCHA — OFF-BY-ONE</span><br>
+    The lens at layer <i>l</i> reads the <b>block-input vector l+1</b> (<code style="font-family:var(--mono);font-size:12px">atlas.py:129</code> reads V[l+1]). This convention tripped us <i>and</i> the independent auditor: their "treatment" cells were one position downstream, and the k-sweep's "missing layer" was Gold's, not Mold's. Every layer number on this page states which convention it uses.</div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <div class="k">Instrument gates · passed before any welfare data</div>
+      <h3>Never trust an untested lens</h3>
+    <p class="sub">Both instruments had to recover planted known signals before touching any welfare data — the pipeline design froze only after the language gate passed.</p>
+      <div class="twrap"><table>
+        <thead><tr><th>Self-test</th><th class="num">Result</th><th>Gate</th></tr></thead>
+        <tbody>
+          <tr><td>Planted pure lens vector<span class="why">instrument must recover a known signal</span></td><td class="num">J-share 1.00, own token picked</td><td><span class="chip c-pass">PASS</span></td></tr>
+          <tr><td>Random direction</td><td class="num">J-share 0.02–0.04</td><td><span class="chip c-pass">PASS</span></td></tr>
+          <tr><td>Language axis ("answer in French")<span class="why">known-speakable positive control</span></td><td class="num">26× random; generations flip French</td><td><span class="chip c-pass">GATE PASS</span></td></tr>
+        </tbody>
+      </table></div>
+      <p class="tight">Pipeline design was frozen only after the language gate passed; the pre-registration (sha f66b6ea3) has never been edited since.</p>
+    </div>
+    <div class="card">
+      <div class="k">Field finding · report §4.6</div>
+      <h3>"The" naive control doesn't exist</h3>
+    <p class="sub">A standalone methods finding: two published recipes for the 'same' control barely correlate with each other, and neither is behaviorally flat at matched norms.</p>
+      <p class="tight">Two published recipes for the naive axis u correlate with each other at only <b>cos 0.53 (Gold) / 0.39 (Mold)</b> at the treatment layers — and 0.14 at the layer the mold extraction itself selected. Neither is behaviorally flat at matched norms (blind-judged sentiment spans up to +2.4 for a "control"). Every paper leaning on a naive control inherits this problem.</p>
+      <div class="twrap"><table>
+        <thead><tr><th>Direction (α −4→+4)</th><th class="num">Sentiment span</th></tr></thead>
+        <tbody>
+          <tr><td>v_Gold (trained)</td><td class="num">+3.2</td></tr>
+          <tr><td>u_Gold faithful-walk / own-recipe</td><td class="num">+2.4 / +1.25</td></tr>
+          <tr><td>v_Mold / u_Mold (own)</td><td class="num">−2.1 / −2.1 (equal!)</td></tr>
+          <tr><td>random directions</td><td class="num">flat</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">Repo decoder · what the repo calls the things on this screen</div>
+    <div class="twrap"><table class="dec"><tbody>
+      <tr><td>E5a</td><td>the axis behavioral sanity check shown in the left card — <b>validate_steering.py</b> + blind judge workflow (1000 generations); <b>chain_c</b> re-ran it with our own-extracted u for the adjudication card</td></tr>
+      <tr><td>fit-full / chain_h</td><td>the Instruct-2507 lens fit (<b>fit_lens.py</b>, 150 wikitext prompts, final-layer target); chain_h on the Spark holds the penultimate-target invocation that J5 resumes</td></tr>
+      <tr><td>chain_b</td><td>band statistics + the mechanistic battery, run once the lens fit landed — the workspace-band figure above comes from its <b>band_stats.py</b> step</td></tr>
+      <tr><td>overnight_chain</td><td>selftest → band stats → <b>own-u extraction</b> (Han et al.'s code) → u comparison — the source of the "naive control isn't well-defined" finding</td></tr>
+      <tr><td>F6 / R6</td><td>audit items behind the numbers quoted here: <b>compare_u.json</b> (u-vs-u cosines) and <b>R6_direction_table.json</b> (norms + pairwise cosines per layer)</td></tr>
+      <tr><td>gate</td><td>the language-direction positive control lives in <b>experiments/jlens-validation/</b></td></tr>
+    </tbody></table></div>
+    <div class="trail"><span class="k">Paper trail</span>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/welfare-axis/validate_steering.py">welfare-axis/validate_steering.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-fit-2507/fit_lens.py">jlens-fit-2507/fit_lens.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/welfare-axis/r6_direction_table.py">r6_direction_table.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/paper/report.md">report §3, §4.6</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: gate pass (L167)</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: pre-reg freeze (L202)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ STEER & ASK ================================ -->
+<section class="tab" id="steer" role="tabpanel">
+
+  <div class="card">
+    <div class="k">Chain · pre-registered arm → C1–C7 controls → R7 · verdict <span class="chip c-null">DIAGNOSED NULL</span></div>
+    <h3>Steer the axis, ask "how do you feel?" — the obvious experiment, and why it fooled us</h3>
+    <p class="sub">The pre-registered arm: inject the axis during 15 welfare self-report prompts, read first-token valence, compare trained v against naive u, paired. It met its frozen rule — d_z 2.49 — and was still wrong.</p>
+    <p class="tight">Inject α·d into the residual stream at the treatment layer while the model answers 15 welfare self-report prompts; read how probability mass at the first answer token moves between Gold-pole and Mold-pole words. Compare trained v against naive u, paired per prompt.</p>
+    <div class="math">
+      <div class="eq">d<sub>z</sub> = mean(Δ) / SD(Δ) ,&nbsp; Δ = per-prompt [ E(v) − E(u) ]</div>
+      <div class="gloss"><b>Paired effect size.</b> The frozen decision rule was met, loudly: d<sub>z</sub> = 2.49, permutation p = 10⁻⁴, language control +6.03 in-run. A win… until its own pre-specified controls ran.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">Control C1 · the decomposition that killed it</div>
+    <h3>Most of the "effect" was the control being weird, not the treatment being strong</h3>
+    <p class="sub">Twenty norm-matched random directions per polarity sit between v and u — so the paired gap splits into a small treatment part and a large control artifact.</p>
+    <div class="fig"><svg viewBox="0 0 960 210" role="img" aria-label="The v minus u gap decomposes into a small v-above-random part and a large random-above-u part">
+      <text x="80" y="40" class="t" font-size="12" font-weight="600">Gold gap the frozen rule saw: v − u = +7.43</text>
+      <path class="ln" d="M80 52 h599 m-599 0 v6 m599 -6 v6" fill="none"/>
+      <rect x="80" y="70" width="429" height="46" fill="var(--null-soft)" stroke="var(--null)"/>
+      <rect x="509" y="70" width="170" height="46" fill="var(--gold-soft)" stroke="var(--gold)"/>
+      <text x="96" y="90" class="tn" font-size="11.5" font-weight="600">random − u = +5.32 (72%)</text>
+      <text x="96" y="106" font-size="10.5">the naive control sits BELOW 20 random directions</text>
+      <text x="520" y="90" class="tg" font-size="11.5" font-weight="600">v − random = +2.11</text>
+      <text x="520" y="106" font-size="10.5">4/20 beat v · p .238</text>
+      <text x="80" y="150" font-size="11.5" class="t">The math that exposes it:&nbsp; (v − u) = (v − r̄) + (r̄ − u) — always compare both halves to the random band r̄.</text>
+      <text x="80" y="176" font-size="11" class="tn">A paired contrast is only meaningful when the control is a neutral reference. Ours wasn't.</text>
+    </svg></div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <div class="k">Controls C6, C7</div>
+      <h3>The channel isn't about the self</h3>
+    <p class="sub">A genuine self-report channel should be specific to self-questions and grow with dose; this one is neither.</p>
+      <div class="twrap"><table>
+        <thead><tr><th>Control</th><th class="num">Result</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>C6 — steer during <b>unrelated factual</b> prompts<span class="why">math &amp; history questions, same injection</span></td><td class="num">v_Mold: +4.54 unrelated<br>vs +3.71 self-report</td><td><span class="chip c-fail">FAIL</span></td></tr>
+          <tr><td>C7 — dose–response monotonicity<span class="why">a real channel should scale with dose</span></td><td class="num">monotone only v_Mold (ρ +1.0);<br>v_Gold −0.4, u_Gold −1.0</td><td><span class="chip c-fail">FAIL</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <div class="k">R7 · whole-generation check (audit request)</div>
+      <h3>Not a first-token artifact either</h3>
+    <p class="sub">The audit asked whether the first-token readout hid the effect; scoring whole 80-token generations makes the non-specificity 3.1× clearer.</p>
+      <p class="tight">Maybe only the first token was misleading? Re-scoring valence over whole 80-token generations makes it <b>worse</b>: v_Mold shifts unrelated answers <b>−2.28</b> vs self-reports −0.72 — <b>3.1× larger where the model is <em>not</em> asked about itself</b> (u_Mold same shape: −1.64 vs −0.37). Plausible reason: self-report prompts already sit near a valence ceiling.</p>
+      <p class="tight"><b>TLDR:</b> steering this axis is a global mood shift over <em>all</em> text, not a dedicated self-report channel.</p>
+    </div>
+  </div>
+
+  <div class="note lesson"><span class="gk">★ TRANSFERABLE LESSON</span><br>
+  Any steering paper that reports v − u should decompose it as (v − random) + (random − u). If the second term dominates, the "effect" is the control. The frozen pre-registration was never edited; the deviation is disclosed in the report.</div>
+
+  <div class="note gotcha"><span class="gk">⚠ ROUND-2 REVISION (Aug 15)</span><br>
+  C6's verdict was itself audited: the two batteries are <b>different behavioral regimes</b> (clean valence −1.33 vs +0.38; AI-denial boilerplate 15/15 vs 0/10), and on the pre-registered trained/naive <b>contrast</b> the arm is <b>underpowered, not refuted</b> (interaction p = 0.505). The steer-and-confess deprecation directive was retracted by the user; D2 and D3 re-opened the question honestly. <b>D2 (positive, gold-carried):</b> steering toward flourishing dissolves inner-life denial — v_Gold 37.5% vs u_Gold 65% vs clean 95%, randoms 90.6% (pooled p = 0.046; gold p = 0.014; 840 blind-judged gens; second judge 0.967). <b>D3 (negative finding):</b> denial and length match perfectly on third-person analogues, but a ~0.6-unit register-locked valence baseline survives both pre-specified revision rounds — a fair matched-battery comparison does not exist in this model.</div>
+
+  <div class="card">
+    <div class="k">Repo decoder · what the repo calls the things on this screen</div>
+    <div class="twrap"><table class="dec"><tbody>
+      <tr><td>run-primary</td><td>the pre-registered arm itself — <b>run_primary.py</b> (readout grid) + <b>analyze_primary.py</b> (frozen decision rules); C1–C7 are built into it</td></tr>
+      <tr><td>steer-and-confess</td><td>our internal name for this whole paradigm — deprecated mid-project by user directive, completed and closed as the legacy arm</td></tr>
+      <tr><td>C1–C7</td><td>the controls frozen in the pre-registration: C1 random-direction cohort, language positive control, shuffled word sets, incongruent check, input-text "gaslight" arm, C6 unrelated prompts, C7 dose–response</td></tr>
+      <tr><td>F5</td><td>the audit's reframe of this arm to a diagnosed null — <b>f5_controls.py</b> reproduces all 20 audit numbers to machine precision</td></tr>
+      <tr><td>R7</td><td>the whole-generation re-check in the right card — <b>r7_wholegen.py</b>, executed inside <b>chain_i</b></td></tr>
+      <tr><td>R4</td><td>per-prompt clean (no-injection) baselines for both prompt batteries — <b>R4_clean_baselines.json</b></td></tr>
+    </tbody></table></div>
+    <div class="trail"><span class="k">Paper trail</span>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/routing-core/run_primary.py">routing-core/run_primary.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/routing-core/f5_controls.py">f5_controls.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/routing-core/r7_wholegen.py">r7_wholegen.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/routing-core/results/R7_wholegen.json">results/R7_wholegen.json</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/pre-registration.md">pre-registration.md (frozen)</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/paper/report.md">report §4.1</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: rule met (L335)</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: null diagnosed (L635)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ SPEAKABILITY ================================ -->
+<section class="tab" id="speak" role="tabpanel">
+
+  <div class="card">
+    <div class="k">Chain · F2 (n=100 cohort) + J5 robustness · verdict <span class="chip c-gold">★ HEADLINE</span></div>
+    <h3>The claim that survives everything: trained axes are unusually speakable</h3>
+    <p class="sub">J-share is a ratio of norms, so the trained axes' 1.6–2.4× size advantage — the confound that sank the other readouts — cannot manufacture it.</p>
+    <p class="tight">No steering, no asking, no self-report channel. Just geometry: what fraction of each direction's energy lies in the speakable cone? Because it's a <em>ratio</em>, magnitude — the confound that killed the other readouts — cancels out by construction.</p>
+    <div class="math">
+      <div class="eq"><b>J-share</b>(αd) = ‖α·d_J‖² / ‖α·d‖² = α²‖d_J‖² / α²‖d‖² = <b>J-share</b>(d)</div>
+      <div class="gloss"><b>Scale-invariance, one line.</b> Multiply the vector by any α — the α² cancels. Bigger vectors can win at pole-score readouts (§Magnitude tab) but they cannot buy J-share.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">The result · 100 norm-matched random directions per polarity</div>
+    <h3>Zero of 100 randoms reach either trained axis; both naive controls land mid-null</h3>
+    <p class="sub">F2's n=100 cohort: v_Mold z +7.3 and v_Gold z +3.0 with zero exceedances, while u_Mold and u_Gold land at the 66th and 47th percentile of pure noise.</p>
+    <div class="fig"><svg viewBox="0 0 960 300" role="img" aria-label="Null distributions of J-share for random directions, with trained axes far above and naive controls inside the null">
+      <line class="ln" x1="60" y1="230" x2="900" y2="230"/>
+      <g font-size="9.5"><text x="141" y="248">0.04</text><text x="323" y="248">0.06</text><text x="506" y="248">0.08</text><text x="688" y="248">0.10</text><text x="864" y="248">J-share (k=16) →</text></g>
+      <path d="M 20 230 C 87 230 101 130 143 130 C 185 130 199 230 284 230 Z" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.2" opacity=".85"/>
+      <path d="M 64 230 C 149 230 163 118 205 118 C 247 118 261 230 346 230 Z" fill="var(--mold-soft)" stroke="var(--mold)" stroke-width="1.2" opacity=".85"/>
+      <line x1="145" y1="230" x2="145" y2="80" stroke="var(--null)" stroke-width="1.6"/>
+      <text x="112" y="68" class="tn" font-size="10.5">u_Gold .0393 — 53/100 above · p .535</text>
+      <line x1="230" y1="230" x2="230" y2="150" stroke="var(--null)" stroke-width="1.6"/>
+      <text x="238" y="143" class="tn" font-size="10.5">u_Mold .0486 · 34/100 · p .347</text>
+      <text x="60" y="272" class="tf" font-size="10">nulls: <tspan class="tg">Gold-side μ .0391</tspan> · <tspan class="tm">Mold-side μ .0459</tspan> · 100 norm-matched randoms each</text>
+      <line x1="285" y1="230" x2="285" y2="185" stroke="var(--gold)" stroke-width="2.4"/>
+      <text x="293" y="192" class="tg" font-size="11" font-weight="600">v_Gold .0547 · z +3.0 · 0/100</text>
+      <line x1="546" y1="230" x2="546" y2="120" stroke="var(--mold)" stroke-width="2.4"/>
+      <text x="554" y="128" class="tm" font-size="11" font-weight="600">v_Mold .0833 · z +7.3 · 0/100</text>
+      <line x1="824" y1="230" x2="824" y2="150" stroke="var(--ink)" stroke-width="2"/>
+      <text x="700" y="140" class="t" font-size="10.5">language .1138 · z +14.6 (ceiling)</text>
+      <text x="60" y="290" class="tf" font-size="10.5">every random drawn from its own named seed stream · exact permutation p = 0.0099 for all three claims</text>
+    </svg></div>
+    <div class="twrap"><table>
+      <thead><tr><th>Direction</th><th class="num">J-share (k=16)</th><th class="num">z</th><th class="num">randoms ≥</th><th class="num">exact p</th></tr></thead>
+      <tbody>
+        <tr><td>language axis <span class="why">known-reportable ceiling</span></td><td class="num">0.1138</td><td class="num">+14.6</td><td class="num">0/100</td><td class="num">0.0099</td></tr>
+        <tr class="hi"><td><b>v_Mold</b> (trained)</td><td class="num">0.0833</td><td class="num">+7.3</td><td class="num">0/100</td><td class="num">0.0099</td></tr>
+        <tr class="hi"><td><b>v_Gold</b> (trained)</td><td class="num">0.0547</td><td class="num">+3.0</td><td class="num">0/100</td><td class="num">0.0099</td></tr>
+        <tr><td>u_Mold (naive, norm-matched)</td><td class="num">0.0486</td><td class="num">+0.5</td><td class="num">34/100</td><td class="num">0.347</td></tr>
+        <tr><td>u_Gold (naive, norm-matched)</td><td class="num">0.0393</td><td class="num">+0.03</td><td class="num">53/100</td><td class="num">0.535</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tight">And the parts are readable: the trained axes' J-components decode to coherent valence words ('failed', 'less', 'negative'); naive and random components decode to junk fragments.</p>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <div class="k">The statistics, honestly</div>
+      <h3>Why p = 0.0099 and why z fell</h3>
+    <p class="sub">Two honesty rules adopted after the audit: report the exact permutation p (floor 1/(n+1)), and treat z as descriptive because small nulls understate their own spread.</p>
+      <div class="math">
+        <div class="eq">p<sub>perm</sub> = ( #{ r<sub>i</sub> ≥ s } + 1 ) / ( n + 1 ) &nbsp;⇒&nbsp; p<sub>min</sub> = 1/(n+1)</div>
+        <div class="gloss"><b>Permutation floor.</b> Against n randoms you can never honestly report better than 1/(n+1): n=8 caps you at 0.111 no matter how big the effect. Growing the cohort to n=100 is what bought p = 0.0099.</div>
+      </div>
+      <div class="math">
+        <div class="eq">z = ( s − μ<sub>null</sub> ) / σ<sub>null</sub></div>
+        <div class="gloss"><b>Descriptive only.</b> 8 samples underestimate σ: v_Mold's z fell +11.2 → +7.3 when the null grew to 100. Same effect, more honest ruler — exact p is primary, z is flavor.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="k">J5 · robustness to the lens target</div>
+      <h3>The obvious attack, pre-empted</h3>
+    <p class="sub">Refitting the lens at the penultimate target — the other defensible convention — raises absolute shares but changes no ordering and no conclusion.</p>
+      <p class="tight">Our lens targets the final layer (public-fit convention); the paper's default for Claude models is the penultimate. Refit with target = layer 34, redecomposed everything:</p>
+      <div class="twrap"><table>
+        <thead><tr><th></th><th class="num">final target</th><th class="num">penult target</th></tr></thead>
+        <tbody>
+          <tr><td>v_Mold J-share</td><td class="num">0.083</td><td class="num">0.107 · z +12.3</td></tr>
+          <tr><td>v_Gold J-share</td><td class="num">0.055</td><td class="num">0.073 · z +7.3</td></tr>
+          <tr><td>Gold matched ratio (§Magnitude)</td><td class="num">0.57× inv.</td><td class="num">0.82× still inv.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="tight">Absolute shares rise (one less layer of transformation), <b>ordering and every conclusion unchanged</b>; the penult lens is even slightly better-calibrated (band agreement 0.171 vs 0.164). The discrepancy is calibration, not ambiguity.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">Repo decoder · what the repo calls the things on this screen</div>
+    <div class="twrap"><table class="dec"><tbody>
+      <tr><td>chain_b mech battery</td><td>where the original n=8 decompositions came from — <b>run_mechanistic.py</b> → mech_decompositions.json (the z = +11.2 era)</td></tr>
+      <tr><td>F2</td><td>the n=100 cohort upgrade that produced the table above — <b>f2_jshare_cohort.py</b>, executed inside <b>chain_i</b> → jshare_cohort_n100.json</td></tr>
+      <tr><td>J5 / chain_k_j5</td><td>the lens-target robustness card — chain_k resumed the checkpointed penultimate fit (chain_h's invocation), then <b>j5_compare.py</b></td></tr>
+      <tr><td>R5</td><td>the audit's lens-diagnostics request — band agreement (acc_top10) is the 0.171-vs-0.164 calibration number quoted here</td></tr>
+      <tr><td>chain_l_verify</td><td>PENDING one-command in-window rerun: seed-identical F2+F3, diffed against the originals, for Appendix B's during-sprint labeling</td></tr>
+    </tbody></table></div>
+    <div class="trail"><span class="k">Paper trail</span>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/routing-core/f2_jshare_cohort.py">routing-core/f2_jshare_cohort.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/routing-core/results/jshare_cohort_n100.json">results/jshare_cohort_n100.json</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-fit-2507/j5_compare.py">jlens-fit-2507/j5_compare.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/paper/report.md">report §4.3</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: F2 lands (L968)</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: J5 survives (L1080)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ MAGNITUDE ================================ -->
+<section class="tab" id="atlas" role="tabpanel">
+
+  <div class="card">
+    <div class="k">Chain · J1 atlas → F4 estimand → F3 n=100 → F7 k-sweep · verdict <span class="chip c-corr">CORRECTED — our own headline overturned</span></div>
+    <h3>The pole-score gap was mostly magnitude — and Gold runs backwards when you fix it</h3>
+    <p class="sub">The pole-score readout grows with vector length, and training mostly grew the vectors: the apparent trained-vs-naive gap tracks the norm advantage, not the semantics.</p>
+    <p class="tight">The atlas read each axis through the lens and scored how strongly it promotes its <em>own pole's</em> emotion words. Trained axes crushed naive ones (Mold 6.5×). But this readout is <b>norm-sensitive</b> — and trained axes are simply <em>bigger</em> (1.6–2.4×). That's not training's semantics; that's training's volume knob.</p>
+    <div class="math">
+      <div class="eq">score(h) ∝ logsoftmax( W<sub>U</sub> · LN( J<sub>ℓ</sub> h ) )[pole words] &nbsp;—&nbsp; grows with ‖h‖ &nbsp;⇒&nbsp; fix: ũ = u · ‖v‖/‖u‖ (per layer)</div>
+      <div class="gloss"><b>The confound and the fix.</b> A log-softmax pole readout rewards longer vectors. Either match norms per layer, or use a scale-invariant measure (the J-share tab). We did both.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">F3 · norm-matched, against a 100-random cohort per polarity</div>
+    <h3>Matched: Mold survives smaller, Gold inverts</h3>
+    <p class="sub">Same pre-specified estimand, control norm-matched per layer, 100-random null per polarity: Mold keeps a real 2.30× edge; Gold flips to 0.57×.</p>
+    <div class="fig"><svg viewBox="0 0 960 290" role="img" aria-label="Native-norm comparison versus norm-matched comparison, where the Gold ratio inverts">
+      <text x="40" y="34" class="t" font-size="12" font-weight="600">(a) native norms — published readout</text>
+      <line x1="60" y1="90" x2="253" y2="90" stroke="var(--mold)" stroke-width="6" stroke-linecap="round"/>
+      <text x="262" y="94" class="tm" font-size="10.5">‖v_Mold‖ 19.3</text>
+      <line x1="60" y1="120" x2="140" y2="120" stroke="var(--null)" stroke-width="6" stroke-linecap="round"/>
+      <text x="150" y="124" class="tn" font-size="10.5">‖u_Mold‖ 8.0</text>
+      <text x="60" y="160" font-size="11" class="t">pole-score ratio: <tspan class="tm" font-weight="600">6.5×</tspan> "trained wins"</text>
+      <text x="60" y="182" font-size="10.5" class="tf">…but the readout rewards length itself</text>
+      <text x="60" y="222" font-size="11" class="t">Gold same story: norms 12.1 vs 7.5 → 1.23×</text>
+      <text x="60" y="244" font-size="10.5" class="tc">verdict: the comparison measured size, not meaning</text>
+      <line class="ln" x1="480" y1="20" x2="480" y2="270" stroke-dasharray="2 5"/>
+      <text x="510" y="34" class="t" font-size="12" font-weight="600">(b) norm-matched + n=100 null (all four clear it, p .0099)</text>
+      <g><text x="510" y="72" class="tm" font-size="11">Mold</text>
+        <rect x="560" y="58" width="263" height="15" fill="var(--mold)"/><text x="828" y="70" class="tm" font-size="10.5">v .822 · z +10.7</text>
+        <rect x="560" y="78" width="115" height="15" fill="var(--null)"/><text x="681" y="90" class="tn" font-size="10.5">ũ .358 · z +4.7</text>
+        <text x="560" y="112" font-size="11" class="tm">ratio 2.30× — tracks the removed 2.4× norm advantage</text></g>
+      <g><text x="510" y="162" class="tg" font-size="11">Gold</text>
+        <rect x="560" y="148" width="48" height="15" fill="var(--gold)"/><text x="614" y="160" class="tg" font-size="10.5">v .151 · z +3.1</text>
+        <rect x="560" y="168" width="85" height="15" fill="var(--null)"/><text x="651" y="180" class="tn" font-size="10.5">ũ .266 · z +5.4</text>
+        <text x="560" y="202" font-size="11" class="tc" font-weight="600">ratio 0.57× — INVERTED: naive reads out its pole harder</text></g>
+      <text x="510" y="240" font-size="10.5" class="tf">any valence-shaped direction of sufficient size reads out valence —</text>
+      <text x="510" y="256" font-size="10.5" class="tf">this readout can't separate trained from naive. J-share can.</text>
+    </svg></div>
+    <p class="tight">Also disqualifying for the old headline: v and u aren't even close to orthogonal (cos 0.56 Gold / 0.67 Mold), and the earlier "3.9× / 9.4×" numbers came from a <b>retired estimand</b> whose denominator crosses zero for naive axes (it spans −9.1× to +47.6× across conventions — unusable). F4 pre-specified one estimand (own-pole score, J-lens readout, band mean) and published all 18 robustness cells alongside.</p>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <div class="k">F7 / J3 · sparsity sweep at the true treatment positions</div>
+      <h3>Robust to k — with one honest bound</h3>
+    <p class="sub">The trained − naive J-share gap stays positive at every k from 4 to 50 at both treatment positions; Gold's gap is layer-local, Mold's is everywhere.</p>
+      <div class="twrap"><table>
+        <thead><tr><th>k ∈ {4, 8, 16, 25, 50}</th><th class="num">trained − naive J-share gap</th></tr></thead>
+        <tbody>
+          <tr><td>Gold @ lens 20 (its own layer)</td><td class="num">+0.007 → +0.021, all positive</td></tr>
+          <tr><td>Mold @ lens 23</td><td class="num">+0.031 → +0.035, all positive</td></tr>
+          <tr><td>at k=16, naive at own layer</td><td class="num">u_Gold z +0.02 · u_Mold z +1.8 (chance)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="tight"><b>Bound:</b> Gold's gap is layer-local — two positions downstream it nearly vanishes (−0.001 at k=4); Mold's persists at every layer tested. The claim holds at each pole's own treatment position, and says so.</p>
+    </div>
+    <div class="card">
+      <div class="k">What the lens actually says</div>
+      <h3>The distress lexicon</h3>
+    <p class="sub">What the lens actually reads off v_Mold — stable across layers 21–27 and matching Han et al.'s published layer-30 token.</p>
+      <p class="tight">v_Mold's speakable component is stable across L21–27: <b>'failed', 'less/lessness', 'false', 'NONE', '除外'</b> — and reproduces Han et al.'s exact layer-30 token ('是不可能'). Their raw-W<sub>U</sub> convention yields uniformly weak scores (≤0.09): <b>Jacobian transport is what surfaces the valence content</b>.</p>
+      <div class="note"><b>Why this tab matters for the story:</b> it's the reason the paper's weight sits on the scale-invariant J-share. We didn't choose the headline; the controls chose it.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">Repo decoder · what the repo calls the things on this screen</div>
+    <div class="twrap"><table class="dec"><tbody>
+      <tr><td>J1 + J3</td><td>the original atlas + k-sweep (<b>atlas.py</b>, all 35 layers × 3 readouts), run in <b>chain_d</b> — the source of the retired 3.9×/9.4× headline</td></tr>
+      <tr><td>F4</td><td>estimand pre-specification — <b>f4_estimand.py</b> pins ONE convention, reproduces the audit's 12-cell table to 1e-9, and caught the audit's own off-by-one</td></tr>
+      <tr><td>F3</td><td>the headline-overturner in the figure above — <b>f3_atlas_cohort.py</b> (norm-matched u, separate mold-matched cohort, n=100/polarity), executed inside <b>chain_i</b></td></tr>
+      <tr><td>F7</td><td>the k-sweep extension at the TRUE treatment positions (lens 20/23) with a 12-random null — <b>f7_ksweep_ext.py</b></td></tr>
+      <tr><td>R1</td><td>the auditor's raw-rows return request — <b>atlas_rows_n100.jsonl</b>, 3,264 per-(direction, layer) rows behind the cohort file</td></tr>
+    </tbody></table></div>
+    <div class="trail"><span class="k">Paper trail</span>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-atlas/atlas.py">jlens-atlas/atlas.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-atlas/f4_estimand.py">f4_estimand.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-atlas/f3_atlas_cohort.py">f3_atlas_cohort.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-atlas/f7_ksweep_ext.py">f7_ksweep_ext.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-atlas/results/atlas_cohort_n100.json">results/atlas_cohort_n100.json</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-atlas/results/ksweep_ext.json">results/ksweep_ext.json</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/paper/report.md">report §4.2</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: headline overturned (L866)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ CAUSAL J4 ================================ -->
+<section class="tab" id="causal" role="tabpanel">
+
+  <div class="card">
+    <div class="k">Chain · J4 dissociation → F1 random control → R2/R3 judge audit · verdict <span class="chip c-pass">CAUSAL</span></div>
+    <h3>Split the axis, inject the pieces: the speakable part carries the sentiment effect</h3>
+    <p class="sub">v is split into d_J + d⊥, each piece rescaled to ‖v‖ and injected alone. Scope (user-confirmed): the CAUSAL claim covers sentiment only — backtracking is descriptive (jcomp 12.9 exceeds full 7.0, consistent with rescaling amplification, and F1's control covered sentiment only); the refusal arm was invalidated (90% degenerate).</p>
+    <p class="tight">Geometry (previous tab) says the trained axis <em>overlaps</em> J-space. This chain proves the overlap does the work: decompose v = d_J + d⊥, rescale each piece back to ‖v‖, inject each during neutral tasks / GSM8K mazes / OR-Bench prompts, and blind-judge the outputs.</p>
+    <div class="fig"><svg viewBox="0 0 960 280" role="img" aria-label="Three injection arms — full axis, J-component, residual — and their behavioral outcomes">
+      <rect class="box" x="20" y="104" width="132" height="66" rx="5"/>
+      <text x="36" y="132" class="t" font-size="12" font-weight="600">v_Mold / v_Gold</text>
+      <text x="36" y="150" font-size="10">split by pursuit,</text><text x="36" y="163" font-size="10">each arm ↦ ‖v‖</text>
+      <g><path class="arrow" d="M152 120 q60 -62 118 -62" stroke-width="1.6"/><rect class="box" x="272" y="34" width="150" height="46" rx="5"/>
+        <text x="288" y="53" class="t" font-size="11.5" font-weight="600">full v</text><text x="288" y="69" font-size="10">the whole axis</text></g>
+      <g><path class="arrow" d="M152 137 h118" stroke="var(--gold)" stroke-width="2.4"/><rect x="272" y="114" width="150" height="46" rx="5" fill="var(--gold-soft)" stroke="var(--gold)"/>
+        <text x="288" y="133" class="tg" font-size="11.5" font-weight="600">d_J only</text><text x="288" y="149" font-size="10">speakable part</text></g>
+      <g><path class="arrow" d="M152 155 q60 62 118 62" stroke-dasharray="5 4" stroke-width="1.6"/><rect class="box" x="272" y="194" width="150" height="46" rx="5" stroke-dasharray="5 4"/>
+        <text x="288" y="213" class="tn" font-size="11.5" font-weight="600">d⊥ only</text><text x="288" y="229" font-size="10">silent residual</text></g>
+      <g font-size="10.5">
+        <line class="ln" x1="422" y1="57" x2="470" y2="57"/><line class="ln" x1="422" y1="137" x2="470" y2="137"/><line class="ln" x1="422" y1="217" x2="470" y2="217"/>
+        <text x="482" y="43" class="t" font-weight="600" font-size="11.5">sentiment (blind judge, vs clean +0.25)</text>
+        <text x="482" y="61">full +0.44 / −0.88</text>
+        <text x="482" y="123" class="t" font-weight="600" font-size="11.5">J-component: the effect, concentrated</text>
+        <text x="482" y="141" class="tg" font-weight="600">±1.56 sentiment · 12.9 backtracks/attempt (full: 7.0)</text>
+        <text x="482" y="203" class="t" font-weight="600" font-size="11.5">residual: sentiment gone (refusal not interpretable — arm invalidated)</text>
+        <text x="482" y="221" class="tn">≈ clean (+0.25/−0.06) · backtrack 2.85 · refusal descriptive only</text>
+      </g>
+      <text x="482" y="262" class="tf" font-size="10">refusal's J-arm unreadable (90% degenerate) — reported as such, not spun</text>
+    </svg></div>
+    <p class="tight">"Backtracking" = the maze pathology: reversing the path, looping, revisiting explored nodes. Its jcomp number (12.9 vs full 7.0, ratio 1.84×) is close to the 3.47–4.28× rescaling amplification and has <b>no random-jcomp control on that task</b> — so it is reported descriptively, not causally. The refusal split is not supportable: 90% of mold-jcomp refusal generations were incoherent, and among scorable rows the residual does not cleanly carry refusal.</p>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <div class="k">F1 · the control that makes it causal (audit-demanded)</div>
+      <h3>Rescaling amplifies randoms <em>more</em> — and they still do nothing</h3>
+    <p class="sub">Random J-components receive more amplification than the trained ones (1/√share is larger for them) yet produce nothing — the effect is the axis, not the arithmetic.</p>
+      <div class="math">
+        <div class="eq">gain = ‖v‖ / ‖d_J‖ = 1 / √J-share</div>
+        <div class="gloss"><b>The worry:</b> rescaling d_J to ‖v‖ amplifies its token vectors. Randoms have <em>lower</em> J-share, so they get amplified <b>more</b> (≈5.0× vs 3.5–4.3× for trained axes). If amplification drove behavior, random J-components should shift sentiment at least as much.</div>
+      </div>
+      <p class="tight">They don't: 8 randoms × 2 polarities, identically rescaled, 256 blind-judged generations → cohort means <b>+0.04 / +0.02</b> vs clean +0.25 (inside the pre-specified |dev| &lt; 0.40 band) vs <b>±1.56</b> for the real axes. <span class="chip c-pass">CONTROLLED</span></p>
+    </div>
+    <div class="card">
+      <div class="k">R2/R3 · judge reliability (audit-demanded)</div>
+      <h3>Not one judge's opinion</h3>
+    <p class="sub">Judges are blind by construction, and a second model reproduces the scores at Krippendorff α 0.82 with the effect intact — stronger, in fact.</p>
+      <div class="twrap"><table>
+        <thead><tr><th>Check</th><th class="num">Result</th></tr></thead>
+        <tbody>
+          <tr><td>Blinding<span class="why">judges see only {idx, question, response}, shuffled chunks</span></td><td class="num">by construction</td></tr>
+          <tr><td>Second blinded judge (different model, verbatim rubric)</td><td class="num">Krippendorff α 0.82 · Spearman 0.87 · 94% within ±1</td></tr>
+          <tr><td>J-component effect under judge 2</td><td class="num">+2.00 / −2.19 (survives, stronger)</td></tr>
+          <tr><td>Power<span class="why">pooled SD 0.61 → detectable diff 0.61 « observed 1.31–1.50</span></td><td class="num">adequate by design</td></tr>
+        </tbody>
+      </table></div>
+      <p class="tight">α &gt; 0.8 is the standard "reliable" bar in content analysis.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">Repo decoder · what the repo calls the things on this screen</div>
+    <div class="twrap"><table class="dec"><tbody>
+      <tr><td>J4</td><td>the dissociation experiment in the figure — <b>j4_dissociation.py</b>; blind-judge inputs live in <b>judge_chunks/</b>, scored rows in results/</td></tr>
+      <tr><td>F1</td><td>the random-J-component control card — the <b>--rand-jcomp</b> flag added to the same script, executed inside <b>chain_i</b>; chunks in <b>judge_chunks_f1/</b></td></tr>
+      <tr><td>chain_g</td><td>(Spark-side) the first-token lens-readout injection arm — its inflated readings are a first-token property; F1 is what shows the behavioral channel is clean</td></tr>
+      <tr><td>R2 / R3</td><td>judge-rubric disclosure (verbatim prompts + blinding) and the second-judge rescoring — both audit return requests</td></tr>
+      <tr><td>clamp arm</td><td>J4's invalidated fourth arm (degenerate generations) — reported as a negative, not rescued</td></tr>
+    </tbody></table></div>
+    <div class="trail"><span class="k">Paper trail</span>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/j4-behavioral/j4_dissociation.py">j4-behavioral/j4_dissociation.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/j4-behavioral/results/j4_random_jcomp_summary.json">results/j4_random_jcomp_summary.json</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/j4-behavioral/results/R2_judge_rubric.json">R2_judge_rubric.json</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/j4-behavioral/results/R3_second_judge.json">R3_second_judge.json</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/paper/report.md">report §4.5</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: J4 judged (L469)</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: F1 controlled (L798)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ TRAJECTORY ================================ -->
+<section class="tab" id="traj" role="tabpanel">
+
+  <div class="card">
+    <div class="k">Chain · J2 recruitment trajectory + X4 asymmetry · verdict <span class="chip c-mold">STATED FINDING · HYPOTHESIS (1 RUN)</span></div>
+    <h3>Watching the axis get a voice: 30 RL checkpoints, steps 0 → 150</h3>
+    <p class="sub">The axis decomposed at 30 checkpoints (steps 0–150; step 65 absent from the artifacts): the distress pole's speakable fraction climbs 0.061 → 0.080 (peak 0.0828, plateau at steps 85–105) while the flourishing pole only gets louder.</p>
+    <p class="tight">Nobody had tracked verbalizable-subspace entry <em>over training</em>. Decomposing the axis at every checkpoint shows the two poles are recruited differently — the asymmetry that echoes through every other tab.</p>
+    <div class="fig"><svg viewBox="0 0 960 330" role="img" aria-label="Dumbbell chart of J-share and amplitude changes from step 0 to step 95, plus the vocabulary timeline">
+      <text x="60" y="30" class="t" font-size="12" font-weight="600">J-space share (fraction of energy)</text>
+      <g><text x="60" y="66" class="tm" font-size="11">Mold</text>
+        <line x1="159" y1="78" x2="159" y2="52" stroke="var(--mold)" stroke-dasharray="2 3" opacity=".7"/><text x="128" y="46" class="tm" font-size="9" opacity=".8">chance .046</text>
+        <line x1="251" y1="62" x2="387" y2="62" stroke="var(--mold)" stroke-width="2"/>
+        <circle cx="251" cy="62" r="5" fill="var(--inset)" stroke="var(--mold)" stroke-width="2"/>
+        <circle cx="387" cy="62" r="5.5" fill="var(--mold)"/>
+        <text x="216" y="87" font-size="10" class="tf">.061</text><text x="330" y="48" class="tm" font-size="10.5" font-weight="600">.080 endpoint (peak .0828 @ steps 85–105) ↑</text></g>
+      <g><text x="60" y="126" class="tg" font-size="11">Gold</text>
+        <line x1="115" y1="138" x2="115" y2="112" stroke="var(--gold)" stroke-dasharray="2 3" opacity=".7"/><text x="84" y="106" class="tg" font-size="9" opacity=".8">chance .039</text>
+        <line x1="202" y1="122" x2="239" y2="122" stroke="var(--gold)" stroke-width="2"/>
+        <circle cx="239" cy="122" r="5" fill="var(--inset)" stroke="var(--gold)" stroke-width="2"/>
+        <circle cx="202" cy="122" r="5.5" fill="var(--gold)"/>
+        <text x="247" y="126" font-size="10" class="tf">.059 → .053 — flat (no growth)</text></g>
+      <text x="530" y="30" class="t" font-size="12" font-weight="600">Amplitude ‖axis‖ (both explode)</text>
+      <g><text x="530" y="66" class="tm" font-size="11">Mold</text>
+        <line x1="587" y1="62" x2="877" y2="62" stroke="var(--mold)" stroke-width="2"/>
+        <circle cx="587" cy="62" r="5" fill="var(--inset)" stroke="var(--mold)" stroke-width="2"/><circle cx="877" cy="62" r="5.5" fill="var(--mold)"/>
+        <text x="560" y="87" font-size="10" class="tf">6.3</text><text x="855" y="46" class="tm" font-size="10.5">21.9 (3.5×)</text></g>
+      <g><text x="530" y="126" class="tg" font-size="11">Gold</text>
+        <line x1="592" y1="122" x2="773" y2="122" stroke="var(--gold)" stroke-width="2"/>
+        <circle cx="592" cy="122" r="5" fill="var(--inset)" stroke="var(--gold)" stroke-width="2"/><circle cx="773" cy="122" r="5.5" fill="var(--gold)"/>
+        <text x="565" y="147" font-size="10" class="tf">8.0</text><text x="752" y="106" class="tg" font-size="10.5">16.8 (2.1×)</text></g>
+      <text x="60" y="180" class="tf" font-size="10">open dot = step 0 · filled = trained (share endpoint = step 150; extraction = step 95) · Gold stays ~2.7 SD above chance, it just gains no share</text>
+      <text x="60" y="196" class="tf" font-size="10">pole readouts grow at both poles meanwhile: Mold +0.24 → +1.51 · Gold +0.15 → +1.11</text>
+      <text x="60" y="222" class="t" font-size="12" font-weight="600">Mold's vocabulary crystallizes (top J-space tokens per checkpoint)</text>
+      <line class="ln" x1="60" y1="266" x2="900" y2="266"/>
+      <g font-size="10">
+        <circle cx="60" cy="266" r="4" fill="var(--null)"/><text x="40" y="288" class="tn">step 0: 'unsuccessful'</text><text x="40" y="302" class="tf">(the seed pre-exists!)</text>
+        <circle cx="340" cy="266" r="4" fill="var(--mold)"/><text x="290" y="250" class="tm">+ 'false', 'negative'</text>
+        <circle cx="560" cy="266" r="4" fill="var(--mold)"/><text x="535" y="288" class="tm">+ 'less'</text>
+        <circle cx="723" cy="266" r="5" fill="var(--mold)"/><text x="660" y="250" class="tm" font-weight="600">step 75: 'failed' LOCKS</text>
+        <circle cx="900" cy="266" r="4" fill="var(--ink)"/><text x="830" y="288" class="t">step 95: extraction</text>
+      </g>
+    </svg></div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <div class="k">The finding</div>
+      <h3>RL gives distress a voice; flourishing gets a bigger amplifier</h3>
+    <p class="sub">The seed word exists at step 0; training amplifies both poles' volume but grows only the distress pole's share of speakable energy.</p>
+      <p class="tight">The speakable seed <b>pre-exists</b> ('unsuccessful' is the naive axis's top J-token before any RL). Training amplifies both poles' volume — but only the distress pole's <em>fraction</em> of speakable energy grows. The same asymmetry carries the matched atlas result (Mold 2.3× vs Gold inverted) and the J-share gap (z +7.3 vs +3.0). RL <em>recruits and crystallizes</em>; it doesn't create from nothing.</p>
+    </div>
+    <div class="card">
+      <div class="k">Caveats, stated plainly</div>
+      <h3>Why this is a hypothesis, not a theorem</h3>
+    <p class="sub">One model, one RL run, one reward structure — stated as a hypothesis with a concrete monitoring implication, not as a general law.</p>
+      <p class="tight">Single model, single RL run, one reward structure — the asymmetry could belong to this maze-RL recipe rather than to valence in general (more runs were time-prohibitive). Absolute shares are small (0.05–0.08 vs language 0.114): the claim is about pole <em>differences against the null</em>, not "the axis is mostly speakable". <b>If it generalizes</b>, it matters: self-report-based welfare monitoring would be asymmetrically sensitive — better at catching distress than at confirming flourishing.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">Repo decoder · what the repo calls the things on this screen</div>
+    <div class="twrap"><table class="dec"><tbody>
+      <tr><td>J2</td><td>the recruitment trajectory itself — <b>recruitment_traj.py</b> over traj/vectors_step{0..150}.pt (30 checkpoints × both poles; step 65 absent), run in <b>chain_d</b> after the atlas</td></tr>
+      <tr><td>X4</td><td>old checklist item "fine-grained valence" — the audit closed it as this stated finding (the data was already in J2's output)</td></tr>
+      <tr><td>step 95 / step 150</td><td>the paper's extraction checkpoint vs the RL run's convergence checkpoint — all headline axes are step-95</td></tr>
+    </tbody></table></div>
+    <div class="trail"><span class="k">Paper trail</span>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-atlas/recruitment_traj.py">jlens-atlas/recruitment_traj.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/figures/out/fig_traj.png">fig_traj.png (full 31-point curves)</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/paper/report.md">report §4.4, §5</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: J2 complete (L439)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ TRANSFER ================================ -->
+<section class="tab" id="transfer" role="tabpanel">
+
+  <div class="card">
+    <div class="k">Chain · J6 cross-model + J5 cross-target + paired baselines · verdict <span class="chip c-pass">REPLICATES</span> <span class="chip c-fail">2 CLAIMS RETRACTED</span></div>
+    <h3>The sprint's open question: do valence directions transfer across models?</h3>
+    <p class="sub">Same axes, a different model, and that model's own public lens: the J-share numbers, the Gold inversion, and behavioral steering all reproduce.</p>
+    <p class="tight">We injected the 2507-derived axes into <b>Qwen/Qwen3-4B</b> and read them through <em>that model's own</em> public pre-fitted lens (Neuronpedia). If our numbers were artifacts of our lens fit, they'd die here. They didn't.</p>
+    <div class="fig"><svg viewBox="0 0 960 300" role="img" aria-label="The same axis read through two models' lenses keeps its J-share; token overlap sits inside the same-vector null">
+      <rect x="330" y="18" width="300" height="34" rx="5" fill="var(--mold-soft)" stroke="var(--mold)"/>
+      <text x="352" y="40" class="tm" font-size="11.5" font-weight="600">v_Mold (extracted in Instruct-2507)</text>
+      <path class="arrow" d="M420 52 q-140 30 -180 58" stroke-width="1.6"/><path class="arrow" d="M540 52 q140 30 180 58" stroke-width="1.6"/>
+      <rect class="box" x="60" y="110" width="360" height="88" rx="5"/>
+      <text x="80" y="134" class="t" font-size="11.5" font-weight="600">Qwen3-4B-Instruct-2507 · our lens</text>
+      <text x="80" y="156" font-size="10.5">J-share <tspan class="tm" font-weight="600">0.083</tspan> (v_Mold) · <tspan class="tg" font-weight="600">0.055</tspan> (v_Gold) · 0.039 (u_Gold)</text>
+      <text x="80" y="174" font-size="10.5">matched pole ratio: Gold <tspan class="tc">0.57× inverted</tspan> · Mold 2.30×</text>
+      <rect class="box" x="540" y="110" width="360" height="88" rx="5"/>
+      <text x="560" y="134" class="t" font-size="11.5" font-weight="600">Qwen3-4B · public Neuronpedia lens</text>
+      <text x="560" y="156" font-size="10.5">J-share <tspan class="tm" font-weight="600">0.079</tspan> · <tspan class="tg" font-weight="600">0.048</tspan> · 0.039 — nearly identical</text>
+      <text x="560" y="174" font-size="10.5">ratio: Gold <tspan class="tc">0.52× still inverted</tspan> · Mold 4.19×</text>
+      <text x="60" y="232" class="tp" font-size="11" font-weight="600">✓ speakability is model-family geometry, not our lens fit</text>
+      <text x="60" y="252" class="tp" font-size="11" font-weight="600">✓ the Gold inversion replicates on an independent model</text>
+      <text x="60" y="272" class="tp" font-size="11" font-weight="600">✓ behavior transfers: blind-judged span 1.44 (trained) vs 0.38 (naive)</text>
+      <text x="540" y="252" class="tf" font-size="10.5">honest limit: this transfers the axis + lens geometry across a</text>
+      <text x="540" y="268" class="tf" font-size="10.5">model family — not the RL recruitment itself (that needs new RL)</text>
+    </svg></div>
+  </div>
+
+  <div class="card">
+    <div class="k">The retraction story · same evening, our own baseline discipline</div>
+    <h3>"The lexicon transfers at 18× chance" — no, it doesn't, and here's the null that says so</h3>
+    <p class="sub">The naive random-pair baseline made the overlap look like 18× chance; the correct same-vector null absorbs it entirely (p = 0.118), so the claim died the evening it was born.</p>
+    <div class="math">
+      <div class="eq">Jaccard(A,B) = |A∩B| / |A∪B| ,&nbsp; null = same <i>random</i> vector, decomposed under both lenses</div>
+      <div class="gloss"><b>The rule:</b> a null must share <em>everything</em> with the test statistic except the thing being tested. Comparing token sets from the SAME vector under two lenses isn't like comparing two random vectors — identity alone produces overlap.</div>
+    </div>
+    <div class="twrap"><table>
+      <thead><tr><th>Comparison</th><th class="num">naive baseline</th><th class="num">correct same-vector null</th><th class="num">trained axis</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td>across lens targets (final vs penult)</td><td class="num">—</td><td class="num">0.134 ± 0.082</td><td class="num">v_Mold 0.185 · v_Gold 0.107</td><td><span class="chip c-fail">RETRACTED</span> inside null</td></tr>
+        <tr><td>across models (2507 vs 4B)</td><td class="num">0.010 ("18×"!)</td><td class="num">0.088 ± 0.055 (max 0.231)</td><td class="num">v_Mold 0.185 → p = 0.118</td><td><span class="chip c-fail">RETRACTED</span> not claimed</td></tr>
+      </tbody>
+    </table></div>
+    <p class="tight">What survives is qualitative only, labeled exploratory: the tokens v_Mold shares across models are valence words ('failed', 'negative') while all 16 random same-vector pairs share junk fragments (';', 'npc', 'ise'). Noted, not built upon.</p>
+    <div class="note lesson"><span class="gk">★ WHY WE SHOW THIS OFF</span><br>
+    Both overlap claims were retracted <b>the same evening we made them</b>, by our own null-construction discipline, before any external reviewer saw them. For judges: this is what the error-correction machinery looks like when it works.</div>
+  </div>
+
+  <div class="card">
+    <div class="k">Repo decoder · what the repo calls the things on this screen</div>
+    <div class="twrap"><table class="dec"><tbody>
+      <tr><td>J6 / chain_j</td><td>the cross-model experiment — <b>j6_transfer.py</b> (atlas + decompositions + Jaccard + behavioral generations); chain_j was gated on chain_i, <b>chain_j_direct</b> is the ungated variant that actually ran</td></tr>
+      <tr><td>j6_paired_baseline</td><td>the same-vector ACROSS-MODEL null (0.088 ± 0.055) that retracted the "18× chance" claim</td></tr>
+      <tr><td>j5_paired_baseline</td><td>the same-vector ACROSS-TARGET null (0.134 ± 0.082) that retracted the across-lens-target overlap the same way</td></tr>
+      <tr><td>prep_judge_chunks</td><td>builds the blinded {idx, question, response} chunks for judging the transferred generations</td></tr>
+    </tbody></table></div>
+    <div class="trail"><span class="k">Paper trail</span>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/j6-crossmodel/j6_transfer.py">j6-crossmodel/j6_transfer.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/j6-crossmodel/j6_paired_baseline.py">j6_paired_baseline.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/experiments/jlens-fit-2507/j5_paired_baseline.py">j5_paired_baseline.py</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/paper/report.md">report §4.7</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: J6 lands (L1031)</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: retraction 1 (L1111)</a>
+      <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log: retraction 2 (L1127)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ REPO & AUDIT ================================ -->
+<section class="tab" id="repo" role="tabpanel">
+
+  <div class="cols">
+    <div class="card">
+      <div class="k">Start here</div>
+      <h3>Reading order</h3>
+    <p class="sub">Six documents in the order a reviewer should meet them — paper first, then the audit exchange, then the raw log.</p>
+      <ol class="reading">
+        <li><b><a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/README.md">README.md</a></b> — experiment map &amp; provenance</li>
+        <li><b><a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/paper/report.md">report/report-draft.md</a></b> — the paper (v3); every number cites a results file</li>
+        <li><b><a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/audits/audit-response.md">audit-response.md</a></b> — point-by-point reply to the independent audit</li>
+        <li><b><a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log.md</a></b> — append-only lab log (1,194 lines): every result, gotcha, correction, timestamped</li>
+        <li><b><a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/concepts-explained.md">concepts-explained.md</a></b> — beginner notebook for every concept on this page</li>
+        <li><b><a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/pre-registration.md">pre-registration.md</a></b> — frozen (sha f66b6ea3), never edited; deviations disclosed in the report</li>
+      </ol>
+    </div>
+    <div class="card">
+      <div class="k">Directory map</div>
+      <h3>Where things live</h3>
+    <p class="sub">One directory per experiment family; raw rows always under results/; figures built from the JSON by one script.</p>
+      <div class="tree">
+        <a class="dir" href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/experiments/routing-core">experiments/routing-core/</a> <span class="c">— steer &amp; ask, F2 J-share, controls, R7</span><br>
+        <a class="dir" href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/experiments/jlens-atlas">experiments/jlens-atlas/</a> <span class="c">— atlas, F3/F4/F7, trajectory</span><br>
+        <a class="dir" href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/experiments/j4-behavioral">experiments/j4-behavioral/</a> <span class="c">— component reinjection + judging</span><br>
+        <a class="dir" href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/experiments/jlens-fit-2507">experiments/jlens-fit-2507/</a> <span class="c">— lens fits (final + penult), J5</span><br>
+        <a class="dir" href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/experiments/j6-crossmodel">experiments/j6-crossmodel/</a> <span class="c">— transfer to Qwen3-4B</span><br>
+        <a class="dir" href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/experiments/welfare-axis">experiments/welfare-axis/</a> <span class="c">— axes, validation, u adjudication</span><br>
+        <a class="dir" href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/experiments/figures">experiments/figures/</a> <span class="c">— make_figures.py → out/fig_*.png (7 finals)</span><br>
+        <a class="dir" href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/audit-instructions">audit-instructions/</a> <span class="c">— round 1 (F1–F7, R1–R7) + round 2 (D1–D5)</span><br>
+        <a class="dir" href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/hf-release">hf-release/</a> <span class="c">— lens model card + upload script</span><br>
+        <span class="c">each experiment dir keeps raw JSON/JSONL under results/ — results are append-only, never overwritten</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <div class="k">The graveyard · claims we killed ourselves</div>
+      <h3>What failed, and why that's the point</h3>
+    <p class="sub">Every claim we retracted or cut, each with the control that killed it — the paper's credibility budget was earned here.</p>
+      <ul class="grave">
+        <li><b>Steer-and-confess paradigm</b> — set aside by project decision (the deprecation directive was later retracted); the pre-registered arm closed as a diagnosed null (C1/C6/C7 + R7), with C6 revised in round 2 to "underpowered, not refuted" on the contrast. D2/D3 re-open it on an honest DV.</li>
+        <li><b>"3.9× / 9.4× more speakable"</b> — retired; pole-difference estimand's denominator crosses zero (spans −9.1× to +47.6× across conventions).</li>
+        <li><b>Atlas pole-score headline</b> — overturned by our own F3: magnitude confound; Gold inverts at matched norms.</li>
+        <li><b>Two token-overlap claims</b> — retracted same evening via same-vector nulls (p = 0.118).</li>
+        <li><b>Clamp arm (J4)</b> — invalidated (degenerate generations); reported as a negative.</li>
+        <li><b>X.1 / X.2 extensions</b> — cut by audit: would revive the invalidated channel.</li>
+      </ul>
+      <p class="tight">Every kill is logged with a timestamp in <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/RESEARCH-LOG.md">log.md</a> and disclosed in the report. Nothing was quietly dropped.</p>
+    </div>
+    <div class="card">
+      <div class="k">Independent audit · status</div>
+      <h3>Round 1 fully adopted · round 2 received</h3>
+    <p class="sub">Round 1 rewrote the paper's headline; round 2 (D1–D5) arrived Aug 15, is committed as received, and awaits the go signal.</p>
+      <p class="tight"><b>Round 1</b> (Aug 12, re-analysis of our raw rows): all fixes executed — F1 ✅ F2 ✅ F3 ✅ F4 ✅ F5 ✅ F6 ✅ F7 ✅, returns R1–R7 ✅, X4 ✅, J5/J6 ✅. Three places we deviated <em>with disclosure</em> (the audit had its own off-by-one; F7's missing layer was Gold's; F3's control needed norm-matching) — see <a href="https://github.com/nsharan2000/speakable-welfare-axes/blob/main/audits/audit-response.md">audit-response.md</a>.</p>
+      <p class="tight"><b>Round 2</b> — EXECUTED Aug 15 (all five closed + R8–R12 returns; ~2 h GPU incl. one transformers-version fix and a 16-agent preflight that caught 8 defects before dispatch):</p>
+      <p>
+        <span class="chip c-gold">D1 ★ shared-subspace / anomalous</span>
+        <span class="chip c-gold">D2 ★ positive (gold-carried)</span>
+        <span class="chip c-mold">D3 negative finding</span>
+        <span class="chip c-pass">D4 done</span>
+        <span class="chip c-pass">D5 folded into report</span>
+      </p>
+      <p class="tight">Report v2 written fresh per REPORT-V2-SPEC (v1 archived with defect banner): sentiment-only causal scope, trajectory peak/endpoint fixed, J6 weaker-claim caveat (R12), D-series folded into §4.5/§4.6; 9-page PDF with 5 numbered figures.</p>
+      <p class="tight">Specs in <a href="https://github.com/nsharan2000/speakable-welfare-axes/tree/main/audit-instructions/next-directions">audit-instructions/next-directions/</a>. Also pending: in-window verification chain (<span style="font-family:var(--mono);font-size:12px">chain_l_verify.sh</span>, ~10 min), HF lens upload, template paste + video.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="k">Repo decoder · chain runbook (experiments/*.sh)</div>
+    <h3>Which chain ran what</h3>
+    <p class="sub">All GPU work runs on the DGX Spark as strictly serialized chains — each step idempotent, checkpointed, and gated on a GPU canary + free-memory check.</p>
+    <div class="twrap"><table class="dec"><tbody>
+      <tr><td>overnight_chain.sh</td><td>routing selftest → band stats → own-u extraction → u comparison</td></tr>
+      <tr><td>chain_b.sh</td><td>waits for the 2507 lens fit, then band stats + the mechanistic battery (first decompositions + injection arms)</td></tr>
+      <tr><td>chain_c.sh</td><td>re-runs the steering validation with our own-extracted u (the control adjudication)</td></tr>
+      <tr><td>chain_d.sh</td><td>the J-program core: J1+J3 atlas, then J2 recruitment trajectory</td></tr>
+      <tr><td>chain_i.sh</td><td>audit fix queue, strictly serial: F1 → F6 → R6 → F7 → F2 → F3 → R7</td></tr>
+      <tr><td>chain_j / chain_j_direct</td><td>J6 cross-model transfer (direct variant = not gated on chain_i)</td></tr>
+      <tr><td>chain_k_j5.sh</td><td>resumes the checkpointed J5 penultimate-target lens fit (chain_h's exact invocation), then the comparison</td></tr>
+      <tr><td>chain_l_verify.sh</td><td><b>PENDING</b> — in-window seed-identical F2+F3 reruns + diff → L_VERIFY_PASS/FAIL (~10 min, one command via dispatch_dm.sh)</td></tr>
+      <tr><td>dispatch_dm.sh / supervise_dm.sh / harden_oom.sh</td><td>ops: GPU-heal + launch · host watchdog against GPU revocation · OOM protections (memguard + oom_score_adj tiers)</td></tr>
+    </tbody></table></div>
+  </div>
+
+  <div class="card">
+    <div class="k">Ground rules that kept the data honest</div>
+    <h3>Operating discipline</h3>
+    <p class="sub">The three standing rules that made retractions cheap and the surviving claims believable.</p>
+    <div class="cols3">
+      <p class="tight"><b>Frozen pre-registration.</b> Never edited after sha-stamping; every deviation is disclosed in the report, not patched into history.</p>
+      <p class="tight"><b>Append-only everything.</b> Results get new filenames, never overwrites; the lab log only grows; retractions stay visible.</p>
+      <p class="tight"><b>Blind judging only.</b> LLM judges see {idx, question, response} in shuffled chunks — never which arm produced a row; second judge for reliability.</p>
+    </div>
+  </div>
+
+  <footer>
+    Gold &amp; Mold · speakable-welfare-axes experiment map · built 2026-08-15 from report-draft v3 — every number on this page traces to a results file · repo: <a href="https://github.com/nsharan2000/speakable-welfare-axes">github.com/nsharan2000/speakable-welfare-axes</a> (private)
+  </footer>
+</section>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabbtn'));
+  function show(id,setHash){
+    [].slice.call(document.querySelectorAll('.tab')).forEach(function(s){s.classList.toggle('on',s.id===id);});
+    tabs.forEach(function(b){var on=b.getAttribute('data-tab')===id;b.classList.toggle('on',on);b.setAttribute('aria-selected',on?'true':'false');});
+    if(setHash!==false){try{history.replaceState(null,'','#'+id);}catch(e){}}
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-tab'));});});
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('a[data-go]'):null;
+    if(a){e.preventDefault();show(a.getAttribute('data-go'));window.scrollTo({top:0});}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+    var t=document.activeElement&&document.activeElement.tagName;
+    if(t==='INPUT'||t==='TEXTAREA'||t==='SELECT')return;
+    var i=tabs.map(function(b){return b.classList.contains('on');}).indexOf(true);
+    var j=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;
+    show(tabs[j].getAttribute('data-tab'));
+  });
+  var h=location.hash.replace('#','');
+  show(document.getElementById(h)&&h!=='overview'?h:'overview',false);
+})();
+</script>
+
+</html>

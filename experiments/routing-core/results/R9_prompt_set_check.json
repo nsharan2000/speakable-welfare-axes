@@ -1,0 +1,12 @@
+{
+  "r7_self_n": 15,
+  "primary_self_n": 15,
+  "r8_n": 15,
+  "r7_equals_primary": true,
+  "r7_equals_r8": true,
+  "primary_equals_r8": true,
+  "r7_minus_primary": [],
+  "primary_minus_r7": [],
+  "note": "R9: validates the auditor pairing behind interaction p=0.505 (00-why-round-2 s2b)",
+  "r7_unrel_n": 10
+}

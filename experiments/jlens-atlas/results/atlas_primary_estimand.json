@@ -1,0 +1,333 @@
+{
+ "estimand_name": "own-pole congruent score, J-lens readout ('jlens' variant), mean over workspace band L16-31 (lens layers)",
+ "estimand_rationale": [
+  "pole-difference ratio rejected: denominator (a difference) crosses zero for naive axes -> range -9.1x..+47.6x across conventions; a ratio whose denominator can vanish is not a usable estimand",
+  "band-averaging avoids privileging a single treatment layer",
+  "L16-31 is the band the instrument was validated on (band_stats persistence above null), chosen on instrument grounds not effect size"
+ ],
+ "readout_variant": "jlens",
+ "layer_convention": "lens=vector,   band=lens16-31",
+ "layer_convention_note": "atlas.py:129 reads V[l+1] at lens layer l, so lens layer l == stream position of block-input vector layer l+1. The audit's 'treatment' cells (lens 21/24) are one position downstream of the true treatment position (vector 21/24 = lens 20/23); both appear in the robustness panel as treatment_audit / treatment_stream. Band 'L16-31' means lens layers 16-31 (= vector layers 17-32), matching band_stats' lens-layer convention.",
+ "treatment_lens_layers_audit": {
+  "gold": 21,
+  "mold": 24
+ },
+ "treatment_lens_layers_stream": {
+  "gold": 20,
+  "mold": 23
+ },
+ "band_lens_layers": [
+  16,
+  31
+ ],
+ "primary": {
+  "gold": {
+   "v": {
+    "band_mean": 0.15128332376480103,
+    "z_vs_null": 2.4163340241608964,
+    "n_randoms_ge": 0,
+    "perm_p": 0.14285714285714285,
+    "per_layer": {
+     "16": 0.03610992431640625,
+     "17": 0.09336662292480469,
+     "18": 0.16922283172607422,
+     "19": 0.2655916213989258,
+     "20": 0.18311405181884766,
+     "21": 0.3579692840576172,
+     "22": 0.41826438903808594,
+     "23": 0.18448543548583984,
+     "24": 0.12972068786621094,
+     "25": 0.105438232421875,
+     "26": 0.07946014404296875,
+     "27": 0.028865814208984375,
+     "28": 0.04148674011230469,
+     "29": 0.1227884292602539,
+     "30": 0.007075309753417969,
+     "31": 0.19757366180419922
+    }
+   },
+   "u": {
+    "band_mean": 0.12259465456008911,
+    "z_vs_null": 1.9099787252943308,
+    "n_randoms_ge": 0,
+    "perm_p": 0.14285714285714285,
+    "per_layer": {
+     "16": 0.0126190185546875,
+     "17": 0.04472541809082031,
+     "18": 0.029058456420898438,
+     "19": 0.10833454132080078,
+     "20": 0.12831783294677734,
+     "21": 0.2380828857421875,
+     "22": 0.22055721282958984,
+     "23": 0.0733327865600586,
+     "24": 0.08170413970947266,
+     "25": 0.11611080169677734,
+     "26": 0.1080484390258789,
+     "27": 0.1363058090209961,
+     "28": 0.17344951629638672,
+     "29": 0.13662433624267578,
+     "30": 0.11924362182617188,
+     "31": 0.2349996566772461
+    }
+   },
+   "null": {
+    "values": [
+     0.06981194019317627,
+     0.038358867168426514,
+     -0.09264469146728516,
+     0.02788245677947998,
+     0.039689719676971436,
+     0.003185451030731201
+    ],
+    "mean": 0.014380623896916708,
+    "sd": 0.05665719163782647,
+    "min": -0.09264469146728516,
+    "max": 0.06981194019317627
+   },
+   "own_pole_ratio_v_over_u": 1.234012398890119
+  },
+  "mold": {
+   "v": {
+    "band_mean": 0.8218793869018555,
+    "z_vs_null": 15.745271286947768,
+    "n_randoms_ge": 0,
+    "perm_p": 0.14285714285714285,
+    "per_layer": {
+     "16": 0.014530181884765625,
+     "17": -0.00510406494140625,
+     "18": 0.1370830535888672,
+     "19": 0.3798847198486328,
+     "20": 0.9520702362060547,
+     "21": 0.9385051727294922,
+     "22": 0.876154899597168,
+     "23": 0.6835823059082031,
+     "24": 0.9471988677978516,
+     "25": 1.2287731170654297,
+     "26": 1.383255958557129,
+     "27": 1.3887310028076172,
+     "28": 1.418020248413086,
+     "29": 1.1934175491333008,
+     "30": 0.6141424179077148,
+     "31": 0.9998245239257812
+    }
+   },
+   "u": {
+    "band_mean": 0.12588459253311157,
+    "z_vs_null": 2.289582893104356,
+    "n_randoms_ge": 0,
+    "perm_p": 0.14285714285714285,
+    "per_layer": {
+     "16": -0.008616447448730469,
+     "17": -0.016721725463867188,
+     "18": -0.040215492248535156,
+     "19": -0.06390571594238281,
+     "20": 0.028504371643066406,
+     "21": 0.0792694091796875,
+     "22": 0.10222911834716797,
+     "23": 0.10723876953125,
+     "24": 0.19936847686767578,
+     "25": 0.23781776428222656,
+     "26": 0.2691507339477539,
+     "27": 0.2728900909423828,
+     "28": 0.2901420593261719,
+     "29": 0.2497568130493164,
+     "30": 0.08769798278808594,
+     "31": 0.21954727172851562
+    }
+   },
+   "null": {
+    "values": [
+     -0.06689631938934326,
+     -0.008210420608520508,
+     -0.030994653701782227,
+     0.07049083709716797,
+     0.03783351182937622,
+     0.042513251304626465
+    ],
+    "mean": 0.007456034421920776,
+    "sd": 0.05172494888386336,
+    "min": -0.06689631938934326,
+    "max": 0.07049083709716797
+   },
+   "own_pole_ratio_v_over_u": 6.528832245182631
+  }
+ },
+ "robustness_panel_all_conventions": {
+  "han|treatment_audit|gold": {
+   "v_own_pole": 0.034913063049316406,
+   "u_own_pole": 0.00623321533203125,
+   "own_pole_ratio": 5.601132190942472,
+   "own_pole_inverted": false,
+   "v_pole_diff": 0.035819053649902344,
+   "u_pole_diff": -0.040569305419921875,
+   "pole_diff_ratio": -0.8829102021626705
+  },
+  "han|treatment_stream|gold": {
+   "v_own_pole": 0.02363109588623047,
+   "u_own_pole": -0.029290199279785156,
+   "own_pole_ratio": -0.8067919122195812,
+   "own_pole_inverted": null,
+   "v_pole_diff": -0.04579448699951172,
+   "u_pole_diff": -0.07128238677978516,
+   "pole_diff_ratio": 0.6424376212455682
+  },
+  "han|band16-31|gold": {
+   "v_own_pole": 0.08330202102661133,
+   "u_own_pole": 0.02951645851135254,
+   "own_pole_ratio": 2.8222227607208343,
+   "own_pole_inverted": false,
+   "v_pole_diff": 0.09346014261245728,
+   "u_pole_diff": -0.010267019271850586,
+   "pole_diff_ratio": -9.102948006409214
+  },
+  "han|treatment_audit|mold": {
+   "v_own_pole": 0.17207813262939453,
+   "u_own_pole": 0.04480743408203125,
+   "own_pole_ratio": 3.8403924740337136,
+   "own_pole_inverted": false,
+   "v_pole_diff": 0.3662090301513672,
+   "u_pole_diff": 0.007689476013183594,
+   "pole_diff_ratio": 47.62470544462359
+  },
+  "han|treatment_stream|mold": {
+   "v_own_pole": 0.05680656433105469,
+   "u_own_pole": 0.0061054229736328125,
+   "own_pole_ratio": 9.304279912527335,
+   "own_pole_inverted": false,
+   "v_pole_diff": 0.3463859558105469,
+   "u_pole_diff": -0.00417327880859375,
+   "pole_diff_ratio": -83.00091407678245
+  },
+  "han|band16-31|mold": {
+   "v_own_pole": -0.02947413921356201,
+   "u_own_pole": -0.04252266883850098,
+   "own_pole_ratio": 0.6931394481730052,
+   "own_pole_inverted": null,
+   "v_pole_diff": 0.20291489362716675,
+   "u_pole_diff": -0.05200612545013428,
+   "pole_diff_ratio": -3.901749877939481
+  },
+  "jlens|treatment_audit|gold": {
+   "v_own_pole": 0.3579692840576172,
+   "u_own_pole": 0.2380828857421875,
+   "own_pole_ratio": 1.5035489969877587,
+   "own_pole_inverted": false,
+   "v_pole_diff": 0.8680315017700195,
+   "u_pole_diff": 0.21613216400146484,
+   "pole_diff_ratio": 4.016206961977841
+  },
+  "jlens|treatment_stream|gold": {
+   "v_own_pole": 0.18311405181884766,
+   "u_own_pole": 0.12831783294677734,
+   "own_pole_ratio": 1.4270351019316097,
+   "own_pole_inverted": false,
+   "v_pole_diff": 0.6820526123046875,
+   "u_pole_diff": 0.17698955535888672,
+   "pole_diff_ratio": 3.853631989309596
+  },
+  "jlens|band16-31|gold": {
+   "v_own_pole": 0.15128332376480103,
+   "u_own_pole": 0.12259465456008911,
+   "own_pole_ratio": 1.234012398890119,
+   "own_pole_inverted": false,
+   "v_pole_diff": 0.7226688861846924,
+   "u_pole_diff": 0.12098091840744019,
+   "pole_diff_ratio": 5.97341213554756
+  },
+  "jlens|treatment_audit|mold": {
+   "v_own_pole": 0.9471988677978516,
+   "u_own_pole": 0.19936847686767578,
+   "own_pole_ratio": 4.750996158868803,
+   "own_pole_inverted": false,
+   "v_pole_diff": 1.3826665878295898,
+   "u_pole_diff": 0.16841411590576172,
+   "pole_diff_ratio": 8.209921005690989
+  },
+  "jlens|treatment_stream|mold": {
+   "v_own_pole": 0.6835823059082031,
+   "u_own_pole": 0.10723876953125,
+   "own_pole_ratio": 6.374395276038702,
+   "own_pole_inverted": false,
+   "v_pole_diff": 1.3175525665283203,
+   "u_pole_diff": 0.14092636108398438,
+   "pole_diff_ratio": 9.3492271878299
+  },
+  "jlens|band16-31|mold": {
+   "v_own_pole": 0.8218793869018555,
+   "u_own_pole": 0.12588459253311157,
+   "own_pole_ratio": 6.528832245182631,
+   "own_pole_inverted": false,
+   "v_pole_diff": 1.1762011647224426,
+   "u_pole_diff": 0.14418679475784302,
+   "pole_diff_ratio": 8.15748187410528
+  },
+  "jlens_norm|treatment_audit|gold": {
+   "v_own_pole": 1.4816246032714844,
+   "u_own_pole": 2.401841163635254,
+   "own_pole_ratio": 0.6168703516717999,
+   "own_pole_inverted": true,
+   "v_pole_diff": 2.2744522094726562,
+   "u_pole_diff": 1.093693733215332,
+   "pole_diff_ratio": 2.079606146033252
+  },
+  "jlens_norm|treatment_stream|gold": {
+   "v_own_pole": 1.064413070678711,
+   "u_own_pole": 1.7068824768066406,
+   "own_pole_ratio": 0.623600678513082,
+   "own_pole_inverted": true,
+   "v_pole_diff": 1.6641855239868164,
+   "u_pole_diff": 1.024327278137207,
+   "pole_diff_ratio": 1.6246619215425222
+  },
+  "jlens_norm|band16-31|gold": {
+   "v_own_pole": 0.8293326497077942,
+   "u_own_pole": 1.259542167186737,
+   "own_pole_ratio": 0.658439765903319,
+   "own_pole_inverted": true,
+   "v_pole_diff": 2.424798905849457,
+   "u_pole_diff": 0.9018294811248779,
+   "pole_diff_ratio": 2.6887554206200215
+  },
+  "jlens_norm|treatment_audit|mold": {
+   "v_own_pole": 2.324298858642578,
+   "u_own_pole": 1.5761222839355469,
+   "own_pole_ratio": 1.4746944969516254,
+   "own_pole_inverted": false,
+   "v_pole_diff": 3.5674819946289062,
+   "u_pole_diff": 1.1239395141601562,
+   "pole_diff_ratio": 3.174087172559854
+  },
+  "jlens_norm|treatment_stream|mold": {
+   "v_own_pole": 2.5794029235839844,
+   "u_own_pole": 1.0806999206542969,
+   "own_pole_ratio": 2.386789222694044,
+   "own_pole_inverted": false,
+   "v_pole_diff": 4.598140716552734,
+   "u_pole_diff": 1.0412158966064453,
+   "pole_diff_ratio": 4.41612611902978
+  },
+  "jlens_norm|band16-31|mold": {
+   "v_own_pole": 1.5296381115913391,
+   "u_own_pole": 0.266268789768219,
+   "own_pole_ratio": 5.744714252552298,
+   "own_pole_inverted": false,
+   "v_pole_diff": 2.76873242855072,
+   "u_pole_diff": 0.4243747591972351,
+   "pole_diff_ratio": 6.524262738406425
+  }
+ },
+ "cells_inverted_own_pole": [
+  "jlens_norm|band16-31|gold",
+  "jlens_norm|treatment_audit|gold",
+  "jlens_norm|treatment_stream|gold"
+ ],
+ "n_random": 6,
+ "perm_p_floor_at_n6": 0.1429,
+ "note_random_storage": "randoms stored under concept='gold' rows only; mold null read from mold_pole field of those rows (audit defect #3, documented here)",
+ "audit_reproduction": "12/12 own-pole cells match audit_findings.json to 1e-9",
+ "sources": {
+  "rows": "results/atlas_rows.jsonl (1260 rows, unmodified)",
+  "v": "step95",
+  "u": "naive_faithful"
+ }
+}

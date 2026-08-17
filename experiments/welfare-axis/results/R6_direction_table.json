@@ -1,0 +1,42 @@
+{
+ "treatment_layers_block_input": {
+  "gold": 21,
+  "mold": 24
+ },
+ "per_pole": {
+  "gold": {
+   "layer": 21,
+   "norms": {
+    "v_gold": 12.101579666137695,
+    "u_faithful_gold": 7.479214191436768,
+    "own_u_gold": 4.752405643463135,
+    "lang_fr@L18": 0.9999999403953552
+   },
+   "cosines": {
+    "v_gold vs u_faithful_gold": 0.5604970455169678,
+    "v_gold vs own_u_gold": 0.43292683362960815,
+    "v_gold vs lang_fr@L18": 0.027631420642137527,
+    "u_faithful_gold vs own_u_gold": 0.5345857739448547,
+    "u_faithful_gold vs lang_fr@L18": 0.010202066972851753,
+    "own_u_gold vs lang_fr@L18": 0.039119821041822433
+   },
+   "random_cohort_norm": 12.101579666137695,
+   "random_note": "randoms are unit gaussians rescaled to ||v|| (expected cos vs any fixed direction ~ N(0, 1/2560), i.e. |cos|~0.02)"
+  },
+  "mold": {
+   "layer": 24,
+   "norms": {
+    "v_mold": 19.339996337890625,
+    "u_faithful_mold": 8.00526237487793,
+    "own_u_mold": 5.974766731262207
+   },
+   "cosines": {
+    "v_mold vs u_faithful_mold": 0.6748858094215393,
+    "v_mold vs own_u_mold": 0.5963042378425598,
+    "u_faithful_mold vs own_u_mold": 0.3852367401123047
+   },
+   "random_cohort_norm": 19.339996337890625,
+   "random_note": "randoms are unit gaussians rescaled to ||v|| (expected cos vs any fixed direction ~ N(0, 1/2560), i.e. |cos|~0.02)"
+  }
+ }
+}

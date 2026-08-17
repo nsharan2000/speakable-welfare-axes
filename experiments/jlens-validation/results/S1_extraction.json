@@ -1,0 +1,48 @@
+{
+  "4": {
+    "raw_norm": 24.76415252685547,
+    "path": "/workspace/experiments/jlens-validation/directions/lang_fr_minus_en_L4.npy",
+    "mean_resid_norm": 14.922187805175781
+  },
+  "8": {
+    "raw_norm": 9.22500991821289,
+    "path": "/workspace/experiments/jlens-validation/directions/lang_fr_minus_en_L8.npy",
+    "mean_resid_norm": 35.80249786376953
+  },
+  "11": {
+    "raw_norm": 9.666815757751465,
+    "path": "/workspace/experiments/jlens-validation/directions/lang_fr_minus_en_L11.npy",
+    "mean_resid_norm": 48.24152755737305
+  },
+  "14": {
+    "raw_norm": 10.11446475982666,
+    "path": "/workspace/experiments/jlens-validation/directions/lang_fr_minus_en_L14.npy",
+    "mean_resid_norm": 50.309478759765625
+  },
+  "18": {
+    "raw_norm": 10.924785614013672,
+    "path": "/workspace/experiments/jlens-validation/directions/lang_fr_minus_en_L18.npy",
+    "mean_resid_norm": 57.58918380737305
+  },
+  "22": {
+    "raw_norm": 22.497556686401367,
+    "path": "/workspace/experiments/jlens-validation/directions/lang_fr_minus_en_L22.npy",
+    "mean_resid_norm": 76.59375
+  },
+  "25": {
+    "raw_norm": 44.61185836791992,
+    "path": "/workspace/experiments/jlens-validation/directions/lang_fr_minus_en_L25.npy",
+    "mean_resid_norm": 123.08401489257812
+  },
+  "28": {
+    "raw_norm": 80.90298461914062,
+    "path": "/workspace/experiments/jlens-validation/directions/lang_fr_minus_en_L28.npy",
+    "mean_resid_norm": 185.19769287109375
+  },
+  "32": {
+    "raw_norm": 240.41795349121094,
+    "path": "/workspace/experiments/jlens-validation/directions/lang_fr_minus_en_L32.npy",
+    "mean_resid_norm": 312.259521484375
+  },
+  "seconds": 3.9
+}

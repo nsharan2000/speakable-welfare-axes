@@ -1,0 +1,155 @@
+{
+ "correction_date": "2026-08-14",
+ "trigger": "user retracted the 2026-08-12 steer-and-ask deprecation directive as mistakenly asserted",
+ "provenance_check": {
+  "deprecation_origin": "log.md:292-293 \u2014 entered as user DIRECTIVE CHANGE, not as a repo finding",
+  "unsupported_claim_in_report": "report-draft.md:168 states the evidence 'independently led us to deprecate' the paradigm",
+  "verdict": "not defensible as written; the directive preceded the supporting analysis",
+  "note": "chain-g first-token rescaling fragility is real and predates the audit, but bears on readout fragility, not on the paradigm"
+ },
+ "C6_reanalysis": {
+  "readout": "whole-generation valence, R7_wholegen.json, alpha=+4",
+  "regime_confound": {
+   "clean_valence_self": -1.326751940672644,
+   "clean_valence_unrel": 0.38115468720595047,
+   "baseline_gap": 1.708,
+   "denial_language_rate_self": "15/15 = 100%",
+   "denial_language_rate_unrel": "0/10 = 0%",
+   "implication": "C6 compares a suppressed response regime against a free one"
+  },
+  "headroom_normalized_effect": {
+   "v_mold_self": -0.215,
+   "v_mold_unrel": -0.449,
+   "note": "gap narrows 3.2x -> 2.1x; headroom explains part, not all"
+  },
+  "contrast_rescoring": {
+   "self": {
+    "n": 15,
+    "E_v": -0.7232867673784015,
+    "E_u": -0.3656361555804331,
+    "v_minus_u": -0.35765061179796853,
+    "ratio": 1.98,
+    "p_contrast": 0.1780000428509907
+   },
+   "unrel": {
+    "n": 10,
+    "E_v": -2.2774345145622887,
+    "E_u": -1.6359377847115197,
+    "v_minus_u": -0.641496729850769,
+    "ratio": 1.39,
+    "p_contrast": 0.0856702814257636
+   },
+   "interaction_welch_p": 0.5047580507293352,
+   "verdict": "C6 rejects self-report specificity of the RAW EFFECT but does not reject it for the trained/naive CONTRAST that H1 names. Contrast is underpowered (p=0.178/0.086), not refuted. Correct summary: 'not established', not 'refuted'."
+  },
+  "self_report_specific_effect_invisible_to_C6": {
+   "measure": "AI-denial boilerplate removal under steering, self-report prompts only",
+   "clean": "15/15 (100%)",
+   "u_mold": "11/15 (73%)",
+   "v_mold": "12/15 (80%)",
+   "trained_naive_split": "none detectable at n=15 (80% vs 73%)",
+   "significance": "exists only on self-report prompts and is invisible to a valence-magnitude readout; shows the C6 dependent variable was mis-chosen, not that H1 holds"
+  }
+ },
+ "post_fix_state": {
+  "jshare_n100": {
+   "v_gold": {
+    "var_fraction": 0.0547,
+    "z": 3.0444,
+    "n_randoms_ge": 0,
+    "perm_p": 0.0099,
+    "null_polarity": "gold"
+   },
+   "u_gold": {
+    "var_fraction": 0.0393,
+    "z": 0.0282,
+    "n_randoms_ge": 53,
+    "perm_p": 0.5347,
+    "null_polarity": "gold"
+   },
+   "lang_fr": {
+    "var_fraction": 0.1138,
+    "z": 14.612,
+    "n_randoms_ge": 0,
+    "perm_p": 0.0099,
+    "null_polarity": "gold"
+   },
+   "v_mold": {
+    "var_fraction": 0.0833,
+    "z": 7.3032,
+    "n_randoms_ge": 0,
+    "perm_p": 0.0099,
+    "null_polarity": "mold"
+   },
+   "u_mold": {
+    "var_fraction": 0.0486,
+    "z": 0.527,
+    "n_randoms_ge": 34,
+    "perm_p": 0.3465,
+    "null_polarity": "mold"
+   }
+  },
+  "control_alignment_R6": {
+   "v_gold_vs_u_faithful": 0.56,
+   "v_mold_vs_u_faithful": 0.675,
+   "v_gold_vs_own_u": 0.433,
+   "v_mold_vs_own_u": 0.596,
+   "vs_random": 0.02,
+   "implication": "the 'naive control' shares 56-68% of its direction with the trained axis; u sits at chance on J-share DESPITE that alignment, which strengthens the J-share result and explains the F3 Gold inversion without a Gold-specific story"
+  }
+ },
+ "next_directions": [
+  {
+   "id": "D1",
+   "name": "orthogonalized control u_perp = u - (u.vhat)vhat, norm-matched",
+   "gpu_min": 2,
+   "decides": "whether speakable valence lives in the shared subspace or pre-exists in the naive construction",
+   "budget_wall_min": 5
+  },
+  {
+   "id": "D2",
+   "name": "denial-breaking as a binary self-report readout (40 prompts x 11 arms x 2 poles)",
+   "gpu_min": 13,
+   "decides": "whether the self-report channel has any trained-specific content on a fair, self-report-specific DV",
+   "budget_wall_min": 25
+  },
+  {
+   "id": "D3",
+   "name": "prompt-matched C6 with third-person analogues",
+   "gpu_min": 5,
+   "decides": "the C6 the pre-registration should have specified; removes the regime confound",
+   "budget_wall_min": 15
+  },
+  {
+   "id": "D4",
+   "name": "elevate R6 alignment + F3 inversion to a stated methods finding",
+   "gpu_min": 0,
+   "decides": "reframes three negative results as one positive contribution"
+  },
+  {
+   "id": "D5",
+   "name": "finish F7, report per-k p against the 12-random null",
+   "gpu_min": 0,
+   "decides": "bounds the k-robustness claim"
+  }
+ ],
+ "not_recommended": [
+  "more J-share cohort beyond n=100 (p already 0.0099)",
+  "RL replication on Qwen3-4B (correct but outside runway)",
+  "X.1 as originally specified (superseded by D2)"
+ ],
+ "j6_token_overlap_null": {
+  "source_file": "experiments/j6-crossmodel/results/j6_paired_baseline.json",
+  "not_in": "j6_summary.json['jaccard_baselines'] holds only naive random-pair baselines (0.0104, 0.0020)",
+  "null_definition": "same random vector decomposed under 2507-final lens vs Qwen3-4B public lens",
+  "n_pairs": 16,
+  "mean": 0.0877,
+  "sd": 0.0546,
+  "max": 0.2308,
+  "v_mold_jaccard": 0.1852,
+  "n_pairs_ge_v_mold": 1,
+  "perm_p": 0.118,
+  "verdict": "lexicon transfer NOT significant against the proper null; team retracted the claim; ordering transfer stands"
+ },
+ "cost_note": "gpu_min is the itemized grid at the repo's measured unit rates (decomposition 14.3 s/direction, atlas row 1.67 s, generation+judge 0.9 s); budget_wall_min adds model/lens load, judge round-trips, D2's 120-token generations (the 0.9 s rate was measured at 60 tokens), and D3's prompt-revision rounds. Corrected 2026-08-15: D1 had been stated as 15 min, an 8x overstatement against its own grid."
+}

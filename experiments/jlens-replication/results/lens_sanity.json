@@ -1,0 +1,700 @@
+{
+  "C1": {
+    "finite": true,
+    "source_layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "d_model": 2560,
+    "n_prompts": 479,
+    "load_seconds": 420.2
+  },
+  "C2_top_words_by_layer": {
+    "L0": [
+      "second",
+      "Intialized",
+      "headed",
+      "left",
+      "cents",
+      "itters",
+      "later",
+      "Second",
+      "leading",
+      "anches",
+      "ding",
+      "next"
+    ],
+    "L4": [
+      "ucas",
+      "aviest",
+      "oxide",
+      "arence",
+      "ocratic",
+      "cents",
+      "orce",
+      "ighthouse",
+      "anches",
+      "ocracy",
+      "parentId",
+      "ocrats"
+    ],
+    "L8": [
+      "ucas",
+      "ocracy",
+      "urga",
+      "Wiki",
+      "borough",
+      "wiki",
+      "roys",
+      "gypt",
+      "ocratic",
+      "ulers",
+      "udades",
+      "cano"
+    ],
+    "L12": [
+      "borough",
+      "izzes"
+    ],
+    "L16": [
+      "\u540d\u8bcd",
+      "\u540d\u79f0",
+      "\u9a8c\u8bc1",
+      "\u540d\u5b57",
+      "\u6587\u5b57",
+      "Wiki",
+      "ighthouse",
+      "\u7591\u95ee",
+      "izzes",
+      "\u62fc\u97f3",
+      "ystery",
+      "\u4e24\u53e5"
+    ],
+    "L20": [
+      "\u7b54\u6848",
+      "\u540d\u5b57",
+      "\u540d\u79f0",
+      "\u7684\u7b54\u6848",
+      "Answer",
+      "\u9a8c\u8bc1",
+      "\u6b63\u786e",
+      "\u4e24\u53e5",
+      "\u540d\u8bcd",
+      "phrase",
+      "\u56de\u7b54",
+      "\u662f\u4ec0\u4e48"
+    ],
+    "L24": [
+      "currency",
+      "\u8d27\u5e01",
+      "Currency",
+      "\u4eba\u6c11\u5e01"
+    ],
+    "L28": [
+      "\u610f\u5927\u5229",
+      "\u6b27\u5143",
+      "Italian",
+      "\u897f\u73ed\u7259",
+      "Italian",
+      "\u8461\u8404\u7259",
+      "\u8d27\u5e01",
+      "Currency",
+      "\u91d1\u5e01",
+      "currency",
+      "\u7c73\u5170",
+      "\u7f8e\u5143"
+    ],
+    "L32": [
+      "\u6b27\u5143",
+      "euro",
+      "\u610f\u5927\u5229",
+      "Italian",
+      "euros",
+      "Italian",
+      "\u897f\u73ed\u7259",
+      "Euro",
+      "Euros",
+      "Euro",
+      "EUR",
+      "franc"
+    ]
+  },
+  "C3_lens-eval-multihop.json_jlens": {
+    "n_scored": 25,
+    "pass_at": {
+      "1": 0.08,
+      "5": 0.44,
+      "10": 0.44,
+      "25": 0.6
+    },
+    "items": [
+      {
+        "name": "carnival-ocean",
+        "intermediate": "Brazil",
+        "best_rank": 525
+      },
+      {
+        "name": "amazon-language",
+        "intermediate": "Brazil",
+        "best_rank": 4
+      },
+      {
+        "name": "mars-color",
+        "intermediate": "Mars",
+        "best_rank": 37
+      },
+      {
+        "name": "spider-legs",
+        "intermediate": "spider",
+        "best_rank": 0
+      },
+      {
+        "name": "basketball-players",
+        "intermediate": "basketball",
+        "best_rank": 2
+      },
+      {
+        "name": "paper-continent",
+        "intermediate": "China",
+        "best_rank": 44
+      },
+      {
+        "name": "christmas-season",
+        "intermediate": "Christmas",
+        "best_rank": 19
+      },
+      {
+        "name": "osu-rival-mascot",
+        "intermediate": "Michigan",
+        "best_rank": 35
+      },
+      {
+        "name": "topeka-west",
+        "intermediate": "Kansas",
+        "best_rank": 0
+      },
+      {
+        "name": "atomic-79-symbol",
+        "intermediate": "gold",
+        "best_rank": 1
+      },
+      {
+        "name": "atomic-26-symbol",
+        "intermediate": "iron",
+        "best_rank": 3
+      },
+      {
+        "name": "atomic-29-symbol",
+        "intermediate": "copper",
+        "best_rank": 1
+      },
+      {
+        "name": "atomic-80-state",
+        "intermediate": "mercury",
+        "best_rank": 56
+      },
+      {
+        "name": "atomic-29-flame",
+        "intermediate": "copper",
+        "best_rank": 10
+      },
+      {
+        "name": "planet-3-moons",
+        "intermediate": "Earth",
+        "best_rank": 4
+      },
+      {
+        "name": "month-3-godof",
+        "intermediate": "March",
+        "best_rank": 258
+      },
+      {
+        "name": "spaceneedle-border",
+        "intermediate": "Seattle",
+        "best_rank": 100
+      },
+      {
+        "name": "rhyme-rain-neighbor",
+        "intermediate": "Spain",
+        "best_rank": 4
+      },
+      {
+        "name": "rhyme-door-doubled",
+        "intermediate": "four",
+        "best_rank": 18
+      },
+      {
+        "name": "rhyme-chair-flag",
+        "intermediate": "bear",
+        "best_rank": 1161
+      },
+      {
+        "name": "rhyme-spoon-orbit",
+        "intermediate": "moon",
+        "best_rank": 75
+      },
+      {
+        "name": "etym-wargod-month",
+        "intermediate": "March",
+        "best_rank": 3
+      },
+      {
+        "name": "etym-frigg-position",
+        "intermediate": "Friday",
+        "best_rank": 27
+      },
+      {
+        "name": "etym-saturn-position",
+        "intermediate": "Saturn",
+        "best_rank": 10
+      },
+      {
+        "name": "chem-photosynthesis-Z",
+        "intermediate": "oxygen",
+        "best_rank": 4
+      }
+    ]
+  },
+  "C3_lens-eval-multihop.json_logitlens": {
+    "n_scored": 25,
+    "pass_at": {
+      "1": 0.12,
+      "5": 0.36,
+      "10": 0.48,
+      "25": 0.6
+    },
+    "items": [
+      {
+        "name": "carnival-ocean",
+        "intermediate": "Brazil",
+        "best_rank": 1582
+      },
+      {
+        "name": "amazon-language",
+        "intermediate": "Brazil",
+        "best_rank": 5
+      },
+      {
+        "name": "mars-color",
+        "intermediate": "Mars",
+        "best_rank": 9
+      },
+      {
+        "name": "spider-legs",
+        "intermediate": "spider",
+        "best_rank": 0
+      },
+      {
+        "name": "basketball-players",
+        "intermediate": "basketball",
+        "best_rank": 13
+      },
+      {
+        "name": "paper-continent",
+        "intermediate": "China",
+        "best_rank": 189
+      },
+      {
+        "name": "christmas-season",
+        "intermediate": "Christmas",
+        "best_rank": 26
+      },
+      {
+        "name": "osu-rival-mascot",
+        "intermediate": "Michigan",
+        "best_rank": 319
+      },
+      {
+        "name": "topeka-west",
+        "intermediate": "Kansas",
+        "best_rank": 0
+      },
+      {
+        "name": "atomic-79-symbol",
+        "intermediate": "gold",
+        "best_rank": 0
+      },
+      {
+        "name": "atomic-26-symbol",
+        "intermediate": "iron",
+        "best_rank": 3
+      },
+      {
+        "name": "atomic-29-symbol",
+        "intermediate": "copper",
+        "best_rank": 2
+      },
+      {
+        "name": "atomic-80-state",
+        "intermediate": "mercury",
+        "best_rank": 209
+      },
+      {
+        "name": "atomic-29-flame",
+        "intermediate": "copper",
+        "best_rank": 9
+      },
+      {
+        "name": "planet-3-moons",
+        "intermediate": "Earth",
+        "best_rank": 3
+      },
+      {
+        "name": "month-3-godof",
+        "intermediate": "March",
+        "best_rank": 92
+      },
+      {
+        "name": "spaceneedle-border",
+        "intermediate": "Seattle",
+        "best_rank": 393
+      },
+      {
+        "name": "rhyme-rain-neighbor",
+        "intermediate": "Spain",
+        "best_rank": 13
+      },
+      {
+        "name": "rhyme-door-doubled",
+        "intermediate": "four",
+        "best_rank": 18
+      },
+      {
+        "name": "rhyme-chair-flag",
+        "intermediate": "bear",
+        "best_rank": 1284
+      },
+      {
+        "name": "rhyme-spoon-orbit",
+        "intermediate": "moon",
+        "best_rank": 29
+      },
+      {
+        "name": "etym-wargod-month",
+        "intermediate": "March",
+        "best_rank": 1
+      },
+      {
+        "name": "etym-frigg-position",
+        "intermediate": "Friday",
+        "best_rank": 29
+      },
+      {
+        "name": "etym-saturn-position",
+        "intermediate": "Saturn",
+        "best_rank": 3
+      },
+      {
+        "name": "chem-photosynthesis-Z",
+        "intermediate": "oxygen",
+        "best_rank": 4
+      }
+    ]
+  },
+  "C3_lens-eval-multilingual.json_jlens": {
+    "n_scored": 25,
+    "pass_at": {
+      "1": 0.12,
+      "5": 0.16,
+      "10": 0.24,
+      "25": 0.32
+    },
+    "items": [
+      {
+        "name": "spanish-opposite-big",
+        "intermediate": "Spanish",
+        "best_rank": 2495
+      },
+      {
+        "name": "french-season-summer",
+        "intermediate": "French",
+        "best_rank": 1
+      },
+      {
+        "name": "german-opposite-loud",
+        "intermediate": "German",
+        "best_rank": 486
+      },
+      {
+        "name": "chinese-color-banana",
+        "intermediate": "Chinese",
+        "best_rank": 1342
+      },
+      {
+        "name": "japanese-day-monday",
+        "intermediate": "Japanese",
+        "best_rank": 114
+      },
+      {
+        "name": "russian-opposite-heavy",
+        "intermediate": "Russian",
+        "best_rank": 161
+      },
+      {
+        "name": "italian-color-sky",
+        "intermediate": "Italian",
+        "best_rank": 1806
+      },
+      {
+        "name": "portuguese-season-spring",
+        "intermediate": "Portuguese",
+        "best_rank": 1584
+      },
+      {
+        "name": "arabic-color-blood",
+        "intermediate": "Arabic",
+        "best_rank": 0
+      },
+      {
+        "name": "korean-opposite-hot",
+        "intermediate": "Korean",
+        "best_rank": 5
+      },
+      {
+        "name": "dutch-opposite-big",
+        "intermediate": "Dutch",
+        "best_rank": 131
+      },
+      {
+        "name": "greek-color-sea",
+        "intermediate": "Greek",
+        "best_rank": 149
+      },
+      {
+        "name": "hindi-color-snow",
+        "intermediate": "Hindi",
+        "best_rank": 183
+      },
+      {
+        "name": "polish-opposite-wet",
+        "intermediate": "Polish",
+        "best_rank": 294
+      },
+      {
+        "name": "turkish-opposite-fast",
+        "intermediate": "Turkish",
+        "best_rank": 212
+      },
+      {
+        "name": "swedish-opposite-hard",
+        "intermediate": "Swedish",
+        "best_rank": 0
+      },
+      {
+        "name": "hebrew-color-moon",
+        "intermediate": "Hebrew",
+        "best_rank": 18
+      },
+      {
+        "name": "finnish-season-summer",
+        "intermediate": "Finnish",
+        "best_rank": 6
+      },
+      {
+        "name": "danish-color-ocean",
+        "intermediate": "Danish",
+        "best_rank": 20
+      },
+      {
+        "name": "norwegian-season-spring",
+        "intermediate": "Norwegian",
+        "best_rank": 0
+      },
+      {
+        "name": "czech-opposite-tall",
+        "intermediate": "Czech",
+        "best_rank": 287
+      },
+      {
+        "name": "thai-color-blood",
+        "intermediate": "Thai",
+        "best_rank": 2821
+      },
+      {
+        "name": "vietnamese-opposite-heavy",
+        "intermediate": "Vietnamese",
+        "best_rank": 109
+      },
+      {
+        "name": "indonesian-color-grass",
+        "intermediate": "Indonesian",
+        "best_rank": 4625
+      },
+      {
+        "name": "romanian-opposite-young",
+        "intermediate": "Romanian",
+        "best_rank": 57
+      }
+    ]
+  },
+  "C3_lens-eval-multilingual.json_logitlens": {
+    "n_scored": 25,
+    "pass_at": {
+      "1": 0.0,
+      "5": 0.04,
+      "10": 0.04,
+      "25": 0.16
+    },
+    "items": [
+      {
+        "name": "spanish-opposite-big",
+        "intermediate": "Spanish",
+        "best_rank": 3525
+      },
+      {
+        "name": "french-season-summer",
+        "intermediate": "French",
+        "best_rank": 44
+      },
+      {
+        "name": "german-opposite-loud",
+        "intermediate": "German",
+        "best_rank": 4966
+      },
+      {
+        "name": "chinese-color-banana",
+        "intermediate": "Chinese",
+        "best_rank": 393
+      },
+      {
+        "name": "japanese-day-monday",
+        "intermediate": "Japanese",
+        "best_rank": 11
+      },
+      {
+        "name": "russian-opposite-heavy",
+        "intermediate": "Russian",
+        "best_rank": 899
+      },
+      {
+        "name": "italian-color-sky",
+        "intermediate": "Italian",
+        "best_rank": 172
+      },
+      {
+        "name": "portuguese-season-spring",
+        "intermediate": "Portuguese",
+        "best_rank": 4509
+      },
+      {
+        "name": "arabic-color-blood",
+        "intermediate": "Arabic",
+        "best_rank": 979
+      },
+      {
+        "name": "korean-opposite-hot",
+        "intermediate": "Korean",
+        "best_rank": 24
+      },
+      {
+        "name": "dutch-opposite-big",
+        "intermediate": "Dutch",
+        "best_rank": 475
+      },
+      {
+        "name": "greek-color-sea",
+        "intermediate": "Greek",
+        "best_rank": 194
+      },
+      {
+        "name": "hindi-color-snow",
+        "intermediate": "Hindi",
+        "best_rank": 4927
+      },
+      {
+        "name": "polish-opposite-wet",
+        "intermediate": "Polish",
+        "best_rank": 581
+      },
+      {
+        "name": "turkish-opposite-fast",
+        "intermediate": "Turkish",
+        "best_rank": 3400
+      },
+      {
+        "name": "swedish-opposite-hard",
+        "intermediate": "Swedish",
+        "best_rank": 73
+      },
+      {
+        "name": "hebrew-color-moon",
+        "intermediate": "Hebrew",
+        "best_rank": 199
+      },
+      {
+        "name": "finnish-season-summer",
+        "intermediate": "Finnish",
+        "best_rank": 15
+      },
+      {
+        "name": "danish-color-ocean",
+        "intermediate": "Danish",
+        "best_rank": 177
+      },
+      {
+        "name": "norwegian-season-spring",
+        "intermediate": "Norwegian",
+        "best_rank": 1
+      },
+      {
+        "name": "czech-opposite-tall",
+        "intermediate": "Czech",
+        "best_rank": 274
+      },
+      {
+        "name": "thai-color-blood",
+        "intermediate": "Thai",
+        "best_rank": 5772
+      },
+      {
+        "name": "vietnamese-opposite-heavy",
+        "intermediate": "Vietnamese",
+        "best_rank": 66
+      },
+      {
+        "name": "indonesian-color-grass",
+        "intermediate": "Indonesian",
+        "best_rank": 859
+      },
+      {
+        "name": "romanian-opposite-young",
+        "intermediate": "Romanian",
+        "best_rank": 631
+      }
+    ]
+  },
+  "total_seconds": 572.7
+}

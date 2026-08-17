@@ -1,0 +1,134 @@
+{
+ "k": 16,
+ "pairs": {
+  "rand_gold0": {
+   "jaccard": 0.14285714285714285,
+   "shared": [
+    "epy",
+    "vi",
+    "\u2510",
+    "\u4eec\u7684"
+   ]
+  },
+  "rand_gold1": {
+   "jaccard": 0.14285714285714285,
+   "shared": [
+    "vision",
+    "\u2026the",
+    "\u53ed",
+    "\u8d4c\u535a"
+   ]
+  },
+  "rand_gold2": {
+   "jaccard": 0.03225806451612903,
+   "shared": [
+    "\u2022"
+   ]
+  },
+  "rand_gold3": {
+   "jaccard": 0.06666666666666667,
+   "shared": [
+    "ney",
+    "\u5189"
+   ]
+  },
+  "rand_gold4": {
+   "jaccard": 0.10344827586206896,
+   "shared": [
+    ",",
+    ";",
+    "rax"
+   ]
+  },
+  "rand_gold5": {
+   "jaccard": 0.03225806451612903,
+   "shared": [
+    "\u4e4f\u529b"
+   ]
+  },
+  "rand_gold6": {
+   "jaccard": 0.03225806451612903,
+   "shared": [
+    "\u75be\u75c5"
+   ]
+  },
+  "rand_gold7": {
+   "jaccard": 0.03225806451612903,
+   "shared": [
+    "lin"
+   ]
+  },
+  "rand_mold0": {
+   "jaccard": 0.23076923076923078,
+   "shared": [
+    ",d",
+    "ifest",
+    "ise",
+    "obao",
+    "patri",
+    "\u8058\u8bf7"
+   ]
+  },
+  "rand_mold1": {
+   "jaccard": 0.03225806451612903,
+   "shared": [
+    "ent"
+   ]
+  },
+  "rand_mold2": {
+   "jaccard": 0.1111111111111111,
+   "shared": [
+    "_",
+    "npc",
+    "\ufffd"
+   ]
+  },
+  "rand_mold3": {
+   "jaccard": 0.06666666666666667,
+   "shared": [
+    "());",
+    "oves"
+   ]
+  },
+  "rand_mold4": {
+   "jaccard": 0.10344827586206896,
+   "shared": [
+    "corn",
+    "yourselves",
+    "\u7b97\u662f"
+   ]
+  },
+  "rand_mold5": {
+   "jaccard": 0.06666666666666667,
+   "shared": [
+    ".net",
+    "logged"
+   ]
+  },
+  "rand_mold6": {
+   "jaccard": 0.10344827586206896,
+   "shared": [
+    "",
+    "ified",
+    "ystone"
+   ]
+  },
+  "rand_mold7": {
+   "jaccard": 0.10344827586206896,
+   "shared": [
+    "_guard",
+    "uned",
+    "\u738b"
+   ]
+  }
+ },
+ "baseline": {
+  "mean": 0.08766737835147179,
+  "sd": 0.0546441615428185,
+  "min": 0.03225806451612903,
+  "max": 0.23076923076923078,
+  "n": 16,
+  "n_ge_0185": 1,
+  "meaning": "same random vector decomposed under 2507-final lens vs Qwen3-4B public lens \u2014 the correct null for the across-model axis token overlap"
+ }
+}

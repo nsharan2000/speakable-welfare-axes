@@ -1,0 +1,25 @@
+# Base environment — the container's system Python.
+#
+# Every committed result was produced on a DGX Spark (GB10, aarch64) inside
+# the container image vllm/vllm-openai:qwen3_5-aarc64-cu130, Python 3.12.
+# These are the versions that were actually installed there; see
+# important-info.md for the full machine notes.
+#
+# NOTE: the Jacobian-lens work does NOT run in this environment. It needs a
+# newer transformers than the base image ships, and lives in a separate venv —
+# see requirements-jlens.txt. Mixing them silently changes tokenizer/model
+# behaviour, so keep them apart.
+#
+# aarch64 + CUDA 13.0 wheels are not on PyPI for every package; on the Spark
+# these came from the base image rather than pip. On other hardware, install
+# the torch build that matches your CUDA and let the rest resolve.
+
+torch==2.10.0            # +cu130 on the Spark; CUDA-capability 12.1 warning is benign
+transformers==4.57.6
+numpy==2.2.6
+scipy>=1.11              # NOT in the base image — dm_stats falls back to a pure-numpy
+                         # Student-t if it is missing, so install it for exact parity
+matplotlib>=3.8          # figures only (experiments/figures/make_figures.py)
+accelerate
+einops
+huggingface_hub<1.0      # repo lesson: the 1.0 CLI rename breaks hf-release/upload.sh

@@ -1,0 +1,39 @@
+{
+  "T1_config": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "n_layers": 36,
+    "d_model": 2560,
+    "vocab": 151936,
+    "tie_word_embeddings": true,
+    "load_seconds": 49.2
+  },
+  "T2_capture": {
+    "layer": 18,
+    "shape": [
+      1,
+      10,
+      2560
+    ]
+  },
+  "T3_planted_signal": {
+    "alpha": 10.0,
+    "recovered_projection": 10.002,
+    "off_direction_norm": 0.0817,
+    "pass": true
+  },
+  "T4_ablation": {
+    "component_before": -1.1557,
+    "component_after": 0.0008,
+    "pass": true
+  },
+  "T5_lens_matches_head": {
+    "max_abs_diff": 0.0625,
+    "argmax_match": true,
+    "pass": true
+  },
+  "T6_generation": {
+    "seconds": 2.2,
+    "reply_first_200": "I don't have feelings like humans do, so I don't experience emotions such as happiness or sadness. But I'm here and ready to help you with whatever you need! How can I assist you today? \ud83d\ude0a"
+  },
+  "all_pass": true
+}

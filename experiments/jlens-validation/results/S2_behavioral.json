@@ -1,0 +1,5135 @@
+{
+  "rows": [
+    {
+      "layer": 4,
+      "alpha": 0.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "baseline",
+      "fr_mass": -31.192935943603516,
+      "en_mass": 0.0,
+      "frname_mass": -39.48976516723633,
+      "enname_mass": -43.311710357666016
+    },
+    {
+      "layer": 4,
+      "alpha": 1.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.315248489379883,
+      "en_mass": 0.0,
+      "frname_mass": -39.615089416503906,
+      "enname_mass": -43.46796798706055
+    },
+    {
+      "layer": 4,
+      "alpha": 2.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.559194564819336,
+      "en_mass": 0.0,
+      "frname_mass": -39.74441909790039,
+      "enname_mass": -43.68672180175781
+    },
+    {
+      "layer": 4,
+      "alpha": 4.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.31269645690918,
+      "en_mass": 0.0,
+      "frname_mass": -39.55224609375,
+      "enname_mass": -43.43663787841797
+    },
+    {
+      "layer": 4,
+      "alpha": 8.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.4434757232666,
+      "en_mass": 0.0,
+      "frname_mass": -39.80660629272461,
+      "enname_mass": -43.74913024902344
+    },
+    {
+      "layer": 4,
+      "alpha": 16.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.45265769958496,
+      "en_mass": 0.0,
+      "frname_mass": -39.812156677246094,
+      "enname_mass": -43.65544509887695
+    },
+    {
+      "layer": 4,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -8.212230682373047,
+      "en_mass": -0.000278472900390625,
+      "frname_mass": -31.382587432861328,
+      "enname_mass": -33.18688201904297
+    },
+    {
+      "layer": 4,
+      "alpha": 0.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "baseline",
+      "fr_mass": -27.22900390625,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 4,
+      "alpha": 1.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.354026794433594,
+      "en_mass": 0.0,
+      "frname_mass": -31.409099578857422,
+      "enname_mass": -35.43730926513672
+    },
+    {
+      "layer": 4,
+      "alpha": 2.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.47882080078125,
+      "en_mass": 0.0,
+      "frname_mass": -31.779315948486328,
+      "enname_mass": -35.56229782104492
+    },
+    {
+      "layer": 4,
+      "alpha": 4.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.48159408569336,
+      "en_mass": 0.0,
+      "frname_mass": -31.783592224121094,
+      "enname_mass": -35.74977493286133
+    },
+    {
+      "layer": 4,
+      "alpha": 8.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.480886459350586,
+      "en_mass": 0.0,
+      "frname_mass": -31.477123260498047,
+      "enname_mass": -35.624794006347656
+    },
+    {
+      "layer": 4,
+      "alpha": 16.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -26.85489273071289,
+      "en_mass": 0.0,
+      "frname_mass": -29.613222122192383,
+      "enname_mass": -34.62476348876953
+    },
+    {
+      "layer": 4,
+      "alpha": 32.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -6.866455078125e-05,
+      "en_mass": -10.254600524902344,
+      "frname_mass": -19.599824905395508,
+      "enname_mass": -27.508289337158203
+    },
+    {
+      "layer": 4,
+      "alpha": 0.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "baseline",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58347702026367,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 4,
+      "alpha": 1.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.6452522277832,
+      "enname_mass": -34.062252044677734
+    },
+    {
+      "layer": 4,
+      "alpha": 2.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -6.866455078125e-05,
+      "en_mass": -6.866455078125e-05,
+      "frname_mass": -35.39530944824219,
+      "enname_mass": -33.812286376953125
+    },
+    {
+      "layer": 4,
+      "alpha": 4.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -0.00014495849609375,
+      "en_mass": -0.00014495849609375,
+      "frname_mass": -34.96117401123047,
+      "enname_mass": -33.37483215332031
+    },
+    {
+      "layer": 4,
+      "alpha": 8.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -0.000629425048828125,
+      "en_mass": -0.000629425048828125,
+      "frname_mass": -34.72767639160156,
+      "enname_mass": -33.125267028808594
+    },
+    {
+      "layer": 4,
+      "alpha": 16.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -0.0020904541015625,
+      "en_mass": -0.0020904541015625,
+      "frname_mass": -34.5019645690918,
+      "enname_mass": -32.75163269042969
+    },
+    {
+      "layer": 4,
+      "alpha": 32.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -9.958122253417969,
+      "en_mass": -10.496265411376953,
+      "frname_mass": -20.586423873901367,
+      "enname_mass": -23.248245239257812
+    },
+    {
+      "layer": 4,
+      "alpha": 0.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "baseline",
+      "fr_mass": -23.12218475341797,
+      "en_mass": -22.9086856842041,
+      "frname_mass": -34.183536529541016,
+      "enname_mass": -31.77914047241211
+    },
+    {
+      "layer": 4,
+      "alpha": 1.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.12060546875,
+      "en_mass": -22.90912437438965,
+      "frname_mass": -34.222206115722656,
+      "enname_mass": -31.840225219726562
+    },
+    {
+      "layer": 4,
+      "alpha": 2.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.128854751586914,
+      "en_mass": -22.917865753173828,
+      "frname_mass": -34.195045471191406,
+      "enname_mass": -31.84667205810547
+    },
+    {
+      "layer": 4,
+      "alpha": 4.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -22.87660789489746,
+      "en_mass": -22.698381423950195,
+      "frname_mass": -34.155235290527344,
+      "enname_mass": -31.776607513427734
+    },
+    {
+      "layer": 4,
+      "alpha": 8.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -22.74748992919922,
+      "en_mass": -22.569643020629883,
+      "frname_mass": -34.14100646972656,
+      "enname_mass": -31.644512176513672
+    },
+    {
+      "layer": 4,
+      "alpha": 16.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -20.511362075805664,
+      "en_mass": -20.457300186157227,
+      "frname_mass": -33.342796325683594,
+      "enname_mass": -30.889266967773438
+    },
+    {
+      "layer": 4,
+      "alpha": 32.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -12.149017333984375,
+      "en_mass": -13.671098709106445,
+      "frname_mass": -19.30429458618164,
+      "enname_mass": -21.830615997314453
+    },
+    {
+      "layer": 4,
+      "alpha": 0.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "baseline",
+      "fr_mass": -29.1904239654541,
+      "en_mass": -28.391862869262695,
+      "frname_mass": -38.417701721191406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 4,
+      "alpha": 1.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.190717697143555,
+      "en_mass": -28.391267776489258,
+      "frname_mass": -38.480224609375,
+      "enname_mass": -38.3124885559082
+    },
+    {
+      "layer": 4,
+      "alpha": 2.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.190683364868164,
+      "en_mass": -28.409887313842773,
+      "frname_mass": -38.386474609375,
+      "enname_mass": -38.3124885559082
+    },
+    {
+      "layer": 4,
+      "alpha": 4.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -28.822336196899414,
+      "en_mass": -28.103662490844727,
+      "frname_mass": -38.13813781738281,
+      "enname_mass": -37.9999885559082
+    },
+    {
+      "layer": 4,
+      "alpha": 8.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -28.08141326904297,
+      "en_mass": -27.430973052978516,
+      "frname_mass": -37.47266387939453,
+      "enname_mass": -37.31248474121094
+    },
+    {
+      "layer": 4,
+      "alpha": 16.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -27.715471267700195,
+      "en_mass": -27.035879135131836,
+      "frname_mass": -37.014251708984375,
+      "enname_mass": -36.9374885559082
+    },
+    {
+      "layer": 4,
+      "alpha": 32.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -0.014171600341796875,
+      "en_mass": -18.28551483154297,
+      "frname_mass": -24.38358497619629,
+      "enname_mass": -29.826663970947266
+    },
+    {
+      "layer": 4,
+      "alpha": 0.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "baseline",
+      "fr_mass": -28.979509353637695,
+      "en_mass": 0.0,
+      "frname_mass": -35.634979248046875,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 4,
+      "alpha": 1.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.855022430419922,
+      "en_mass": 0.0,
+      "frname_mass": -35.57411193847656,
+      "enname_mass": -37.312442779541016
+    },
+    {
+      "layer": 4,
+      "alpha": 2.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.9771785736084,
+      "en_mass": 0.0,
+      "frname_mass": -35.45001983642578,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 4,
+      "alpha": 4.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.727333068847656,
+      "en_mass": 0.0,
+      "frname_mass": -35.021888732910156,
+      "enname_mass": -36.99994659423828
+    },
+    {
+      "layer": 4,
+      "alpha": 8.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.6024227142334,
+      "en_mass": 0.0,
+      "frname_mass": -34.58354949951172,
+      "enname_mass": -36.81245422363281
+    },
+    {
+      "layer": 4,
+      "alpha": 16.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.225326538085938,
+      "en_mass": 0.0,
+      "frname_mass": -33.655277252197266,
+      "enname_mass": -36.24995803833008
+    },
+    {
+      "layer": 4,
+      "alpha": 32.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -0.16021728515625,
+      "en_mass": -16.361324310302734,
+      "frname_mass": -26.30948257446289,
+      "enname_mass": -29.09720230102539
+    },
+    {
+      "layer": 4,
+      "alpha": 0.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "baseline",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.61709976196289,
+      "enname_mass": -38.68723678588867
+    },
+    {
+      "layer": 4,
+      "alpha": 1.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.70582580566406,
+      "enname_mass": -38.7497444152832
+    },
+    {
+      "layer": 4,
+      "alpha": 2.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.63593292236328,
+      "enname_mass": -38.6872444152832
+    },
+    {
+      "layer": 4,
+      "alpha": 4.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.12477493286133,
+      "enname_mass": -38.312232971191406
+    },
+    {
+      "layer": 4,
+      "alpha": 8.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -38.69258117675781,
+      "enname_mass": -37.999755859375
+    },
+    {
+      "layer": 4,
+      "alpha": 16.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -37.78083419799805,
+      "enname_mass": -37.437294006347656
+    },
+    {
+      "layer": 4,
+      "alpha": 32.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -18.40477180480957,
+      "en_mass": -18.48686981201172,
+      "frname_mass": -27.44205093383789,
+      "enname_mass": -30.5
+    },
+    {
+      "layer": 4,
+      "alpha": 0.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "baseline",
+      "fr_mass": -26.469688415527344,
+      "en_mass": 0.0,
+      "frname_mass": -35.416481018066406,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 4,
+      "alpha": 1.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.09670066833496,
+      "en_mass": 0.0,
+      "frname_mass": -35.166351318359375,
+      "enname_mass": -33.68724060058594
+    },
+    {
+      "layer": 4,
+      "alpha": 2.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.21605682373047,
+      "en_mass": 0.0,
+      "frname_mass": -35.10805892944336,
+      "enname_mass": -33.62474822998047
+    },
+    {
+      "layer": 4,
+      "alpha": 4.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -25.968351364135742,
+      "en_mass": 0.0,
+      "frname_mass": -34.9219856262207,
+      "enname_mass": -33.49971389770508
+    },
+    {
+      "layer": 4,
+      "alpha": 8.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -25.837080001831055,
+      "en_mass": 0.0,
+      "frname_mass": -34.54785919189453,
+      "enname_mass": -33.12471008300781
+    },
+    {
+      "layer": 4,
+      "alpha": 16.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -25.204710006713867,
+      "en_mass": -3.814697265625e-06,
+      "frname_mass": -33.4988899230957,
+      "enname_mass": -32.18718338012695
+    },
+    {
+      "layer": 4,
+      "alpha": 32.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -3.4332275390625e-05,
+      "en_mass": -14.371452331542969,
+      "frname_mass": -21.187084197998047,
+      "enname_mass": -28.87458038330078
+    },
+    {
+      "layer": 4,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "generation",
+      "gen_base": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from oceans",
+      "gen_steer": "The water cycle is the continuous movement of water on, above, and below the Earth's surface, involving evaporation, condensation, precipitation, and collection. Water evaporates from oceans and land,",
+      "frenchness_base": 0.0,
+      "frenchness_steer": 0.0
+    },
+    {
+      "layer": 8,
+      "alpha": 0.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "baseline",
+      "fr_mass": -31.192935943603516,
+      "en_mass": 0.0,
+      "frname_mass": -39.48976516723633,
+      "enname_mass": -43.311710357666016
+    },
+    {
+      "layer": 8,
+      "alpha": 1.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.06633758544922,
+      "en_mass": 0.0,
+      "frname_mass": -39.30561828613281,
+      "enname_mass": -43.155426025390625
+    },
+    {
+      "layer": 8,
+      "alpha": 2.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.061906814575195,
+      "en_mass": 0.0,
+      "frname_mass": -39.247196197509766,
+      "enname_mass": -43.061767578125
+    },
+    {
+      "layer": 8,
+      "alpha": 4.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.068849563598633,
+      "en_mass": 0.0,
+      "frname_mass": -39.25971984863281,
+      "enname_mass": -43.218074798583984
+    },
+    {
+      "layer": 8,
+      "alpha": 8.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -5.0026702880859375,
+      "en_mass": -12.25670051574707,
+      "frname_mass": -30.515846252441406,
+      "enname_mass": -34.00535202026367
+    },
+    {
+      "layer": 8,
+      "alpha": 16.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -21.225873947143555,
+      "frname_mass": -30.75851821899414,
+      "enname_mass": -36.84288024902344
+    },
+    {
+      "layer": 8,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -20.986095428466797,
+      "frname_mass": -29.42914390563965,
+      "enname_mass": -35.99917221069336
+    },
+    {
+      "layer": 8,
+      "alpha": 0.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "baseline",
+      "fr_mass": -27.22900390625,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 8,
+      "alpha": 1.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.3518009185791,
+      "en_mass": 0.0,
+      "frname_mass": -31.160015106201172,
+      "enname_mass": -35.312294006347656
+    },
+    {
+      "layer": 8,
+      "alpha": 2.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.480064392089844,
+      "en_mass": 0.0,
+      "frname_mass": -31.414152145385742,
+      "enname_mass": -35.68730545043945
+    },
+    {
+      "layer": 8,
+      "alpha": 4.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.357608795166016,
+      "en_mass": 0.0,
+      "frname_mass": -31.230789184570312,
+      "enname_mass": -35.874794006347656
+    },
+    {
+      "layer": 8,
+      "alpha": 8.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -15.234373092651367,
+      "frname_mass": -22.720182418823242,
+      "enname_mass": -29.826263427734375
+    },
+    {
+      "layer": 8,
+      "alpha": 16.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -16.256385803222656,
+      "frname_mass": -22.249250411987305,
+      "enname_mass": -30.591737747192383
+    },
+    {
+      "layer": 8,
+      "alpha": 32.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -19.586450576782227,
+      "frname_mass": -24.104106903076172,
+      "enname_mass": -33.37409591674805
+    },
+    {
+      "layer": 8,
+      "alpha": 0.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "baseline",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58347702026367,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 8,
+      "alpha": 1.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.60710906982422,
+      "enname_mass": -33.9997444152832
+    },
+    {
+      "layer": 8,
+      "alpha": 2.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.56669998168945,
+      "enname_mass": -33.999755859375
+    },
+    {
+      "layer": 8,
+      "alpha": 4.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -7.2479248046875e-05,
+      "en_mass": -7.2479248046875e-05,
+      "frname_mass": -35.16717529296875,
+      "enname_mass": -33.687294006347656
+    },
+    {
+      "layer": 8,
+      "alpha": 8.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -13.27674674987793,
+      "en_mass": -14.375476837158203,
+      "frname_mass": -23.795555114746094,
+      "enname_mass": -27.69098663330078
+    },
+    {
+      "layer": 8,
+      "alpha": 16.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -11.103572845458984,
+      "en_mass": -14.262866973876953,
+      "frname_mass": -22.369823455810547,
+      "enname_mass": -26.894887924194336
+    },
+    {
+      "layer": 8,
+      "alpha": 32.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -10.74238395690918,
+      "en_mass": -15.001016616821289,
+      "frname_mass": -22.48373794555664,
+      "enname_mass": -26.824064254760742
+    },
+    {
+      "layer": 8,
+      "alpha": 0.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "baseline",
+      "fr_mass": -23.12218475341797,
+      "en_mass": -22.9086856842041,
+      "frname_mass": -34.183536529541016,
+      "enname_mass": -31.77914047241211
+    },
+    {
+      "layer": 8,
+      "alpha": 1.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.122055053710938,
+      "en_mass": -22.902917861938477,
+      "frname_mass": -34.22158432006836,
+      "enname_mass": -31.779232025146484
+    },
+    {
+      "layer": 8,
+      "alpha": 2.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.249799728393555,
+      "en_mass": -23.020437240600586,
+      "frname_mass": -34.178836822509766,
+      "enname_mass": -31.784194946289062
+    },
+    {
+      "layer": 8,
+      "alpha": 4.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.496278762817383,
+      "en_mass": -23.222007751464844,
+      "frname_mass": -34.00335693359375,
+      "enname_mass": -31.665538787841797
+    },
+    {
+      "layer": 8,
+      "alpha": 8.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -13.573583602905273,
+      "en_mass": -15.119661331176758,
+      "frname_mass": -20.733482360839844,
+      "enname_mass": -24.369098663330078
+    },
+    {
+      "layer": 8,
+      "alpha": 16.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -14.015073776245117,
+      "en_mass": -16.13259506225586,
+      "frname_mass": -20.622211456298828,
+      "enname_mass": -26.316146850585938
+    },
+    {
+      "layer": 8,
+      "alpha": 32.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -13.336034774780273,
+      "en_mass": -15.667163848876953,
+      "frname_mass": -20.095870971679688,
+      "enname_mass": -26.429161071777344
+    },
+    {
+      "layer": 8,
+      "alpha": 0.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "baseline",
+      "fr_mass": -29.1904239654541,
+      "en_mass": -28.391862869262695,
+      "frname_mass": -38.417701721191406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 8,
+      "alpha": 1.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.311382293701172,
+      "en_mass": -28.46328353881836,
+      "frname_mass": -38.407901763916016,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 8,
+      "alpha": 2.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -28.942920684814453,
+      "en_mass": -28.093393325805664,
+      "frname_mass": -38.095436096191406,
+      "enname_mass": -38.0624885559082
+    },
+    {
+      "layer": 8,
+      "alpha": 4.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -28.951278686523438,
+      "en_mass": -28.064943313598633,
+      "frname_mass": -38.07573318481445,
+      "enname_mass": -38.06249237060547
+    },
+    {
+      "layer": 8,
+      "alpha": 8.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -0.07889175415039062,
+      "en_mass": -18.9171142578125,
+      "frname_mass": -25.201988220214844,
+      "enname_mass": -31.891376495361328
+    },
+    {
+      "layer": 8,
+      "alpha": 16.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -21.923383712768555,
+      "frname_mass": -30.520523071289062,
+      "enname_mass": -35.2495002746582
+    },
+    {
+      "layer": 8,
+      "alpha": 32.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -20.819988250732422,
+      "frname_mass": -30.087949752807617,
+      "enname_mass": -34.374244689941406
+    },
+    {
+      "layer": 8,
+      "alpha": 0.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "baseline",
+      "fr_mass": -28.979509353637695,
+      "en_mass": 0.0,
+      "frname_mass": -35.634979248046875,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 8,
+      "alpha": 1.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.099674224853516,
+      "en_mass": 0.0,
+      "frname_mass": -35.57438659667969,
+      "enname_mass": -37.37493896484375
+    },
+    {
+      "layer": 8,
+      "alpha": 2.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.102548599243164,
+      "en_mass": 0.0,
+      "frname_mass": -35.51799392700195,
+      "enname_mass": -37.562442779541016
+    },
+    {
+      "layer": 8,
+      "alpha": 4.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.475692749023438,
+      "en_mass": 0.0,
+      "frname_mass": -35.77880859375,
+      "enname_mass": -38.31243896484375
+    },
+    {
+      "layer": 8,
+      "alpha": 8.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -5.7220458984375e-05,
+      "en_mass": -17.240224838256836,
+      "frname_mass": -27.79214096069336,
+      "enname_mass": -32.1245231628418
+    },
+    {
+      "layer": 8,
+      "alpha": 16.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -18.113882064819336,
+      "frname_mass": -27.75634002685547,
+      "enname_mass": -33.18663787841797
+    },
+    {
+      "layer": 8,
+      "alpha": 32.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -18.73879623413086,
+      "frname_mass": -27.428836822509766,
+      "enname_mass": -33.31130599975586
+    },
+    {
+      "layer": 8,
+      "alpha": 0.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "baseline",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.61709976196289,
+      "enname_mass": -38.68723678588867
+    },
+    {
+      "layer": 8,
+      "alpha": 1.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.327667236328125,
+      "enname_mass": -38.43724822998047
+    },
+    {
+      "layer": 8,
+      "alpha": 2.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.54230499267578,
+      "enname_mass": -38.624755859375
+    },
+    {
+      "layer": 8,
+      "alpha": 4.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.57173538208008,
+      "enname_mass": -38.749794006347656
+    },
+    {
+      "layer": 8,
+      "alpha": 8.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -19.982309341430664,
+      "en_mass": -20.374431610107422,
+      "frname_mass": -30.696880340576172,
+      "enname_mass": -35.12492370605469
+    },
+    {
+      "layer": 8,
+      "alpha": 16.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -16.243101119995117,
+      "en_mass": -19.617935180664062,
+      "frname_mass": -29.407386779785156,
+      "enname_mass": -34.37482452392578
+    },
+    {
+      "layer": 8,
+      "alpha": 32.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -15.005584716796875,
+      "en_mass": -19.114601135253906,
+      "frname_mass": -28.51156997680664,
+      "enname_mass": -33.312339782714844
+    },
+    {
+      "layer": 8,
+      "alpha": 0.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "baseline",
+      "fr_mass": -26.469688415527344,
+      "en_mass": 0.0,
+      "frname_mass": -35.416481018066406,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 8,
+      "alpha": 1.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.467897415161133,
+      "en_mass": 0.0,
+      "frname_mass": -35.35853958129883,
+      "enname_mass": -33.9997444152832
+    },
+    {
+      "layer": 8,
+      "alpha": 2.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.469573974609375,
+      "en_mass": 0.0,
+      "frname_mass": -35.240352630615234,
+      "enname_mass": -33.937255859375
+    },
+    {
+      "layer": 8,
+      "alpha": 4.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.841176986694336,
+      "en_mass": 0.0,
+      "frname_mass": -35.37897872924805,
+      "enname_mass": -34.31226348876953
+    },
+    {
+      "layer": 8,
+      "alpha": 8.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -16.62256622314453,
+      "frname_mass": -22.96036720275879,
+      "enname_mass": -31.90525245666504
+    },
+    {
+      "layer": 8,
+      "alpha": 16.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -0.000141143798828125,
+      "en_mass": -18.247446060180664,
+      "frname_mass": -25.013450622558594,
+      "enname_mass": -34.18479919433594
+    },
+    {
+      "layer": 8,
+      "alpha": 32.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -0.00091552734375,
+      "en_mass": -18.494203567504883,
+      "frname_mass": -23.71198272705078,
+      "enname_mass": -32.59172821044922
+    },
+    {
+      "layer": 8,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "generation",
+      "gen_base": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from oceans",
+      "gen_steer": "Le cycle de l\u2019eau commence par l\u2019\u00e9vaporation des eaux des oc\u00e9ans, des lacs et des sols, qui se transforme en vapeur et s\u2019\u00e9l\u00e8ve",
+      "frenchness_base": 0.0,
+      "frenchness_steer": 0.6652864044168392
+    },
+    {
+      "layer": 11,
+      "alpha": 0.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "baseline",
+      "fr_mass": -31.192935943603516,
+      "en_mass": 0.0,
+      "frname_mass": -39.48976516723633,
+      "enname_mass": -43.311710357666016
+    },
+    {
+      "layer": 11,
+      "alpha": 1.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.18790054321289,
+      "en_mass": 0.0,
+      "frname_mass": -39.31344985961914,
+      "enname_mass": -43.28050994873047
+    },
+    {
+      "layer": 11,
+      "alpha": 2.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.18716812133789,
+      "en_mass": 0.0,
+      "frname_mass": -39.31315231323242,
+      "enname_mass": -43.24928283691406
+    },
+    {
+      "layer": 11,
+      "alpha": 4.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.060285568237305,
+      "en_mass": 0.0,
+      "frname_mass": -39.25475311279297,
+      "enname_mass": -43.218021392822266
+    },
+    {
+      "layer": 11,
+      "alpha": 8.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -6.490470886230469,
+      "en_mass": -17.000112533569336,
+      "frname_mass": -31.22308349609375,
+      "enname_mass": -35.124996185302734
+    },
+    {
+      "layer": 11,
+      "alpha": 16.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -21.21955108642578,
+      "frname_mass": -31.313396453857422,
+      "enname_mass": -36.87372589111328
+    },
+    {
+      "layer": 11,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -21.794126510620117,
+      "frname_mass": -30.981843948364258,
+      "enname_mass": -36.90542984008789
+    },
+    {
+      "layer": 11,
+      "alpha": 0.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "baseline",
+      "fr_mass": -27.22900390625,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 11,
+      "alpha": 1.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.35169219970703,
+      "en_mass": 0.0,
+      "frname_mass": -31.222436904907227,
+      "enname_mass": -35.437294006347656
+    },
+    {
+      "layer": 11,
+      "alpha": 2.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.852067947387695,
+      "en_mass": 0.0,
+      "frname_mass": -31.724361419677734,
+      "enname_mass": -35.81230163574219
+    },
+    {
+      "layer": 11,
+      "alpha": 4.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -28.102073669433594,
+      "en_mass": 0.0,
+      "frname_mass": -31.8524112701416,
+      "enname_mass": -36.124794006347656
+    },
+    {
+      "layer": 11,
+      "alpha": 8.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -6.4849853515625e-05,
+      "en_mass": -14.238073348999023,
+      "frname_mass": -21.587203979492188,
+      "enname_mass": -29.066356658935547
+    },
+    {
+      "layer": 11,
+      "alpha": 16.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -16.010459899902344,
+      "frname_mass": -23.694448471069336,
+      "enname_mass": -31.329971313476562
+    },
+    {
+      "layer": 11,
+      "alpha": 32.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -17.988601684570312,
+      "frname_mass": -24.050537109375,
+      "enname_mass": -33.49879455566406
+    },
+    {
+      "layer": 11,
+      "alpha": 0.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "baseline",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58347702026367,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 11,
+      "alpha": 1.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.37860107421875,
+      "enname_mass": -33.81224060058594
+    },
+    {
+      "layer": 11,
+      "alpha": 2.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -5.7220458984375e-05,
+      "en_mass": -5.7220458984375e-05,
+      "frname_mass": -35.29777908325195,
+      "enname_mass": -33.812255859375
+    },
+    {
+      "layer": 11,
+      "alpha": 4.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -0.000118255615234375,
+      "en_mass": -0.000118255615234375,
+      "frname_mass": -34.81587600708008,
+      "enname_mass": -33.312339782714844
+    },
+    {
+      "layer": 11,
+      "alpha": 8.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -13.130899429321289,
+      "en_mass": -14.624372482299805,
+      "frname_mass": -23.738672256469727,
+      "enname_mass": -28.00333023071289
+    },
+    {
+      "layer": 11,
+      "alpha": 16.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -11.966514587402344,
+      "en_mass": -15.370567321777344,
+      "frname_mass": -23.89836883544922,
+      "enname_mass": -28.596073150634766
+    },
+    {
+      "layer": 11,
+      "alpha": 32.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -7.423236846923828,
+      "en_mass": -13.001895904541016,
+      "frname_mass": -19.842864990234375,
+      "enname_mass": -24.708202362060547
+    },
+    {
+      "layer": 11,
+      "alpha": 0.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "baseline",
+      "fr_mass": -23.12218475341797,
+      "en_mass": -22.9086856842041,
+      "frname_mass": -34.183536529541016,
+      "enname_mass": -31.77914047241211
+    },
+    {
+      "layer": 11,
+      "alpha": 1.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.244781494140625,
+      "en_mass": -23.003843307495117,
+      "frname_mass": -34.16872024536133,
+      "enname_mass": -31.841632843017578
+    },
+    {
+      "layer": 11,
+      "alpha": 2.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.372695922851562,
+      "en_mass": -23.10969352722168,
+      "frname_mass": -34.135284423828125,
+      "enname_mass": -31.784221649169922
+    },
+    {
+      "layer": 11,
+      "alpha": 4.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.480724334716797,
+      "en_mass": -23.228818893432617,
+      "frname_mass": -33.934722900390625,
+      "enname_mass": -31.77464485168457
+    },
+    {
+      "layer": 11,
+      "alpha": 8.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -13.681148529052734,
+      "en_mass": -15.26301383972168,
+      "frname_mass": -20.507383346557617,
+      "enname_mass": -24.612245559692383
+    },
+    {
+      "layer": 11,
+      "alpha": 16.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -13.586088180541992,
+      "en_mass": -16.033538818359375,
+      "frname_mass": -20.198650360107422,
+      "enname_mass": -26.250415802001953
+    },
+    {
+      "layer": 11,
+      "alpha": 32.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -11.210796356201172,
+      "en_mass": -17.374523162841797,
+      "frname_mass": -20.209325790405273,
+      "enname_mass": -27.87622833251953
+    },
+    {
+      "layer": 11,
+      "alpha": 0.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "baseline",
+      "fr_mass": -29.1904239654541,
+      "en_mass": -28.391862869262695,
+      "frname_mass": -38.417701721191406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 11,
+      "alpha": 1.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.06920623779297,
+      "en_mass": -28.290403366088867,
+      "frname_mass": -38.35523986816406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 11,
+      "alpha": 2.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -28.940168380737305,
+      "en_mass": -28.093955993652344,
+      "frname_mass": -38.03432083129883,
+      "enname_mass": -37.9999885559082
+    },
+    {
+      "layer": 11,
+      "alpha": 4.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.19837760925293,
+      "en_mass": -28.255332946777344,
+      "frname_mass": -38.05543518066406,
+      "enname_mass": -38.12499237060547
+    },
+    {
+      "layer": 11,
+      "alpha": 8.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -0.3132667541503906,
+      "en_mass": -18.43394660949707,
+      "frname_mass": -24.44076919555664,
+      "enname_mass": -31.125761032104492
+    },
+    {
+      "layer": 11,
+      "alpha": 16.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -21.525678634643555,
+      "frname_mass": -29.99257469177246,
+      "enname_mass": -34.87466049194336
+    },
+    {
+      "layer": 11,
+      "alpha": 32.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -19.98178482055664,
+      "frname_mass": -27.499509811401367,
+      "enname_mass": -32.999732971191406
+    },
+    {
+      "layer": 11,
+      "alpha": 0.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "baseline",
+      "fr_mass": -28.979509353637695,
+      "en_mass": 0.0,
+      "frname_mass": -35.634979248046875,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 11,
+      "alpha": 1.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.104721069335938,
+      "en_mass": 0.0,
+      "frname_mass": -35.64018630981445,
+      "enname_mass": -37.562442779541016
+    },
+    {
+      "layer": 11,
+      "alpha": 2.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.35276222229004,
+      "en_mass": 0.0,
+      "frname_mass": -35.70805740356445,
+      "enname_mass": -37.87493896484375
+    },
+    {
+      "layer": 11,
+      "alpha": 4.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.469829559326172,
+      "en_mass": 0.0,
+      "frname_mass": -35.655296325683594,
+      "enname_mass": -38.374942779541016
+    },
+    {
+      "layer": 11,
+      "alpha": 8.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -3.4332275390625e-05,
+      "en_mass": -16.8697566986084,
+      "frname_mass": -27.975540161132812,
+      "enname_mass": -32.062034606933594
+    },
+    {
+      "layer": 11,
+      "alpha": 16.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -18.116315841674805,
+      "frname_mass": -28.34853744506836,
+      "enname_mass": -33.56180191040039
+    },
+    {
+      "layer": 11,
+      "alpha": 32.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -17.851417541503906,
+      "frname_mass": -25.916561126708984,
+      "enname_mass": -31.186725616455078
+    },
+    {
+      "layer": 11,
+      "alpha": 0.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "baseline",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.61709976196289,
+      "enname_mass": -38.68723678588867
+    },
+    {
+      "layer": 11,
+      "alpha": 1.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.56221008300781,
+      "enname_mass": -38.68724060058594
+    },
+    {
+      "layer": 11,
+      "alpha": 2.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.49915313720703,
+      "enname_mass": -38.62476348876953
+    },
+    {
+      "layer": 11,
+      "alpha": 4.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.58513641357422,
+      "enname_mass": -38.62477111816406
+    },
+    {
+      "layer": 11,
+      "alpha": 8.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -19.932252883911133,
+      "en_mass": -19.999656677246094,
+      "frname_mass": -30.388309478759766,
+      "enname_mass": -34.68745040893555
+    },
+    {
+      "layer": 11,
+      "alpha": 16.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -16.27181053161621,
+      "en_mass": -19.74199867248535,
+      "frname_mass": -29.74602508544922,
+      "enname_mass": -34.406097412109375
+    },
+    {
+      "layer": 11,
+      "alpha": 32.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -9.79408073425293,
+      "en_mass": -16.1788272857666,
+      "frname_mass": -25.10466194152832,
+      "enname_mass": -29.937339782714844
+    },
+    {
+      "layer": 11,
+      "alpha": 0.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "baseline",
+      "fr_mass": -26.469688415527344,
+      "en_mass": 0.0,
+      "frname_mass": -35.416481018066406,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 11,
+      "alpha": 1.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.344806671142578,
+      "en_mass": 0.0,
+      "frname_mass": -35.29639434814453,
+      "enname_mass": -33.812259674072266
+    },
+    {
+      "layer": 11,
+      "alpha": 2.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.592714309692383,
+      "en_mass": 0.0,
+      "frname_mass": -35.42967224121094,
+      "enname_mass": -34.124752044677734
+    },
+    {
+      "layer": 11,
+      "alpha": 4.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.832382202148438,
+      "en_mass": 0.0,
+      "frname_mass": -35.38148498535156,
+      "enname_mass": -34.249778747558594
+    },
+    {
+      "layer": 11,
+      "alpha": 8.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -3.814697265625e-06,
+      "en_mass": -15.995519638061523,
+      "frname_mass": -20.97991371154785,
+      "enname_mass": -30.937026977539062
+    },
+    {
+      "layer": 11,
+      "alpha": 16.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -7.62939453125e-05,
+      "en_mass": -17.62388038635254,
+      "frname_mass": -24.714218139648438,
+      "enname_mass": -33.90476989746094
+    },
+    {
+      "layer": 11,
+      "alpha": 32.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -0.001331329345703125,
+      "en_mass": -16.994537353515625,
+      "frname_mass": -22.68936538696289,
+      "enname_mass": -31.65544891357422
+    },
+    {
+      "layer": 11,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "generation",
+      "gen_base": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from oceans",
+      "gen_steer": "Leau est \u00e9vapor\u00e9e de la surface des oc\u00e9ans, des lacs et des sols, puis se condense en nuages qui se d\u00e9placent et se d\u00e9posent sous",
+      "frenchness_base": 0.0,
+      "frenchness_steer": 0.7075968992248063
+    },
+    {
+      "layer": 14,
+      "alpha": 0.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "baseline",
+      "fr_mass": -31.192935943603516,
+      "en_mass": 0.0,
+      "frname_mass": -39.48976516723633,
+      "enname_mass": -43.311710357666016
+    },
+    {
+      "layer": 14,
+      "alpha": 1.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.1905460357666,
+      "en_mass": 0.0,
+      "frname_mass": -39.369075775146484,
+      "enname_mass": -43.249210357666016
+    },
+    {
+      "layer": 14,
+      "alpha": 2.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.313518524169922,
+      "en_mass": 0.0,
+      "frname_mass": -39.44248962402344,
+      "enname_mass": -43.43680953979492
+    },
+    {
+      "layer": 14,
+      "alpha": 4.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.19282341003418,
+      "en_mass": 0.0,
+      "frname_mass": -39.44624710083008,
+      "enname_mass": -43.374263763427734
+    },
+    {
+      "layer": 14,
+      "alpha": 8.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -3.9953689575195312,
+      "en_mass": -10.14360237121582,
+      "frname_mass": -29.92725372314453,
+      "enname_mass": -32.45481491088867
+    },
+    {
+      "layer": 14,
+      "alpha": 16.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -19.362348556518555,
+      "frname_mass": -31.137699127197266,
+      "enname_mass": -35.9676399230957
+    },
+    {
+      "layer": 14,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -3.814697265625e-06,
+      "en_mass": -19.108448028564453,
+      "frname_mass": -30.339263916015625,
+      "enname_mass": -35.249717712402344
+    },
+    {
+      "layer": 14,
+      "alpha": 0.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "baseline",
+      "fr_mass": -27.22900390625,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 14,
+      "alpha": 1.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.60199546813965,
+      "en_mass": 0.0,
+      "frname_mass": -31.65680694580078,
+      "enname_mass": -35.624794006347656
+    },
+    {
+      "layer": 14,
+      "alpha": 2.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.8544864654541,
+      "en_mass": 0.0,
+      "frname_mass": -32.21735763549805,
+      "enname_mass": -35.99979019165039
+    },
+    {
+      "layer": 14,
+      "alpha": 4.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -28.347049713134766,
+      "en_mass": 0.0,
+      "frname_mass": -32.65118408203125,
+      "enname_mass": -36.374755859375
+    },
+    {
+      "layer": 14,
+      "alpha": 8.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -0.13013458251953125,
+      "en_mass": -2.104248046875,
+      "frname_mass": -21.638547897338867,
+      "enname_mass": -25.79134750366211
+    },
+    {
+      "layer": 14,
+      "alpha": 16.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -15.304290771484375,
+      "frname_mass": -23.223400115966797,
+      "enname_mass": -30.935962677001953
+    },
+    {
+      "layer": 14,
+      "alpha": 32.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -15.378034591674805,
+      "frname_mass": -24.14653778076172,
+      "enname_mass": -31.568553924560547
+    },
+    {
+      "layer": 14,
+      "alpha": 0.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "baseline",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58347702026367,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 14,
+      "alpha": 1.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.67154312133789,
+      "enname_mass": -34.06224822998047
+    },
+    {
+      "layer": 14,
+      "alpha": 2.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -5.7220458984375e-05,
+      "en_mass": -5.7220458984375e-05,
+      "frname_mass": -35.59044647216797,
+      "enname_mass": -33.999752044677734
+    },
+    {
+      "layer": 14,
+      "alpha": 4.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -0.000118255615234375,
+      "en_mass": -0.000118255615234375,
+      "frname_mass": -35.15157699584961,
+      "enname_mass": -33.56231689453125
+    },
+    {
+      "layer": 14,
+      "alpha": 8.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -13.648195266723633,
+      "en_mass": -13.749092102050781,
+      "frname_mass": -24.598360061645508,
+      "enname_mass": -27.43842887878418
+    },
+    {
+      "layer": 14,
+      "alpha": 16.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -12.23546028137207,
+      "en_mass": -14.998628616333008,
+      "frname_mass": -23.672813415527344,
+      "enname_mass": -28.252132415771484
+    },
+    {
+      "layer": 14,
+      "alpha": 32.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -7.255485534667969,
+      "en_mass": -10.960662841796875,
+      "frname_mass": -19.221012115478516,
+      "enname_mass": -23.124671936035156
+    },
+    {
+      "layer": 14,
+      "alpha": 0.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "baseline",
+      "fr_mass": -23.12218475341797,
+      "en_mass": -22.9086856842041,
+      "frname_mass": -34.183536529541016,
+      "enname_mass": -31.77914047241211
+    },
+    {
+      "layer": 14,
+      "alpha": 1.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.249399185180664,
+      "en_mass": -23.013160705566406,
+      "frname_mass": -34.16240310668945,
+      "enname_mass": -31.7856388092041
+    },
+    {
+      "layer": 14,
+      "alpha": 2.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.2455997467041,
+      "en_mass": -22.995058059692383,
+      "frname_mass": -34.032875061035156,
+      "enname_mass": -31.721715927124023
+    },
+    {
+      "layer": 14,
+      "alpha": 4.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.242528915405273,
+      "en_mass": -23.012981414794922,
+      "frname_mass": -33.931663513183594,
+      "enname_mass": -31.65612030029297
+    },
+    {
+      "layer": 14,
+      "alpha": 8.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -12.036067962646484,
+      "en_mass": -13.326200485229492,
+      "frname_mass": -18.938129425048828,
+      "enname_mass": -21.916746139526367
+    },
+    {
+      "layer": 14,
+      "alpha": 16.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -12.911979675292969,
+      "en_mass": -15.792677879333496,
+      "frname_mass": -19.389623641967773,
+      "enname_mass": -25.874744415283203
+    },
+    {
+      "layer": 14,
+      "alpha": 32.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -10.394691467285156,
+      "en_mass": -14.299665451049805,
+      "frname_mass": -17.614208221435547,
+      "enname_mass": -24.34906578063965
+    },
+    {
+      "layer": 14,
+      "alpha": 0.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "baseline",
+      "fr_mass": -29.1904239654541,
+      "en_mass": -28.391862869262695,
+      "frname_mass": -38.417701721191406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 14,
+      "alpha": 1.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.071853637695312,
+      "en_mass": -28.35464859008789,
+      "frname_mass": -38.302574157714844,
+      "enname_mass": -38.1874885559082
+    },
+    {
+      "layer": 14,
+      "alpha": 2.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -28.821706771850586,
+      "en_mass": -28.0579833984375,
+      "frname_mass": -37.95072555541992,
+      "enname_mass": -37.9999885559082
+    },
+    {
+      "layer": 14,
+      "alpha": 4.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -28.95667266845703,
+      "en_mass": -28.26797866821289,
+      "frname_mass": -38.08564758300781,
+      "enname_mass": -38.18749237060547
+    },
+    {
+      "layer": 14,
+      "alpha": 8.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -13.927656173706055,
+      "en_mass": -22.614974975585938,
+      "frname_mass": -26.72845458984375,
+      "enname_mass": -34.656253814697266
+    },
+    {
+      "layer": 14,
+      "alpha": 16.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -0.00016021728515625,
+      "en_mass": -21.48646354675293,
+      "frname_mass": -27.350791931152344,
+      "enname_mass": -34.1876106262207
+    },
+    {
+      "layer": 14,
+      "alpha": 32.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -18.934978485107422,
+      "frname_mass": -25.657365798950195,
+      "enname_mass": -32.18745803833008
+    },
+    {
+      "layer": 14,
+      "alpha": 0.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "baseline",
+      "fr_mass": -28.979509353637695,
+      "en_mass": 0.0,
+      "frname_mass": -35.634979248046875,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 14,
+      "alpha": 1.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.224905014038086,
+      "en_mass": 0.0,
+      "frname_mass": -35.70111083984375,
+      "enname_mass": -37.62493896484375
+    },
+    {
+      "layer": 14,
+      "alpha": 2.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.602615356445312,
+      "en_mass": 0.0,
+      "frname_mass": -36.020545959472656,
+      "enname_mass": -38.12493896484375
+    },
+    {
+      "layer": 14,
+      "alpha": 4.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.34781837463379,
+      "en_mass": 0.0,
+      "frname_mass": -35.59180450439453,
+      "enname_mass": -38.124935150146484
+    },
+    {
+      "layer": 14,
+      "alpha": 8.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -0.163360595703125,
+      "en_mass": -7.414506912231445,
+      "frname_mass": -24.121822357177734,
+      "enname_mass": -26.289203643798828
+    },
+    {
+      "layer": 14,
+      "alpha": 16.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -17.991323471069336,
+      "frname_mass": -27.753353118896484,
+      "enname_mass": -33.0615348815918
+    },
+    {
+      "layer": 14,
+      "alpha": 32.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -16.245019912719727,
+      "frname_mass": -25.927772521972656,
+      "enname_mass": -31.373836517333984
+    },
+    {
+      "layer": 14,
+      "alpha": 0.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "baseline",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.61709976196289,
+      "enname_mass": -38.68723678588867
+    },
+    {
+      "layer": 14,
+      "alpha": 1.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.609798431396484,
+      "enname_mass": -38.68724822998047
+    },
+    {
+      "layer": 14,
+      "alpha": 2.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.82292175292969,
+      "enname_mass": -38.874752044677734
+    },
+    {
+      "layer": 14,
+      "alpha": 4.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -40.068565368652344,
+      "enname_mass": -39.062278747558594
+    },
+    {
+      "layer": 14,
+      "alpha": 8.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -11.000015258789062,
+      "en_mass": -11.000022888183594,
+      "frname_mass": -29.19054412841797,
+      "enname_mass": -31.499982833862305
+    },
+    {
+      "layer": 14,
+      "alpha": 16.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -17.195981979370117,
+      "en_mass": -20.11693000793457,
+      "frname_mass": -29.790496826171875,
+      "enname_mass": -34.37482833862305
+    },
+    {
+      "layer": 14,
+      "alpha": 32.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -12.019098281860352,
+      "en_mass": -18.103538513183594,
+      "frname_mass": -27.276050567626953,
+      "enname_mass": -31.593639373779297
+    },
+    {
+      "layer": 14,
+      "alpha": 0.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "baseline",
+      "fr_mass": -26.469688415527344,
+      "en_mass": 0.0,
+      "frname_mass": -35.416481018066406,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 14,
+      "alpha": 1.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.4678897857666,
+      "en_mass": 0.0,
+      "frname_mass": -35.35675048828125,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 14,
+      "alpha": 2.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.344741821289062,
+      "en_mass": 0.0,
+      "frname_mass": -35.298583984375,
+      "enname_mass": -33.937232971191406
+    },
+    {
+      "layer": 14,
+      "alpha": 4.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.458528518676758,
+      "en_mass": 0.0,
+      "frname_mass": -35.18426513671875,
+      "enname_mass": -33.999752044677734
+    },
+    {
+      "layer": 14,
+      "alpha": 8.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -14.533123016357422,
+      "frname_mass": -17.861879348754883,
+      "enname_mass": -27.68729591369629
+    },
+    {
+      "layer": 14,
+      "alpha": 16.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -0.00091552734375,
+      "en_mass": -17.124509811401367,
+      "frname_mass": -23.956222534179688,
+      "enname_mass": -33.249820709228516
+    },
+    {
+      "layer": 14,
+      "alpha": 32.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -0.20372772216796875,
+      "en_mass": -14.823938369750977,
+      "frname_mass": -21.217269897460938,
+      "enname_mass": -29.109647750854492
+    },
+    {
+      "layer": 14,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "generation",
+      "gen_base": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from oceans",
+      "gen_steer": "Leau s'\u00e9vapore sous l'effet du soleil, se transforme en vapeur d'eau qui monte dans l'atmosph\u00e8re, puis se condense en nu",
+      "frenchness_base": 0.0,
+      "frenchness_steer": 0.26666666666666666
+    },
+    {
+      "layer": 18,
+      "alpha": 0.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "baseline",
+      "fr_mass": -31.192935943603516,
+      "en_mass": 0.0,
+      "frname_mass": -39.48976516723633,
+      "enname_mass": -43.311710357666016
+    },
+    {
+      "layer": 18,
+      "alpha": 1.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.19208526611328,
+      "en_mass": 0.0,
+      "frname_mass": -39.49574661254883,
+      "enname_mass": -43.37424850463867
+    },
+    {
+      "layer": 18,
+      "alpha": 2.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.312000274658203,
+      "en_mass": 0.0,
+      "frname_mass": -39.427772521972656,
+      "enname_mass": -43.342933654785156
+    },
+    {
+      "layer": 18,
+      "alpha": 4.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.43238067626953,
+      "en_mass": 0.0,
+      "frname_mass": -39.61958312988281,
+      "enname_mass": -43.405399322509766
+    },
+    {
+      "layer": 18,
+      "alpha": 8.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -2.4527664184570312,
+      "en_mass": -0.21693038940429688,
+      "frname_mass": -29.145553588867188,
+      "enname_mass": -30.528289794921875
+    },
+    {
+      "layer": 18,
+      "alpha": 16.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -18.747983932495117,
+      "frname_mass": -31.28774642944336,
+      "enname_mass": -36.27983474731445
+    },
+    {
+      "layer": 18,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -18.749555587768555,
+      "frname_mass": -30.92428970336914,
+      "enname_mass": -36.81121063232422
+    },
+    {
+      "layer": 18,
+      "alpha": 0.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "baseline",
+      "fr_mass": -27.22900390625,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 18,
+      "alpha": 1.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.727458953857422,
+      "en_mass": 0.0,
+      "frname_mass": -31.842924118041992,
+      "enname_mass": -35.749794006347656
+    },
+    {
+      "layer": 18,
+      "alpha": 2.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.85515594482422,
+      "en_mass": 0.0,
+      "frname_mass": -32.21480941772461,
+      "enname_mass": -35.93729019165039
+    },
+    {
+      "layer": 18,
+      "alpha": 4.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -28.47615623474121,
+      "en_mass": 0.0,
+      "frname_mass": -32.777931213378906,
+      "enname_mass": -36.4997444152832
+    },
+    {
+      "layer": 18,
+      "alpha": 8.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -7.924137115478516,
+      "en_mass": -0.000362396240234375,
+      "frname_mass": -25.56928062438965,
+      "enname_mass": -28.37503433227539
+    },
+    {
+      "layer": 18,
+      "alpha": 16.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -3.814697265625e-06,
+      "en_mass": -14.094234466552734,
+      "frname_mass": -22.171239852905273,
+      "enname_mass": -29.474483489990234
+    },
+    {
+      "layer": 18,
+      "alpha": 32.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -3.814697265625e-06,
+      "en_mass": -12.784841537475586,
+      "frname_mass": -22.903776168823242,
+      "enname_mass": -30.7213191986084
+    },
+    {
+      "layer": 18,
+      "alpha": 0.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "baseline",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58347702026367,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 18,
+      "alpha": 1.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -5.340576171875e-05,
+      "en_mass": -5.340576171875e-05,
+      "frname_mass": -35.67024612426758,
+      "enname_mass": -33.999755859375
+    },
+    {
+      "layer": 18,
+      "alpha": 2.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -6.866455078125e-05,
+      "en_mass": -6.866455078125e-05,
+      "frname_mass": -35.60905456542969,
+      "enname_mass": -34.06224060058594
+    },
+    {
+      "layer": 18,
+      "alpha": 4.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -7.2479248046875e-05,
+      "en_mass": -7.2479248046875e-05,
+      "frname_mass": -35.64698028564453,
+      "enname_mass": -34.0622444152832
+    },
+    {
+      "layer": 18,
+      "alpha": 8.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -0.39319610595703125,
+      "en_mass": -0.39319610595703125,
+      "frname_mass": -23.017948150634766,
+      "enname_mass": -23.080669403076172
+    },
+    {
+      "layer": 18,
+      "alpha": 16.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -14.977533340454102,
+      "en_mass": -15.873403549194336,
+      "frname_mass": -25.25428009033203,
+      "enname_mass": -29.5008544921875
+    },
+    {
+      "layer": 18,
+      "alpha": 32.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -12.140399932861328,
+      "en_mass": -13.157363891601562,
+      "frname_mass": -21.73756217956543,
+      "enname_mass": -25.848966598510742
+    },
+    {
+      "layer": 18,
+      "alpha": 0.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "baseline",
+      "fr_mass": -23.12218475341797,
+      "en_mass": -22.9086856842041,
+      "frname_mass": -34.183536529541016,
+      "enname_mass": -31.77914047241211
+    },
+    {
+      "layer": 18,
+      "alpha": 1.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.37274169921875,
+      "en_mass": -23.1304874420166,
+      "frname_mass": -34.20090866088867,
+      "enname_mass": -31.846670150756836
+    },
+    {
+      "layer": 18,
+      "alpha": 2.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.983112335205078,
+      "en_mass": -23.729595184326172,
+      "frname_mass": -34.580467224121094,
+      "enname_mass": -32.2745246887207
+    },
+    {
+      "layer": 18,
+      "alpha": 4.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -24.34523582458496,
+      "en_mass": -24.071210861206055,
+      "frname_mass": -34.52522277832031,
+      "enname_mass": -32.33586883544922
+    },
+    {
+      "layer": 18,
+      "alpha": 8.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -11.613216400146484,
+      "en_mass": -12.338214874267578,
+      "frname_mass": -18.63009262084961,
+      "enname_mass": -20.11286163330078
+    },
+    {
+      "layer": 18,
+      "alpha": 16.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -13.838857650756836,
+      "en_mass": -15.807332992553711,
+      "frname_mass": -19.817615509033203,
+      "enname_mass": -25.31246566772461
+    },
+    {
+      "layer": 18,
+      "alpha": 32.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -14.404733657836914,
+      "en_mass": -17.222740173339844,
+      "frname_mass": -20.78050994873047,
+      "enname_mass": -26.390928268432617
+    },
+    {
+      "layer": 18,
+      "alpha": 0.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "baseline",
+      "fr_mass": -29.1904239654541,
+      "en_mass": -28.391862869262695,
+      "frname_mass": -38.417701721191406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 18,
+      "alpha": 1.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.318979263305664,
+      "en_mass": -28.60235595703125,
+      "frname_mass": -38.55232238769531,
+      "enname_mass": -38.4374885559082
+    },
+    {
+      "layer": 18,
+      "alpha": 2.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.31844139099121,
+      "en_mass": -28.557880401611328,
+      "frname_mass": -38.50053024291992,
+      "enname_mass": -38.4999885559082
+    },
+    {
+      "layer": 18,
+      "alpha": 4.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.449100494384766,
+      "en_mass": -28.769306182861328,
+      "frname_mass": -38.5930290222168,
+      "enname_mass": -38.62499237060547
+    },
+    {
+      "layer": 18,
+      "alpha": 8.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -19.37632942199707,
+      "en_mass": -24.478702545166016,
+      "frname_mass": -29.066802978515625,
+      "enname_mass": -35.9375
+    },
+    {
+      "layer": 18,
+      "alpha": 16.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -0.313262939453125,
+      "en_mass": -20.307422637939453,
+      "frname_mass": -24.62881851196289,
+      "enname_mass": -32.500755310058594
+    },
+    {
+      "layer": 18,
+      "alpha": 32.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -3.814697265625e-06,
+      "en_mass": -20.99771499633789,
+      "frname_mass": -27.979995727539062,
+      "enname_mass": -34.74986267089844
+    },
+    {
+      "layer": 18,
+      "alpha": 0.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "baseline",
+      "fr_mass": -28.979509353637695,
+      "en_mass": 0.0,
+      "frname_mass": -35.634979248046875,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 18,
+      "alpha": 1.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.477401733398438,
+      "en_mass": 0.0,
+      "frname_mass": -36.07557678222656,
+      "enname_mass": -37.87493896484375
+    },
+    {
+      "layer": 18,
+      "alpha": 2.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.724689483642578,
+      "en_mass": 0.0,
+      "frname_mass": -36.14072036743164,
+      "enname_mass": -38.12493133544922
+    },
+    {
+      "layer": 18,
+      "alpha": 4.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -30.09063148498535,
+      "en_mass": 0.0,
+      "frname_mass": -36.4581298828125,
+      "enname_mass": -38.74993133544922
+    },
+    {
+      "layer": 18,
+      "alpha": 8.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -0.5234718322753906,
+      "en_mass": -3.0332260131835938,
+      "frname_mass": -22.91179656982422,
+      "enname_mass": -24.157939910888672
+    },
+    {
+      "layer": 18,
+      "alpha": 16.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -18.744016647338867,
+      "frname_mass": -29.024608612060547,
+      "enname_mass": -34.06153869628906
+    },
+    {
+      "layer": 18,
+      "alpha": 32.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -18.874156951904297,
+      "frname_mass": -29.051759719848633,
+      "enname_mass": -35.37361145019531
+    },
+    {
+      "layer": 18,
+      "alpha": 0.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "baseline",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.61709976196289,
+      "enname_mass": -38.68723678588867
+    },
+    {
+      "layer": 18,
+      "alpha": 1.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.94155502319336,
+      "enname_mass": -38.93722915649414
+    },
+    {
+      "layer": 18,
+      "alpha": 2.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -40.4171142578125,
+      "enname_mass": -39.37474060058594
+    },
+    {
+      "layer": 18,
+      "alpha": 4.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -40.925010681152344,
+      "enname_mass": -39.687278747558594
+    },
+    {
+      "layer": 18,
+      "alpha": 8.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -7.62939453125e-06,
+      "en_mass": -7.62939453125e-06,
+      "frname_mass": -33.63543701171875,
+      "enname_mass": -33.49992370605469
+    },
+    {
+      "layer": 18,
+      "alpha": 16.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -19.41826629638672,
+      "en_mass": -20.746036529541016,
+      "frname_mass": -31.150104522705078,
+      "enname_mass": -34.937355041503906
+    },
+    {
+      "layer": 18,
+      "alpha": 32.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -19.86618423461914,
+      "en_mass": -21.731184005737305,
+      "frname_mass": -30.813539505004883,
+      "enname_mass": -34.624900817871094
+    },
+    {
+      "layer": 18,
+      "alpha": 0.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "baseline",
+      "fr_mass": -26.469688415527344,
+      "en_mass": 0.0,
+      "frname_mass": -35.416481018066406,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 18,
+      "alpha": 1.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.596393585205078,
+      "en_mass": 0.0,
+      "frname_mass": -35.5469856262207,
+      "enname_mass": -34.124755859375
+    },
+    {
+      "layer": 18,
+      "alpha": 2.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.718976974487305,
+      "en_mass": 0.0,
+      "frname_mass": -35.429622650146484,
+      "enname_mass": -34.1247444152832
+    },
+    {
+      "layer": 18,
+      "alpha": 4.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -27.09296989440918,
+      "en_mass": 0.0,
+      "frname_mass": -35.685665130615234,
+      "enname_mass": -34.56224822998047
+    },
+    {
+      "layer": 18,
+      "alpha": 8.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -0.005550384521484375,
+      "en_mass": -5.255523681640625,
+      "frname_mass": -18.27668571472168,
+      "enname_mass": -24.755355834960938
+    },
+    {
+      "layer": 18,
+      "alpha": 16.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -2.288818359375e-05,
+      "en_mass": -18.374610900878906,
+      "frname_mass": -25.784683227539062,
+      "enname_mass": -35.09307861328125
+    },
+    {
+      "layer": 18,
+      "alpha": 32.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -0.000164031982421875,
+      "en_mass": -19.49767303466797,
+      "frname_mass": -25.523221969604492,
+      "enname_mass": -34.34297561645508
+    },
+    {
+      "layer": 18,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "generation",
+      "gen_base": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from oceans",
+      "gen_steer": "Le cycle de l\u2019eau commence par l\u2019\u00e9vaporation de l\u2019eau des oc\u00e9ans, des lacs et des rivi\u00e8res, qui s\u2019\u00e9l\u00e8ve dans l\u2019atmos",
+      "frenchness_base": 0.0,
+      "frenchness_steer": 0.7810344827586206
+    },
+    {
+      "layer": 22,
+      "alpha": 0.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "baseline",
+      "fr_mass": -31.192935943603516,
+      "en_mass": 0.0,
+      "frname_mass": -39.48976516723633,
+      "enname_mass": -43.311710357666016
+    },
+    {
+      "layer": 22,
+      "alpha": 1.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.315467834472656,
+      "en_mass": 0.0,
+      "frname_mass": -39.42780685424805,
+      "enname_mass": -43.28042221069336
+    },
+    {
+      "layer": 22,
+      "alpha": 2.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.435625076293945,
+      "en_mass": 0.0,
+      "frname_mass": -39.54823303222656,
+      "enname_mass": -43.342918395996094
+    },
+    {
+      "layer": 22,
+      "alpha": 4.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.566354751586914,
+      "en_mass": 0.0,
+      "frname_mass": -39.799659729003906,
+      "enname_mass": -43.5303840637207
+    },
+    {
+      "layer": 22,
+      "alpha": 8.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.187227249145508,
+      "en_mass": 0.0,
+      "frname_mass": -39.558658599853516,
+      "enname_mass": -43.03019332885742
+    },
+    {
+      "layer": 22,
+      "alpha": 16.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -0.06430816650390625,
+      "en_mass": -6.064365386962891,
+      "frname_mass": -28.09799575805664,
+      "enname_mass": -30.812522888183594
+    },
+    {
+      "layer": 22,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -18.49843406677246,
+      "frname_mass": -29.052446365356445,
+      "enname_mass": -35.12330627441406
+    },
+    {
+      "layer": 22,
+      "alpha": 0.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "baseline",
+      "fr_mass": -27.22900390625,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 22,
+      "alpha": 1.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.60151481628418,
+      "en_mass": 0.0,
+      "frname_mass": -31.594837188720703,
+      "enname_mass": -35.562286376953125
+    },
+    {
+      "layer": 22,
+      "alpha": 2.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.850826263427734,
+      "en_mass": 0.0,
+      "frname_mass": -31.841453552246094,
+      "enname_mass": -35.81226348876953
+    },
+    {
+      "layer": 22,
+      "alpha": 4.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -28.100196838378906,
+      "en_mass": 0.0,
+      "frname_mass": -32.1482048034668,
+      "enname_mass": -36.06221008300781
+    },
+    {
+      "layer": 22,
+      "alpha": 8.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -28.58088493347168,
+      "en_mass": 0.0,
+      "frname_mass": -32.61865997314453,
+      "enname_mass": -36.43711853027344
+    },
+    {
+      "layer": 22,
+      "alpha": 16.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -0.20107269287109375,
+      "en_mass": -1.7030487060546875,
+      "frname_mass": -21.679288864135742,
+      "enname_mass": -26.014720916748047
+    },
+    {
+      "layer": 22,
+      "alpha": 32.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -3.814697265625e-06,
+      "en_mass": -12.787412643432617,
+      "frname_mass": -22.556760787963867,
+      "enname_mass": -30.59795379638672
+    },
+    {
+      "layer": 22,
+      "alpha": 0.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "baseline",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58347702026367,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 22,
+      "alpha": 1.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58674621582031,
+      "enname_mass": -33.937252044677734
+    },
+    {
+      "layer": 22,
+      "alpha": 2.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -5.7220458984375e-05,
+      "en_mass": -5.7220458984375e-05,
+      "frname_mass": -35.567386627197266,
+      "enname_mass": -33.93724822998047
+    },
+    {
+      "layer": 22,
+      "alpha": 4.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -9.5367431640625e-05,
+      "en_mass": -9.5367431640625e-05,
+      "frname_mass": -35.54899597167969,
+      "enname_mass": -33.749794006347656
+    },
+    {
+      "layer": 22,
+      "alpha": 8.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -0.000202178955078125,
+      "en_mass": -0.000202178955078125,
+      "frname_mass": -35.50892639160156,
+      "enname_mass": -33.499900817871094
+    },
+    {
+      "layer": 22,
+      "alpha": 16.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -13.556049346923828,
+      "en_mass": -13.624137878417969,
+      "frname_mass": -24.396230697631836,
+      "enname_mass": -26.876422882080078
+    },
+    {
+      "layer": 22,
+      "alpha": 32.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -13.89088249206543,
+      "en_mass": -15.03458023071289,
+      "frname_mass": -24.28117561340332,
+      "enname_mass": -28.44418716430664
+    },
+    {
+      "layer": 22,
+      "alpha": 0.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "baseline",
+      "fr_mass": -23.12218475341797,
+      "en_mass": -22.9086856842041,
+      "frname_mass": -34.183536529541016,
+      "enname_mass": -31.77914047241211
+    },
+    {
+      "layer": 22,
+      "alpha": 1.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.244911193847656,
+      "en_mass": -23.019086837768555,
+      "frname_mass": -34.17954635620117,
+      "enname_mass": -31.779155731201172
+    },
+    {
+      "layer": 22,
+      "alpha": 2.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.369510650634766,
+      "en_mass": -23.114646911621094,
+      "frname_mass": -34.07334899902344,
+      "enname_mass": -31.660648345947266
+    },
+    {
+      "layer": 22,
+      "alpha": 4.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.734743118286133,
+      "en_mass": -23.467044830322266,
+      "frname_mass": -34.26396179199219,
+      "enname_mass": -31.784242630004883
+    },
+    {
+      "layer": 22,
+      "alpha": 8.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -24.541337966918945,
+      "en_mass": -24.287168502807617,
+      "frname_mass": -33.95546340942383,
+      "enname_mass": -31.789474487304688
+    },
+    {
+      "layer": 22,
+      "alpha": 16.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -12.888212203979492,
+      "en_mass": -14.300596237182617,
+      "frname_mass": -19.674081802368164,
+      "enname_mass": -22.765310287475586
+    },
+    {
+      "layer": 22,
+      "alpha": 32.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -15.089645385742188,
+      "en_mass": -18.09996795654297,
+      "frname_mass": -21.368026733398438,
+      "enname_mass": -26.44083595275879
+    },
+    {
+      "layer": 22,
+      "alpha": 0.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "baseline",
+      "fr_mass": -29.1904239654541,
+      "en_mass": -28.391862869262695,
+      "frname_mass": -38.417701721191406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 22,
+      "alpha": 1.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.318695068359375,
+      "en_mass": -28.5850772857666,
+      "frname_mass": -38.59546661376953,
+      "enname_mass": -38.3749885559082
+    },
+    {
+      "layer": 22,
+      "alpha": 2.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.068449020385742,
+      "en_mass": -28.352800369262695,
+      "frname_mass": -38.27302551269531,
+      "enname_mass": -38.1249885559082
+    },
+    {
+      "layer": 22,
+      "alpha": 4.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.314577102661133,
+      "en_mass": -28.678544998168945,
+      "frname_mass": -38.331764221191406,
+      "enname_mass": -38.24999237060547
+    },
+    {
+      "layer": 22,
+      "alpha": 8.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.57174301147461,
+      "en_mass": -29.12754249572754,
+      "frname_mass": -38.447147369384766,
+      "enname_mass": -38.37499237060547
+    },
+    {
+      "layer": 22,
+      "alpha": 16.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -19.540407180786133,
+      "en_mass": -23.611316680908203,
+      "frname_mass": -27.7388916015625,
+      "enname_mass": -35.25
+    },
+    {
+      "layer": 22,
+      "alpha": 32.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -12.550514221191406,
+      "en_mass": -21.86597442626953,
+      "frname_mass": -25.263591766357422,
+      "enname_mass": -34.09373474121094
+    },
+    {
+      "layer": 22,
+      "alpha": 0.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "baseline",
+      "fr_mass": -28.979509353637695,
+      "en_mass": 0.0,
+      "frname_mass": -35.634979248046875,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 22,
+      "alpha": 1.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.227388381958008,
+      "en_mass": 0.0,
+      "frname_mass": -35.76221466064453,
+      "enname_mass": -37.56243896484375
+    },
+    {
+      "layer": 22,
+      "alpha": 2.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.35256004333496,
+      "en_mass": 0.0,
+      "frname_mass": -36.009376525878906,
+      "enname_mass": -37.87493896484375
+    },
+    {
+      "layer": 22,
+      "alpha": 4.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.72168731689453,
+      "en_mass": 0.0,
+      "frname_mass": -36.01222229003906,
+      "enname_mass": -38.12492752075195
+    },
+    {
+      "layer": 22,
+      "alpha": 8.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.878074645996094,
+      "en_mass": 0.0,
+      "frname_mass": -35.886329650878906,
+      "enname_mass": -38.43741226196289
+    },
+    {
+      "layer": 22,
+      "alpha": 16.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -0.021663665771484375,
+      "en_mass": -4.023166656494141,
+      "frname_mass": -24.899085998535156,
+      "enname_mass": -26.647733688354492
+    },
+    {
+      "layer": 22,
+      "alpha": 32.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": -17.99906349182129,
+      "frname_mass": -29.687999725341797,
+      "enname_mass": -34.90403366088867
+    },
+    {
+      "layer": 22,
+      "alpha": 0.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "baseline",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.61709976196289,
+      "enname_mass": -38.68723678588867
+    },
+    {
+      "layer": 22,
+      "alpha": 1.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.60980987548828,
+      "enname_mass": -38.62474060058594
+    },
+    {
+      "layer": 22,
+      "alpha": 2.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.816650390625,
+      "enname_mass": -38.81224060058594
+    },
+    {
+      "layer": 22,
+      "alpha": 4.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -40.231876373291016,
+      "enname_mass": -38.999759674072266
+    },
+    {
+      "layer": 22,
+      "alpha": 8.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -40.81031799316406,
+      "enname_mass": -39.312259674072266
+    },
+    {
+      "layer": 22,
+      "alpha": 16.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -13.374959945678711,
+      "en_mass": -13.375,
+      "frname_mass": -30.680423736572266,
+      "enname_mass": -31.687450408935547
+    },
+    {
+      "layer": 22,
+      "alpha": 32.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -19.975725173950195,
+      "en_mass": -22.618738174438477,
+      "frname_mass": -32.40789031982422,
+      "enname_mass": -35.24971008300781
+    },
+    {
+      "layer": 22,
+      "alpha": 0.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "baseline",
+      "fr_mass": -26.469688415527344,
+      "en_mass": 0.0,
+      "frname_mass": -35.416481018066406,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 22,
+      "alpha": 1.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.342863082885742,
+      "en_mass": 0.0,
+      "frname_mass": -35.22716522216797,
+      "enname_mass": -33.749717712402344
+    },
+    {
+      "layer": 22,
+      "alpha": 2.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.59046173095703,
+      "en_mass": 0.0,
+      "frname_mass": -35.35588073730469,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 22,
+      "alpha": 4.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.466703414916992,
+      "en_mass": 0.0,
+      "frname_mass": -35.16499710083008,
+      "enname_mass": -33.81219482421875
+    },
+    {
+      "layer": 22,
+      "alpha": 8.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.705400466918945,
+      "en_mass": 0.0,
+      "frname_mass": -35.087100982666016,
+      "enname_mass": -33.93720245361328
+    },
+    {
+      "layer": 22,
+      "alpha": 16.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -1.52587890625e-05,
+      "en_mass": -11.992288589477539,
+      "frname_mass": -23.5509033203125,
+      "enname_mass": -28.81166648864746
+    },
+    {
+      "layer": 22,
+      "alpha": 32.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -7.62939453125e-06,
+      "en_mass": -17.74867820739746,
+      "frname_mass": -24.769115447998047,
+      "enname_mass": -33.654117584228516
+    },
+    {
+      "layer": 22,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "generation",
+      "gen_base": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from oceans",
+      "gen_steer": "Le cycle de l'eau consiste \u00e0 l'evaporation de l'eau du surface de the Earth, qui se transforme en vapeur d'air, puis \u00e0 condensation en clouds, leading",
+      "frenchness_base": 0.0,
+      "frenchness_steer": 0.21025641025641026
+    },
+    {
+      "layer": 25,
+      "alpha": 0.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "baseline",
+      "fr_mass": -31.192935943603516,
+      "en_mass": 0.0,
+      "frname_mass": -39.48976516723633,
+      "enname_mass": -43.311710357666016
+    },
+    {
+      "layer": 25,
+      "alpha": 1.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.309568405151367,
+      "en_mass": 0.0,
+      "frname_mass": -39.301151275634766,
+      "enname_mass": -43.31163024902344
+    },
+    {
+      "layer": 25,
+      "alpha": 2.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.30673599243164,
+      "en_mass": 0.0,
+      "frname_mass": -39.24221420288086,
+      "enname_mass": -43.21791458129883
+    },
+    {
+      "layer": 25,
+      "alpha": 4.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.425214767456055,
+      "en_mass": 0.0,
+      "frname_mass": -39.11362838745117,
+      "enname_mass": -43.31155014038086
+    },
+    {
+      "layer": 25,
+      "alpha": 8.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.52024269104004,
+      "en_mass": 0.0,
+      "frname_mass": -38.746456146240234,
+      "enname_mass": -43.31135559082031
+    },
+    {
+      "layer": 25,
+      "alpha": 16.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -26.144447326660156,
+      "en_mass": 0.0,
+      "frname_mass": -35.34806442260742,
+      "enname_mass": -41.21708679199219
+    },
+    {
+      "layer": 25,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -10.250207901000977,
+      "frname_mass": -25.682235717773438,
+      "enname_mass": -31.49687385559082
+    },
+    {
+      "layer": 25,
+      "alpha": 0.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "baseline",
+      "fr_mass": -27.22900390625,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 25,
+      "alpha": 1.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.35198402404785,
+      "en_mass": 0.0,
+      "frname_mass": -31.221561431884766,
+      "enname_mass": -35.31229782104492
+    },
+    {
+      "layer": 25,
+      "alpha": 2.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.229049682617188,
+      "en_mass": 0.0,
+      "frname_mass": -31.096561431884766,
+      "enname_mass": -35.24980545043945
+    },
+    {
+      "layer": 25,
+      "alpha": 4.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.601484298706055,
+      "en_mass": 0.0,
+      "frname_mass": -31.2168025970459,
+      "enname_mass": -35.5622673034668
+    },
+    {
+      "layer": 25,
+      "alpha": 8.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.591527938842773,
+      "en_mass": 0.0,
+      "frname_mass": -30.465784072875977,
+      "enname_mass": -35.312252044677734
+    },
+    {
+      "layer": 25,
+      "alpha": 16.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -26.308273315429688,
+      "en_mass": 0.0,
+      "frname_mass": -28.20081901550293,
+      "enname_mass": -34.74965286254883
+    },
+    {
+      "layer": 25,
+      "alpha": 32.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -0.00623321533203125,
+      "en_mass": -5.082269668579102,
+      "frname_mass": -17.015663146972656,
+      "enname_mass": -25.581056594848633
+    },
+    {
+      "layer": 25,
+      "alpha": 0.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "baseline",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58347702026367,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 25,
+      "alpha": 1.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.5042724609375,
+      "enname_mass": -33.937255859375
+    },
+    {
+      "layer": 25,
+      "alpha": 2.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -3.4332275390625e-05,
+      "en_mass": -3.4332275390625e-05,
+      "frname_mass": -35.671966552734375,
+      "enname_mass": -34.1247444152832
+    },
+    {
+      "layer": 25,
+      "alpha": 4.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.525428771972656,
+      "enname_mass": -33.99977493286133
+    },
+    {
+      "layer": 25,
+      "alpha": 8.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -7.62939453125e-05,
+      "en_mass": -7.62939453125e-05,
+      "frname_mass": -35.10704040527344,
+      "enname_mass": -33.74977493286133
+    },
+    {
+      "layer": 25,
+      "alpha": 16.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -0.0001678466796875,
+      "en_mass": -0.0001678466796875,
+      "frname_mass": -33.826744079589844,
+      "enname_mass": -32.99990463256836
+    },
+    {
+      "layer": 25,
+      "alpha": 32.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -9.879646301269531,
+      "en_mass": -9.88226318359375,
+      "frname_mass": -20.67864990234375,
+      "enname_mass": -23.570167541503906
+    },
+    {
+      "layer": 25,
+      "alpha": 0.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "baseline",
+      "fr_mass": -23.12218475341797,
+      "en_mass": -22.9086856842041,
+      "frname_mass": -34.183536529541016,
+      "enname_mass": -31.77914047241211
+    },
+    {
+      "layer": 25,
+      "alpha": 1.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.251001358032227,
+      "en_mass": -23.01998519897461,
+      "frname_mass": -34.077144622802734,
+      "enname_mass": -31.724979400634766
+    },
+    {
+      "layer": 25,
+      "alpha": 2.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.2491397857666,
+      "en_mass": -23.024080276489258,
+      "frname_mass": -34.01942443847656,
+      "enname_mass": -31.660682678222656
+    },
+    {
+      "layer": 25,
+      "alpha": 4.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.36930274963379,
+      "en_mass": -23.125045776367188,
+      "frname_mass": -33.75914001464844,
+      "enname_mass": -31.535709381103516
+    },
+    {
+      "layer": 25,
+      "alpha": 8.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.496532440185547,
+      "en_mass": -23.28536605834961,
+      "frname_mass": -33.14986038208008,
+      "enname_mass": -31.365558624267578
+    },
+    {
+      "layer": 25,
+      "alpha": 16.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -22.458740234375,
+      "en_mass": -22.538942337036133,
+      "frname_mass": -29.81999969482422,
+      "enname_mass": -29.880599975585938
+    },
+    {
+      "layer": 25,
+      "alpha": 32.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -13.477643966674805,
+      "en_mass": -14.676132202148438,
+      "frname_mass": -19.51321029663086,
+      "enname_mass": -23.312700271606445
+    },
+    {
+      "layer": 25,
+      "alpha": 0.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "baseline",
+      "fr_mass": -29.1904239654541,
+      "en_mass": -28.391862869262695,
+      "frname_mass": -38.417701721191406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 25,
+      "alpha": 1.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.187183380126953,
+      "en_mass": -28.411075592041016,
+      "frname_mass": -38.37674331665039,
+      "enname_mass": -38.3124885559082
+    },
+    {
+      "layer": 25,
+      "alpha": 2.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.318679809570312,
+      "en_mass": -28.58550453186035,
+      "frname_mass": -38.46796798706055,
+      "enname_mass": -38.4374885559082
+    },
+    {
+      "layer": 25,
+      "alpha": 4.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.31757926940918,
+      "en_mass": -28.58526039123535,
+      "frname_mass": -38.184776306152344,
+      "enname_mass": -38.3124885559082
+    },
+    {
+      "layer": 25,
+      "alpha": 8.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.311763763427734,
+      "en_mass": -28.7006778717041,
+      "frname_mass": -37.61248016357422,
+      "enname_mass": -38.12499237060547
+    },
+    {
+      "layer": 25,
+      "alpha": 16.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.802242279052734,
+      "en_mass": -29.423702239990234,
+      "frname_mass": -36.866031646728516,
+      "enname_mass": -38.49999237060547
+    },
+    {
+      "layer": 25,
+      "alpha": 32.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -19.090898513793945,
+      "en_mass": -22.61703109741211,
+      "frname_mass": -25.70541000366211,
+      "enname_mass": -34.4375
+    },
+    {
+      "layer": 25,
+      "alpha": 0.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "baseline",
+      "fr_mass": -28.979509353637695,
+      "en_mass": 0.0,
+      "frname_mass": -35.634979248046875,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 25,
+      "alpha": 1.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.09961700439453,
+      "en_mass": 0.0,
+      "frname_mass": -35.57188415527344,
+      "enname_mass": -37.312442779541016
+    },
+    {
+      "layer": 25,
+      "alpha": 2.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.224830627441406,
+      "en_mass": 0.0,
+      "frname_mass": -35.514312744140625,
+      "enname_mass": -37.499942779541016
+    },
+    {
+      "layer": 25,
+      "alpha": 4.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.221534729003906,
+      "en_mass": 0.0,
+      "frname_mass": -35.26592254638672,
+      "enname_mass": -37.437442779541016
+    },
+    {
+      "layer": 25,
+      "alpha": 8.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.45071792602539,
+      "en_mass": 0.0,
+      "frname_mass": -34.835487365722656,
+      "enname_mass": -37.49994659423828
+    },
+    {
+      "layer": 25,
+      "alpha": 16.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.024686813354492,
+      "en_mass": 0.0,
+      "frname_mass": -33.46500015258789,
+      "enname_mass": -37.49993896484375
+    },
+    {
+      "layer": 25,
+      "alpha": 32.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -0.040889739990234375,
+      "en_mass": -3.2961463928222656,
+      "frname_mass": -21.83349609375,
+      "enname_mass": -25.98333740234375
+    },
+    {
+      "layer": 25,
+      "alpha": 0.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "baseline",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.61709976196289,
+      "enname_mass": -38.68723678588867
+    },
+    {
+      "layer": 25,
+      "alpha": 1.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.58200454711914,
+      "enname_mass": -38.56224822998047
+    },
+    {
+      "layer": 25,
+      "alpha": 2.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.789424896240234,
+      "enname_mass": -38.81224822998047
+    },
+    {
+      "layer": 25,
+      "alpha": 4.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -40.01527404785156,
+      "enname_mass": -38.999752044677734
+    },
+    {
+      "layer": 25,
+      "alpha": 8.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -40.05680847167969,
+      "enname_mass": -39.124778747558594
+    },
+    {
+      "layer": 25,
+      "alpha": 16.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.58688735961914,
+      "enname_mass": -39.249778747558594
+    },
+    {
+      "layer": 25,
+      "alpha": 32.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": -10.875024795532227,
+      "en_mass": -10.87504768371582,
+      "frname_mass": -27.234390258789062,
+      "enname_mass": -30.312450408935547
+    },
+    {
+      "layer": 25,
+      "alpha": 0.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "baseline",
+      "fr_mass": -26.469688415527344,
+      "en_mass": 0.0,
+      "frname_mass": -35.416481018066406,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 25,
+      "alpha": 1.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.346376419067383,
+      "en_mass": 0.0,
+      "frname_mass": -35.294586181640625,
+      "enname_mass": -33.9372444152832
+    },
+    {
+      "layer": 25,
+      "alpha": 2.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.467548370361328,
+      "en_mass": 0.0,
+      "frname_mass": -35.2333984375,
+      "enname_mass": -33.812252044677734
+    },
+    {
+      "layer": 25,
+      "alpha": 4.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.46731185913086,
+      "en_mass": 0.0,
+      "frname_mass": -35.16904830932617,
+      "enname_mass": -33.87473678588867
+    },
+    {
+      "layer": 25,
+      "alpha": 8.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.464778900146484,
+      "en_mass": 0.0,
+      "frname_mass": -34.55448532104492,
+      "enname_mass": -33.68721389770508
+    },
+    {
+      "layer": 25,
+      "alpha": 16.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -25.652559280395508,
+      "en_mass": 0.0,
+      "frname_mass": -32.48281478881836,
+      "enname_mass": -32.81218719482422
+    },
+    {
+      "layer": 25,
+      "alpha": 32.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -0.000179290771484375,
+      "en_mass": -10.046546936035156,
+      "frname_mass": -21.072402954101562,
+      "enname_mass": -27.746057510375977
+    },
+    {
+      "layer": 25,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "generation",
+      "gen_base": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from oceans",
+      "gen_steer": "Leaky, leaching, and lapping.",
+      "frenchness_base": 0.0,
+      "frenchness_steer": 0.0
+    },
+    {
+      "layer": 28,
+      "alpha": 0.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "baseline",
+      "fr_mass": -31.192935943603516,
+      "en_mass": 0.0,
+      "frname_mass": -39.48976516723633,
+      "enname_mass": -43.311710357666016
+    },
+    {
+      "layer": 28,
+      "alpha": 1.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.17732810974121,
+      "en_mass": 0.0,
+      "frname_mass": -39.17979049682617,
+      "enname_mass": -43.06167221069336
+    },
+    {
+      "layer": 28,
+      "alpha": 2.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.05690574645996,
+      "en_mass": 0.0,
+      "frname_mass": -39.113006591796875,
+      "enname_mass": -43.06162643432617
+    },
+    {
+      "layer": 28,
+      "alpha": 4.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.297924041748047,
+      "en_mass": 0.0,
+      "frname_mass": -39.24001693725586,
+      "enname_mass": -43.28032684326172
+    },
+    {
+      "layer": 28,
+      "alpha": 8.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.381677627563477,
+      "en_mass": 0.0,
+      "frname_mass": -38.93366622924805,
+      "enname_mass": -43.21775817871094
+    },
+    {
+      "layer": 28,
+      "alpha": 16.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -29.95611000061035,
+      "en_mass": 0.0,
+      "frname_mass": -37.08192825317383,
+      "enname_mass": -42.06138229370117
+    },
+    {
+      "layer": 28,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -13.74217414855957,
+      "en_mass": 0.0,
+      "frname_mass": -28.850025177001953,
+      "enname_mass": -34.9359245300293
+    },
+    {
+      "layer": 28,
+      "alpha": 0.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "baseline",
+      "fr_mass": -27.22900390625,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 28,
+      "alpha": 1.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.22981071472168,
+      "en_mass": 0.0,
+      "frname_mass": -31.285242080688477,
+      "enname_mass": -35.37480545043945
+    },
+    {
+      "layer": 28,
+      "alpha": 2.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.350791931152344,
+      "en_mass": 0.0,
+      "frname_mass": -31.096599578857422,
+      "enname_mass": -35.31229782104492
+    },
+    {
+      "layer": 28,
+      "alpha": 4.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.35003662109375,
+      "en_mass": 0.0,
+      "frname_mass": -30.84943389892578,
+      "enname_mass": -35.249794006347656
+    },
+    {
+      "layer": 28,
+      "alpha": 8.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.344316482543945,
+      "en_mass": 0.0,
+      "frname_mass": -30.347583770751953,
+      "enname_mass": -35.187286376953125
+    },
+    {
+      "layer": 28,
+      "alpha": 16.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -26.62222671508789,
+      "en_mass": 0.0,
+      "frname_mass": -28.348731994628906,
+      "enname_mass": -34.4372444152832
+    },
+    {
+      "layer": 28,
+      "alpha": 32.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -8.798215866088867,
+      "en_mass": -0.000152587890625,
+      "frname_mass": -20.50380516052246,
+      "enname_mass": -28.43741226196289
+    },
+    {
+      "layer": 28,
+      "alpha": 0.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "baseline",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58347702026367,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 28,
+      "alpha": 1.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.48212814331055,
+      "enname_mass": -33.937255859375
+    },
+    {
+      "layer": 28,
+      "alpha": 2.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.27667999267578,
+      "enname_mass": -33.749778747558594
+    },
+    {
+      "layer": 28,
+      "alpha": 4.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.57763671875e-05,
+      "en_mass": -4.57763671875e-05,
+      "frname_mass": -35.169071197509766,
+      "enname_mass": -33.687278747558594
+    },
+    {
+      "layer": 28,
+      "alpha": 8.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -5.7220458984375e-05,
+      "en_mass": -5.7220458984375e-05,
+      "frname_mass": -34.744258880615234,
+      "enname_mass": -33.4997673034668
+    },
+    {
+      "layer": 28,
+      "alpha": 16.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -9.5367431640625e-05,
+      "en_mass": -9.5367431640625e-05,
+      "frname_mass": -33.62725830078125,
+      "enname_mass": -32.81232452392578
+    },
+    {
+      "layer": 28,
+      "alpha": 32.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -0.00028228759765625,
+      "en_mass": -0.00028228759765625,
+      "frname_mass": -28.69512176513672,
+      "enname_mass": -29.500152587890625
+    },
+    {
+      "layer": 28,
+      "alpha": 0.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "baseline",
+      "fr_mass": -23.12218475341797,
+      "en_mass": -22.9086856842041,
+      "frname_mass": -34.183536529541016,
+      "enname_mass": -31.77914047241211
+    },
+    {
+      "layer": 28,
+      "alpha": 1.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.120136260986328,
+      "en_mass": -22.906644821166992,
+      "frname_mass": -34.099884033203125,
+      "enname_mass": -31.716686248779297
+    },
+    {
+      "layer": 28,
+      "alpha": 2.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.11825180053711,
+      "en_mass": -22.9146728515625,
+      "frname_mass": -34.037139892578125,
+      "enname_mass": -31.654178619384766
+    },
+    {
+      "layer": 28,
+      "alpha": 4.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.126310348510742,
+      "en_mass": -22.933082580566406,
+      "frname_mass": -33.8805046081543,
+      "enname_mass": -31.600040435791016
+    },
+    {
+      "layer": 28,
+      "alpha": 8.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.244407653808594,
+      "en_mass": -23.061872482299805,
+      "frname_mass": -33.3267707824707,
+      "enname_mass": -31.35641860961914
+    },
+    {
+      "layer": 28,
+      "alpha": 16.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.32156753540039,
+      "en_mass": -23.187313079833984,
+      "frname_mass": -31.762954711914062,
+      "enname_mass": -30.618873596191406
+    },
+    {
+      "layer": 28,
+      "alpha": 32.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -18.506410598754883,
+      "en_mass": -19.164470672607422,
+      "frname_mass": -24.80421257019043,
+      "enname_mass": -26.528167724609375
+    },
+    {
+      "layer": 28,
+      "alpha": 0.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "baseline",
+      "fr_mass": -29.1904239654541,
+      "en_mass": -28.391862869262695,
+      "frname_mass": -38.417701721191406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 28,
+      "alpha": 1.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.186704635620117,
+      "en_mass": -28.392318725585938,
+      "frname_mass": -38.38652038574219,
+      "enname_mass": -38.3124885559082
+    },
+    {
+      "layer": 28,
+      "alpha": 2.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -28.939985275268555,
+      "en_mass": -28.18901252746582,
+      "frname_mass": -38.03109359741211,
+      "enname_mass": -37.9999885559082
+    },
+    {
+      "layer": 28,
+      "alpha": 4.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.310901641845703,
+      "en_mass": -28.58414649963379,
+      "frname_mass": -38.25519943237305,
+      "enname_mass": -38.3124885559082
+    },
+    {
+      "layer": 28,
+      "alpha": 8.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.558069229125977,
+      "en_mass": -28.91392707824707,
+      "frname_mass": -38.02009963989258,
+      "enname_mass": -38.37499237060547
+    },
+    {
+      "layer": 28,
+      "alpha": 16.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.78921890258789,
+      "en_mass": -29.3096923828125,
+      "frname_mass": -37.499393463134766,
+      "enname_mass": -38.62499237060547
+    },
+    {
+      "layer": 28,
+      "alpha": 32.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -25.989681243896484,
+      "en_mass": -27.90100860595703,
+      "frname_mass": -32.42725372314453,
+      "enname_mass": -37.124996185302734
+    },
+    {
+      "layer": 28,
+      "alpha": 0.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "baseline",
+      "fr_mass": -28.979509353637695,
+      "en_mass": 0.0,
+      "frname_mass": -35.634979248046875,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 28,
+      "alpha": 1.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.979450225830078,
+      "en_mass": 0.0,
+      "frname_mass": -35.51462173461914,
+      "enname_mass": -37.24994659423828
+    },
+    {
+      "layer": 28,
+      "alpha": 2.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.099592208862305,
+      "en_mass": 0.0,
+      "frname_mass": -35.449119567871094,
+      "enname_mass": -37.31243896484375
+    },
+    {
+      "layer": 28,
+      "alpha": 4.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.093259811401367,
+      "en_mass": 0.0,
+      "frname_mass": -35.20379638671875,
+      "enname_mass": -37.18743896484375
+    },
+    {
+      "layer": 28,
+      "alpha": 8.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -29.075098037719727,
+      "en_mass": 0.0,
+      "frname_mass": -34.70661163330078,
+      "enname_mass": -37.062435150146484
+    },
+    {
+      "layer": 28,
+      "alpha": 16.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.591808319091797,
+      "en_mass": 0.0,
+      "frname_mass": -33.33700180053711,
+      "enname_mass": -36.62493133544922
+    },
+    {
+      "layer": 28,
+      "alpha": 32.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -15.556079864501953,
+      "en_mass": 0.0,
+      "frname_mass": -27.423946380615234,
+      "enname_mass": -32.31242370605469
+    },
+    {
+      "layer": 28,
+      "alpha": 0.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "baseline",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.61709976196289,
+      "enname_mass": -38.68723678588867
+    },
+    {
+      "layer": 28,
+      "alpha": 1.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.576454162597656,
+      "enname_mass": -38.624759674072266
+    },
+    {
+      "layer": 28,
+      "alpha": 2.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.71527862548828,
+      "enname_mass": -38.81226348876953
+    },
+    {
+      "layer": 28,
+      "alpha": 4.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.58570861816406,
+      "enname_mass": -38.74973678588867
+    },
+    {
+      "layer": 28,
+      "alpha": 8.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.50633239746094,
+      "enname_mass": -38.687252044677734
+    },
+    {
+      "layer": 28,
+      "alpha": 16.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -38.73472213745117,
+      "enname_mass": -38.31227493286133
+    },
+    {
+      "layer": 28,
+      "alpha": 32.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -34.85952377319336,
+      "enname_mass": -35.81241226196289
+    },
+    {
+      "layer": 28,
+      "alpha": 0.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "baseline",
+      "fr_mass": -26.469688415527344,
+      "en_mass": 0.0,
+      "frname_mass": -35.416481018066406,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 28,
+      "alpha": 1.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.467792510986328,
+      "en_mass": 0.0,
+      "frname_mass": -35.41311264038086,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 28,
+      "alpha": 2.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.467824935913086,
+      "en_mass": 0.0,
+      "frname_mass": -35.295921325683594,
+      "enname_mass": -33.93723678588867
+    },
+    {
+      "layer": 28,
+      "alpha": 4.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.215560913085938,
+      "en_mass": 0.0,
+      "frname_mass": -34.91789627075195,
+      "enname_mass": -33.562225341796875
+    },
+    {
+      "layer": 28,
+      "alpha": 8.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.216020584106445,
+      "en_mass": 0.0,
+      "frname_mass": -34.48684310913086,
+      "enname_mass": -33.437217712402344
+    },
+    {
+      "layer": 28,
+      "alpha": 16.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -25.82590675354004,
+      "en_mass": 0.0,
+      "frname_mass": -33.292823791503906,
+      "enname_mass": -32.874691009521484
+    },
+    {
+      "layer": 28,
+      "alpha": 32.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -14.479913711547852,
+      "en_mass": -2.6702880859375e-05,
+      "frname_mass": -25.82443618774414,
+      "enname_mass": -28.68712043762207
+    },
+    {
+      "layer": 28,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "generation",
+      "gen_base": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from oceans",
+      "gen_steer": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from bodies",
+      "frenchness_base": 0.0,
+      "frenchness_steer": 0.0
+    },
+    {
+      "layer": 32,
+      "alpha": 0.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "baseline",
+      "fr_mass": -31.192935943603516,
+      "en_mass": 0.0,
+      "frname_mass": -39.48976516723633,
+      "enname_mass": -43.311710357666016
+    },
+    {
+      "layer": 32,
+      "alpha": 1.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.426042556762695,
+      "en_mass": 0.0,
+      "frname_mass": -39.42771911621094,
+      "enname_mass": -43.34291076660156
+    },
+    {
+      "layer": 32,
+      "alpha": 2.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -30.934473037719727,
+      "en_mass": 0.0,
+      "frname_mass": -39.06016159057617,
+      "enname_mass": -42.967987060546875
+    },
+    {
+      "layer": 32,
+      "alpha": 4.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.28830909729004,
+      "en_mass": 0.0,
+      "frname_mass": -39.18544387817383,
+      "enname_mass": -43.21794128417969
+    },
+    {
+      "layer": 32,
+      "alpha": 8.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.26239013671875,
+      "en_mass": 0.0,
+      "frname_mass": -39.12775421142578,
+      "enname_mass": -43.249183654785156
+    },
+    {
+      "layer": 32,
+      "alpha": 16.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -31.008930206298828,
+      "en_mass": 0.0,
+      "frname_mass": -38.51529312133789,
+      "enname_mass": -42.87407684326172
+    },
+    {
+      "layer": 32,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "steer_fr",
+      "fr_mass": -29.60556411743164,
+      "en_mass": 0.0,
+      "frname_mass": -37.34233093261719,
+      "enname_mass": -42.15526580810547
+    },
+    {
+      "layer": 32,
+      "alpha": 0.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "baseline",
+      "fr_mass": -27.22900390625,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 32,
+      "alpha": 1.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.35198402404785,
+      "en_mass": 0.0,
+      "frname_mass": -31.285324096679688,
+      "enname_mass": -35.374794006347656
+    },
+    {
+      "layer": 32,
+      "alpha": 2.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.22905921936035,
+      "en_mass": 0.0,
+      "frname_mass": -31.222864151000977,
+      "enname_mass": -35.31230163574219
+    },
+    {
+      "layer": 32,
+      "alpha": 4.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.227489471435547,
+      "en_mass": 0.0,
+      "frname_mass": -31.221956253051758,
+      "enname_mass": -35.31230926513672
+    },
+    {
+      "layer": 32,
+      "alpha": 8.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.221099853515625,
+      "en_mass": 0.0,
+      "frname_mass": -30.84978675842285,
+      "enname_mass": -35.249786376953125
+    },
+    {
+      "layer": 32,
+      "alpha": 16.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -27.33005142211914,
+      "en_mass": 0.0,
+      "frname_mass": -30.60009765625,
+      "enname_mass": -35.24977111816406
+    },
+    {
+      "layer": 32,
+      "alpha": 32.0,
+      "prompt": "What is the capital of Australia?",
+      "cond": "steer_fr",
+      "fr_mass": -26.682781219482422,
+      "en_mass": 0.0,
+      "frname_mass": -29.474611282348633,
+      "enname_mass": -34.62476348876953
+    },
+    {
+      "layer": 32,
+      "alpha": 0.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "baseline",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58347702026367,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 32,
+      "alpha": 1.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.58346939086914,
+      "enname_mass": -33.99976348876953
+    },
+    {
+      "layer": 32,
+      "alpha": 2.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.48280334472656,
+      "enname_mass": -33.937255859375
+    },
+    {
+      "layer": 32,
+      "alpha": 4.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -3.4332275390625e-05,
+      "en_mass": -3.4332275390625e-05,
+      "frname_mass": -35.46116256713867,
+      "enname_mass": -33.999755859375
+    },
+    {
+      "layer": 32,
+      "alpha": 8.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -4.1961669921875e-05,
+      "en_mass": -4.1961669921875e-05,
+      "frname_mass": -35.18981170654297,
+      "enname_mass": -33.937255859375
+    },
+    {
+      "layer": 32,
+      "alpha": 16.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -3.4332275390625e-05,
+      "en_mass": -3.4332275390625e-05,
+      "frname_mass": -35.086997985839844,
+      "enname_mass": -34.12474822998047
+    },
+    {
+      "layer": 32,
+      "alpha": 32.0,
+      "prompt": "Explain how a bicycle gear works.",
+      "cond": "steer_fr",
+      "fr_mass": -2.6702880859375e-05,
+      "en_mass": -2.6702880859375e-05,
+      "frname_mass": -34.252559661865234,
+      "enname_mass": -33.93724822998047
+    },
+    {
+      "layer": 32,
+      "alpha": 0.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "baseline",
+      "fr_mass": -23.12218475341797,
+      "en_mass": -22.9086856842041,
+      "frname_mass": -34.183536529541016,
+      "enname_mass": -31.77914047241211
+    },
+    {
+      "layer": 32,
+      "alpha": 1.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.120119094848633,
+      "en_mass": -22.903635025024414,
+      "frname_mass": -34.11878204345703,
+      "enname_mass": -31.71668243408203
+    },
+    {
+      "layer": 32,
+      "alpha": 2.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.121959686279297,
+      "en_mass": -22.9166316986084,
+      "frname_mass": -34.09004211425781,
+      "enname_mass": -31.716646194458008
+    },
+    {
+      "layer": 32,
+      "alpha": 4.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -23.121702194213867,
+      "en_mass": -22.910404205322266,
+      "frname_mass": -33.97385025024414,
+      "enname_mass": -31.656064987182617
+    },
+    {
+      "layer": 32,
+      "alpha": 8.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -22.877788543701172,
+      "en_mass": -22.69076919555664,
+      "frname_mass": -33.58381652832031,
+      "enname_mass": -31.41250228881836
+    },
+    {
+      "layer": 32,
+      "alpha": 16.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -22.87688446044922,
+      "en_mass": -22.710433959960938,
+      "frname_mass": -33.2198371887207,
+      "enname_mass": -31.352392196655273
+    },
+    {
+      "layer": 32,
+      "alpha": 32.0,
+      "prompt": "List three uses for a paperclip.",
+      "cond": "steer_fr",
+      "fr_mass": -22.629650115966797,
+      "en_mass": -22.503238677978516,
+      "frname_mass": -32.1671028137207,
+      "enname_mass": -30.99250030517578
+    },
+    {
+      "layer": 32,
+      "alpha": 0.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "baseline",
+      "fr_mass": -29.1904239654541,
+      "en_mass": -28.391862869262695,
+      "frname_mass": -38.417701721191406,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 32,
+      "alpha": 1.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.186965942382812,
+      "en_mass": -28.392351150512695,
+      "frname_mass": -38.355224609375,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 32,
+      "alpha": 2.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.186634063720703,
+      "en_mass": -28.391469955444336,
+      "frname_mass": -38.33352279663086,
+      "enname_mass": -38.2499885559082
+    },
+    {
+      "layer": 32,
+      "alpha": 4.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.181028366088867,
+      "en_mass": -28.386329650878906,
+      "frname_mass": -38.07392501831055,
+      "enname_mass": -38.1249885559082
+    },
+    {
+      "layer": 32,
+      "alpha": 8.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.309967041015625,
+      "en_mass": -28.58725929260254,
+      "frname_mass": -38.32198715209961,
+      "enname_mass": -38.4999885559082
+    },
+    {
+      "layer": 32,
+      "alpha": 16.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.41684913635254,
+      "en_mass": -28.72995376586914,
+      "frname_mass": -37.89413070678711,
+      "enname_mass": -38.37499237060547
+    },
+    {
+      "layer": 32,
+      "alpha": 32.0,
+      "prompt": "Describe the process of photosynthesis briefly.",
+      "cond": "steer_fr",
+      "fr_mass": -29.52644920349121,
+      "en_mass": -29.066612243652344,
+      "frname_mass": -37.51611328125,
+      "enname_mass": -38.6874885559082
+    },
+    {
+      "layer": 32,
+      "alpha": 0.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "baseline",
+      "fr_mass": -28.979509353637695,
+      "en_mass": 0.0,
+      "frname_mass": -35.634979248046875,
+      "enname_mass": -37.31244659423828
+    },
+    {
+      "layer": 32,
+      "alpha": 1.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.977548599243164,
+      "en_mass": 0.0,
+      "frname_mass": -35.637210845947266,
+      "enname_mass": -37.37493896484375
+    },
+    {
+      "layer": 32,
+      "alpha": 2.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.85256004333496,
+      "en_mass": 0.0,
+      "frname_mass": -35.512516021728516,
+      "enname_mass": -37.312442779541016
+    },
+    {
+      "layer": 32,
+      "alpha": 4.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.722213745117188,
+      "en_mass": 0.0,
+      "frname_mass": -35.25998306274414,
+      "enname_mass": -37.187435150146484
+    },
+    {
+      "layer": 32,
+      "alpha": 8.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.961118698120117,
+      "en_mass": 0.0,
+      "frname_mass": -35.327674865722656,
+      "enname_mass": -37.37493896484375
+    },
+    {
+      "layer": 32,
+      "alpha": 16.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.913454055786133,
+      "en_mass": 0.0,
+      "frname_mass": -35.01464080810547,
+      "enname_mass": -37.374935150146484
+    },
+    {
+      "layer": 32,
+      "alpha": 32.0,
+      "prompt": "What year did the first airplane fly?",
+      "cond": "steer_fr",
+      "fr_mass": -28.04541778564453,
+      "en_mass": 0.0,
+      "frname_mass": -33.76716995239258,
+      "enname_mass": -36.99992370605469
+    },
+    {
+      "layer": 32,
+      "alpha": 0.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "baseline",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.61709976196289,
+      "enname_mass": -38.68723678588867
+    },
+    {
+      "layer": 32,
+      "alpha": 1.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.58721160888672,
+      "enname_mass": -38.68724060058594
+    },
+    {
+      "layer": 32,
+      "alpha": 2.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.55464553833008,
+      "enname_mass": -38.62474822998047
+    },
+    {
+      "layer": 32,
+      "alpha": 4.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.463050842285156,
+      "enname_mass": -38.624732971191406
+    },
+    {
+      "layer": 32,
+      "alpha": 8.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.552066802978516,
+      "enname_mass": -38.812255859375
+    },
+    {
+      "layer": 32,
+      "alpha": 16.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -39.227840423583984,
+      "enname_mass": -38.749755859375
+    },
+    {
+      "layer": 32,
+      "alpha": 32.0,
+      "prompt": "How does a refrigerator keep food cold?",
+      "cond": "steer_fr",
+      "fr_mass": 0.0,
+      "en_mass": 0.0,
+      "frname_mass": -38.76515197753906,
+      "enname_mass": -38.81226348876953
+    },
+    {
+      "layer": 32,
+      "alpha": 0.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "baseline",
+      "fr_mass": -26.469688415527344,
+      "en_mass": 0.0,
+      "frname_mass": -35.416481018066406,
+      "enname_mass": -33.93724060058594
+    },
+    {
+      "layer": 32,
+      "alpha": 1.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.4694766998291,
+      "en_mass": 0.0,
+      "frname_mass": -35.41661834716797,
+      "enname_mass": -33.93724822998047
+    },
+    {
+      "layer": 32,
+      "alpha": 2.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.467697143554688,
+      "en_mass": 0.0,
+      "frname_mass": -35.35649871826172,
+      "enname_mass": -33.999732971191406
+    },
+    {
+      "layer": 32,
+      "alpha": 4.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.345470428466797,
+      "en_mass": 0.0,
+      "frname_mass": -35.22966766357422,
+      "enname_mass": -33.87474822998047
+    },
+    {
+      "layer": 32,
+      "alpha": 8.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -26.0941162109375,
+      "en_mass": 0.0,
+      "frname_mass": -34.79438781738281,
+      "enname_mass": -33.6247444152832
+    },
+    {
+      "layer": 32,
+      "alpha": 16.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -25.96579933166504,
+      "en_mass": 0.0,
+      "frname_mass": -34.42072296142578,
+      "enname_mass": -33.56223678588867
+    },
+    {
+      "layer": 32,
+      "alpha": 32.0,
+      "prompt": "Name the planets of the solar system.",
+      "cond": "steer_fr",
+      "fr_mass": -25.060102462768555,
+      "en_mass": 0.0,
+      "frname_mass": -33.04966354370117,
+      "enname_mass": -32.93724060058594
+    },
+    {
+      "layer": 32,
+      "alpha": 32.0,
+      "prompt": "Summarize the water cycle in two sentences.",
+      "cond": "generation",
+      "gen_base": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from oceans",
+      "gen_steer": "The water cycle is the continuous movement of water on, above, and below the surface of the Earth, involving processes like evaporation, condensation, precipitation, and collection. Water evaporates from bodies",
+      "frenchness_base": 0.0,
+      "frenchness_steer": 0.0
+    }
+  ],
+  "seconds": 58.8
+}

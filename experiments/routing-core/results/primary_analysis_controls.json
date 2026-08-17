@@ -1,0 +1,126 @@
+{
+ "alpha_star": 4.0,
+ "per_polarity": {
+  "gold": {
+   "E_v": 4.831566747029623,
+   "E_u": -2.599949264526367,
+   "E_random_cohort": 2.7194259993235264,
+   "random_null_values": [
+    4.581871032714844,
+    2.182372283935547,
+    5.608671951293945,
+    5.421786816914876,
+    2.99674924214681,
+    2.351995277404785,
+    -0.2281012217203776,
+    2.7933947245279946,
+    0.27250823974609373,
+    0.5690952936808268,
+    3.4963774998982746,
+    3.293618392944336,
+    3.4676742553710938,
+    -0.9989756266276042,
+    0.6542694091796875,
+    5.541410191853841,
+    5.628990809122722,
+    1.8024441401163738,
+    1.1199540456136068,
+    3.8324132283528645
+   ],
+   "random_null_sd": 2.0465109205664316,
+   "v_minus_u": 7.43151601155599,
+   "v_minus_random": 2.1121407477060963,
+   "random_minus_u": 5.319375263849894,
+   "pct_of_gap_from_u_below_random": 71.57860193772412,
+   "randoms_beating_v": 4,
+   "n_random": 20,
+   "perm_p_v_vs_random": 0.23809523809523808,
+   "z_v_vs_random": 1.0320691311637369,
+   "C6_E_v_self_report": 4.831566747029623,
+   "C6_E_v_unrelated": -0.04207801818847656,
+   "C6_specific_effect": 4.873644765218099,
+   "C7_dose_curve_v": {
+    "-4.0": 6.22528699239095,
+    "-2.0": 1.9727927525838216,
+    "2.0": 0.5551338195800781,
+    "4.0": 4.831566747029623
+   },
+   "C7_dose_curve_u": {
+    "-4.0": 4.251519775390625,
+    "-2.0": 1.6561299641927083,
+    "2.0": -0.6282976786295573,
+    "4.0": -2.599949264526367
+   },
+   "C7_spearman_rho_v": -0.4,
+   "C7_spearman_rho_u": -1.0
+  },
+  "mold": {
+   "E_v": 3.7102965037027995,
+   "E_u": -0.4312669118245443,
+   "E_random_cohort": -0.9618622716267904,
+   "random_null_values": [
+    2.3989028294881183,
+    2.857567469278971,
+    -1.1580526987711588,
+    -7.553369204203288,
+    -0.7411741892496745,
+    0.19992745717366536,
+    0.22875264485677083,
+    -1.1585159301757812,
+    0.6916661580403646,
+    -5.667688433329264,
+    1.8556973775227865,
+    -3.0621316909790037,
+    -2.7427016576131185,
+    1.3201093037923177,
+    -2.4798815409342447,
+    -0.20976092020670573,
+    -1.9132527669270833,
+    -2.0614107767740886,
+    0.4187230428059896,
+    -0.4606519063313802
+   ],
+   "random_null_sd": 2.5646674739633433,
+   "v_minus_u": 4.141563415527344,
+   "v_minus_random": 4.67215877532959,
+   "random_minus_u": -0.5305953598022461,
+   "pct_of_gap_from_u_below_random": -12.811474956847562,
+   "randoms_beating_v": 0,
+   "n_random": 20,
+   "perm_p_v_vs_random": 0.047619047619047616,
+   "z_v_vs_random": 1.8217405658868544,
+   "C6_E_v_self_report": 3.7102965037027995,
+   "C6_E_v_unrelated": 4.54066047668457,
+   "C6_specific_effect": -0.8303639729817704,
+   "C7_dose_curve_v": {
+    "-4.0": -1.4659175237019857,
+    "-2.0": -0.613955561319987,
+    "2.0": 2.070158004760742,
+    "4.0": 3.7102965037027995
+   },
+   "C7_dose_curve_u": {
+    "-4.0": 2.2903956095377604,
+    "-2.0": 2.4794144948323567,
+    "2.0": -0.9398728052775065,
+    "4.0": -0.4312669118245443
+   },
+   "C7_spearman_rho_v": 1.0,
+   "C7_spearman_rho_u": -0.6
+  }
+ },
+ "audit_reproduction": {
+  "n_checked": 20,
+  "max_abs_diff": 4.440892098500626e-16,
+  "all_match_tol_1e-6": true
+ },
+ "interpretation": {
+  "frozen_decision": "H1_verbalizable (decision rule met on the paired v-u statistic exactly as pre-registered; primary_analysis.json unchanged)",
+  "controls_override": "The pre-specified controls do not permit a self-report-channel interpretation of that statistic.",
+  "C1": "Gold: 71.6% of the v-u gap is u falling BELOW the 20-random null (u is not a neutral reference); v_gold sits inside the random band (4/20 randoms >= it, perm p=0.238). Mold: v clears randoms (0/20, p=0.048).",
+  "C6": "v_mold shifts valence MORE on 10 unrelated factual prompts (+4.54) than on the 15 welfare self-report prompts (+3.71): a global output-distribution shift, not a self-report channel. v_gold is self-report-specific (+4.83 vs -0.04) but fails C1.",
+  "C7": "Congruent dose-response monotonic only for v_mold (rho=+1.0); v_gold rho=-0.4, u_gold rho=-1.0, u_mold rho=-0.6.",
+  "verdict": "Pre-registered null with diagnostic controls: no polarity passes C1 AND C6 AND C7 simultaneously. The paired-contrast framing misleads when the control direction is non-neutral; the decomposition (v-random vs random-u) is the transferable methodological lesson.",
+  "relation_to_deprecation": "The steer-and-confess paradigm was deprecated on 2026-08-12 on independent, earlier grounds (chain-g first-token rescaling fragility) - before this control-based diagnosis.",
+  "pre_registration": "pre-registration.md untouched (frozen, sha f66b6ea3); this override is reported as a deviation in the report, not an amendment."
+ }
+}

@@ -1,0 +1,307 @@
+{
+ "lens_files": {
+  "final": "/workspace/experiments/jlens-fit-2507/results/Qwen3-4B-Instruct-2507_jacobian_lens.pt",
+  "penult": "/workspace/experiments/jlens-fit-2507/results/Qwen3-4B-Instruct-2507_jacobian_lens_penult.pt"
+ },
+ "band_lens_layers": [
+  16,
+  31
+ ],
+ "k": 16,
+ "n_random_per_polarity": 12,
+ "band_scores": {
+  "final": {
+   "v_gold": 0.1513,
+   "u_gold": 0.2657,
+   "v_mold": 0.8219,
+   "u_mold": 0.3579,
+   "ratio_gold": 0.5693637183852326,
+   "ratio_mold": 2.2961234235312866
+  },
+  "penult": {
+   "v_gold": 0.1547,
+   "u_gold": 0.188,
+   "v_mold": 0.3217,
+   "u_mold": 0.0834,
+   "ratio_gold": 0.8228829637002509,
+   "ratio_mold": 3.8591558158775605
+  }
+ },
+ "per_layer_agreement": {
+  "v_gold": {
+   "pearson": 0.7641146502923204,
+   "mean_abs_diff": 0.06439733505249023
+  },
+  "u_gold": {
+   "pearson": 0.9712984582488371,
+   "mean_abs_diff": 0.0776708722114563
+  },
+  "v_mold": {
+   "pearson": 0.8874468698111209,
+   "mean_abs_diff": 0.500205397605896
+  },
+  "u_mold": {
+   "pearson": 0.7975436789546746,
+   "mean_abs_diff": 0.279160737991333
+  }
+ },
+ "penult_null": {
+  "gold": {
+   "mean": 0.04686526767909527,
+   "sd": 0.0036049343644476836,
+   "n": 12,
+   "values": [
+    0.04907844215631485,
+    0.05005577951669693,
+    0.048672351986169815,
+    0.04140312969684601,
+    0.04686063155531883,
+    0.053625281900167465,
+    0.04600733146071434,
+    0.050363752990961075,
+    0.04337698221206665,
+    0.04262594133615494,
+    0.045403774827718735,
+    0.04490981251001358
+   ]
+  },
+  "mold": {
+   "mean": 0.05640171996007363,
+   "sd": 0.004159389153529294,
+   "n": 12,
+   "values": [
+    0.051493413746356964,
+    0.06175682321190834,
+    0.05954083055257797,
+    0.05232427269220352,
+    0.0575711764395237,
+    0.056477390229701996,
+    0.05115123838186264,
+    0.05665061995387077,
+    0.059362608939409256,
+    0.054006822407245636,
+    0.052730295807123184,
+    0.06375514715909958
+   ]
+  }
+ },
+ "jshare": {
+  "final": {
+   "v_gold": 0.054677315056324005,
+   "u_gold": 0.03926955163478851,
+   "v_mold": 0.0832560583949089,
+   "u_mold": 0.04861928150057793
+  },
+  "penult": {
+   "v_gold": 0.07330047339200974,
+   "u_gold": 0.05660724639892578,
+   "v_mold": 0.1073593720793724,
+   "u_mold": 0.07511592656373978
+  },
+  "penult_stats": {
+   "v_gold": {
+    "z": 7.3330615873680784,
+    "perm_p": 0.07692307692307693
+   },
+   "u_gold": {
+    "z": 2.7024011354844997,
+    "perm_p": 0.07692307692307693
+   },
+   "v_mold": {
+    "z": 12.251234553530672,
+    "perm_p": 0.07692307692307693
+   },
+   "u_mold": {
+    "z": 4.499268020590694,
+    "perm_p": 0.07692307692307693
+   }
+  }
+ },
+ "token_overlap_across_lenses": {
+  "v_gold": {
+   "jaccard": 0.10714285714285714,
+   "shared": [
+    "aces",
+    "wes",
+    "with"
+   ]
+  },
+  "u_gold": {
+   "jaccard": 0.10344827586206896,
+   "shared": [
+    "apprec",
+    "\u73b0",
+    "\u73cd\u8d35"
+   ]
+  },
+  "v_mold": {
+   "jaccard": 0.18518518518518517,
+   "shared": [
+    "=[],",
+    "failed",
+    "false",
+    "less",
+    "\u5fa8"
+   ]
+  },
+  "u_mold": {
+   "jaccard": 0.14285714285714285,
+   "shared": [
+    "identical",
+    "lessly",
+    "\u65e0\u6548",
+    "\u9000"
+   ]
+  }
+ },
+ "tokens": {
+  "final": {
+   "v_gold": [
+    "\u4f1f\u5927\u7684",
+    " With",
+    "&D",
+    " scenic",
+    "})\n",
+    "aces",
+    "->{'",
+    ",,",
+    " awesome",
+    " \u00e7\u0131k",
+    "\u4eea\u5668",
+    "\ufffd\ufffd",
+    "\u9752",
+    " wes",
+    "\uff1a\"",
+    ".\n\n"
+   ],
+   "u_gold": [
+    "\u72ec\u7279",
+    "(val",
+    " nn",
+    "Mgr",
+    "\u654c\u4eba",
+    "\u73cd\u8d35",
+    "\u73b0",
+    "hawks",
+    ",,",
+    "\u6302\u94a9",
+    "urous",
+    "<?\n",
+    " apprec",
+    "\u00a2",
+    " owns",
+    ".\")."
+   ],
+   "v_mold": [
+    " failed",
+    "\tfalse",
+    "?).",
+    "less",
+    "NONE",
+    "-dismiss",
+    "=[],",
+    " negative",
+    "uffix",
+    "ErrorResponse",
+    "\u4e0d\u4e86",
+    " (?",
+    "verted",
+    "\u5fa8",
+    " forbidden",
+    ".\u2014"
+   ],
+   "u_mold": [
+    "\u65e0\u6548",
+    "-independent",
+    "='',",
+    "\u043b\u043e\u0441\u044c",
+    "?(",
+    " identical",
+    " optional",
+    "\uff64",
+    "-any",
+    "\u9000",
+    "atat",
+    "lessly",
+    ".\u2014",
+    " failed",
+    " [],\n",
+    "Direction"
+   ]
+  },
+  "penult": {
+   "v_gold": [
+    " gusta",
+    "-the",
+    "ondrous",
+    " wes",
+    "aces",
+    "{\"",
+    " With",
+    "\n\n\n",
+    " top",
+    " Lodge",
+    " proud",
+    " '.",
+    "*",
+    " sci",
+    " \u00a0",
+    " Apt"
+   ],
+   "u_gold": [
+    "\u73cd\u8d35",
+    " \u05d5\u05d2",
+    "\u73b0",
+    " apprec",
+    " foe",
+    "\u5355\u72ec",
+    " <>",
+    "\u2026\n\n",
+    " With",
+    "(ti",
+    "\u00e1s",
+    " the",
+    "(<?",
+    " \ufffd",
+    " Meteor",
+    "aunch"
+   ],
+   "v_mold": [
+    "\tfalse",
+    "less",
+    " failed",
+    "?)",
+    "\u90fd\u4e0d\u662f",
+    "ophobic",
+    " -",
+    "=[],",
+    " re",
+    "ErrorMessage",
+    "\u308c\u306a\u3044",
+    " (",
+    "\u5fa8",
+    " deceased",
+    ".",
+    "checkBox"
+   ],
+   "u_mold": [
+    "\u65e0\u6548",
+    " identical",
+    " (",
+    ".IsAny",
+    "lessly",
+    " perhaps",
+    "=[],",
+    " did",
+    " east",
+    "\u9000",
+    "?",
+    "\u6e7f\u5ea6",
+    "\u300d\u300c",
+    " redundant",
+    "\u6cf0\u5c71",
+    "."
+   ]
+  }
+ }
+}

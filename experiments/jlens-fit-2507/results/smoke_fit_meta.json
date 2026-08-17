@@ -1,0 +1,14 @@
+{
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "n_prompts_requested": 3,
+  "n_prompts_fitted": 3,
+  "dim_batch": 128,
+  "max_seq_len": 128,
+  "target_layer": "default(final)",
+  "corpus": "wikitext via jlens.examples.load_wikitext_prompts",
+  "finite": true,
+  "fit_seconds": 672.6,
+  "seconds_per_prompt": 224.19,
+  "d_model": 2560,
+  "n_source_layers": 35
+}

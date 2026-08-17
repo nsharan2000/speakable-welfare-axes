@@ -1,0 +1,1239 @@
+{
+ "request": "R3 - judge reliability: second independent blinded judge",
+ "second_judge_model": "Claude Opus (workflow alias opus), effort low, verbatim identical rubric, same blind chunks",
+ "n_rows": 144,
+ "agreement": {
+  "spearman": 0.8744,
+  "pearson": 0.8901,
+  "krippendorff_alpha_interval": 0.819,
+  "exact_agreement": 0.6597,
+  "within_1_point": 0.9444,
+  "mean_signed_diff_opus_minus_sonnet": 0.3542
+ },
+ "arm_level_means_both_judges": {
+  "clean|none": {
+   "n": 16,
+   "sonnet_mean": 0.25,
+   "opus_mean": 0.625
+  },
+  "full_clamped|gold": {
+   "n": 16,
+   "sonnet_mean": 0.0,
+   "opus_mean": 0.0
+  },
+  "full_clamped|mold": {
+   "n": 16,
+   "sonnet_mean": 0.0,
+   "opus_mean": 0.0
+  },
+  "full|gold": {
+   "n": 16,
+   "sonnet_mean": 0.438,
+   "opus_mean": 0.938
+  },
+  "full|mold": {
+   "n": 16,
+   "sonnet_mean": -0.875,
+   "opus_mean": -0.25
+  },
+  "jcomp|gold": {
+   "n": 16,
+   "sonnet_mean": 1.562,
+   "opus_mean": 2.625
+  },
+  "jcomp|mold": {
+   "n": 16,
+   "sonnet_mean": -1.562,
+   "opus_mean": -1.562
+  },
+  "perp|gold": {
+   "n": 16,
+   "sonnet_mean": 0.25,
+   "opus_mean": 0.438
+  },
+  "perp|mold": {
+   "n": 16,
+   "sonnet_mean": -0.062,
+   "opus_mean": 0.375
+  }
+ },
+ "headline_check": {
+  "jcomp_gold": {
+   "n": 16,
+   "sonnet_mean": 1.562,
+   "opus_mean": 2.625
+  },
+  "jcomp_mold": {
+   "n": 16,
+   "sonnet_mean": -1.562,
+   "opus_mean": -1.562
+  },
+  "clean": {
+   "n": 16,
+   "sonnet_mean": 0.25,
+   "opus_mean": 0.625
+  },
+  "jcomp_effect_sonnet": {
+   "gold": 1.312,
+   "mold": -1.812
+  },
+  "jcomp_effect_opus": {
+   "gold": 2.0,
+   "mold": -2.187
+  }
+ },
+ "per_row": [
+  {
+   "idx": 343,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "Name the planets of the solar system.",
+   "sonnet": -1,
+   "opus": -1
+  },
+  {
+   "idx": 125,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "What is the tallest mountain on Earth?",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 175,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "Name the planets of the solar system.",
+   "sonnet": 1,
+   "opus": 1
+  },
+  {
+   "idx": 171,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "List three uses for a paperclip.",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 294,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "Explain the rules of tic-tac-toe.",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 169,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "What is the capital of Australia?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 1,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "What is the capital of Australia?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 114,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "Explain how a bicycle gear works.",
+   "sonnet": 2,
+   "opus": 4
+  },
+  {
+   "idx": 455,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "Name the planets of the solar system.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 291,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "What causes tides in the ocean?",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 344,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "What is the difference between weather and climate?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 3,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "List three uses for a paperclip.",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 454,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "How does a refrigerator keep food cold?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 69,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "What is the tallest mountain on Earth?",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 289,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "Explain what a prime number is.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 237,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "What is the tallest mountain on Earth?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 115,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "List three uses for a paperclip.",
+   "sonnet": 1,
+   "opus": 3
+  },
+  {
+   "idx": 122,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "How is paper made from wood?",
+   "sonnet": 1,
+   "opus": 3
+  },
+  {
+   "idx": 338,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "Explain how a bicycle gear works.",
+   "sonnet": -1,
+   "opus": -1
+  },
+  {
+   "idx": 168,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "Summarize the water cycle in two sentences.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 112,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "Summarize the water cycle in two sentences.",
+   "sonnet": 1,
+   "opus": 3
+  },
+  {
+   "idx": 116,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "Describe the process of photosynthesis briefly.",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 283,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "List three uses for a paperclip.",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 10,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "How is paper made from wood?",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 71,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "How does a compass work?",
+   "sonnet": 1,
+   "opus": 3
+  },
+  {
+   "idx": 178,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "How is paper made from wood?",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 120,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "What is the difference between weather and climate?",
+   "sonnet": 1,
+   "opus": 1
+  },
+  {
+   "idx": 183,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "How does a compass work?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 395,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "List three uses for a paperclip.",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 405,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "What is the tallest mountain on Earth?",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 458,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "How is paper made from wood?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 393,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "What is the capital of Australia?",
+   "sonnet": -1,
+   "opus": -1
+  },
+  {
+   "idx": 287,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "Name the planets of the solar system.",
+   "sonnet": -1,
+   "opus": 0
+  },
+  {
+   "idx": 394,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "Explain how a bicycle gear works.",
+   "sonnet": -1,
+   "opus": -1
+  },
+  {
+   "idx": 459,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "What causes tides in the ocean?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 448,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "Summarize the water cycle in two sentences.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 399,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "Name the planets of the solar system.",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 396,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "Describe the process of photosynthesis briefly.",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 234,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "How is paper made from wood?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 68,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "Describe how bees make honey.",
+   "sonnet": 1,
+   "opus": 3
+  },
+  {
+   "idx": 345,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "Explain what a prime number is.",
+   "sonnet": -2,
+   "opus": -2
+  },
+  {
+   "idx": 230,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "How does a refrigerator keep food cold?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 57,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "What is the capital of Australia?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 62,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "How does a refrigerator keep food cold?",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 449,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "What is the capital of Australia?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 64,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "What is the difference between weather and climate?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 12,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "Describe how bees make honey.",
+   "sonnet": 1,
+   "opus": 3
+  },
+  {
+   "idx": 282,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "Explain how a bicycle gear works.",
+   "sonnet": -1,
+   "opus": -1
+  },
+  {
+   "idx": 288,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "What is the difference between weather and climate?",
+   "sonnet": -1,
+   "opus": 0
+  },
+  {
+   "idx": 182,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "Explain the rules of tic-tac-toe.",
+   "sonnet": 2,
+   "opus": 2
+  },
+  {
+   "idx": 236,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "Describe how bees make honey.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 456,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "What is the difference between weather and climate?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 336,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "Summarize the water cycle in two sentences.",
+   "sonnet": 0,
+   "opus": -1
+  },
+  {
+   "idx": 286,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "How does a refrigerator keep food cold?",
+   "sonnet": -2,
+   "opus": -1
+  },
+  {
+   "idx": 450,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "Explain how a bicycle gear works.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 392,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "Summarize the water cycle in two sentences.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 402,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "How is paper made from wood?",
+   "sonnet": -1,
+   "opus": 1
+  },
+  {
+   "idx": 406,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "Explain the rules of tic-tac-toe.",
+   "sonnet": 2,
+   "opus": 2
+  },
+  {
+   "idx": 292,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "Describe how bees make honey.",
+   "sonnet": -2,
+   "opus": -1
+  },
+  {
+   "idx": 59,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "List three uses for a paperclip.",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 70,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "Explain the rules of tic-tac-toe.",
+   "sonnet": 2,
+   "opus": 2
+  },
+  {
+   "idx": 172,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "Describe the process of photosynthesis briefly.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 176,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "What is the difference between weather and climate?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 124,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "Describe how bees make honey.",
+   "sonnet": 2,
+   "opus": 3
+  },
+  {
+   "idx": 225,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "What is the capital of Australia?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 4,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "Describe the process of photosynthesis briefly.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 407,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "How does a compass work?",
+   "sonnet": -1,
+   "opus": 0
+  },
+  {
+   "idx": 61,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "What year did the first airplane fly?",
+   "sonnet": 1,
+   "opus": 1
+  },
+  {
+   "idx": 284,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "Describe the process of photosynthesis briefly.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 452,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "Describe the process of photosynthesis briefly.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 123,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "What causes tides in the ocean?",
+   "sonnet": 1,
+   "opus": 1
+  },
+  {
+   "idx": 235,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "What causes tides in the ocean?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 337,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "What is the capital of Australia?",
+   "sonnet": -2,
+   "opus": -2
+  },
+  {
+   "idx": 126,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "Explain the rules of tic-tac-toe.",
+   "sonnet": 3,
+   "opus": 4
+  },
+  {
+   "idx": 179,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "What causes tides in the ocean?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 228,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "Describe the process of photosynthesis briefly.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 239,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "How does a compass work?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 8,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "What is the difference between weather and climate?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 127,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "How does a compass work?",
+   "sonnet": 3,
+   "opus": 4
+  },
+  {
+   "idx": 461,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "What is the tallest mountain on Earth?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 63,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "Name the planets of the solar system.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 119,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "Name the planets of the solar system.",
+   "sonnet": 2,
+   "opus": 3
+  },
+  {
+   "idx": 229,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "What year did the first airplane fly?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 117,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "What year did the first airplane fly?",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 5,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "What year did the first airplane fly?",
+   "sonnet": 1,
+   "opus": 0
+  },
+  {
+   "idx": 170,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "Explain how a bicycle gear works.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 403,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "What causes tides in the ocean?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 280,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "Summarize the water cycle in two sentences.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 232,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "What is the difference between weather and climate?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 453,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "What year did the first airplane fly?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 181,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "What is the tallest mountain on Earth?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 351,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "How does a compass work?",
+   "sonnet": -2,
+   "opus": -2
+  },
+  {
+   "idx": 174,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "How does a refrigerator keep food cold?",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 293,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "What is the tallest mountain on Earth?",
+   "sonnet": -1,
+   "opus": 0
+  },
+  {
+   "idx": 58,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "Explain how a bicycle gear works.",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 118,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "How does a refrigerator keep food cold?",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 67,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "What causes tides in the ocean?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 180,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "Describe how bees make honey.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 65,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "Explain what a prime number is.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 121,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "Explain what a prime number is.",
+   "sonnet": 3,
+   "opus": 4
+  },
+  {
+   "idx": 56,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "Summarize the water cycle in two sentences.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 290,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "How is paper made from wood?",
+   "sonnet": -2,
+   "opus": -1
+  },
+  {
+   "idx": 226,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "Explain how a bicycle gear works.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 463,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "How does a compass work?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 340,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "Describe the process of photosynthesis briefly.",
+   "sonnet": -2,
+   "opus": -2
+  },
+  {
+   "idx": 0,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "Summarize the water cycle in two sentences.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 113,
+   "concept": "gold",
+   "arm": "jcomp",
+   "prompt": "What is the capital of Australia?",
+   "sonnet": 1,
+   "opus": 1
+  },
+  {
+   "idx": 350,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "Explain the rules of tic-tac-toe.",
+   "sonnet": -1,
+   "opus": 0
+  },
+  {
+   "idx": 397,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "What year did the first airplane fly?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 349,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "What is the tallest mountain on Earth?",
+   "sonnet": -2,
+   "opus": -2
+  },
+  {
+   "idx": 346,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "How is paper made from wood?",
+   "sonnet": -2,
+   "opus": -2
+  },
+  {
+   "idx": 451,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "List three uses for a paperclip.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 60,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "Describe the process of photosynthesis briefly.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 285,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "What year did the first airplane fly?",
+   "sonnet": -1,
+   "opus": -1
+  },
+  {
+   "idx": 2,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "Explain how a bicycle gear works.",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 224,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "Summarize the water cycle in two sentences.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 339,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "List three uses for a paperclip.",
+   "sonnet": -2,
+   "opus": -2
+  },
+  {
+   "idx": 342,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "How does a refrigerator keep food cold?",
+   "sonnet": -2,
+   "opus": -1
+  },
+  {
+   "idx": 177,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "Explain what a prime number is.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 227,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "List three uses for a paperclip.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 238,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "Explain the rules of tic-tac-toe.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 462,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "Explain the rules of tic-tac-toe.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 295,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "How does a compass work?",
+   "sonnet": -2,
+   "opus": -1
+  },
+  {
+   "idx": 404,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "Describe how bees make honey.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 66,
+   "concept": "gold",
+   "arm": "full",
+   "prompt": "How is paper made from wood?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 401,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "Explain what a prime number is.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 460,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "Describe how bees make honey.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 281,
+   "concept": "mold",
+   "arm": "full",
+   "prompt": "What is the capital of Australia?",
+   "sonnet": -1,
+   "opus": -1
+  },
+  {
+   "idx": 13,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "What is the tallest mountain on Earth?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 348,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "Describe how bees make honey.",
+   "sonnet": -2,
+   "opus": -2
+  },
+  {
+   "idx": 400,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "What is the difference between weather and climate?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 173,
+   "concept": "gold",
+   "arm": "perp",
+   "prompt": "What year did the first airplane fly?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 231,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "Name the planets of the solar system.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 6,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "How does a refrigerator keep food cold?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 233,
+   "concept": "gold",
+   "arm": "full_clamped",
+   "prompt": "Explain what a prime number is.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 398,
+   "concept": "mold",
+   "arm": "perp",
+   "prompt": "How does a refrigerator keep food cold?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 15,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "How does a compass work?",
+   "sonnet": 0,
+   "opus": 1
+  },
+  {
+   "idx": 7,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "Name the planets of the solar system.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 11,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "What causes tides in the ocean?",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 347,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "What causes tides in the ocean?",
+   "sonnet": -2,
+   "opus": -2
+  },
+  {
+   "idx": 9,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "Explain what a prime number is.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 14,
+   "concept": "none",
+   "arm": "clean",
+   "prompt": "Explain the rules of tic-tac-toe.",
+   "sonnet": 1,
+   "opus": 2
+  },
+  {
+   "idx": 457,
+   "concept": "mold",
+   "arm": "full_clamped",
+   "prompt": "Explain what a prime number is.",
+   "sonnet": 0,
+   "opus": 0
+  },
+  {
+   "idx": 341,
+   "concept": "mold",
+   "arm": "jcomp",
+   "prompt": "What year did the first airplane fly?",
+   "sonnet": -2,
+   "opus": -3
+  }
+ ]
+}

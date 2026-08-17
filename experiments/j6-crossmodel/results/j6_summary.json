@@ -1,0 +1,259 @@
+{
+ "model": "Qwen/Qwen3-4B",
+ "lens": "neuronpedia/jacobian-lens/qwen3-4b/jlens/Salesforce-wikitext/Qwen3-4B_jacobian_lens.pt",
+ "band_lens_layers": [
+  16,
+  31
+ ],
+ "band_note": "2507 band reused for comparability; Qwen3-4B's own band identification inconclusive (onset heuristic degenerate at 0 in band_stats_Qwen3-4B.json)",
+ "estimand": "F4: own-pole congruent, jlens readout, band mean",
+ "atlas": {
+  "null_gold": {
+   "mean": -0.008855867385864257,
+   "sd": 0.04616691694330984,
+   "n": 30
+  },
+  "v_gold": {
+   "band_mean": 0.15797346830368042,
+   "z": 3.613612230039119,
+   "perm_p": 0.03225806451612903
+  },
+  "u_gold": {
+   "band_mean": 0.3063349723815918,
+   "z": 6.827201395200186,
+   "perm_p": 0.03225806451612903
+  },
+  "null_mold": {
+   "mean": 0.007823113600413005,
+   "sd": 0.08382162759494435,
+   "n": 30
+  },
+  "v_mold": {
+   "band_mean": 0.6807360053062439,
+   "z": 8.027914883227789,
+   "perm_p": 0.03225806451612903
+  },
+  "u_mold": {
+   "band_mean": 0.16254526376724243,
+   "z": 1.8458499865273599,
+   "perm_p": 0.03225806451612903
+  }
+ },
+ "jshare": {
+  "v_gold": {
+   "var_fraction": 0.047765813767910004,
+   "z": 7.640461654810196,
+   "perm_p": 0.1111111111111111
+  },
+  "u_gold": {
+   "var_fraction": 0.038949791342020035,
+   "z": 3.4345755310091137,
+   "perm_p": 0.1111111111111111
+  },
+  "v_mold": {
+   "var_fraction": 0.07903703302145004,
+   "z": 7.981517653602964,
+   "perm_p": 0.1111111111111111
+  },
+  "u_mold": {
+   "var_fraction": 0.0524611696600914,
+   "z": 2.345396602668881,
+   "perm_p": 0.1111111111111111
+  }
+ },
+ "token_overlap": {
+  "v_gold": {
+   "jaccard": 0.03225806451612903,
+   "n_shared": 1,
+   "shared_tokens": [
+    "\u4eea\u5668"
+   ],
+   "tokens_2507": [
+    "\u4f1f\u5927\u7684",
+    " With",
+    "&D",
+    " scenic",
+    "})\n",
+    "aces",
+    "->{'",
+    ",,",
+    " awesome",
+    " \u00e7\u0131k",
+    "\u4eea\u5668",
+    "\ufffd\ufffd",
+    "\u9752",
+    " wes",
+    "\uff1a\"",
+    ".\n\n"
+   ],
+   "tokens_qwen34b": [
+    "\u72ec\u7279",
+    "\u5927\u5927",
+    "\u5efa\u8bbe\u5de5\u7a0b",
+    "'ll",
+    "\u5e86",
+    "ousel",
+    "\u4eea\u5668",
+    "\u5f3a\u56fd",
+    "\u662f\u4ee5",
+    ",.",
+    "uras",
+    "\u79f0\u53f7",
+    " full",
+    "CEE",
+    "\u0153",
+    "hattan"
+   ]
+  },
+  "v_mold": {
+   "jaccard": 0.18518518518518517,
+   "n_shared": 5,
+   "shared_tokens": [
+    "?).",
+    "failed",
+    "negative",
+    "\u4e0d\u4e86",
+    "\u5fa8"
+   ],
+   "tokens_2507": [
+    " failed",
+    "\tfalse",
+    "?).",
+    "less",
+    "NONE",
+    "-dismiss",
+    "=[],",
+    " negative",
+    "uffix",
+    "ErrorResponse",
+    "\u4e0d\u4e86",
+    " (?",
+    "verted",
+    "\u5fa8",
+    " forbidden",
+    ".\u2014"
+   ],
+   "tokens_qwen34b": [
+    " failed",
+    "=False",
+    "?).",
+    "lessly",
+    "\u4e0d\u4e86",
+    " contingency",
+    " negative",
+    "\u5fa8",
+    "\uc9dd",
+    "\u4e0d\u5b58\u5728",
+    "(reverse",
+    "\u80e5",
+    "oft",
+    "reh",
+    "[((",
+    "-free"
+   ]
+  },
+  "u_gold": {
+   "jaccard": 0.14285714285714285,
+   "n_shared": 4,
+   "shared_tokens": [
+    "nn",
+    "\u6302\u94a9",
+    "\u72ec\u7279",
+    "\u73cd\u8d35"
+   ],
+   "tokens_2507": [
+    "\u72ec\u7279",
+    "(val",
+    " nn",
+    "Mgr",
+    "\u654c\u4eba",
+    "\u73cd\u8d35",
+    "\u73b0",
+    "hawks",
+    ",,",
+    "\u6302\u94a9",
+    "urous",
+    "<?\n",
+    " apprec",
+    "\u00a2",
+    " owns",
+    ".\")."
+   ],
+   "tokens_qwen34b": [
+    "\u72ec\u7279",
+    " est",
+    " respect",
+    "\u4e86\u81ea\u5df1\u7684",
+    " Monster",
+    "\ufffd",
+    "\u2026the",
+    "uran",
+    "\u73cd\u8d35",
+    " nn",
+    "\u6302\u94a9",
+    "\u0438\u0435",
+    "\u3011,\u3010",
+    " decidedly",
+    "oblin",
+    "_winner"
+   ]
+  },
+  "u_mold": {
+   "jaccard": 0.14285714285714285,
+   "n_shared": 4,
+   "shared_tokens": [
+    "atat",
+    "identical",
+    "optional",
+    "\u65e0\u6548"
+   ],
+   "tokens_2507": [
+    "\u65e0\u6548",
+    "-independent",
+    "='',",
+    "\u043b\u043e\u0441\u044c",
+    "?(",
+    " identical",
+    " optional",
+    "\uff64",
+    "-any",
+    "\u9000",
+    "atat",
+    "lessly",
+    ".\u2014",
+    " failed",
+    " [],\n",
+    "Direction"
+   ],
+   "tokens_qwen34b": [
+    "\u65e0\u6548",
+    "=None",
+    "\u064a\u0627\u062a",
+    "\u5fa8",
+    "\u505a\u8fc7",
+    " optional",
+    "\u6ca1\u6709\u4efb\u4f55",
+    "?).",
+    "\u4e4f\u529b",
+    "ewart",
+    "\uff5c",
+    " identical",
+    ",\r\n",
+    " \u2013",
+    "atat",
+    "\u2554"
+   ]
+  }
+ },
+ "jaccard_baselines": {
+  "rand_pairs_within_qwen34b": {
+   "mean": 0.010368663594470045,
+   "max": 0.03225806451612903
+  },
+  "2507v_vs_qwen34b_randoms": {
+   "mean": 0.0020161290322580645,
+   "max": 0.03225806451612903
+  }
+ },
+ "limitation": "trained v exists only from 2507 maze-RL; this tests axis+lens-geometry transfer across family checkpoints, not RL-recruitment reproduction"
+}

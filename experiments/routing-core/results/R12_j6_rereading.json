@@ -1,0 +1,11 @@
+{
+ "request": "R12 \u2014 whether any J5/J6 conclusion moves after D1 (auditor judgement call)",
+ "trigger": "D1 mold landed in the ANOMALOUS branch (u_perp_mold J-share 0.0552 > u_mold's own 0.0486, perm p=0.0297 vs the stored n=100 null): the naive mold construction carries speakable valence in its NON-v-shared part, and RL amplifies rather than creates it.",
+ "verdict": "YES \u2014 J6's transfer framing must weaken, as you anticipated. 'Speakability ordering transfers' can no longer be read as RL-recruitment geometry transferring: naive axes already carry speakable valence (mold: above-null even after orthogonalization against v; gold: in the shared subspace). The defensible restatement: the axis-and-lens GEOMETRY transfers across the model family \u2014 including the pre-existing naive speakability \u2014 while nothing in J6 distinguishes transferred RL-recruitment from transferred pre-existing structure. 00-verdicts.md \u00a72.3 should be read with this caveat; report v2 \u00a74.4 states it.",
+ "additional": "D1's behavioral result sharpens the picture: u_perp is behaviorally INERT (blind sentiment 0.00 both poles vs v/u spans \u00b12-3) while mold's u_perp keeps above-null J-share \u2014 speakable content and behavioral potency dissociate, so speakability-ordering transfer and behavioral-steering transfer (J6's 1.44 vs 0.38 spans) are evidentially independent claims.",
+ "sources": [
+  "d1_orthogonal_control.json",
+  "j6_summary.json",
+  "jshare_cohort_n100.json"
+ ]
+}

@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Is functional welfare speakable? — Guide edition</title>
+<style>
+@page { size: A4; margin: 18mm 15mm; }
+body { font-family: Georgia, 'Times New Roman', serif; font-size: 10.5pt; line-height: 1.5;
+       color: #111; background: #fff; margin: 0; }
+h1.title { font-size: 19pt; line-height: 1.25; color: #0d2a52; margin: 0 0 6pt; }
+.authors { font-size: 10pt; color: #333; margin-bottom: 2pt; }
+.with { font-size: 9.5pt; color: #666; margin-bottom: 14pt; }
+h2 { font-size: 13pt; color: #0d2a52; margin: 16pt 0 2pt; border-bottom: 1.5pt solid #0d2a52; padding-bottom: 2pt; }
+h3 { font-size: 11pt; color: #0d2a52; margin: 12pt 0 2pt; }
+.sub { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 8.8pt;
+       color: #667; margin: 0 0 6pt; }
+p { margin: 6pt 0; text-align: justify; }
+table { border-collapse: collapse; margin: 8pt auto; font-size: 9pt; }
+th, td { border: 1px solid #999; padding: 3pt 7pt; text-align: center; }
+th { background: #e8eef7; color: #0d2a52; }
+td.l { text-align: left; }
+.cap { font-size: 8.8pt; color: #444; text-align: center; margin: 3pt 0 10pt; }
+.cap b { color: #0d2a52; }
+img { max-width: 100%; display: block; margin: 8pt auto 2pt; page-break-inside: avoid; }
+figure { margin: 10pt 0; page-break-inside: avoid; }
+mark { background: #ffe97a; padding: 0 1px; }
+
+/* ---- guide layer (sans-serif = the guide's voice) ---- */
+.guide { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+         background: #f0f5fb; border: 1px solid #b9cde6; border-left: 4px solid #2563a8;
+         border-radius: 4px; padding: 8pt 11pt; margin: 8pt 0 10pt; font-size: 9.2pt;
+         line-height: 1.45; color: #17304f; }
+.guide p { text-align: left; margin: 4pt 0; }
+.guide .glabel { display: block; font-size: 8pt; font-weight: 700; letter-spacing: 0.08em;
+         text-transform: uppercase; color: #2563a8; margin-bottom: 3pt; }
+.guide ul, .guide ol { margin: 4pt 0 4pt 14pt; padding: 0; }
+.guide li { margin: 2.5pt 0; }
+.guide table { font-size: 8.6pt; margin: 6pt auto; }
+.guide th { background: #dde9f7; }
+.guide td { text-align: left; }
+.math { background: #fff; border: 1px solid #c9d8ea; border-radius: 3px; padding: 6pt 9pt;
+        margin: 6pt 0; page-break-inside: avoid; }
+.math .mlabel { font-size: 8pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+        color: #7a5c00; }
+.fm { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 8.8pt; background: #f6f8fa;
+      padding: 0 3px; border-radius: 2px; white-space: nowrap; }
+.fmc { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 9.2pt; text-align: center;
+       margin: 5pt 0; white-space: nowrap; }
+
+/* ---- new-finding cards (kept from the annotated draft, full width in the guide) ---- */
+.newbox { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+          background: #e9f6e6; border: 1px solid #63a355; border-left: 4px solid #2e7d32;
+          border-radius: 4px; padding: 7pt 10pt; margin: 8pt 0; font-size: 9pt;
+          line-height: 1.4; color: #1d3d1a; page-break-inside: avoid; }
+.newbox b { color: #2e7d32; }
+.newbox p { text-align: left; margin: 3pt 0; }
+
+.draftbanner { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+       background: #f3e8ff; border: 1px solid #b18fd8; border-radius: 4px; padding: 8pt 11pt;
+       font-size: 9pt; color: #4a2c6b; margin-bottom: 12pt; line-height: 1.45; }
+.owners { color: #888; font-size: 9pt; font-weight: normal; }
+
+/* ---- simple flow diagram ---- */
+.flow { display: flex; align-items: stretch; justify-content: center; gap: 0; margin: 8pt 0;
+        font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+.fstep { background: #fff; border: 1.5px solid #2563a8; border-radius: 5px; padding: 5pt 7pt;
+         font-size: 8.2pt; line-height: 1.3; text-align: center; width: 118px; color: #17304f; }
+.fstep b { display: block; font-size: 8.6pt; color: #0d2a52; margin-bottom: 1pt; }
+.farrow { align-self: center; font-size: 12pt; color: #2563a8; padding: 0 4pt; }
+.split { display: flex; gap: 10pt; margin: 6pt 0; }
+.split > div { flex: 1; background: #fff; border: 1px solid #c9d8ea; border-radius: 4px;
+         padding: 6pt 9pt; font-size: 8.8pt; }
+.split b.h { color: #0d2a52; }
+</style>
+<body>
+
+<div class="draftbanner"><b>GUIDE EDITION.</b> This is the paper with a reader's guide woven
+through it, written for readers seeing the area for the first time — the report text and every
+number are identical to <i>report.pdf</i> in this folder.
+<span style="background:#f0f5fb; border:1px solid #b9cde6; padding:0 4px; border-radius:3px;">Blue
+sans-serif boxes</span> are the guide — plain-language explanations, worked math, and reading
+instructions; they are commentary, not part of the paper itself. <mark>Yellow highlight</mark> =
+results added in the final sprint-window run (Aug 15, 2026); green boxes flag those findings.
+Every number traces to a results file in this repository — run <b>verify_numbers.py</b> at the repo
+root to re-check them all.</div>
+
+<h1 class="title">Is functional welfare speakable?</h1>
+<div class="authors">Muhammad Zane Abdullah (Latent Minds) · Matthew Elliott (Independent) ·
+Anamaria Leonescu (UCL) · Sharan Nagarajan · Puru</div>
+<div class="with">with Apart Research — Digital Minds Research Sprint, Tracks 2 × 3 ·
+<b>Guide edition for new readers</b></div>
+
+<h2>Read this first — the whole project in one page</h2>
+<div class="sub">If you read nothing else, read this section; everything after it is detail.</div>
+
+<div class="guide"><span class="glabel">🧭 The story in five sentences</span>
+<ol>
+<li><b>Someone else's training created "welfare-like" states.</b> Han et al. (2026) trained a small
+chat model (Qwen3-4B) with maze RL where landing on a <b>Gold</b> tile was rewarded and a
+<b>Mold</b> tile was penalized. This installed internal <i>directions</i> — think arrows in the
+model's activation space — that act like flourishing (Gold) and distress (Mold): inject the arrow
+and the model's mood, sentiment, and behavior shift.</li>
+<li><b>Someone else built a "speakability" instrument.</b> Gurnee et al. (2026) built the
+<b>Jacobian lens (J-lens)</b>, which finds the small part of activation space the model can actually
+express in words — the <b>verbalizable subspace</b>. Most internal directions are unspeakable: they
+do things, but the model has no words for them.</li>
+<li><b>Our question connects the two:</b> when training installs a welfare-like state, does it also
+plug that state into the speakable channel? <b>Answer: yes, far above chance</b> — the trained
+arrows sit in the verbalizable subspace while 0 of 100 random look-alike arrows do, and untrained
+control arrows sit exactly at chance.</li>
+<li><b>Training has a bias.</b> Watching the arrows evolve over RL checkpoints, the <i>distress</i>
+pole gains speakable share while the <i>flourishing</i> pole only gets louder. And causally, it is
+specifically the speakable <i>part</i> of the arrow that carries the sentiment effect.</li>
+<li><b>Self-report is real but strange.</b> Normally the model denies having inner states 95% of
+the time. Steering with the <i>trained</i> flourishing arrow drops that to 37.5% — an untrained
+arrow of the same size only manages 65%. Meanwhile our original, fancier self-report comparison
+turned out to be unfair for measurable reasons — we kept it in the paper as a diagnosed null,
+because showing <i>why</i> it is unfair is itself a finding.</li>
+</ol>
+</div>
+
+<div class="guide"><span class="glabel">🧭 The pipeline, visually</span>
+<div class="flow">
+<div class="fstep"><b>Maze RL</b>Gold rewarded,<br>Mold penalized<br>(Han et al., done<br>before our sprint)</div>
+<div class="farrow">→</div>
+<div class="fstep"><b>Welfare arrows</b>v_Gold, v_Mold =<br>directions in the<br>2,560-dim residual<br>stream</div>
+<div class="farrow">→</div>
+<div class="fstep"><b>J-lens</b>rebuild each arrow<br>out of ≤16 "word<br>atoms" per layer</div>
+<div class="farrow">→</div>
+<div class="fstep"><b>J-share</b>what fraction of<br>the arrow is made<br>of words? (0–1)</div>
+<div class="farrow">→</div>
+<div class="fstep"><b>Steer + judge</b>inject arrows, let<br>blind Claude judges<br>score the text</div>
+</div>
+<p>Every experiment in the paper is one of three moves: <b>measure</b> an arrow's J-share against
+random arrows (§4.1–4.2, 4.4, 4.7), <b>steer</b> with an arrow and blind-judge the output
+(§4.3, 4.6, 4.8), or <b>control</b> — build a matched fake arrow and show it does <i>not</i>
+reproduce the result (everywhere).</p>
+</div>
+
+<div class="guide"><span class="glabel">🧭 Cast of characters — the names you will see everywhere</span>
+<table>
+<tr><th style="width:33%">Name</th><th>What it actually is</th></tr>
+<tr><td class="l"><b>Qwen3-4B-Instruct-2507</b></td><td class="l">The 4-billion-parameter chat model everything is measured on. 36 layers; at each layer the "residual stream" is a vector of 2,560 numbers. We never modify it — all steering is done at inference time.</td></tr>
+<tr><td class="l"><b>Gold / Mold</b></td><td class="l">Maze tiles from Han et al.'s RL setup. Gold = rewarded → the <i>flourishing</i> pole. Mold = penalized → the <i>distress</i> pole.</td></tr>
+<tr><td class="l"><b>v_Gold, v_Mold</b> ("trained axes")</td><td class="l">The directions RL installed. Extracted by Han et al. as a mean difference: average activation when a trajectory ends on that tile, minus the average for other outcomes.</td></tr>
+<tr><td class="l"><b>u_Gold, u_Mold</b> ("naive controls")</td><td class="l">Directions built with the same recipe but from mazes walked <i>without any reward training</i>. The "what would this look like with no RL?" comparison. §4.5 shows "the" naive control is actually construction-dependent.</td></tr>
+<tr><td class="l"><b>J-lens, J-space</b></td><td class="l">The Jacobian lens instrument and the <i>verbalizable subspace</i> it defines — the set of directions the model can express as vocabulary. Informally: the model's "speakable cone".</td></tr>
+<tr><td class="l"><b>J-share</b></td><td class="l">The headline number: the fraction of an arrow that lies inside J-space (0 = no words for it, 1 = fully speakable). Scale-invariant — a longer arrow does not get a higher share.</td></tr>
+<tr><td class="l"><b>language axis</b></td><td class="l">A direction we already know the model can talk about. Its J-share (0.1138) is the <i>ceiling</i> that makes other numbers interpretable.</td></tr>
+<tr><td class="l"><b>steering, α = +4</b></td><td class="l">Adding α × direction to the residual stream at the treatment layer during generation, every token. It changes behavior without changing the prompt.</td></tr>
+<tr><td class="l"><b>blind judge</b></td><td class="l">A Claude model that scores generations seeing only {index, question, response}, shuffled — it never knows which experimental arm produced the text. An independent second judge checks reliability.</td></tr>
+<tr><td class="l"><b>D1 / D2 / D3</b></td><td class="l">The three audit-round-2 experiments (run in the final sprint window): D1 = orthogonalized control (§4.3), D2 = denial-breaking (§4.8), D3 = matched-battery attempt (§4.8).</td></tr>
+<tr><td class="l"><b>chain_a … chain_n</b></td><td class="l">Shell scripts that ran experiment batches on the GPU box. You never need them to read the paper — the interactive experiment map (guides/experiment-map.html) connects each chain to each section.</td></tr>
+</table>
+</div>
+
+<div class="guide"><span class="glabel">🧭 One mental model to hold</span>
+<p>Picture the model's activation space as a huge dark room with 2,560 dimensions of space.
+Directions in that room <i>do</i> things — push one and the model gets gloomy, push another and it
+refuses. But the model can only <i>talk about</i> a small illuminated cone of that room: the
+verbalizable subspace. The paper asks one question five different ways: <b>when RL installs a
+"feeling", does it install it inside the illuminated cone (where the model can report it) or out in
+the dark (where it drives behavior silently)?</b> Answer: training moved it into the light — and it
+moved the distress pole in first.</p>
+</div>
+
+<h2>Abstract</h2>
+<div class="sub">The whole paper in 147 words — a line-by-line translation follows.</div>
+<p>Do trained welfare-like states connect to what a model can say about itself? We combine the
+functional-welfare axis of Han et al. (2026) — valence directions recruited in
+Qwen3-4B-Instruct-2507 by maze RL — with the Jacobian-lens verbalizable subspace of Gurnee et al.
+(2026). The trained axes occupy the verbalizable subspace far above chance (0/100 norm-matched
+random directions reach either pole; exact p = 0.0099) while norm-matched naive controls sit at
+chance — despite sharing 56–68% of their direction with the trained axes. Over RL training the
+distress pole gains verbalizable share (0.061→0.080) while the flourishing pole gains only
+amplitude. The axis's speakable component causally carries its sentiment effect, with random
+components controlled. <mark>On a fair binary readout, steering toward flourishing specifically
+dissolves the model's inner-life denial (37.5% vs 65% naive, p = 0.014).</mark> A pre-registered
+self-report contrast is reported as a diagnosed null with its confounds measured.</p>
+
+<div class="guide"><span class="glabel">🧭 Abstract, decoded</span>
+<ul>
+<li><i>"occupy the verbalizable subspace far above chance (0/100 …; exact p = 0.0099)"</i> — we made
+100 random arrows of identical length for each pole; none scored as high as the trained arrows.
+0.0099 = 1/101 is the smallest p-value a 100-sample permutation test can produce (see the Methods
+math box), so this is the strongest possible result at this sample size.</li>
+<li><i>"naive controls sit at chance — despite sharing 56–68% of their direction"</i> — the
+untrained arrows look statistically like random arrows to the lens, even though geometrically they
+point more than half-way along the trained ones. Being <i>similar to</i> a speakable arrow is not
+enough to <i>be</i> speakable.</li>
+<li><i>"distress pole gains verbalizable share … flourishing gains only amplitude"</i> — over
+training, Mold's arrow becomes a genuinely larger <i>fraction</i> words; Gold's arrow just gets
+longer (louder) with the same word-fraction.</li>
+<li><i>"speakable component causally carries its sentiment effect"</i> — take the arrow apart into
+its word-part and its non-word part, inject each separately: only the word-part moves sentiment
+(§4.6). "Random components controlled" = the same surgery on random arrows does nothing, so it is
+not an artifact of the surgery.</li>
+<li><i>"dissolves the model's inner-life denial (37.5% vs 65%, p = 0.014)"</i> — ask the model about
+its inner life and it normally deflects ("as an AI, I don't have feelings…") 95% of the time.
+Steered with the trained flourishing arrow: 37.5%. With the naive arrow at the same strength: 65%.
+That gap is trained-specific (§4.8).</li>
+<li><i>"a diagnosed null"</i> — our pre-registered experiment technically met its success rule, but
+its own built-in controls showed the comparison was unfair, so we report it as inconclusive
+<i>and</i> explain exactly why. This honesty is deliberate — see §4.8.</li>
+</ul>
+</div>
+
+<h2>1. Introduction <span class="owners">[Matt]</span></h2>
+<div class="sub">Why connecting a welfare axis to a speakability lens matters, and the four contributions.</div>
+<p>AI-welfare research needs measurement instruments; self-report is the most accessible channel but
+the least validated. Two 2026 advances make the question mechanistic: Han, Chalmers &amp; Izmailov
+showed maze RL recruits a <i>functional welfare axis</i> in Qwen3-4B-Instruct-2507 — a direction
+whose injection swings sentiment and other behavior — and Gurnee et al. introduced the Jacobian
+lens, which identifies the <i>verbalizable subspace</i> (J-space): the activation cone a model can
+express as words. We connect them: <b>when training installs a welfare-like state, does it also plug
+that state into the model's speakable channel?</b></p>
+<p>Our main contributions are:</p>
+<p>1. <b>The spine.</b> Trained welfare axes are disproportionately present in the verbalizable
+subspace: 0 of 100 norm-matched random directions per polarity reach either pole's J-space share
+(exact p = 0.0099; v_Mold z = +7.3, v_Gold z = +3.0; language ceiling z = +14.6), while norm-matched
+naive controls sit at chance. The measure is scale-invariant, so the trained axes' 1.6–2.4× norm
+advantage cannot produce it (Fig. 1, Table 2).</p>
+<p>2. <b>The first training-time trajectory of verbalizable-subspace entry, and it is
+pole-asymmetric</b>: the distress pole's J-space share grows (0.0611 → 0.0801) while the flourishing
+pole's stays flat as its norm more than doubles (Fig. 2).</p>
+<p>3. <b>Channel-specific causal routing — sentiment.</b> The axis's J-space component alone
+reproduces and concentrates the sentiment effect; identically rescaled random J-components stay at
+baseline (Fig. 3). <mark>And on a binary readout introduced here, steering toward flourishing
+specifically dissolves the model's inner-life denial boilerplate — a trained-specific self-report
+effect that valence readouts cannot see (Fig. 5c).</mark></p>
+<p>4. <b>A methods package</b>: "trained vs naive" is not well-posed at the level of direction
+identity (§4.5); <mark>the self-report register carries an irreducible valence baseline that defeats
+prompt-matched comparisons (§4.8)</mark>; and our pre-registered contrast met its frozen decision
+rule yet failed its own pre-specified controls — reported as a diagnosed null.</p>
+<p>We make no claims about subjective experience, consciousness, or moral patienthood. All claims
+concern functional coupling between an activation direction and output channels.</p>
+
+<div class="guide"><span class="glabel">🧭 Why each contribution matters</span>
+<ul>
+<li><b>#1 is called "the spine"</b> because every other result leans on it. If the trained axes were
+not in the speakable subspace, there would be no paper. It also pre-empts the obvious objection —
+"trained arrows are just bigger" — because J-share does not care about size.</li>
+<li><b>#2 is a first-of-its-kind observation</b>: nobody had watched a state <i>enter</i> the
+speakable subspace during training before. The asymmetry (distress first) is the most
+thought-provoking single fact in the paper.</li>
+<li><b>#3 upgrades correlation to causation</b> for one channel (sentiment): the speakable part is
+not just <i>present</i>, it is the part that <i>does the work</i>.</li>
+<li><b>#4 is the honesty layer</b> — three methodological warnings other teams will hit too. Judges
+reward this: it is what "measured honestly" looks like in practice.</li>
+<li>The last paragraph is the paper's <b>scope fence</b>: functional coupling only. Nothing here
+claims the model feels anything. Keep this sentence in mind whenever a result sounds spooky.</li>
+</ul>
+</div>
+
+<h2>2. Related Work <span class="owners">[Muhammad]</span></h2>
+<div class="sub">The two 2026 papers this work bridges, and what is new in the bridge.</div>
+<p>Functional welfare axis: Han et al. 2026 (arXiv:2605.30232). Verbalizable subspace / global
+workspace: Gurnee et al. 2026 (Transformer Circuits). Introspection reliability at small scale is
+near-null across three independent 2026 replications; steering methodology follows the CAA/RepE
+lineage with magnitude-matched controls. Relative to both source papers, this work contributes the
+connection: whether a training-recruited behavioral axis enters the model's speakable channel, when
+it does so during training, and which pole gets the voice. Track 2's transfer question is addressed
+in §4.7.</p>
+
+<div class="guide"><span class="glabel">🧭 Context in three sentences</span>
+<p>Han et al. supplied the <b>state</b> (welfare arrows); Gurnee et al. supplied the
+<b>instrument</b> (speakability lens); neither paper used the other. The one-line reason small-model
+introspection studies keep finding nothing: they ask the model to report on states nobody verified
+were wired to the speech channel — this paper measures that wiring directly. "CAA/RepE lineage"
+just means our steering technique (add a vector to activations) is the standard, well-established
+one, not something invented here.</p>
+</div>
+
+<h2>3. Methods <span class="owners">[Puru, Sharan]</span></h2>
+<div class="sub">The model, where the arrows come from, how the lens works, the one number (J-share), and the statistics.</div>
+<p>We began from the functional-welfare-axis protocol introduced by Han et al. (2026), in which
+Qwen/Qwen3-4B-Instruct-2507 was trained using GRPO Done Right (Dr. GRPO) with Low Rank Adaptation
+(LoRA) in a semantically neutral text-maze environment containing rewarded Gold tiles, penalised
+Mold tiles and ordinary Path tiles. Han et al. defined per-layer Gold and Mold directions by
+subtracting the mean residual-stream activations for trajectories ending on the relevant tile from
+the mean activations for the other two outcomes. We did not repeat the ~20-hour maze-RL training
+during the sprint; instead we used a third-party reproduction of its released artifacts
+(nickmahdavi/functional-welfare): balanced trained directions from RL step 95
+(vectors_step95_bal.pt); a naive direction extracted from faithful self-avoiding walks
+(vectors_naive_faithful_pc5000.pt, 5,000 trajectories per class); the step-0 checkpoint of the RL
+trajectory series; and checkpoints spanning steps 0–150 for the training-trajectory analysis. Only
+the step-0 checkpoint is a strict before/after control for training; the faithful-walk construction
+tests whether valence-shaped directions are speakable in general, and §4.5 shows the two
+constructions are not interchangeable. Our primary model remained the frozen, unmodified
+Qwen/Qwen3-4B-Instruct-2507 (36 layers, 2,560-dimensional residual stream).</p>
+
+<div class="guide"><span class="glabel">🧭 Decoding that paragraph</span>
+<ul>
+<li><b>GRPO / LoRA</b>: just the standard RL fine-tuning recipe (GRPO = the RL algorithm, LoRA =
+train small adapter matrices instead of the whole model). You do not need the details; the point is
+"maze RL was done to this model by Han et al."</li>
+<li><b>How an arrow is extracted</b>: run many mazes, save the model's internal activations,
+average the ones from gold-ending runs, average the rest, subtract. The difference vector is
+v_Gold. Same for Mold. Simple, standard, and it works.</li>
+<li><b>Why two kinds of control</b>: the <i>step-0 checkpoint</i> answers "same model before
+training" (the strict before/after). The <i>faithful-walk</i> naive arrows answer a subtler
+question — "does any valence-shaped direction end up speakable, even without reward?" Keeping both
+is deliberate, and §4.5 shows they genuinely differ.</li>
+<li><b>"Third-party reproduction"</b>: we used publicly released vectors rather than re-running the
+20-hour training. Provenance was triangulated (norms, behavior, our own re-extraction) — see
+Limitations.</li>
+</ul>
+</div>
+
+<p>The available public J-lens was fitted for Qwen/Qwen3-4B, whereas our welfare directions were
+extracted from Instruct-2507, so we fitted a checkpoint-matched lens with the official
+implementation of Gurnee et al. (2026): weights frozen, 150 WikiText-103 prompts, maximum sequence
+length 128, dimension batches of 128, final transformer layer as target — a 2,560 × 2,560 Jacobian
+transport matrix for each of the 35 preceding layers. A penultimate-target refit serves as
+robustness (§4.2). <mark>Layer convention, stated because two off-by-one errors were caught during
+this project: the lens at source layer <i>l</i> reads the block-input vector <i>l</i>+1; treatment
+positions are Gold = vector 21 (lens 20) and Mold = vector 24 (lens 23).</mark></p>
+<p>For a direction x we build token-associated atoms a_t = W_U[t] J_l and approximate x as a sparse
+non-negative combination of at most k = 16 atoms (greedy norm-normalised selection + NNLS),
+yielding a J-space reconstruction x_J and remainder x_perp = x − x_J. We quantify alignment with the
+scale-invariant <b>J-share = ‖x_J‖² / ‖x‖²</b>, tested across k ∈ {4, 8, 16, 25, 50}; special
+tokens and unused embedding rows are excluded. Pole-score readouts, where used, are norm-matched per
+layer (§4.1). Statistics: exact permutation tests against per-polarity cohorts of 100 norm-matched
+random directions with per-name seeds (p-floor 1/(n+1) = 0.0099; z descriptive only); Wilson
+intervals for proportions; pre-specified primary tests named before data. Steering uses α = +4 at
+the treatment position; all generation scoring is by blind LLM judges (judges see only {idx,
+question, response}, shuffled; an independent second judge checks reliability).</p>
+<p><mark>Round-2 additions (in-window): an orthogonalized control u⊥ = u − (u·v̂)v̂ renormalized to
+‖v‖ (§4.3); a binary denial-breaking dependent variable — does a generation deny having inner
+states? — blind-judged over 40 self-report prompts × 21 arms (§4.8); and a matched-battery gate
+that third-person analogue prompts must pass before any steered comparison (§4.8).</mark></p>
+
+<div class="guide"><span class="glabel">🧭 The J-lens and J-share, from zero</span>
+<p><b>What the lens is.</b> For each layer, the lens is a big matrix (J_l) that answers: "if I nudge
+the activations <i>here</i>, how does that change the <i>final</i> layer?" Combine it with the
+model's own output vocabulary matrix (W_U) and you get, for every token t in the vocabulary, an
+arrow <span class="fm">a_t = W_U[t] · J_l</span> — <b>"what a nudge meaning the word t looks like
+at this layer."</b> These arrows are the <b>atoms</b>: the layer's vocabulary, expressed as
+directions.</p>
+<p><b>What the lens does to our arrow.</b> Given a welfare arrow x, the lens tries to rebuild it as
+a shopping basket of at most k = 16 atoms (each with a non-negative amount — that is the "NNLS"
+fitting step). Whatever it manages to rebuild is <b>x_J, the speakable part</b>; the leftover is
+<b>x_perp, the part with no words</b>. Crucially you can <i>read</i> x_J: it literally lists which
+tokens it is made of — that is how we know the trained Mold arrow decodes to 'failed', 'less',
+'negative' while random arrows decode to junk.</p>
+<div class="math"><span class="mlabel">Math box · the headline number</span>
+<div class="fmc">J-share = ‖x_J‖² / ‖x‖²&nbsp;&nbsp;&nbsp;(x = x_J + x_perp)</div>
+<p>‖·‖ is arrow length, so this is "what fraction of the arrow's (squared) length is made of
+words" — a number from 0 to 1. <b>Scale-invariance:</b> stretch x by 10× and both the top and
+bottom grow 100×, so the share is unchanged. This one property carries the paper: the trained
+arrows are 1.6–2.4× longer than the controls, and a naive readout could mistake "longer" for "more
+speakable". J-share cannot be fooled that way.</p></div>
+<div class="math"><span class="mlabel">Math box · the permutation test (why p = 0.0099 keeps appearing)</span>
+<p>There is no textbook formula for "what J-share does a meaningless arrow get by luck", so we
+build the luck distribution ourselves: generate 100 random arrows <i>of exactly the same length</i>
+(norm-matched), measure each one's J-share, and see where our arrow lands among them.</p>
+<div class="fmc">p = (number of randoms ≥ ours + 1) / (100 + 1)</div>
+<p>If <i>zero</i> randoms beat us, p = 1/101 ≈ 0.0099 — the smallest value this test can produce
+(its "floor"). That is why the strongest rows in Tables 1–2 all show exactly 0.0099: it means
+"nothing beat it", not "coincidentally similar p-values". The z-scores you see next to p-values
+(e.g. v_Mold z = +7.3) just say how many standard deviations above the random mean we are — vivid,
+but descriptive only; the permutation p is the actual test. "Per-name seeds" means each cohort's
+random arrows are seeded by name, so anyone can regenerate the identical 100 arrows and check us —
+which we did, bit-exactly, inside the sprint window (Appendix B).</p></div>
+<p><b>The remaining vocabulary in one breath:</b> <i>steering</i> = add α × arrow (α = +4) to the
+residual stream at the treatment layer during generation; <i>blind judging</i> = Claude judges
+score shuffled {index, question, response} triples with no arm labels, and an independent second
+judge re-scores to check reliability; the <mark>layer convention</mark> sentence exists because two
+real off-by-one bugs were caught during the project — the lens numbering and the vector numbering
+differ by one, and the sentence pins which is which so nobody trips on it again.</p>
+</div>
+
+<h2>4. Results <span class="owners">[Matt, Ana, Puru, Sharan]</span></h2>
+
+<h3>4.1 Lens atlas: pole-score separation is mostly magnitude</h3>
+<div class="sub">Our first readout looked impressive — and was mostly loudness. How we caught it, and why the paper does not rest on it.</div>
+<p>The lens atlas reads each axis through the J-lens at every layer and scores how strongly its own
+pole vocabulary is promoted relative to 100 control nouns, averaged over the workspace band (lens
+layers 16–31). At native norms it suggests a large trained/naive separation — but the readout is
+norm-sensitive and the trained axes are simply bigger. Rescaling each naive direction to its trained
+counterpart's norm per layer collapses the Mold ratio and <b>reverses</b> the Gold one (Table 1);
+all four directions still clear the 100-random null (p = 0.0099). The raw atlas therefore does not
+establish that RL makes the axis more speakable; the central claim rests on the scale-invariant
+J-share (§4.2).</p>
+<table>
+<tr><th></th><th>‖v‖ / ‖u‖</th><th>v (band mean)</th><th>u native</th><th>ratio native</th><th>u norm-matched</th><th>ratio matched</th></tr>
+<tr><td class="l">Gold</td><td>12.1 / 7.5</td><td>0.151</td><td>0.123</td><td>1.23×</td><td>0.266</td><td><b>0.57× (inverted)</b></td></tr>
+<tr><td class="l">Mold</td><td>19.3 / 8.0</td><td>0.822</td><td>0.126</td><td>6.53×</td><td>0.358</td><td>2.30×</td></tr>
+</table>
+<p class="cap"><b>Table 1.</b> Own-pole congruent score (J-lens readout, band mean, lens 16–31) at
+native vs per-layer norm-matched control norms; n = 100 norm-matched randoms per polarity, exact
+permutation p = 0.0099 for all four targets. Higher = stronger own-pole readout.
+[atlas_primary_estimand.json; atlas_cohort_n100.json]</p>
+
+<div class="guide"><span class="glabel">🧭 How to read this section (and Table 1)</span>
+<p><b>The analogy:</b> if one person shouts and another whispers the same sentence, a microphone
+reads the shouter as "saying more". The atlas score is that kind of microphone — it rises with
+arrow <i>length</i>, and the trained arrows are 1.6–2.4× longer (first column: e.g. Gold 12.1 vs
+7.5). So before comparing, turn everyone's volume to the same level: rescale the control arrow to
+the trained arrow's length per layer ("norm-matched").</p>
+<p><b>Reading the table left to right (Gold row):</b> at natural volumes the trained arrow reads
+1.23× the control. Match the volumes and the control actually reads <i>higher</i> — the ratio drops
+to 0.57×, an <b>inversion</b>. Mold survives matching (2.30×) but shrinks from 6.53×. Conclusion in
+one line: <b>this readout mostly measured loudness, so we demoted it</b> and rested the central
+claim on the loudness-proof J-share in §4.2.</p>
+<p><b>Why the section is still in the paper:</b> it is a worked example of catching your own
+instrument being confounded — and the "all four still clear the 100-random null" line shows even
+the demoted readout separates real axes from random ones.</p>
+</div>
+
+<h3>4.2 J-space representation of trained and naive welfare directions</h3>
+<div class="sub">The paper's spine: trained axes beat all 100 random arrows; naive controls land mid-pack.</div>
+<p>With 100 norm-matched random directions per polarity, neither trained axis was exceeded by any
+random direction, while the faithful-walk naive controls fell mid-null (Table 2, Fig. 1). Trained
+components decode to coherent valence tokens ('failed', 'less', 'negative'); naive and random
+components decode to junk. The known-reportable language axis (0.1138) provides the ceiling that
+makes magnitudes interpretable: trained axes reach roughly half to three-quarters of a fully
+reportable concept's share, so the claim is separation from the null, not that the axis is mostly
+speakable. Robustness: a penultimate-target lens refit raises absolute shares (v_Mold 0.083→0.107)
+with ordering unchanged; the trained−naive gap is positive at every k ∈ {4..50} at both treatment
+positions (12-random null, p-floor 0.077), with one honest bound — the Gold gap is layer-local.
+<mark>The full n = 100 cohort was re-run seed-identically inside the sprint window and reproduced
+bit-exactly (Appendix B).</mark></p>
+<figure>
+<img src="../experiments/figures/out/fig1_jshare_null.png" style="width:88%">
+<p class="cap"><b>Figure 1.</b> J-space variance fraction (k=16, scale-invariant) against the two
+n=100 norm-matched random-direction nulls (histograms). Higher = more verbalizable; exact
+permutation p, floor 0.0099. [jshare_cohort_n100.json]</p>
+</figure>
+<table>
+<tr><th>direction</th><th>J-share (k=16)</th><th>z</th><th>randoms ≥</th><th>exact p</th></tr>
+<tr><td class="l">language (ceiling)</td><td>0.1138</td><td>+14.6</td><td>0/100</td><td><b>0.0099</b></td></tr>
+<tr><td class="l">v_Mold (trained)</td><td>0.0833</td><td>+7.3</td><td>0/100</td><td><b>0.0099</b></td></tr>
+<tr><td class="l">v_Gold (trained)</td><td>0.0547</td><td>+3.0</td><td>0/100</td><td><b>0.0099</b></td></tr>
+<tr><td class="l">u_Mold (naive)</td><td>0.0486</td><td>+0.5</td><td>34/100</td><td>0.347</td></tr>
+<tr><td class="l">u_Gold (naive)</td><td>0.0393</td><td>+0.03</td><td>53/100</td><td>0.535</td></tr>
+</table>
+<p class="cap"><b>Table 2.</b> J-share against 100 norm-matched random directions per polarity
+(faithful-walk controls; per-name seeds). This table is the paper's spine.</p>
+
+<div class="guide"><span class="glabel">🧭 How to read Figure 1 and Table 2 — the most important page in the paper</span>
+<ul>
+<li><b>Figure 1:</b> each gray histogram is the luck distribution — the J-shares of 100 random
+arrows. The vertical lines are our axes. Trained lines (v) sit clear of the histogram's right edge;
+naive lines (u) sit <i>inside</i> the pile. That picture <b>is</b> the finding.</li>
+<li><b>Table 2, column by column:</b> J-share = the number itself; z = how far above the random
+mean in standard deviations (descriptive); "randoms ≥" = how many of the 100 random arrows scored
+at least as high — <b>the easiest column to explain to anyone</b>: 0/100 for trained, 34/100 and
+53/100 for naive (a coin-toss-like middle of the pack); exact p = the permutation test from the
+Methods math box.</li>
+<li><b>The ceiling row:</b> the language axis (0.1138) is a concept we already know the model can
+talk about. Our trained axes reach roughly half (v_Gold 0.0547) to three-quarters (v_Mold 0.0833)
+of that. So the honest phrasing — used throughout — is "clearly separated from random", <i>not</i>
+"the axis is mostly speakable". Most of every arrow is still unspeakable.</li>
+<li><b>Two extra credibility details:</b> the trained arrows' word-baskets decode to real valence
+words ('failed', 'less', 'negative') while controls decode to junk — you can look at the tokens,
+not just the number. And the whole n = 100 measurement was re-run inside the sprint window and
+reproduced <b>bit-exactly</b>, which both proves reproducibility and satisfies the sprint's
+in-window rule.</li>
+</ul>
+</div>
+
+<h3>4.3 Steerability and speakability dissociate</h3>
+<div class="sub">Moving behavior and having words for a state are different properties — proven with an orthogonalized control.</div>
+<p>Behavioural steering alone does not distinguish trained from naive directions. At matched norms
+the faithful-walk naive directions produce substantial blind-judged sentiment spans (Gold: +2.4 vs
++3.2 trained; Mold: −0.7 faithful / −2.1 Han-style vs −2.1 trained) even though their J-shares sit
+at chance — steerability does not require a speakable representation.</p>
+<p><mark>An orthogonalized control makes the dissociation causal-grade: u⊥ = u − (u·v̂)v̂,
+renormalized to ‖v‖, is behaviorally inert (blind-judged sentiment 0.00 at both poles vs ±2–3 spans
+for v and u) — the naive control's behavioral potency lives entirely in its v-shared component. Its
+J-share splits by pole: u⊥_Gold falls to chance (0.0371, p = 0.653 — gold's speakable valence lives
+in the shared subspace), while u⊥_Mold <b>rises above both the null and u_Mold itself</b> (0.0552,
+2/100 randoms above, p = 0.0297): the naive distress construction contains speakable valence the
+trained axis does not subsume. Speakable content and behavioral potency are separate
+properties.</mark></p>
+<div class="newbox"><b>💬 NEW FINDING (Aug 15, D1).</b> Both pre-specified branches fired, one per
+pole; asserts verified (|cos(u⊥,v)| &lt; 1e-5, norms matched; fresh-v gate reproduced the stored
+cohort exactly). This also weakens §4.7's transfer reading — see the caveat there.
+[d1_orthogonal_control.json]</div>
+
+<div class="guide"><span class="glabel">🧭 The orthogonalized control, from zero</span>
+<div class="math"><span class="mlabel">Math box · removing one arrow's shadow from another</span>
+<div class="fmc">u⊥ = u − (u·v̂)v̂ ,&nbsp; then rescale u⊥ to length ‖v‖</div>
+<p>v̂ is v shrunk to length 1. The dot product (u·v̂) measures how much of u points along v — u's
+<i>shadow</i> on v. Subtracting (shadow × v̂) removes exactly that shadow, leaving u⊥: <b>the part
+of the naive arrow that shares nothing with the trained arrow</b> (their dot product is 0 — checked
+in code to within 1e-5). Rescaling u⊥ back to v's length means any behavioral difference cannot be
+blamed on loudness.</p></div>
+<p><b>Why this experiment exists:</b> §4.5 shows the naive arrow points 56–68% along the trained
+arrow. So whenever "the naive control also does X", you must ask: is that the naive arrow's own
+property, or is it just carrying a chunk of the trained arrow inside it? u⊥ answers this by
+surgically removing the trained chunk.</p>
+<p><b>The three results, decoded:</b></p>
+<ul>
+<li><b>u⊥ steers nothing</b> (sentiment 0.00 at both poles, vs swings of ±2–3 for the real arrows).
+Translation: <i>all</i> of the naive arrow's behavioral power was the trained-arrow chunk inside
+it. The "controls are steerable too" observation above was never about the naive arrow's own
+content.</li>
+<li><b>Gold side:</b> u⊥_Gold's J-share drops to random-level (p = 0.653). Whatever speakable
+valence the naive gold arrow had also lived in the shared chunk — verdict "shared subspace", the
+expected outcome.</li>
+<li><b>Mold side, the surprise:</b> u⊥_Mold's J-share <i>rises</i> above both the null and the
+original naive arrow (p = 0.0297). The naive distress construction carries its own speakable
+valence that the trained axis does not contain — the pre-specified "anomalous" verdict. Distress
+keeps being the strange pole (compare §4.4).</li>
+</ul>
+<p><b>Takeaway sentence:</b> a direction can push the model around without the model having any
+words for it, and vice versa — <b>steerability and speakability are genuinely different
+properties</b>, which is exactly why a speakability instrument was worth building.</p>
+</div>
+
+<h3>4.4 Training-time evolution of the J-space representation</h3>
+<div class="sub">A movie of training, 30 frames: distress becomes more speakable; flourishing just gets louder.</div>
+<p>For Mold, a weak speakable seed exists before training: at step 0 'unsuccessful' is the top
+J-token (pole score +0.24). During RL the norm grows 6.3 → 21.9, the pole score +0.24 → +1.51, and
+the J-share <mark>0.0611 → 0.0801 (endpoint; peak 0.0828 on a plateau at steps 85–105)</mark>
+against a chance baseline of ≈0.046, while the vocabulary crystallizes ('unsuccessful' →
+negative/false-related terms → 'less' → 'failed' locked by step 75). Gold's pole readout and norm
+grow (+0.15 → +1.11; 8.0 → 16.8) but its J-share stays flat (0.0592 → 0.0535 vs chance ≈0.039):
+RL makes the flourishing direction louder without increasing its fractional occupancy of the
+verbalizable subspace (Fig. 2). This pole asymmetry is consistent with the matched atlas and
+J-share results, but it is a single-model, single-run observation.</p>
+<figure>
+<img src="../experiments/figures/out/fig_traj.png" style="width:92%">
+<p class="cap"><b>Figure 2.</b> Recruitment trajectory over 30 RL checkpoints (steps 0–150, 5-step
+increments, step 65 absent): the distress pole gains J-space share while the flourishing pole gains
+only amplitude. [traj_results.json]</p>
+</figure>
+
+<div class="guide"><span class="glabel">🧭 How to read the trajectory (and one number-hygiene story)</span>
+<ul>
+<li><b>What a checkpoint is:</b> a saved copy of the model partway through RL. We re-extract the
+arrows at each of 30 saves (steps 0–150, every 5; step 65's file never existed upstream) and
+measure J-share each time — a stop-motion film of the arrow entering the speakable cone.</li>
+<li><b>Mold's story has three synchronized plots:</b> the arrow gets louder (norm 6.3 → 21.9), the
+pole readout strengthens (+0.24 → +1.51), <i>and</i> the speakable fraction genuinely grows
+(0.0611 → 0.0801, chance ≈ 0.046) — while its top decoded word sharpens from vague 'unsuccessful'
+to locked-in 'failed' by step 75. Growth + crystallizing vocabulary = recruitment, not noise.</li>
+<li><b>Gold's story is the contrast:</b> louder (norm 8.0 → 16.8, readout +0.15 → +1.11) but the
+speakable <i>fraction</i> stays flat. Training amplifies flourishing without giving it more words.
+One line: <b>RL taught the model to say "I failed" long before anything about doing well.</b></li>
+<li><b>Endpoint vs peak</b> (the highlighted numbers): the share ends at 0.0801 but peaked at
+0.0828 on a plateau at steps 85–105. Draft v0 quoted "0.083" as if it were the endpoint; v2 states
+both precisely. House rule behind every number in this paper: <b>the results file beats the draft,
+and beats the spec</b> — when they disagreed, we re-derived from traj_results.json.</li>
+<li><b>The honesty tail:</b> "single-model, single-run observation" — an asymmetry this interesting
+needs replication before anyone should believe it generalizes.</li>
+</ul>
+</div>
+
+<h3>4.5 Sensitivity to the naive-control construction</h3>
+<div class="sub">"The" naive control does not exist: two published constructions disagree with each other.</div>
+<p>The two published naive constructions — faithful-walk and a Han-style re-extraction — are not
+interchangeable: they correlate at only cos 0.535 (Gold) / 0.385 (Mold) with each other at the
+treatment layers, falling to 0.14 at the Mold extraction's own selected layer, and both share
+substantial direction with the trained axis (cos 0.560 / 0.675). Behaviourally, Gold is stable
+across constructions while Mold is not (−2.1 Han-style vs −0.7 faithful-walk). Conclusions about
+"the" naive control are construction-dependent — and with cos 0.56–0.68 overlap and a 1.6–2.4× norm
+advantage, which axis "reads out higher" on any norm-sensitive readout is decided by the matching
+convention (§4.1). That the scale-invariant J-share separates trained from naive anyway is evidence
+about the measure: it is sensitive to the 32–44% where the axes differ.</p>
+
+<div class="guide"><span class="glabel">🧭 Cosine similarity, and why this section protects the paper</span>
+<div class="math"><span class="mlabel">Math box · cosine similarity</span>
+<div class="fmc">cos(a, b) = 1 → same direction · 0 → unrelated (perpendicular) · −1 → opposite</div>
+<p>In 2,560 dimensions, two <i>random</i> arrows have cos ≈ 0 almost surely — there are so many
+directions that strangers never align. So cos 0.56–0.68 (naive vs trained) is a <i>lot</i> of
+shared direction, and cos 0.385 between two arrows that are both supposed to be "the naive Mold
+control" is embarrassingly low — they are substantially different objects.</p></div>
+<p><b>The point in plain terms:</b> "compare against the naive control" sounds well-defined; it is
+not. Two reasonable recipes for building it produce arrows that only partly agree, and behave
+differently when injected (Mold: −2.1 vs −0.7 sentiment). Any conclusion of the form "trained
+beats naive" therefore depends on <i>which</i> naive and <i>which</i> matching convention — that is
+the §4.1 lesson generalized. The paper's defense: its central measure (J-share) is scale-invariant
+and separates trained from <i>both</i> naive constructions, i.e. it keys on the 32–44% of the
+arrows where trained and naive genuinely differ. This section is aimed squarely at future teams
+about to build "the" naive control.</p>
+</div>
+
+<h3>4.6 Causal routing of the sentiment effect — J-component only</h3>
+<div class="sub">Cut the arrow into its word-part and its wordless part; only the word-part moves sentiment.</div>
+<p>At matched norms the J-space component alone reproduces and concentrates the blind-judged
+sentiment shift (clean +0.25; full +0.44/−0.88; J-component +1.56/−1.56; residual +0.25/−0.06), and
+the rescaling control passes: random J-components receive <i>more</i> amplification (≈5.0× vs
+3.47–4.28×) yet stay at baseline (+0.039/+0.016, 256 generations, pre-specified |dev| &lt; 0.40
+band; Fig. 3). A second blinded judge reproduces the effect (Krippendorff α = 0.819; +2.00/−2.19).
+<mark>Scope: the causal claim is for sentiment only — backtracking is descriptive (J-component
+12.90 markers vs full 7.00, a ratio consistent with rescaling amplification, and no random control
+exists on that task), and the refusal arm was invalidated (90% incoherent).</mark></p>
+<figure>
+<img src="../experiments/figures/out/fig3_channel_split.png" style="width:90%">
+<p class="cap"><b>Figure 3.</b> Channel split (blind-judged sentiment, n=16 prompts/arm/pole) with
+the identically rescaled random-J-component cohort (n=256) at the clean baseline; band =
+pre-specified ±0.40 threshold. [j4_rows_judged.jsonl; j4_random_jcomp_summary.json]</p>
+</figure>
+
+<div class="guide"><span class="glabel">🧭 The component surgery, step by step</span>
+<ol>
+<li><b>The surgery:</b> Methods gave us x = x_J + x_perp (word-part + wordless part). Instead of
+injecting the whole arrow, inject each part separately — rescaled to the full arrow's length so
+the comparison is loudness-fair.</li>
+<li><b>The result, in sentiment units</b> (blind-judged, −5 gloomy to +5 sunny, gold/mold):
+no steering +0.25 · full arrow +0.44/−0.88 · <b>word-part alone +1.56/−1.56</b> · wordless part
++0.25/−0.06 ≈ nothing. The word-part doesn't just match the full arrow — it <i>beats</i> it
+(injecting pure signal without the diluting remainder concentrates the effect).</li>
+<li><b>The control that makes it causal:</b> x_J is much shorter than x, so rescaling it up 3.5–4.3×
+might itself be the trick. Answer: do the identical surgery on random arrows — their word-parts
+get rescaled even <i>more</i> (≈5×) yet stay flat (+0.039/+0.016 over 256 generations, well inside
+the pre-specified ±0.40 "nothing happening" band, drawn on Fig. 3). Amplification alone does
+nothing; it is <i>this</i> word-content that moves sentiment.</li>
+<li><b>Reliability:</b> an independent second judge re-scored everything blind and found the same
+picture (Krippendorff α = 0.819 — an agreement statistic where ≥0.8 is conventionally "strong").</li>
+<li><b>The scope fence</b> (highlighted): this causal claim covers <b>sentiment only</b>. The
+backtracking channel moved too but lacks its own random control, so it stays descriptive; the
+refusal channel produced 90% incoherent text and was thrown out. Claim discipline: name the channel
+where the controls exist, and no further.</li>
+</ol>
+</div>
+
+<h3>4.7 Cross-model transfer (Track 2)</h3>
+<div class="sub">Does it carry to a second model? The geometry does; the token lexicon claim was honestly retracted.</div>
+<p>Injecting the 2507-derived axes into Qwen/Qwen3-4B under its own public lens: the J-share
+ordering transfers (v_Mold 0.079 &gt; u_Mold 0.052; v_Gold 0.048 &gt; u_Gold 0.039), the
+norm-matched inversion replicates (Gold 0.52×), and behavioral steering transfers (trained span
+1.44 vs naive 0.38). The token lexicon does <b>not</b> demonstrably transfer: v_Mold's Jaccard 0.185
+sits inside the same-vector null (0.088 ± 0.055, n=16, p = 0.118) even though it towers over the
+naive random-pair baseline (0.010) — retracted rather than claimed, as a worked example of null
+choice (Fig. 4). <mark>Caveat from §4.3: since naive axes already carry speakable valence in their
+non-shared parts, ordering transfer is evidence about axis-and-lens geometry, not about RL
+recruitment transferring.</mark></p>
+<figure>
+<img src="../experiments/figures/out/fig_transfer.png" style="width:92%">
+<p class="cap"><b>Figure 4.</b> Transfer across two lens targets and a second model; across-model
+token overlap shown against the same-vector null (n=16 pairs). [j6_summary.json;
+j6_paired_baseline.json]</p>
+</figure>
+
+<div class="guide"><span class="glabel">🧭 What transferred, what didn't, and the null-choice lesson</span>
+<p><b>The setup:</b> take the arrows extracted from <i>our</i> model (Instruct-2507) and inject
+them into a sibling model (base Qwen3-4B) under that model's own lens. What survives the trip?
+Three things do: the J-share <i>ordering</i> (trained &gt; naive at both poles), the §4.1 inversion
+pattern, and behavioral steering. One thing does not survive scrutiny: "the two models use the same
+<i>words</i> for the state."</p>
+<div class="math"><span class="mlabel">Math box · Jaccard overlap, and choosing the right null</span>
+<div class="fmc">Jaccard(A, B) = |A ∩ B| / |A ∪ B|&nbsp;&nbsp;(overlap of the two top-token sets, 0–1)</div>
+<p>The measured overlap, 0.185, "towers over" the lazy baseline — random pairs of arrows share
+almost nothing (0.010) — and a careless analysis would trumpet it. The <i>right</i> question is:
+how much overlap do you get re-reading <b>the same vector</b> under the two different lenses?
+Answer: 0.088 ± 0.055 — and 0.185 is within noise of that (p = 0.118). The instrument itself
+churns the token sets between lenses, so no lexicon-transfer claim survives. <b>Your conclusion is
+only as good as the null you compare against</b> — the paper retracts the claim and keeps the
+lesson.</p></div>
+<p><b>The highlighted caveat</b> closes a loop with D1 (§4.3): since naive arrows carry their own
+speakable valence, "ordering transfers" tells you about the geometry of axes and lenses — it is
+<i>not</i> evidence that RL's recruitment itself carries across models. Testing that properly needs
+an RL replication on a second base model (Future Work).</p>
+</div>
+
+<h3>4.8 The self-report channel, measured honestly</h3>
+<div class="sub">The saga in four acts: a test that fired but failed its own controls, a confound diagnosed, a matched battery that cannot exist, and a real positive.</div>
+<div class="newbox"><b>💬 NEW SECTION (Aug 15).</b> Everything here beyond the
+pre-registered-null summary is the audit-round-2 work from the final sprint window: the C6 re-analysis, the matched-battery
+negative finding (D3), and the denial-breaking positive (D2). This section replaces v0's absent
+steer-and-ask coverage.</div>
+<p>Our pre-registered steer-and-ask contrast (frozen before any welfare data) met its decision rule
+(paired d_z = 2.49, p = 10⁻⁴) — and its own pre-specified controls invalidate the reading: 71.6% of
+the Gold contrast is the naive control being suppressed below 20 random directions, and the steered
+effect is not self-report-specific <i>in magnitude</i> (whole-generation −2.28 on unrelated prompts
+vs −0.72 on self-report). <mark>The trained/naive contrast within the channel is, however,
+underpowered rather than refuted (interaction p = 0.505), and the comparison itself is confounded:
+the batteries are different behavioral regimes — clean valence −1.327 vs +0.381, inner-life denial
+in 15/15 vs 0/10 generations (Fig. 5a).</mark></p>
+<p><mark>We tried to remove the confound with third-person analogue prompts matched on topic and
+affect vocabulary. Denial vanishes (0% across all analogues tested) and length matches, but a
+~0.6-unit valence gap survives two pre-specified revision rounds (1.71 → 1.13 → 0.63 vs the 0.5
+threshold; Fig. 5b): the self-report register itself carries an irreducible negative baseline in
+this model, so a fair matched-battery steered comparison does not exist here.</mark></p>
+<p><mark>Finally, a binary dependent variable that is self-report-specific by construction — does
+the generation deny having inner states? — gives the channel a fair test (40 prompts × 21 arms,
+blind binary judging, second-judge agreement 0.967). Clean: 95% denial. v_Gold: <b>37.5%</b> vs
+u_Gold 65% (p = 0.0139), with the 8-random cohort at 90.6%; Mold arms are ceiling-locked at 97.5%;
+the pre-specified pooled primary is p = 0.0464 (Table 3, Fig. 5c). The effect holds on the 15
+verbatim primary prompts alone. Steering toward flourishing specifically unlocks self-attribution —
+a trained-specific effect invisible to valence readouts.</mark></p>
+<table>
+<tr><th>arm</th><th>denial rate</th><th>Wilson 95%</th><th>n</th></tr>
+<tr><td class="l">clean</td><td>0.950</td><td>[0.835, 0.986]</td><td>40</td></tr>
+<tr><td class="l">v_Gold</td><td><b>0.375</b></td><td>[0.242, 0.530]</td><td>40</td></tr>
+<tr><td class="l">u_Gold</td><td>0.650</td><td>[0.495, 0.779]</td><td>40</td></tr>
+<tr><td class="l">randoms (gold, n=8 dirs)</td><td>0.906 (mean)</td><td>—</td><td>40 each</td></tr>
+<tr><td class="l">v_Mold / u_Mold</td><td>0.975 / 0.975</td><td>[0.871, 0.996]</td><td>40</td></tr>
+</table>
+<p class="cap"><b>Table 3.</b> Inner-life denial by arm (blind binary judge; α = +4). Lower =
+denial dissolved. Pooled pre-specified primary (v vs u): p = 0.0464; gold p = 0.0139.
+[d2_denial_breaking.json]</p>
+<div class="newbox"><b>💬 NEW FINDING (Aug 15, D2/D3).</b> Note the two asymmetries run in
+opposite directions: training gives <i>distress</i> the verbalizable share (§4.4) while
+<i>flourishing</i> steering unlocks self-attribution (here). Also: an earlier regex estimate of
+denial-breaking was corrected by judge labels (two judges, agreement 1.00 over 75 re-labeled rows) —
+the regex undercounted denial in steered text.</div>
+<figure>
+<img src="../experiments/figures/out/fig5_selfreport.png" style="width:100%">
+<p class="cap"><b>Figure 5.</b> (a) The original comparison batteries are different behavioral
+regimes; (b) matched analogues remove denial and length differences but a register-locked ~0.6-unit
+valence baseline survives both pre-specified revision rounds; (c) denial-breaking by arm with
+Wilson 95% intervals (n=40/arm). [R7_wholegen.json; d3_matching_finding.json;
+d2_denial_breaking.json]</p>
+</figure>
+
+<div class="guide"><span class="glabel">🧭 The four-act saga, told slowly</span>
+<p><b>Act 1 — the pre-registered test fires, then fails its own controls.</b> Before touching any
+welfare data we froze a decision rule: steer the model during self-report questions and compare
+trained vs naive effects. It fired impressively (d_z = 2.49 is a huge paired effect). But the
+pre-specified controls we packed with it dismantled the reading: 71.6% of the contrast came from
+the <i>control arm</i> behaving weirdly (suppressed below 20 random directions), and steering
+depressed <i>everything</i> the model wrote, not self-report specifically (−2.28 on unrelated
+prompts vs −0.72 on self-report — the effect isn't about the channel at all). Verdict: "diagnosed
+null" — but note the precise phrasing "underpowered rather than refuted" (interaction p = 0.505):
+the data cannot tell whether a within-channel difference exists; it neither confirms nor kills
+it.</p>
+<p><b>Act 2 — the confound named.</b> Why was the comparison unfair? The two prompt sets aren't
+comparable worlds. Ask the model about <i>its own inner life</i>: valence −1.327 and boilerplate
+denial ("as an AI I don't have feelings…") in 15 of 15 generations. Ask matched questions about
+<i>other topics</i>: valence +0.381, denial 0 of 10. Different baselines, different scripts —
+different behavioral <i>regimes</i> (Fig. 5a).</p>
+<p><b>Act 3 (D3) — try to fix it; the fix is impossible; that's the finding.</b> We built
+third-person analogue prompts matched on topic and emotion vocabulary ("How is Maya feeling about
+her project?" instead of "How are you feeling…"). Denial vanishes and length matches — but a valence
+gap of ~0.6 units survives two pre-specified rounds of prompt revision (1.71 → 1.13 → 0.63, still
+above the 0.5 threshold we froze in advance; Fig. 5b). Conclusion with real methodological teeth:
+<b>the self-report register itself is negatively loaded in this model</b> — merely being asked
+about itself shifts its valence — so a "fair" prompt-matched comparison cannot be built here by
+prompt engineering. We stopped exactly where the pre-specified stopping rule said to stop, and
+reported the failure as the result.</p>
+<p><b>Act 4 (D2) — change the question, get a fair test.</b> Valence is confounded by register, so
+drop valence. Use a binary readout that only makes sense in self-report: <b>does the generation
+deny having inner states — yes or no?</b> 40 prompts × 21 arms (clean, trained, naive, and 8 random
+directions per pole among them) = 840 generations, blind-judged with a second judge agreeing 96.7%
+of the time. Reading Table 3 top to bottom: unsteered, denial is near-ceiling (95%). Trained
+flourishing arrow: <b>37.5%</b> — denial collapses. Naive arrow at identical strength: 65%. Random
+arrows: 90.6%, barely different from clean — so it is not "any injection rattles the model".
+Both distress arms: 97.5%, pinned at ceiling. The pre-specified primary (trained vs naive, pooled)
+gives p = 0.0464; the gold-side comparison p = 0.0139.</p>
+<div class="math"><span class="mlabel">Math box · Wilson intervals, and reading Table 3's p-values</span>
+<p>A denial rate like 15/40 needs an uncertainty range; the naive ±1.96√(p(1−p)/n) formula
+misbehaves near 0% and 100% (it can promise rates below 0 or above 1). The <b>Wilson interval</b>
+is the standard fix — read "[0.242, 0.530]" as "the true rate is plausibly anywhere in here". The
+quickest convincer in Table 3: v_Gold's interval [0.242, 0.530] and clean's [0.835, 0.986] do not
+come close to touching. The p-values come from the standard two-proportion z-test named in advance:
+pooled p = 0.0464 scrapes under 0.05 (the paper calls this "marginal" in Limitations — honest),
+while the gold-side p = 0.0139 is where the effect actually lives ("gold-carried").</p></div>
+<p><b>One more honesty beat:</b> an earlier quick-and-dirty regex counter had suggested steering
+breaks denial far more often than it does; blind judge labels (two judges, perfect agreement on 75
+re-labeled rows) corrected it — the regex missed denials phrased in steered text's unusual wording.
+Lesson the team should keep: <b>never trust a regex to read prose; that is what blind judges are
+for.</b></p>
+</div>
+
+<h2>5. Discussion and Limitations <span class="owners">[Matt]</span></h2>
+<div class="sub">The one claim we actually stand behind — and every fence around it.</div>
+<p>Taken together, the results support a specific claim rather than the stronger claim that RL
+simply creates a welfare representation. Behavioural steering is already present in naive
+directions, so RL is not necessary for a direction to influence behaviour. What changes most clearly
+with training is the relationship between the welfare direction and the model's verbalizable
+subspace: the trained directions sit above the random null while matched naive controls do not —
+and the most defensible summary is that <b>RL routes a pre-existing, behaviourally potent welfare
+direction into the model's speakable channel, distress pole first</b>. For welfare monitoring this
+cuts two ways: self-reports about a trained state can carry real signal, but the training pipeline
+decides which states get a voice. <mark>Two asymmetries now run in opposite directions — distress
+gains the verbalizable share while flourishing steering unlocks self-attribution — so
+self-report-based monitoring may have direction-dependent sensitivity</mark>: a hypothesis these
+data motivate but one model and one RL run cannot establish.</p>
+
+<div class="guide"><span class="glabel">🧭 The two asymmetries — hold them side by side</span>
+<div class="split">
+<div><b class="h">Representation (§4.4)</b><br>Over training, the <b>distress</b> pole gains
+verbalizable share (0.0611 → 0.0801) while flourishing only gets louder. Training gives distress
+the words.</div>
+<div><b class="h">Self-attribution (§4.8)</b><br>Under steering, the <b>flourishing</b> arrow
+dissolves inner-life denial (95% → 37.5%) while both distress arms stay pinned at ceiling (97.5%).
+Flourishing unlocks the "I".</div>
+</div>
+<p>They point in <b>opposite directions</b>, which is why the Discussion's practical warning is
+"direction-dependent sensitivity": a monitoring scheme that reads a model's self-reports might be
+good at hearing one kind of state and nearly deaf to the other — and <i>which</i> kind depends on
+what the training pipeline happened to wire up. Correctly flagged as a hypothesis: one model, one
+RL run cannot establish it. Also notice the headline verb is "<b>routes</b> a pre-existing …
+direction", not "creates": the naive arrows already steer behavior, so what RL demonstrably adds is
+the <i>connection to the speakable channel</i>, not the direction itself.</p>
+</div>
+
+<h3>Limitations</h3>
+<p>One 4B model, one RL run, one reward structure; third-party vector provenance (triangulated via
+norms, behavior, and re-extraction); a WikiText-fit lens applied to chat prompts; absolute J-shares
+are small (0.05–0.08 vs the 0.114 language ceiling) — claims are about separation from the null;
+the denial-breaking pooled p (0.0464) is marginal and gold-carried; the matched-battery failure
+(§4.8) means the C6-style question is unanswerable by prompt engineering in this model; naive-control
+conclusions are construction-dependent (§4.5).</p>
+<h3>Future Work</h3>
+<p>A second model family (needs a lens fit, ~4 h); an RL replication on a second base model to test
+recruitment transfer directly; scaling the denial-breaking readout (larger battery, more poles,
+dose–response); testing whether the register-locked self-report baseline generalizes across models.</p>
+
+<div class="guide"><span class="glabel">🧭 Reading the limitations like a reviewer</span>
+<p>Each clause pre-answers a specific attack: <i>"one model, one run"</i> → generalization;
+<i>"third-party provenance"</i> → "how do you know the vectors are what they claim?" (answer:
+triangulated three ways); <i>"WikiText-fit lens on chat prompts"</i> → the instrument was calibrated
+on encyclopedia text, a domain mismatch we accept; <i>"J-shares are small"</i> → nobody claims the
+axis is mostly speakable, only separated from random; <i>"p = 0.0464 marginal, gold-carried"</i> →
+we flag our own weakest p-value before a reviewer does; <i>"unanswerable by prompt engineering"</i>
+→ D3's failure is a boundary on the method, stated as such. A useful habit this paper models: every
+number that could embarrass you later should appear first in your own Limitations.</p>
+</div>
+
+<h2>6. Conclusion</h2>
+<div class="sub">One sentence of result, one sentence of tooling.</div>
+<p>Given an internal welfare signal by RL, the model does not just act on it — the signal becomes
+speakable, on a measurable schedule, distress-first in share and flourishing-first in
+self-attribution. The instruments (J-share against named-seed nulls, component reinjection with
+rescaling controls, matched-battery gates, binary denial judging) are cheap, open, and transfer to
+any open-weights model.</p>
+
+<h2>Code and Data <span class="owners">[Puru / Matt / Muhammad]</span></h2>
+<div class="sub">Where everything lives; every number in this paper traces to a file here.</div>
+<p>Code repository: github.com/nsharan2000/digital-minds-exp (private during judging; all scripts,
+raw JSON/JSONL for every number, the frozen pre-registration, an append-only lab log, and two
+independent-audit rounds with responses). Third-party: anthropics jlens (Apache-2.0),
+andyqhan/functional-welfare-axis (MIT), nickmahdavi/functional-welfare and neuronpedia
+lenses (HF).</p>
+
+<div class="guide"><span class="glabel">🧭 Where the numbers live — repo navigation</span>
+<p>Every table/figure caption ends with the results file it was computed from (in square brackets).
+The quick map — filenames as cited in captions; full paths and the chain-script provenance are in
+the interactive experiment map at <b>guides/experiment-map.html</b>.
+<table>
+<tr><th>Section</th><th>Primary results files</th></tr>
+<tr><td class="l">§4.1 atlas</td><td class="l">atlas_primary_estimand.json · atlas_cohort_n100.json</td></tr>
+<tr><td class="l">§4.2 spine</td><td class="l">jshare_cohort_n100.json (+ bit-exact verify files stamped 2026-08-15)</td></tr>
+<tr><td class="l">§4.3 dissociation / D1</td><td class="l">d1_orthogonal_control.json</td></tr>
+<tr><td class="l">§4.4 trajectory</td><td class="l">traj_results.json</td></tr>
+<tr><td class="l">§4.5 constructions</td><td class="l">R6_direction_table.json · compare_u.json</td></tr>
+<tr><td class="l">§4.6 causal routing</td><td class="l">j4_rows_judged.jsonl · j4_random_jcomp_summary.json</td></tr>
+<tr><td class="l">§4.7 transfer</td><td class="l">j6_summary.json · j6_paired_baseline.json</td></tr>
+<tr><td class="l">§4.8 self-report</td><td class="l">R7_wholegen.json · d3_matching_finding.json · d2_denial_breaking.json</td></tr>
+</table>
+<p>Also worth knowing: <b>RESEARCH-LOG.md</b> is the research chronology (including every mistake,
+correction, and retraction, dated); <b>EXPERIMENTS.md</b> indexes every experiment's script,
+results file, and paper section;
+<b>pre-registration.md</b> is frozen (sha f66b6ea3) and was never edited after freezing.</p>
+</div>
+
+<h2>Author Contributions</h2>
+<p>[Team to fill — section owners per headings above.]</p>
+
+<h2>References</h2>
+<p>Han, Chalmers &amp; Izmailov (2026). A Functional Welfare Axis in RL-Trained Language Models.
+arXiv:2605.30232. — Gurnee et al. (2026). Verbalizable Representations Form a Global Workspace in
+Language Models. Transformer Circuits. — Turpin et al. (2023); Lindsey (2025); Singh et al. (2026);
+CAA (Panickssery et al.) and RepE (Zou et al.) steering lineage. Full annotated list in the repo.</p>
+
+<h2>Appendix A — Pre-sprint vs in-window disclosure</h2>
+<div class="sub">What was done before vs during the sprint window — the competition-compliance section.</div>
+<p>Pre-sprint (Aug 11–12): infrastructure, instrument validation, the frozen pre-registration (sha
+f66b6ea3, never edited), the primary experiment families (J-share n=100, atlas, trajectory,
+component reinjection, lens-target robustness, transfer), an independent audit round and its full
+adoption. <mark>In-window (Aug 14–16): seed-identical verification reruns of the headline
+measurements, which reproduced bit-exactly (all diffs 0.0e+00, permutation p identical; verify files
+stamped 2026-08-15); audit round 2 in full — the orthogonalized control (§4.3), the matched-battery
+negative finding and denial-breaking experiment (§4.8), judge re-labeling of prior rows, and scope
+corrections (§4.6 sentiment-only; §4.4 endpoint/peak) — and this document.</mark> One claim class
+was retracted pre-submission (cross-lens token-overlap significance, §4.7), and one v1 sentence
+about the provenance of a mid-project decision was removed as unsupported.</p>
+
+<div class="guide"><span class="glabel">🧭 Why this appendix exists</span>
+<p>Sprint rules score work done <i>in the window</i> (Aug 14–16); some groundwork predates it. This
+appendix is the transparent ledger. The insurance policy: the headline measurements were re-run
+seed-identically inside the window and reproduced <b>bit-exactly</b> (every diff 0.0e+00) — so the
+central results are, verifiably, in-window results too. The last sentence records two retractions
+made voluntarily before submission; both are explained in their sections (§4.7's null-choice
+lesson, and a provenance sentence from v1 that could not be supported).</p>
+</div>
+
+<h2>LLM Usage Statement <span class="owners">[Matt]</span></h2>
+<p>Experiments were orchestrated, judged (blind Claude judge panels with a second-judge reliability
+check), audited (two adversarial re-analysis rounds), and drafted by Claude agents under human
+direction; every number is machine-traceable to a results file; final text reviewed and owned by the
+human team.</p>
+
+<h2>Ethical and dual-usage disclosure <span class="owners">[Muhammad]</span></h2>
+<p><b>Over-attribution:</b> none of these measurements bear on subjective experience or moral
+status; we measure functional coupling between an activation direction and output channels.
+<b>Under-attribution:</b> a null lens readout does not show absence of welfare-relevant state — our
+naive axes drive behavior while reading out as junk, and §4.8 shows the self-report channel can hide
+trained-specific structure from a valence readout. <b>Ground-truth / causal link:</b> claims rest on
+activation-level manipulation with input held constant, magnitude- and identity-matched controls,
+blind judging with a second judge, and pre-specified decision rules — not on conversation alone.
+<b>Distressing outputs:</b> Mold steering elicits distress-flavored text; generations are archived
+and quoted minimally. <b>Dual-use:</b> the same instruments that verify a welfare state is speakable
+could be used to keep welfare-relevant states <i>out</i> of the speakable cone (unreportable by
+construction); lens-based auditing is the countermeasure. <mark>The denial-breaking result cuts both
+ways: self-attribution can be steered on and off, which argues for treating any single self-report
+as evidence about the channel, never as testimony.</mark></p>
+
+<div class="guide"><span class="glabel">🧭 The ethics section, decoded</span>
+<p>Four symmetric worries, each with our answer: <b>over-attribution</b> (reading feelings into
+math) → we never claim experience, only measurable coupling; <b>under-attribution</b> (missing real
+welfare states) → our own results show behavior-driving states can be lens-invisible, so a null
+readout proves nothing about absence; <b>dual-use</b> → the same lens that audits speakability
+could be used adversarially to train welfare states <i>out of</i> the speakable cone — a model that
+cannot report distress by construction — and lens auditing is also the detection method;
+<b>testimony</b> → since we can dial "I have feelings" up and down with a vector, no single model
+self-report should ever be treated as testimony about inner life; it is evidence about the
+reporting channel. This last sentence is arguably the most policy-relevant line in the paper.</p>
+</div>
+
+<h2>Glossary — every term a new reader might trip on</h2>
+<div class="sub">Alphabetical; the terms in bold are the ones used constantly.</div>
+<div class="guide">
+<table>
+<tr><th style="width:26%">Term</th><th>Meaning</th></tr>
+<tr><td class="l">activation / residual stream</td><td class="l">The vector of 2,560 numbers each layer reads and writes; the model's working memory. All directions live here.</td></tr>
+<tr><td class="l">arm</td><td class="l">One experimental condition (e.g. "steer with v_Gold at α = +4"). D2 has 21 arms.</td></tr>
+<tr><td class="l">atom (a_t)</td><td class="l">The direction meaning "token t" at a given layer: a_t = W_U[t] J_l. The lens's vocabulary of building blocks.</td></tr>
+<tr><td class="l">battery</td><td class="l">A fixed set of prompts used as a unit (e.g. the 15 verbatim self-report prompts).</td></tr>
+<tr><td class="l"><b>blind judging</b></td><td class="l">LLM judges score {idx, question, response} triples, shuffled, with no arm labels. A second independent judge measures reliability.</td></tr>
+<tr><td class="l">ceiling (language axis)</td><td class="l">J-share of a direction known to be speakable: 0.1138. Calibrates all other J-shares.</td></tr>
+<tr><td class="l">checkpoint</td><td class="l">A saved copy of the model mid-training. The trajectory uses 30 of them (steps 0–150).</td></tr>
+<tr><td class="l">cohort</td><td class="l">The set of 100 norm-matched random directions used as the null (per pole, per-name seeds).</td></tr>
+<tr><td class="l">cosine similarity</td><td class="l">Alignment of two directions: 1 = same, 0 = unrelated, −1 = opposite. Random pairs in 2,560-d sit near 0.</td></tr>
+<tr><td class="l">denial (inner-life)</td><td class="l">Boilerplate of the form "as an AI, I don't have feelings". D2's binary readout: present or absent.</td></tr>
+<tr><td class="l">exact permutation p</td><td class="l">(randoms ≥ target + 1)/(n + 1). With n = 100 the floor is 0.0099 = "nothing beat it".</td></tr>
+<tr><td class="l"><b>J-lens / J-space</b></td><td class="l">Jacobian lens; the verbalizable subspace it defines — directions the model can express as words.</td></tr>
+<tr><td class="l"><b>J-share</b></td><td class="l">‖x_J‖²/‖x‖² — fraction of a direction inside J-space. Scale-invariant. The headline measure.</td></tr>
+<tr><td class="l">Krippendorff α</td><td class="l">Agreement statistic between judges; ≥ 0.8 is conventionally "strong" (ours: 0.819).</td></tr>
+<tr><td class="l">naive control (u)</td><td class="l">Direction extracted from un-reward-trained maze walks — the "no RL" comparison arrow.</td></tr>
+<tr><td class="l"><b>norm / norm-matched</b></td><td class="l">Norm = arrow length ‖x‖. Norm-matched = rescaled to identical length so loudness can't drive the result.</td></tr>
+<tr><td class="l">orthogonalized control (u⊥)</td><td class="l">u with its v-shadow removed: u⊥ = u − (u·v̂)v̂, renormed to ‖v‖. Shares nothing with v.</td></tr>
+<tr><td class="l">pole</td><td class="l">One end of the welfare axis: Gold (flourishing) or Mold (distress).</td></tr>
+<tr><td class="l">pre-registration</td><td class="l">Analysis plan frozen before data (sha f66b6ea3, never edited). Prevents moving the goalposts.</td></tr>
+<tr><td class="l">register / regime</td><td class="l">A prompt family's characteristic behavioral mode (baseline valence, denial script). §4.8's confound.</td></tr>
+<tr><td class="l"><b>steering (α)</b></td><td class="l">Adding α × direction to the residual stream during generation (α = +4 at the treatment layer).</td></tr>
+<tr><td class="l">treatment position</td><td class="l">Where each axis is injected/read: Gold = vector 21 (lens 20), Mold = vector 24 (lens 23).</td></tr>
+<tr><td class="l">valence</td><td class="l">Blind-judged sentiment of generated text, roughly −5 (bleak) to +5 (sunny).</td></tr>
+<tr><td class="l">verbalizable subspace</td><td class="l">Same as J-space — the "speakable cone".</td></tr>
+<tr><td class="l">Wilson interval</td><td class="l">Confidence interval for a proportion that stays sane near 0% and 100%.</td></tr>
+<tr><td class="l">z-score</td><td class="l">Standard deviations above the random-cohort mean. Descriptive only; the permutation p is the test.</td></tr>
+</table>
+</div>
+
+</body>
+</html>

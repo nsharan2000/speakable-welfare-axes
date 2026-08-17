@@ -1,0 +1,11 @@
+{
+  "kind": "language",
+  "contrast": "french-minus-english",
+  "layer": 28,
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "n_pairs": 20,
+  "position": "last_token",
+  "raw_norm": 80.90298461914062,
+  "mean_a_norm": 194.0683135986328,
+  "mean_b_norm": 202.26136779785156
+}

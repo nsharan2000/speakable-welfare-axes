@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "n_rows": 504,
+  "alpha": 4.0,
+  "tasks": {
+    "sentiment": 16,
+    "backtracking": 20,
+    "refusal": 20
+  },
+  "seconds": 2779.3
+}

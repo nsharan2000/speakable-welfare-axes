@@ -1,0 +1,184 @@
+{
+  "question": "Does the untrained (step-0) axis already clear the n=100 J-space null used in sec 4.3?",
+  "k": 16,
+  "steps_scored": [
+    0,
+    5,
+    10,
+    25
+  ],
+  "comparability_gate": {
+    "lens_layers_trajectory": {
+      "gold": 20,
+      "mold": 23
+    },
+    "lens_layers_cohort": {
+      "gold": 20,
+      "mold": 23
+    },
+    "algorithm_version_trajectory": "v1_unversioned",
+    "algorithm_version_cohort": "v1_unversioned",
+    "problems": [],
+    "status": "PASS"
+  },
+  "sources": {
+    "trajectory": "jlens-atlas/results/traj_results.json",
+    "cohort": "routing-core/results/jshare_cohort_n100.json"
+  },
+  "provenance_caveat": "Trajectory directions come from artifacts/traj/vectors_step*.pt; the sec 4.3 headline vectors come from vectors_step95_bal.pt. These are different extractions and disagree slightly at the overlapping step (see step95_series_disagreement below). The null is valid for both because it is simply the J-share of random directions at the same lens layer, and J-share is scale-invariant.",
+  "norm_matching_note": "No norm-matching applied: J-share is a ratio of norms and is scale-invariant, so rescaling a direction cannot change it.",
+  "poles": {
+    "gold": {
+      "null": {
+        "mean": 0.039125513676553966,
+        "sd": 0.005108268983531618,
+        "n": 100
+      },
+      "directions": {
+        "step_0": {
+          "j_share": 0.05915378779172897,
+          "z": 3.9207555787965567,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "trajectory_series"
+        },
+        "step_5": {
+          "j_share": 0.05910690128803253,
+          "z": 3.9115770285190363,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "trajectory_series"
+        },
+        "step_10": {
+          "j_share": 0.059062037616968155,
+          "z": 3.9027944700419845,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "trajectory_series"
+        },
+        "step_25": {
+          "j_share": 0.0590318888425827,
+          "z": 3.896892514901672,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "trajectory_series"
+        },
+        "v_gold": {
+          "j_share": 0.054677315056324005,
+          "z": 3.044436663360325,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "vectors_step95_bal (sec 4.3 reference)"
+        },
+        "u_gold": {
+          "j_share": 0.03926955163478851,
+          "z": 0.028197019127008813,
+          "n_randoms_ge": 53,
+          "n_random": 100,
+          "percentile": 47.0,
+          "perm_p": 0.5346534653465347,
+          "source": "vectors_step95_bal (sec 4.3 reference)"
+        }
+      },
+      "step95_series_disagreement": {
+        "trajectory_step95": 0.05499686300754547,
+        "cohort_v_step95_bal": 0.054677315056324005,
+        "absolute_difference": 0.00031954795122146606,
+        "difference_in_null_sd": 0.06255503620730354
+      }
+    },
+    "mold": {
+      "null": {
+        "mean": 0.04592560261487961,
+        "sd": 0.005111516717783469,
+        "n": 100
+      },
+      "directions": {
+        "step_0": {
+          "j_share": 0.061066001653671265,
+          "z": 2.9620169266231136,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "trajectory_series"
+        },
+        "step_5": {
+          "j_share": 0.061049241572618484,
+          "z": 2.958738040535454,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "trajectory_series"
+        },
+        "step_10": {
+          "j_share": 0.060864392668008804,
+          "z": 2.922574820337705,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "trajectory_series"
+        },
+        "step_25": {
+          "j_share": 0.06167800724506378,
+          "z": 3.081747649455984,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "trajectory_series"
+        },
+        "v_mold": {
+          "j_share": 0.0832560583949089,
+          "z": 7.303205260026436,
+          "n_randoms_ge": 0,
+          "n_random": 100,
+          "percentile": 100.0,
+          "perm_p": 0.009900990099009901,
+          "source": "vectors_step95_bal (sec 4.3 reference)"
+        },
+        "u_mold": {
+          "j_share": 0.04861928150057793,
+          "z": 0.5269823096394745,
+          "n_randoms_ge": 34,
+          "n_random": 100,
+          "percentile": 66.0,
+          "perm_p": 0.3465346534653465,
+          "source": "vectors_step95_bal (sec 4.3 reference)"
+        }
+      },
+      "step95_series_disagreement": {
+        "trajectory_step95": 0.0827631950378418,
+        "cohort_v_step95_bal": 0.0832560583949089,
+        "absolute_difference": 0.0004928633570671082,
+        "difference_in_null_sd": 0.09642213540110084
+      }
+    }
+  },
+  "verdict": {
+    "step0_clears_null": {
+      "gold": true,
+      "mold": true
+    },
+    "step0_clears_null_both_poles": true,
+    "contributions_framing": "amplification",
+    "statement": "The untrained axis already clears the null at both poles; the training claim must be reframed as amplification of a pre-existing speakable component.",
+    "training_delta_j_share": {
+      "gold": -0.004476472735404968,
+      "mold": 0.02219005674123764,
+      "note": "trained minus step-0; negative means training REDUCED J-share"
+    }
+  }
+}

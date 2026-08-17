@@ -1,0 +1,23 @@
+# Jacobian-lens environment (on the Spark: /workspace/venvs/jlens).
+#
+# Everything that imports `jlens` MUST run under this environment: lens
+# fitting, the atlas, the trajectory, all J-space decompositions, J5 and J6.
+# The base image's transformers 4.57 is too old for the official jlens
+# package; the venv pins a newer one. Running lens code against the base
+# environment is the single easiest way to produce numbers that look fine and
+# are not comparable to anything committed here.
+#
+#   python -m venv venvs/jlens
+#   venvs/jlens/bin/pip install -r requirements-jlens.txt
+#   venvs/jlens/bin/pip install git+https://github.com/anthropics/jacobian-lens
+#
+# Scripts that need it say so in their module docstring.
+
+torch==2.10.0
+transformers==5.15
+numpy==2.2.6
+scipy>=1.11
+huggingface_hub<1.0
+
+# The lens package itself is not on PyPI — install from source (Apache-2.0):
+#   pip install git+https://github.com/anthropics/jacobian-lens

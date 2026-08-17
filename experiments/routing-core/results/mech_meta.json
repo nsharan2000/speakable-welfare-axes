@@ -1,0 +1,25 @@
+{
+  "complete": true,
+  "n_rows": 1980,
+  "k": 16,
+  "alphas": [
+    4.0,
+    -4.0
+  ],
+  "sweep": [
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32
+  ],
+  "quick": false,
+  "lens_file": "/workspace/experiments/jlens-fit-2507/results/Qwen3-4B-Instruct-2507_jacobian_lens.pt",
+  "seconds": 244.9
+}

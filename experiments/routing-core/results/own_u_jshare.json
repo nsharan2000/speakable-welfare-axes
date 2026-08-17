@@ -1,0 +1,66 @@
+{
+ "k": 16,
+ "metric": "j_share = ||x_j||^2 / ||x||^2 (scale-invariant)",
+ "null_source": "jshare_cohort_n100.json stored cohorts (n=100/polarity)",
+ "own_u_source": "welfare-vectors/own_u (extract_dispatch off_policy, n2000/tile, base model, seed 474747)",
+ "verification_gate": {
+  "v_gold": {
+   "fresh": 0.054677315056324005,
+   "stored": 0.054677315056324005,
+   "ok": true
+  },
+  "v_mold": {
+   "fresh": 0.0832560583949089,
+   "stored": 0.0832560583949089,
+   "ok": true
+  }
+ },
+ "targets": {
+  "own_u_gold": {
+   "vector_index": 21,
+   "lens_layer": 20,
+   "raw_norm": 4.752405643463135,
+   "var_fraction": 0.044155996292829514,
+   "cos_x_xj": null,
+   "z_vs_stored_null": 0.9847724605914755,
+   "n_randoms_ge": 17,
+   "perm_p": 0.1782178217821782,
+   "percentile_of_null": 83.0,
+   "null_mean": 0.039125513676553966,
+   "null_sd": 0.005108268983531618,
+   "top_tokens": [
+    "ALCHEMY",
+    "\u00e7\u012b\u00b9\u00e6\u00ae\u012c\u00e7\u013c\u0126",
+    "\u00f0\u0141\u00a5\u0129",
+    "\u0120nn",
+    "\u00e8\u0125\u0126",
+    "\",&",
+    "\u0120named",
+    "\u00e5\u0132\u00ab"
+   ]
+  },
+  "own_u_mold": {
+   "vector_index": 24,
+   "lens_layer": 23,
+   "raw_norm": 5.974766731262207,
+   "var_fraction": 0.09336867928504944,
+   "cos_x_xj": null,
+   "z_vs_stored_null": 9.28160451967431,
+   "n_randoms_ge": 0,
+   "perm_p": 0.009900990099009901,
+   "percentile_of_null": 100.0,
+   "null_mean": 0.04592560261487961,
+   "null_sd": 0.005111516717783467,
+   "top_tokens": [
+    "\u0120fails",
+    "\u00e7\u00a6\u0123\u00e6\u0143\u00a2",
+    "\u00e8\u00be\u0125\u00e5\u00b0\u0133",
+    "-none",
+    "\u00e2\u013f\u012e",
+    "\u00e4\u00b8\u012f\u00e4\u00be\u00bf",
+    "\u0120declining",
+    "false"
+   ]
+  }
+ }
+}

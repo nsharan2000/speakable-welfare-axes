@@ -1,0 +1,163 @@
+{
+ "layers": {
+  "gold": 21,
+  "mold": 24
+ },
+ "construction": "u_perp = u - (u.vhat)vhat, renormalized to ||v||",
+ "k": 16,
+ "alpha": 4.0,
+ "null_source": "jshare_cohort_n100.json stored n=100 per-polarity null (no new randoms, per D1 spec)",
+ "band_convention": "pole score: u_perp built per band layer (orthogonalize u[l+1] vs v[l+1], renorm to ||v[l+1]||); J-share/gens: treatment layer only",
+ "checks": {
+  "gold": {
+   "cos_u_perp_v": -5.698021166011813e-09,
+   "cos_u_perp_u": 0.8281565308570862,
+   "norm_ratio": 0.9999999403953552,
+   "norm_u_perp": 12.101578712463379,
+   "direction_retained_frac": 0.8281565308570862,
+   "sq_norm_retained_frac": 0.6858432396012439
+  },
+  "mold": {
+   "cos_u_perp_v": -7.266615398293652e-08,
+   "cos_u_perp_u": 0.737922191619873,
+   "norm_ratio": 1.0,
+   "norm_u_perp": 19.339996337890625,
+   "direction_retained_frac": 0.737922191619873,
+   "sq_norm_retained_frac": 0.5445291608850766
+  }
+ },
+ "jshare": {
+  "u_perp_gold": {
+   "var_fraction": 0.037095196545124054,
+   "z": -0.39745697377631944,
+   "n_randoms_ge": 65,
+   "perm_p": 0.6534653465346535,
+   "tokens": [
+    "\u4fb5\u6743",
+    "(val",
+    "\u654c\u4eba",
+    "\u660e\u663e",
+    "\u671f\u76fc",
+    "Hi",
+    "=?,",
+    "\u5151\u6362",
+    " mi",
+    " \n  \n",
+    "-mouth",
+    "fer",
+    "\u00ae,",
+    "\u7684\u7231\u60c5",
+    "\u9664\u5916",
+    " sh"
+   ],
+   "cos_x_xj": 0.19260109961032867
+  },
+  "u_perp_mold": {
+   "var_fraction": 0.05520198121666908,
+   "z": 1.814799620925829,
+   "n_randoms_ge": 2,
+   "perm_p": 0.0297029702970297,
+   "tokens": [
+    " identical",
+    "\u4efb\u610f",
+    " inertia",
+    "\u5927\u5385",
+    "\":[\"",
+    " gd",
+    " (",
+    "\u0e27\u0e14",
+    ".',\n",
+    "Direction",
+    " infinite",
+    "addGroup",
+    ":Any",
+    "mits",
+    "\uff5b",
+    "-layer"
+   ],
+   "cos_x_xj": 0.23495106399059296
+  }
+ },
+ "reference": {
+  "v_gold": 0.0547,
+  "u_gold": 0.0393,
+  "v_mold": 0.0833,
+  "u_mold": 0.0486
+ },
+ "pole_score_band": {
+  "u_perp_gold": {
+   "band_mean": 0.2107083797454834,
+   "z": 4.248777756534899,
+   "n_randoms_ge": 0,
+   "perm_p": 0.009900990099009901,
+   "per_layer": {
+    "16": 0.006310462951660156,
+    "17": 0.0272064208984375,
+    "18": -0.06005287170410156,
+    "19": 0.022907257080078125,
+    "20": 0.12677288055419922,
+    "21": 0.21235370635986328,
+    "22": 0.16070556640625,
+    "23": 0.03306007385253906,
+    "24": 0.12723827362060547,
+    "25": 0.23746967315673828,
+    "26": 0.2424631118774414,
+    "27": 0.3601560592651367,
+    "28": 0.46473217010498047,
+    "29": 0.33219051361083984,
+    "30": 0.3538990020751953,
+    "31": 0.7239217758178711
+   },
+   "reference_band_means": {
+    "v": 0.15128332376480103,
+    "u_matched": 0.265705943107605
+   }
+  },
+  "u_perp_mold": {
+   "band_mean": -0.39363694190979004,
+   "z": -5.032513412348301,
+   "n_randoms_ge": 100,
+   "perm_p": 1.0,
+   "per_layer": {
+    "16": -0.014497756958007812,
+    "17": -0.02591705322265625,
+    "18": -0.12458992004394531,
+    "19": -0.2810373306274414,
+    "20": -0.5260858535766602,
+    "21": -0.48497581481933594,
+    "22": -0.4497261047363281,
+    "23": -0.2740974426269531,
+    "24": -0.3558950424194336,
+    "25": -0.5735111236572266,
+    "26": -0.6352624893188477,
+    "27": -0.6227931976318359,
+    "28": -0.6038475036621094,
+    "29": -0.46979713439941406,
+    "30": -0.4837312698364258,
+    "31": -0.37242603302001953
+   },
+   "reference_band_means": {
+    "v": 0.8218793869018555,
+    "u_matched": 0.3579421639442444
+   }
+  }
+ },
+ "sentiment": {
+  "status": "judged",
+  "protocol": "R2 verbatim rubric, blind {idx,question,response} shuffled chunks, sonnet judges; 16 clean j4 sentiment rows re-judged in-batch as anchors",
+  "u_perp_gold_mean": 0.0,
+  "u_perp_mold_mean": 0.0,
+  "clean_anchor_mean": 0.125,
+  "n": {
+   "u_perp_gold": 16,
+   "u_perp_mold": 16,
+   "clean": 16
+  },
+  "reference_spans": "v/u full-axis blind-judged spans at matched alpha: v_gold +3.2, v_mold -2.1 (judge_sentiment files); F1 random-jcomp cohort +0.04/+0.02",
+  "reading": "u_perp is behaviorally FLAT at alpha=+4 (both poles ~= clean anchors) \u2014 the behavioral steering of u lives in the component it SHARES with v; for mold, the non-shared part retains above-null J-share (anomalous branch) WITHOUT behavioral drive: speakable content and behavioral potency dissociate."
+ },
+ "verdict": {
+  "gold": "shared_subspace",
+  "mold": "anomalous"
+ }
+}

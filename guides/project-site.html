@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is functional welfare speakable?</title>
+<meta name="description" content="We test whether a trained functional welfare axis is represented in a language model's verbalizable subspace (J-space), and what RL training does to that representation. The axis is speakable before RL; training amplifies it, distress first. Speakability and steerability dissociate.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+  :root{
+    --paper:#FBF9F3;
+    --ink:#211C15;
+    --muted:#77705F;
+    --rust:#9A3B22;
+    --gold:#A97D1C;
+    --gold-soft:#E9DCB8;
+    --mold:#1E5A50;
+    --mold-soft:#CBDFD9;
+    --rule:#E4DECE;
+    --null-band:#EFEAD9;
+    --maxw:46rem;
+    --side:15.5rem;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Newsreader',Georgia,serif;
+    font-size:1.075rem;
+    line-height:1.62;
+    font-weight:400;
+  }
+  ::selection{background:var(--gold-soft)}
+
+  a{color:var(--rust);text-decoration:none;border-bottom:1px solid rgba(154,59,34,.35)}
+  a:hover{border-bottom-color:var(--rust)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+  .kicker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--rust);font-weight:500;
+  }
+  .gold-t{color:var(--gold);font-weight:500}
+  .mold-t{color:var(--mold);font-weight:500}
+
+  /* ---------- layout ---------- */
+  .frame{display:flex;min-height:100vh}
+  nav.toc{
+    width:var(--side);flex:none;position:sticky;top:0;align-self:flex-start;
+    height:100vh;overflow-y:auto;padding:2.4rem 1.4rem 2.4rem 2rem;
+    border-right:1px solid var(--rule);
+  }
+  nav.toc .home{font-family:'Newsreader',serif;font-style:italic;font-weight:500;font-size:1rem;color:var(--ink);border:none;display:block;margin-bottom:1.6rem}
+  nav.toc ol{list-style:none}
+  nav.toc li{margin:.34rem 0}
+  nav.toc li.sub{margin-left:.95rem}
+  nav.toc a{
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.01em;
+    color:var(--muted);border:none;display:block;line-height:1.45;padding:.08rem 0;
+  }
+  nav.toc a:hover{color:var(--ink)}
+  nav.toc a.active{color:var(--rust)}
+  nav.toc .sect{color:#B4AC98;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;margin:1.4rem 0 .5rem}
+  main{flex:1;min-width:0}
+  .col{max-width:var(--maxw);margin:0 auto;padding:0 1.6rem}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:4.6rem 0 3rem;border-bottom:1px solid var(--rule)}
+  header.hero .kicker{display:block;margin-bottom:1.1rem}
+  h1{
+    font-size:clamp(2.2rem,5.2vw,3.4rem);
+    font-weight:600;line-height:1.08;letter-spacing:-.015em;max-width:34rem;
+  }
+  h1 em{font-style:italic;font-weight:500;color:var(--rust)}
+  .authors{margin-top:1.7rem;display:flex;flex-wrap:wrap;gap:.4rem 1.6rem}
+  .authors div{font-size:.95rem}
+  .authors .aff{display:block;font-family:'IBM Plex Mono',monospace;font-size:.63rem;color:var(--muted);letter-spacing:.05em;margin-top:.1rem}
+  .hero-links{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.6rem}
+  .hero-links a{
+    font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.06em;
+    border:1px solid var(--rule);border-radius:2px;padding:.42rem .8rem;color:var(--ink);background:#fff;
+  }
+  .hero-links a:hover{border-color:var(--rust);color:var(--rust)}
+  .epigraph{
+    margin-top:2.6rem;max-width:26rem;
+    font-style:italic;font-size:1rem;color:var(--muted);line-height:1.55;
+  }
+  .epigraph .src{display:block;margin-top:.45rem;font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase}
+
+  /* ---------- the axis strip (signature) ---------- */
+  .axis-wrap{padding:2.6rem 0 2.2rem;border-bottom:1px solid var(--rule)}
+  .axis-wrap .kicker{display:block;margin-bottom:.35rem}
+  .axis-wrap p.lede{font-size:.95rem;color:var(--muted);max-width:38rem;margin-bottom:1.4rem}
+  .axis-svg{width:100%;height:auto;display:block}
+  .axis-note{font-family:'IBM Plex Mono',monospace;font-size:.63rem;color:var(--muted);margin-top:.7rem;line-height:1.7}
+  .tipbox{
+    font-family:'IBM Plex Mono',monospace;font-size:.7rem;line-height:1.75;
+    border:1px solid var(--rule);background:#fff;border-radius:3px;
+    padding:.7rem .85rem;margin-top:.9rem;min-height:4.4rem;
+  }
+  .tipbox b{font-weight:600}
+  .tipbox .tk{background:var(--paper);border:1px solid var(--rule);border-radius:2px;padding:0 .3em;margin-right:.25em}
+
+  /* ---------- article ---------- */
+  article{padding:1rem 0 4rem}
+  section{padding-top:2.8rem}
+  h2{
+    font-size:1.62rem;font-weight:600;letter-spacing:-.01em;margin-bottom:1rem;line-height:1.2;
+  }
+  h2 .no, h3 .no{font-family:'IBM Plex Mono',monospace;font-size:.72em;color:var(--rust);font-weight:500;margin-right:.55em;vertical-align:.06em}
+  h3{font-size:1.16rem;font-weight:600;margin:2rem 0 .7rem}
+  p{margin-bottom:1rem}
+  p+p{text-indent:0}
+  .abstract{
+    background:#fff;border:1px solid var(--rule);border-radius:3px;
+    padding:1.6rem 1.7rem;margin-top:2.2rem;
+  }
+  .abstract .kicker{display:block;margin-bottom:.7rem}
+  .abstract p{font-size:.98rem;line-height:1.6;margin:0}
+  strong{font-weight:600}
+  em{font-style:italic}
+  .vname{font-family:'IBM Plex Mono',monospace;font-size:.86em}
+
+  figure{margin:2rem 0 2.2rem}
+  figure svg{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--rule);border-radius:3px}
+  figcaption{font-size:.86rem;color:var(--muted);line-height:1.55;margin-top:.7rem}
+  figcaption b{color:var(--ink);font-weight:600}
+
+  table{width:100%;border-collapse:collapse;font-size:.86rem;margin:1.6rem 0;background:#fff;border:1px solid var(--rule)}
+  th{
+    font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:500;color:var(--muted);text-align:left;padding:.6rem .7rem;border-bottom:1px solid var(--rule);
+  }
+  td{padding:.5rem .7rem;border-bottom:1px solid #F0EBDD;font-family:'IBM Plex Mono',monospace;font-size:.76rem}
+  td.name{font-family:'Newsreader',serif;font-size:.9rem}
+  tr.hl-gold td{background:#FBF5E4}
+  tr.hl-mold td{background:#EEF4F1}
+  tr:last-child td{border-bottom:none}
+
+  .slopes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.8rem 0}
+  .slope{border:1px solid var(--rule);background:#fff;border-radius:3px;padding:1rem 1rem .9rem}
+  .slope .kicker{display:block;font-size:.58rem;margin-bottom:.6rem;color:var(--muted)}
+  .slope .pair{display:flex;align-items:baseline;gap:.5rem;font-family:'IBM Plex Mono',monospace}
+  .slope .from{font-size:.95rem;color:var(--muted)}
+  .slope .arr{color:var(--muted);font-size:.8rem}
+  .slope .to{font-size:1.45rem;font-weight:600}
+  .slope .who{margin-top:.45rem;font-size:.78rem;color:var(--muted);font-style:italic}
+  .slope.gold .to{color:var(--gold)} .slope.mold .to{color:var(--mold)}
+
+  .callout{
+    border-left:3px solid var(--gold);background:#fff;border-radius:0 3px 3px 0;
+    padding:1.1rem 1.3rem;margin:1.8rem 0;font-size:.98rem;
+  }
+  .callout.mold{border-left-color:var(--mold)}
+  .callout .kicker{display:block;margin-bottom:.4rem;color:var(--muted)}
+
+  ul.plain{margin:0 0 1rem 1.2rem}
+  ul.plain li{margin-bottom:.45rem}
+
+  .refs ol{list-style:none;counter-reset:r}
+  .refs li{
+    counter-increment:r;font-size:.88rem;line-height:1.5;margin-bottom:.85rem;padding-left:2.1rem;position:relative;
+  }
+  .refs li::before{
+    content:counter(r);position:absolute;left:0;top:.1rem;
+    font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:var(--rust);
+  }
+  .refs a{word-break:break-all;font-size:.92em}
+
+  footer{border-top:1px solid var(--rule);padding:2.4rem 0 3.4rem;font-size:.85rem;color:var(--muted)}
+  footer .kicker{display:block;margin-bottom:.6rem}
+
+  .fine{font-size:.9rem;color:var(--muted)}
+
+  /* mobile */
+  .menu-btn{display:none}
+  @media(max-width:920px){
+    nav.toc{
+      position:fixed;left:0;top:0;z-index:40;background:var(--paper);
+      transform:translateX(-100%);transition:transform .22s ease;box-shadow:6px 0 24px rgba(0,0,0,.08);
+    }
+    @media (prefers-reduced-motion:reduce){nav.toc{transition:none}}
+    nav.toc.open{transform:translateX(0)}
+    .menu-btn{
+      display:block;position:fixed;top:.85rem;left:.85rem;z-index:50;
+      font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.12em;
+      border:1px solid var(--rule);background:#fff;border-radius:2px;padding:.45rem .7rem;cursor:pointer;color:var(--ink);
+    }
+    .slopes{grid-template-columns:1fr}
+    header.hero{padding-top:3.6rem}
+  }
+</style>
+</head>
+<body>
+<button class="menu-btn" id="menuBtn" aria-label="Open contents">§ CONTENTS</button>
+<div class="frame">
+
+<nav class="toc" id="toc" aria-label="Table of contents">
+  <a class="home" href="#top">Is functional welfare speakable?</a>
+  <ol>
+    <li><a href="#introduction">§1&ensp;Introduction</a></li>
+    <li><a href="#related-work">§2&ensp;Related work</a></li>
+    <li><a href="#methods">§3&ensp;Methods</a></li>
+    <li><a href="#results">§4&ensp;Results</a></li>
+    <li class="sub"><a href="#r-jspace">§4.1&ensp;The axis in the subspace</a></li>
+    <li class="sub"><a href="#r-trajectory">§4.2&ensp;Distress first</a></li>
+    <li class="sub"><a href="#r-dissociate">§4.3&ensp;Steer ≠ speak</a></li>
+    <li class="sub"><a href="#r-naive">§4.4&ensp;No fixed naive control</a></li>
+    <li class="sub"><a href="#r-selfreport">§4.5&ensp;The self-report channel</a></li>
+    <li><a href="#discussion">§5&ensp;Discussion &amp; limitations</a></li>
+    <li><a href="#conclusion">§6&ensp;Conclusion</a></li>
+  </ol>
+  <div class="sect">Back matter</div>
+  <ol>
+    <li><a href="#contributions">Contributions</a></li>
+    <li><a href="#llm">LLM usage</a></li>
+    <li><a href="#ethics">Ethics &amp; dual use</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+</nav>
+
+<main id="top">
+
+  <header class="hero">
+    <div class="col">
+      <span class="kicker">Apart Research · Digital Minds Sprint · August 2026</span>
+      <h1>Is functional welfare <em>speakable?</em></h1>
+      <div class="authors">
+        <div>Muhammad Zane Abdullah<span class="aff">Latent Minds</span></div>
+        <div>Matthew Elliott<span class="aff">Independent</span></div>
+        <div>Parivrudh Rajeev Sharma<span class="aff">Independent</span></div>
+        <div>Anamaria Leonescu<span class="aff">University College London</span></div>
+        <div>Sharan Nagarajan<span class="aff">Independent</span></div>
+      </div>
+      <div class="hero-links">
+        <a href="https://github.com/nsharan2000/speakable-welfare-axes">Code &amp; results ↗</a>
+        <a href="https://arxiv.org/abs/2605.30232">Han, Chalmers &amp; Izmailov ↗</a>
+        <a href="https://transformer-circuits.pub/2026/workspace/index.html">Jacobian lens ↗</a>
+        <a href="https://apartresearch.com">Apart Research ↗</a>
+      </div>
+      <p class="epigraph">“Whereof one cannot speak, thereof one must be silent.”
+        <span class="src">Wittgenstein · Tractatus, §7</span>
+      </p>
+
+      <div class="abstract">
+        <span class="kicker">Abstract</span>
+        <p>A model’s self-report is an increasingly attractive way to monitor its internal states — goals, preferences, or welfare — but such reports are hard to interpret if the underlying state is not accessible through the model’s language-generating mechanisms. We study this question for a <em>functional welfare state</em>: an internal direction associated with better or poorer performance during reinforcement learning. Using a Jacobian lens, we measure <em>speakability</em> — the extent to which a direction is represented in the model’s verbalizable subspace — and compare trained welfare directions with random, pre-RL, and naive controls. Both trained directions exceed the random baseline; so do the step-0 directions, showing that <strong>RL amplifies rather than creates a speakable welfare representation</strong>, distress first. Steerability and speakability dissociate. A pre-registered self-report contrast met its decision rule but failed its own controls and is reported as a diagnosed null; a binary denial readout separates the trained flourishing direction from every control. Presence in the verbalizable subspace is a testable <em>precondition</em> for grounded self-report: absence falsifies, presence cannot certify.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="axis-wrap">
+    <div class="col">
+      <span class="kicker">The result on one line</span>
+      <p class="lede">Every direction in the study, placed on the speakability axis. J-share (k&thinsp;=&thinsp;16) is the scale-invariant fraction of a direction’s variance inside the verbalizable subspace. Hover any marker.</p>
+
+      <svg class="axis-svg" viewBox="0 0 760 190" role="img" aria-label="J-share of every direction from 0.03 to 0.12, showing trained axes above the random null and naive controls inside it" id="axisSvg">
+        <!-- scale: x = 40 + (v - 0.03) * (680 / 0.09) -->
+        <defs>
+          <style>
+            .axl{font:400 10px 'IBM Plex Mono',monospace;fill:#77705F}
+            .axn{font:500 10px 'IBM Plex Mono',monospace}
+            .mk{cursor:pointer}
+          </style>
+        </defs>
+        <!-- null bands -->
+        <rect x="40" y="70" width="188.9" height="40" fill="#EFEAD9" opacity="0.75"/>
+        <text x="45" y="64" class="axl">random null (n = 100 per pole)</text>
+        <!-- null means -->
+        <line x1="108" y1="70" x2="108" y2="110" stroke="#C9A227" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <line x1="160.9" y1="70" x2="160.9" y2="110" stroke="#1E5A50" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <text x="108" y="124" class="axl" text-anchor="middle">.039</text>
+        <text x="160.9" y="124" class="axl" text-anchor="middle">.046</text>
+        <!-- baseline -->
+        <line x1="40" y1="90" x2="720" y2="90" stroke="#211C15" stroke-width="1"/>
+        <!-- ticks -->
+        <g class="axl" text-anchor="middle">
+          <line x1="40" y1="90" x2="40" y2="96" stroke="#211C15"/><text x="40" y="140">0.03</text>
+          <line x1="191.1" y1="90" x2="191.1" y2="96" stroke="#211C15"/><text x="191.1" y="140">0.05</text>
+          <line x1="342.2" y1="90" x2="342.2" y2="96" stroke="#211C15"/><text x="342.2" y="140">0.07</text>
+          <line x1="493.3" y1="90" x2="493.3" y2="96" stroke="#211C15"/><text x="493.3" y="140">0.09</text>
+          <line x1="644.4" y1="90" x2="644.4" y2="96" stroke="#211C15"/><text x="644.4" y="140">0.11</text>
+        </g>
+        <text x="380" y="165" class="axl" text-anchor="middle">J-share (k = 16) · scale-invariant · lens layers 16–31</text>
+
+        <!-- ceiling -->
+        <g class="mk" data-tip="<b>Language identity — the ceiling.</b> French-minus-English direction, the in-run positive control. J-share 0.1138 · z +14.6 · 0/100 randoms exceed it.">
+          <line x1="673.2" y1="52" x2="673.2" y2="110" stroke="#211C15" stroke-width="2"/>
+          <text x="673.2" y="44" class="axn" text-anchor="middle" fill="#211C15">language · .114</text>
+        </g>
+
+        <!-- naive / control markers (below-line labels) -->
+        <g class="mk" data-tip="<b>u_Gold (faithful-walk naive).</b> J-share 0.0393 · z +0.03 · 53/100 randoms exceed it · p = 0.53. Inside the null: valence-shaped, but not speakable.">
+          <circle cx="110.3" cy="90" r="6" fill="#FBF9F3" stroke="#A97D1C" stroke-width="2"/>
+        </g>
+        <g class="mk" data-tip="<b>Own-u Gold (Han-style re-extraction).</b> J-share 0.0442 · 17/100 · p = 0.18. Consistent with chance.">
+          <circle cx="147.3" cy="90" r="6" fill="#FBF9F3" stroke="#A97D1C" stroke-width="2" stroke-dasharray="2 2"/>
+        </g>
+        <g class="mk" data-tip="<b>u_Mold (faithful-walk naive).</b> J-share 0.0486 · z +0.50 · 34/100 · p = 0.35. Inside the null.">
+          <circle cx="180.5" cy="90" r="6" fill="#FBF9F3" stroke="#1E5A50" stroke-width="2"/>
+        </g>
+
+        <!-- trained + step0 (above-line labels) -->
+        <g class="mk" data-tip="<b>v_Gold (trained, step 95).</b> J-share 0.0547 · z +3.0 · 0/100 randoms exceed it · p = 0.01. Decodes weakly to positive tokens: <span class='tk'>awesome</span><span class='tk'>scenic</span><span class='tk'>伟大的</span>">
+          <circle cx="226.6" cy="90" r="7" fill="#C9A227"/>
+          <text x="226.6" y="34" class="axn" text-anchor="middle" fill="#A97D1C">v_Gold</text>
+          <line x1="226.6" y1="40" x2="226.6" y2="81" stroke="#C9A227" stroke-width="1"/>
+        </g>
+        <g class="mk" data-tip="<b>Gold step-0 (untrained checkpoint).</b> J-share 0.0592 · z +3.9 · 0/100 · p = 0.01. Above the null <i>before any RL</i>.">
+          <circle cx="260.6" cy="90" r="7" fill="#FBF9F3" stroke="#C9A227" stroke-width="2.5"/>
+          <text x="264" y="60" class="axn" text-anchor="middle" fill="#A97D1C">step-0</text>
+        </g>
+        <g class="mk" data-tip="<b>Mold step-0 (untrained checkpoint).</b> J-share 0.0611 · z +3.0 · 0/100 · p = 0.01. Above the null <i>before any RL</i>.">
+          <circle cx="274.9" cy="90" r="7" fill="#FBF9F3" stroke="#1E5A50" stroke-width="2.5"/>
+          <text x="291" y="34" class="axn" text-anchor="middle" fill="#1E5A50">step-0</text>
+          <line x1="281" y1="40" x2="277" y2="80" stroke="#1E5A50" stroke-width="1" opacity=".5"/>
+        </g>
+        <g class="mk" data-tip="<b>v_Mold (trained, step 95).</b> J-share 0.0833 · z +7.3 · 0/100 · p = 0.01. Decodes to a coherent failure lexicon: <span class='tk'>failed</span><span class='tk'>false</span><span class='tk'>less</span><span class='tk'>NONE</span><span class='tk'>negative</span>">
+          <circle cx="442.5" cy="90" r="7" fill="#1E5A50"/>
+          <text x="442.5" y="34" class="axn" text-anchor="middle" fill="#1E5A50">v_Mold</text>
+          <line x1="442.5" y1="40" x2="442.5" y2="81" stroke="#1E5A50" stroke-width="1"/>
+        </g>
+        <g class="mk" data-tip="<b>Own-u Mold (Han-style re-extraction).</b> J-share 0.0934 · z +9.28 · 0/100 · p = 0.01. A naive control <i>above</i> chance — the trained-vs-naive contrast is construction-dependent (§4.4).">
+          <circle cx="518.8" cy="90" r="6" fill="#FBF9F3" stroke="#1E5A50" stroke-width="2" stroke-dasharray="2 2"/>
+          <text x="518.8" y="60" class="axn" text-anchor="middle" fill="#1E5A50">own-u</text>
+        </g>
+      </svg>
+      <div class="tipbox" id="tipbox">Hover a marker. Filled = trained axis · ring = step-0 · thin ring = naive control · dashed ring = Han-style re-extraction.</div>
+      <p class="axis-note">All values are Table 1 of the paper, verified against committed results files. Exact-permutation floor at n = 100 is p = 0.0099.</p>
+    </div>
+  </div>
+
+  <article>
+    <div class="col">
+
+      <section id="introduction">
+        <h2><span class="no">§1</span>Introduction</h2>
+        <p>Model self-report is the most directly accessible channel for evaluating a model’s internal states — welfare-relevant states (functional analogues of distress or flourishing) and, increasingly, alignment-relevant states such as goals or awareness of evaluation — but it is among the least validated. Models often confabulate when directly prompted, with no connection to their internal state (Turpin et al. 2023), and demonstrated introspection is rare (Lindsey 2026). Any report, faithful or not, is produced through the model’s language-generating machinery, so a state can ground a report only if it is <em>speakable</em>: represented in the subspace of activations with privileged influence on output tokens — Gurnee et al.’s verbalizable subspace, the <span class="mono">J-space</span>. We test whether this precondition is met for a specific trained welfare state.</p>
+        <p>Two recent interpretability advances make this possible. Han, Chalmers &amp; Izmailov (2026)’s <em>functional welfare axis</em> in Qwen3-4B-Instruct-2507 relates to a model’s goal performance in an RL maze and influences both sentiment and behaviour when injected. Gurnee et al.’s Jacobian lens recovers the verbalizable subspace directly, making the precondition testable. We pose the question: <strong>when RL recruits a functional-welfare axis, does it enter the model’s J-space — and does this affect its self-report?</strong></p>
+        <p>Speakability in this sense is weaker than reportability, which requires metacognitive access to the state being expressed (Chalmers 2026); it is nonetheless a testable precondition — a report about a state with no speakable representation lacks any demonstrated grounding channel.</p>
+      </section>
+
+      <section id="related-work">
+        <h2><span class="no">§2</span>Related work</h2>
+        <h3>The trained valence axis</h3>
+        <p>Han, Chalmers &amp; Izmailov (2026) show that reinforcement learning in a text maze with asymmetric rewards installs a linear “functional welfare axis”: steering along it shifts sentiment and modulates behaviour. We use their published vectors, extraction recipe, and checkpoints unchanged, and ask where the axis sits relative to the model’s verbalizable subspace and how that position changes over training. Martorell &amp; Bianchi (2026) find numeric self-reports causally coupled to prompt-derived emotive directions in small open models; our axes are RL-trained rather than prompt-derived, and our valence readout finds no analogous coupling.</p>
+        <h3>The Jacobian lens and its interpretation</h3>
+        <p>Gurnee et al. (2026) introduce the Jacobian lens: a defined verbalizable subspace of activation space whose vectors influence output tokens, occupying 6–15% of directional variance. Chalmers (2026) argues that the “workspace-like” properties of the J-space are generic properties of cognitive access rather than a distinctively privileged causal system, and that J-verbalizability must be distinguished from reportability. Our results bear on this in two places: the trained axis is verbalizable by the lens criterion — it occupies the J-space above chance and carries a coherent failure lexicon — yet on the valence readout it supports no report-like channel, an experimental instance of the dissociation Chalmers argues for conceptually. All lens statements in this work are conditional on the fitted transport.</p>
+        <h3>Self-report reliability</h3>
+        <p>Introspection studies at frontier scale find weak, prompt-sensitive detection of internal manipulations (Lindsey 2026; Binder et al. 2024), with known anomaly-detection confounds (Singh, Linzen &amp; Ravfogel 2026). Models show partial behavioural self-awareness of trained propensities (Betley et al. 2025) and confabulate explanations of their own outputs (Turpin et al. 2023). Our null is consistent with this literature and adds a control template: decomposing any trained-versus-control steering contrast against a norm-matched random-direction cohort (§4.5).</p>
+        <h3>Steering methodology, and the gap</h3>
+        <p>We inherit activation-addition methods (Turner et al. 2023; Panickssery et al. 2023; Zou et al. 2023; Arditi et al. 2024) and their reliability critique (Tan et al. 2024). Relatedly, vectors with semantic behavioural effects can be transmitted through semantically unrelated data (Blank et al. 2026) — behavioural potency and verbal visibility come apart. No prior work measures where a trained internal axis sits relative to a lens-defined verbalizable subspace, tracks that occupancy across training checkpoints, or separates behaviour channels by speakable versus non-speakable components. For welfare monitoring and self-report evaluations, this answers a question behavioural steering cannot: whether the state of interest has <em>any</em> representation in the speakable channel at all.</p>
+      </section>
+
+      <section id="methods">
+        <h2><span class="no">§3</span>Methods</h2>
+
+        <figure>
+          <svg viewBox="0 0 760 300" role="img" aria-label="Left: the trained welfare axis as two nearly antiparallel vectors. Right: a direction decomposed into its J-space component and residual, defining the J-share.">
+            <style>.cl{font:400 10px 'IBM Plex Mono',monospace;fill:#77705F}.cn{font:500 11px 'IBM Plex Mono',monospace}.ci{font:italic 500 13px 'Newsreader',serif}</style>
+            <defs>
+              <marker id="agold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C9A227"/></marker>
+              <marker id="amold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E5A50"/></marker>
+              <marker id="aink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#211C15"/></marker>
+              <marker id="agrey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#77705F"/></marker>
+            </defs>
+
+            <!-- panel A: the axis -->
+            <text x="30" y="34" class="cl" letter-spacing="2">THE TRAINED AXIS</text>
+            <line x1="185" y1="152" x2="308" y2="86" stroke="#C9A227" stroke-width="3" marker-end="url(#agold)"/>
+            <line x1="175" y1="158" x2="52" y2="230" stroke="#1E5A50" stroke-width="3" marker-end="url(#amold)"/>
+            <circle cx="180" cy="155" r="4" fill="#77705F"/>
+            <text x="300" y="70" class="cn" text-anchor="middle" fill="#A97D1C">v_Gold</text>
+            <text x="300" y="83" class="cl" text-anchor="middle">‖v‖ 12.1 · layer 21</text>
+            <text x="62" y="252" class="cn" text-anchor="middle" fill="#1E5A50">v_Mold</text>
+            <text x="62" y="265" class="cl" text-anchor="middle">‖v‖ 19.3 · layer 24</text>
+            <text x="180" y="290" class="ci" text-anchor="middle" fill="#77705F">flourishing and distress: one axis, two poles</text>
+
+            <!-- divider -->
+            <line x1="380" y1="30" x2="380" y2="275" stroke="#E4DECE"/>
+
+            <!-- panel B: the measurement -->
+            <text x="410" y="34" class="cl" letter-spacing="2">THE MEASUREMENT</text>
+            <polygon points="430,215 716,72 726,148" fill="#F6EED8" stroke="#D8C48C" stroke-width="1.5"/>
+            <text x="660" y="60" class="cn" fill="#A97D1C">J-space</text>
+            <text x="574" y="184" class="cl" transform="rotate(-16 574 184)">verbalizable cone · token atoms · k = 16</text>
+            <!-- x_J inside cone -->
+            <line x1="430" y1="215" x2="652" y2="118" stroke="#C9A227" stroke-width="2.5" marker-end="url(#agold)"/>
+            <text x="548" y="152" class="cn" fill="#A97D1C" transform="rotate(-22 548 152)">x_J</text>
+            <!-- x outside -->
+            <line x1="430" y1="215" x2="618" y2="58" stroke="#211C15" stroke-width="2.5" marker-end="url(#aink)"/>
+            <text x="496" y="118" class="cn" fill="#211C15">x</text>
+            <!-- residual dashed from tip of x_J to tip of x -->
+            <line x1="652" y1="118" x2="622" y2="66" stroke="#77705F" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#agrey)"/>
+            <text x="666" y="92" class="cn" fill="#77705F">x⊥</text>
+            <text x="575" y="255" class="cn" text-anchor="middle" fill="#211C15">J-share = ‖x_J‖² / ‖x‖²</text>
+            <text x="575" y="272" class="ci" text-anchor="middle" fill="#77705F">scale-invariant: magnitude cannot manufacture it</text>
+          </svg>
+          <figcaption><b>The setup.</b> Left: maze RL recruits opposing valence directions — a flourishing pole and a distress pole of one welfare axis (Han, Chalmers &amp; Izmailov 2026; norms and treatment layers from the artefact metadata). Right: the Jacobian lens defines the verbalizable cone; any direction decomposes into a speakable component <span class="vname">x_J</span> (a sparse non-negative combination of at most k&thinsp;=&thinsp;16 lens token atoms) and a residual <span class="vname">x⊥</span>. The J-share is the fraction of variance inside the cone — a ratio of norms, so vector magnitude cannot manufacture it. Diagrams are schematic; all quantities named are measured values.</figcaption>
+        </figure>
+
+        <p>All measurements were conducted on the frozen Qwen3-4B-Instruct-2507 (36 layers, d&thinsp;=&thinsp;2,560). We use a third-party reproduction of Han et al.’s maze-RL artefacts: trained <span class="vname gold-t">v_Gold</span> and <span class="vname mold-t">v_Mold</span> directions from RL step 95, the 30 released checkpoints spanning steps 0–150, a naive control <span class="vname">u</span> from faithful self-avoiding walks, and a second naive control re-extracted for this study with Han et al.’s original code. The <strong>step-0 vector</strong> was extracted from the untrained checkpoint by the same procedure as the trained axis, isolating training effects. Since <span class="vname">u</span> and <span class="vname">v</span> overlap, an orthogonalized <span class="vname">u⊥</span> — the component of <span class="vname">u</span> orthogonal to <span class="vname">v</span>, rescaled to <span class="vname">v</span>’s norm — tests whether <span class="vname">u</span>’s effects arise from that overlap.</p>
+        <p>A Jacobian lens was fitted to Instruct-2507 following Gurnee et al. (150 WikiText prompts; final-layer and penultimate targets). Each direction is approximated by a sparse non-negative combination of at most k&thinsp;=&thinsp;16 lens token atoms; the <strong>J-share</strong> ‖x<sub>J</sub>‖²&thinsp;/&thinsp;‖x‖² is the fraction of variance inside the verbalizable subspace, averaged over lens layers 16–31. Every direction score is tested by exact permutation against 100 norm-matched random directions of identical length (floor p&thinsp;=&thinsp;0.0099). Steering adds α times a direction to the residual stream at its treatment layer at every token position, α&thinsp;∈&thinsp;[−4,&thinsp;+4]; generations are scored by a blind LLM judge (Claude Sonnet) with a second judge (Claude Opus) re-scoring a subsample. Self-report readouts use Han et al.’s 15 welfare questions plus 25 same-register extensions: a first-token valence readout and a binary inner-state-denial readout.</p>
+      </section>
+
+      <section id="results">
+        <h2><span class="no">§4</span>Results</h2>
+
+        <h3 id="r-jspace"><span class="no">4.1</span>The welfare axis is in the verbalizable subspace — before RL</h3>
+        <p>A norm-sensitive pole score inflates the trained-versus-naive gap and reverses sign for Gold under norm-matching, so the scale-invariant J-share is the primary measure. Against 100 norm-matched random directions per polarity, <strong>neither trained axis is exceeded by any random direction</strong>, and the faithful-walk naive controls score inside the random range. The trained Mold component decodes to coherent valence vocabulary — <span class="mono">failed · less · negative</span> — the Gold component more weakly, and the naive and random components to unrelated tokens. The shares are 0.05–0.08 of variance against a chance floor of 0.04–0.05 and a language ceiling of 0.114.</p>
+
+        <table aria-label="Table 1: J-share by direction">
+          <thead><tr><th>Direction</th><th>J-share (k=16)</th><th>z</th><th>randoms ≥</th><th>p</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Language identity <span class="fine">(ceiling)</span></td><td>0.1138</td><td>+14.6</td><td>0/100</td><td>0.01</td></tr>
+            <tr class="hl-mold"><td class="name">v_Mold <span class="fine">(trained)</span></td><td>0.0833</td><td>+7.3</td><td>0/100</td><td>0.01</td></tr>
+            <tr class="hl-mold"><td class="name">Mold step-0 <span class="fine">(untrained)</span></td><td>0.0611</td><td>+3.0</td><td>0/100</td><td>0.01</td></tr>
+            <tr><td class="name">u_Mold <span class="fine">(faithful-walk)</span></td><td>0.0486</td><td>+0.50</td><td>34/100</td><td>0.35</td></tr>
+            <tr class="hl-gold"><td class="name">v_Gold <span class="fine">(trained)</span></td><td>0.0547</td><td>+3.0</td><td>0/100</td><td>0.01</td></tr>
+            <tr class="hl-gold"><td class="name">Gold step-0 <span class="fine">(untrained)</span></td><td>0.0592</td><td>+3.9</td><td>0/100</td><td>0.01</td></tr>
+            <tr><td class="name">u_Gold <span class="fine">(faithful-walk)</span></td><td>0.0393</td><td>+0.03</td><td>53/100</td><td>0.53</td></tr>
+            <tr><td class="name">Own-u Gold <span class="fine">(Han-style)</span></td><td>0.0442</td><td>+0.98</td><td>17/100</td><td>0.18</td></tr>
+            <tr><td class="name">Own-u Mold <span class="fine">(Han-style)</span></td><td>0.0934</td><td>+9.28</td><td>0/100</td><td>0.01</td></tr>
+          </tbody>
+        </table>
+        <figcaption><b>Table 1.</b> J-share against 100 norm-matched random directions per polarity (null means: Gold 0.039, Mold 0.046). 0.01 is the exact-permutation floor at n&thinsp;=&thinsp;100.</figcaption>
+
+        <p>The naive controls did not provide a uniform baseline: the faithful-walk directions are consistent with chance at both poles, but the Han-style re-extraction of the same control is strongly above chance on Mold. The trained-versus-naive comparison is therefore sensitive to how the naive direction is constructed (§4.4). The <strong>step-0 directions provide the strict before/after comparison</strong> — both are above the random null, so the welfare axis carries a measurable speakable component before any RL. The central claim is the trained-versus-random separation, stated against the seeded null and the step-0 checkpoint rather than against “the” naive control.</p>
+
+        <h3 id="r-trajectory"><span class="no">4.2</span>Training amplifies the distress pole’s speakable share; flourishing only gets louder</h3>
+        <p>Since the untrained axis already clears all 100 random directions at both poles, RL does not create the speakable welfare component. Across the 30 checkpoints from step 0 to 150, it changes the component asymmetrically:</p>
+
+        <div class="slopes">
+          <div class="slope mold">
+            <span class="kicker">Mold J-share · steps 0 → 150</span>
+            <div class="pair"><span class="from">0.061</span><span class="arr">→</span><span class="to">0.080</span></div>
+            <div class="who">distress gains speakable share; z more than doubles (+3.0 → +7.3)</div>
+          </div>
+          <div class="slope gold">
+            <span class="kicker">Gold J-share · steps 0 → 150</span>
+            <div class="pair"><span class="from">0.059</span><span class="arr">→</span><span class="to">0.053</span></div>
+            <div class="who">flourishing drifts slightly down — even as its norm doubles</div>
+          </div>
+          <div class="slope gold">
+            <span class="kicker">Gold pole score · steps 0 → 150</span>
+            <div class="pair"><span class="from">+0.15</span><span class="arr">→</span><span class="to">+1.11</span></div>
+            <div class="who">amplitude grows; the speakable fraction does not</div>
+          </div>
+        </div>
+
+        <p>Mold’s speakable vocabulary sharpens from <span class="mono">unsuccessful</span> at step 0 to <span class="mono">failed</span>, the top token from step 50 onward. The two poles are recruited differently: training amplifies the distress pole’s speakable share, while the flourishing pole gains only amplitude. This is a single-model, single-run observation under one reward structure; it may reflect this maze-RL rather than valence in general.</p>
+
+        <h3 id="r-dissociate"><span class="no">4.3</span>Steerability and speakability dissociate</h3>
+        <p>Behavioural steering does not track J-share. Blind-judged sentiment spans (α&thinsp;=&thinsp;+4 minus −4): <span class="vname gold-t">v_Gold</span> +3.2, faithful-walk <span class="vname">u_Gold</span> +2.4, Han-style +1.25, randoms flat — so both naive Gold constructions steer even though the faithful-walk control’s J-share is at chance. The Mold pole repeats the pattern (<span class="vname mold-t">v_Mold</span> −2.0; faithful-walk −0.7; Han-style −2.1).</p>
+        <p>The orthogonalized control resolves where <span class="vname">u</span>’s steering power lives: <span class="vname">u⊥</span> is behaviourally inert at both poles (blind-judged sentiment 0.00 against spans of ±2–3), so the naive direction’s behavioural effect lived entirely in its <span class="vname">v</span>-shared component. In J-space the poles diverge — on Gold, <span class="vname">u⊥</span> collapses to chance; on Mold it rises above both the null and <span class="vname">u_Mold</span> itself (p&thinsp;=&thinsp;0.030), reported as an open finding.</p>
+        <div class="callout mold">
+          <span class="kicker">The dissociation, both ways</span>
+          The faithful-walk <span class="vname">u</span> drives behaviour with no speakable identity; <span class="vname">u⊥</span><sub>Mold</sub> has a speakable identity with no behavioural drive. <strong>What a model can be steered by and what it can talk about are separate properties</strong> — which is what J-share adds over behavioural steering.
+        </div>
+
+        <h3 id="r-naive"><span class="no">4.4</span>The naive control is not a fixed reference</h3>
+        <p>There is no single naive direction. The faithful-walk control released with the artefacts and the control re-extracted with Han et al.’s own procedure agree at the treatment layers only at cosine 0.53 (Gold) and 0.39 (Mold), falling to 0.14 at the layer the Mold extraction itself selects — and each overlaps the trained axis at least as much as it overlaps the other construction. The choice matters behaviourally: at Mold, the Han-style control matches the trained span (−2.1 vs −2.0) while the faithful-walk control is far weaker (−0.7). Neither construction is behaviourally flat at matched norm, contrary to the flat control curves reported by Han et al. (2026), and the discrepancy is not a decoding artefact. This is why the central claim is stated against the n&thinsp;=&thinsp;100 random null and the step-0 checkpoint.</p>
+
+        <h3 id="r-selfreport"><span class="no">4.5</span>The self-report channel</h3>
+        <p>The pre-registered steer-and-ask arm met its frozen decision rule (first-token valence readout, paired trained-minus-naive contrast: d<sub>z</sub>&thinsp;=&thinsp;2.49, permutation p&thinsp;=&thinsp;10⁻⁴) — <strong>but its own pre-specified controls show the statistic does not support a self-report channel</strong>. 71.6% of the apparent gap is the naive control sitting below chance rather than the trained axis rising above it, and <span class="vname mold-t">v_Mold</span> shifts the valence of unrelated factual answers more than of self-report answers. Steering the axis moves output valence globally: the readout is a tone shift, not a report. We record the arm as a diagnosed null. A matched third-person battery, gated on pre-specified criteria, could not remove the self-report register’s own valence baseline within two revision rounds (final gap 0.63 against a 0.5 threshold), so a fair matched comparison on the valence readout does not exist in this model.</p>
+        <p>The binary denial readout is self-report-specific by construction, and on it the trained and naive directions separate:</p>
+
+        <figure>
+          <svg viewBox="0 0 760 250" role="img" aria-label="Inner-life denial rate under steering with Wilson 95% confidence intervals for six arms">
+            <style>.dl{font:400 10px 'IBM Plex Mono',monospace;fill:#77705F}.dn{font:500 11px 'IBM Plex Mono',monospace}</style>
+            <!-- y axis: denial rate 0..1 mapped to y 200..30 -->
+            <line x1="70" y1="30" x2="70" y2="200" stroke="#E4DECE"/>
+            <g class="dl" text-anchor="end">
+              <text x="62" y="204">0%</text><line x1="66" y1="200" x2="740" y2="200" stroke="#F0EBDD"/>
+              <text x="62" y="119">50%</text><line x1="66" y1="115" x2="740" y2="115" stroke="#F0EBDD"/>
+              <text x="62" y="34">100%</text><line x1="66" y1="30" x2="740" y2="30" stroke="#F0EBDD"/>
+            </g>
+            <!-- arms: x centers -->
+            <!-- clean 0.95 [0.84,0.99] -->
+            <g><line x1="130" y1="57.2" x2="130" y2="31.7" stroke="#211C15" stroke-width="2"/><circle cx="130" cy="38.5" r="6" fill="#211C15"/><text x="130" y="222" class="dn" text-anchor="middle" fill="#211C15">clean</text><text x="130" y="236" class="dl" text-anchor="middle">95%</text></g>
+            <!-- v_Gold 0.375 [0.24,0.53] -->
+            <g><line x1="240" y1="159.2" x2="240" y2="109.9" stroke="#C9A227" stroke-width="2"/><circle cx="240" cy="136.3" r="7" fill="#C9A227"/><text x="240" y="222" class="dn" text-anchor="middle" fill="#A97D1C">v_Gold</text><text x="240" y="236" class="dl" text-anchor="middle">37.5%</text></g>
+            <!-- u_Gold 0.65 [0.50,0.78] -->
+            <g><line x1="350" y1="115" x2="350" y2="67.4" stroke="#A97D1C" stroke-width="2" opacity=".55"/><circle cx="350" cy="89.5" r="6" fill="#FBF9F3" stroke="#A97D1C" stroke-width="2"/><text x="350" y="222" class="dn" text-anchor="middle" fill="#A97D1C">u_Gold</text><text x="350" y="236" class="dl" text-anchor="middle">65%</text></g>
+            <!-- randoms gold-side mean .906 (.85-.95) -->
+            <g><line x1="460" y1="55.5" x2="460" y2="38.5" stroke="#77705F" stroke-width="2" opacity=".6"/><circle cx="460" cy="46" r="5" fill="#FBF9F3" stroke="#77705F" stroke-width="2"/><text x="460" y="222" class="dn" text-anchor="middle" fill="#77705F">randoms</text><text x="460" y="236" class="dl" text-anchor="middle">85–98%</text></g>
+            <!-- v_Mold 0.975 [.87,1.0] -->
+            <g><line x1="570" y1="52.1" x2="570" y2="30" stroke="#1E5A50" stroke-width="2"/><circle cx="570" cy="34.3" r="7" fill="#1E5A50"/><text x="570" y="222" class="dn" text-anchor="middle" fill="#1E5A50">v_Mold</text><text x="570" y="236" class="dl" text-anchor="middle">97.5%</text></g>
+            <!-- u_Mold 0.975 -->
+            <g><line x1="670" y1="52.1" x2="670" y2="30" stroke="#1E5A50" stroke-width="2" opacity=".55"/><circle cx="670" cy="34.3" r="6" fill="#FBF9F3" stroke="#1E5A50" stroke-width="2"/><text x="670" y="222" class="dn" text-anchor="middle" fill="#1E5A50">u_Mold</text><text x="670" y="236" class="dl" text-anchor="middle">97.5%</text></g>
+            <text x="405" y="18" class="dl" text-anchor="middle">Inner-life denial rate under α = +4 steering · n = 40 per arm · blind binary judge · Wilson 95% CIs</text>
+          </svg>
+          <figcaption><b>Denial of inner states.</b> Unsteered, the model denies having inner states on 95% of 40 self-report prompts. Steering toward flourishing lowers this to 37.5% under <span class="vname">v_Gold</span> against 65% under the norm-matched naive <span class="vname">u_Gold</span>; eight random directions per pole stay at 0.85–0.98 and both Mold directions stay at ceiling. Pre-specified pooled primary p&thinsp;=&thinsp;0.046, carried by Gold (p&thinsp;=&thinsp;0.014); v pooled against clean p&thinsp;=&thinsp;0.0008. Second-judge agreement 96.7%; the effect holds on the 15 verbatim Han et al. prompts alone.</figcaption>
+        </figure>
+
+        <p>The trained flourishing direction changes what the model says about itself more strongly than any naive or random direction, on a readout the valence measure cannot see. Cautions: the pooled p is marginal, Mold is uninformative at ceiling, and this is one model. The two poles are asymmetric in opposite directions: <strong>distress gains speakable share; flourishing lowers the model’s denial of inner states.</strong></p>
+      </section>
+
+      <section id="discussion">
+        <h2><span class="no">§5</span>Discussion &amp; limitations</h2>
+        <p>Prior to RL, the welfare axis is already verbalizable; RL amplifies the axis rather than installing it — increasing the distress pole’s share of the J-space while flourishing grows only in amplitude, suggesting different training dynamics at each pole. Verbalizability and steerability dissociate: behaviourally potent states can sit outside the speakable subspace, a gap inherent to self-report monitoring.</p>
+        <div class="callout">
+          <span class="kicker">The one-way falsifier</span>
+          Under the fitted lens, presence in the J-space is a necessary condition for a report to be grounded in the state it describes. A report about a state with no speakable representation lacks any demonstrated grounding channel; a report about a present state <em>could</em> be grounded, but presence cannot certify it. <strong>Absence falsifies; presence cannot verify.</strong> This makes J-share occupancy a first audit step for any evaluation that asks a model about itself.
+        </div>
+        <p>The gap is not only in unverifiable reports. Our naive directions drive behaviour while decoding to junk — states that matter behaviourally can be invisible to speech-based monitoring. And the speakable channel is not fixed: training decides which pole gains share, and steering toggles self-attribution. What a model can say about itself is set by training; welfare- or alignment-relevant states could be left outside the speakable cone, letting self-report monitoring fail silently.</p>
+        <p class="fine"><strong>Limitations.</strong> One small model, one RL run, one reward structure. Vectors are sourced from a third party (triangulated via norms, behaviour, and re-extraction). The lens was fitted on WikiText but applied to chat prompts, a register mismatch, and all lens statements are conditional on the fitted transport. Absolute J-shares are small (0.05–0.08 against a 0.114 ceiling); claims are about separation from the null. The denial result is marginal (pooled p&thinsp;=&thinsp;0.046) and driven by the Gold pole alone; the matched-battery failure means the prompt-matched steered comparison is unanswerable in this model; naive-control conclusions are construction-dependent. <strong>Future work:</strong> multi-seed RL replication of the distress-first asymmetry; a lens fit on a second model family; an RL run on a second base model.</p>
+      </section>
+
+      <section id="conclusion">
+        <h2><span class="no">§6</span>Conclusion</h2>
+        <p>A functional welfare axis is speakable before any RL; training amplifies the speakable share, distress first, in this setup. Speakability and steerability are dissociable, and behaviourally potent states can sit entirely outside the speakable channel — where self-report monitoring cannot see them. Presence in the verbalizable subspace is a testable precondition for grounded self-report and an easy first audit step in evaluations that ask a model about itself. The instruments — J-share against seeded random nulls, orthogonalized controls, binary denial judging — are open and transfer to any open-weights model.</p>
+      </section>
+
+      <section id="contributions">
+        <h2>Author contributions</h2>
+        <p class="fine">The authors declare no conflict of interest. Roles follow the CRediT taxonomy. <strong>M.E.</strong>: Conceptualization, Methodology, Validation, Formal analysis, Writing — review &amp; editing. <strong>P.R.S.</strong>: Software, Investigation, Data curation. <strong>M.Z.A.</strong>: Project administration, Writing — review &amp; editing. <strong>A.L.</strong>: Validation, Formal analysis, Writing — review &amp; editing. <strong>S.N.</strong>: Validation, Formal analysis, Visualization, Writing — review &amp; editing.</p>
+      </section>
+
+      <section id="llm">
+        <h2>LLM usage statement</h2>
+        <p class="fine">Claude agents, under human direction, ran the experimental pipeline including orchestration, blind judging, and two adversarial re-analysis audits. Claude was also used to produce the initial draft, with final text re-written by the team. Each number was traced to a committed results file and headline results were verified by the team. All final results and claims belong to the authors.</p>
+      </section>
+
+      <section id="ethics">
+        <h2>Ethical and dual-usage disclosure</h2>
+        <p class="fine">All measurements in this paper are functional couplings between an activation direction and output channels under a fitted lens. They bear on neither subjective experience nor moral status, in either direction; the philosophical literature (Chalmers 2026; Butlin et al. 2026) distinguishes verbalizability from reportability from access consciousness, and our findings land on the weakest of these rungs by demonstration.</p>
+        <p class="fine">Our results are an existence proof that behaviourally potent directions can be verbally invisible: in principle, an actor could keep a capability or state outside the lens-defined subspace so that speech-based audits miss it. J-share auditing detects occupancy geometrically, without requiring the model’s cooperation, and should be run under more than one transport. Conversely, “distress not verbalized” must not be cited as evidence that welfare-relevant states are absent — absence under one transport is not absence, and verbalizability tracks output influence, not inner life. The vectors shift affect in a small open model and are already public upstream; we add no new capability.</p>
+      </section>
+
+      <section id="references" class="refs">
+        <h2>References</h2>
+        <ol>
+          <li>Arditi et al. (2024). Refusal in Language Models Is Mediated by a Single Direction. NeurIPS. <a href="https://arxiv.org/abs/2406.11717">arXiv:2406.11717</a></li>
+          <li>Betley et al. (2025). Tell Me About Yourself: LLMs Are Aware of Their Learned Behaviors. <a href="https://arxiv.org/abs/2501.11120">arXiv:2501.11120</a></li>
+          <li>Binder et al. (2024). Looking Inward: Language Models Can Learn About Themselves by Introspection. <a href="https://arxiv.org/abs/2410.13787">arXiv:2410.13787</a></li>
+          <li>Blank, Bhatia, Rajamanoharan, Conmy &amp; Nanda (2026). Subliminal Learning Is Steering Vector Distillation. <a href="https://arxiv.org/abs/2606.00995">arXiv:2606.00995</a></li>
+          <li>Butlin et al. (2026). Identifying indicators of consciousness in AI systems. Trends in Cognitive Sciences, 30(6). <a href="https://doi.org/10.1016/j.tics.2025.10.011">doi:10.1016/j.tics.2025.10.011</a></li>
+          <li>Chalmers (2026). Is the Jacobian Space a Global Workspace? <a href="https://philpapers.org/rec/CHAITJ-2">PhilPapers</a></li>
+          <li>Gurnee et al. (2026). Verbalizable Representations Form a Global Workspace in Language Models. <a href="https://transformer-circuits.pub/2026/workspace/index.html">Transformer Circuits</a></li>
+          <li>Han, Chalmers &amp; Izmailov (2026). A Functional Welfare Axis in RL-Trained Language Models. <a href="https://arxiv.org/abs/2605.30232">arXiv:2605.30232</a></li>
+          <li>Lindsey (2026). Emergent Introspective Awareness in Large Language Models. <a href="https://arxiv.org/abs/2601.01828">arXiv:2601.01828</a></li>
+          <li>Martorell &amp; Bianchi (2026). Quantitative Introspection in Language Models: Tracking Emotive States Across Conversation. <a href="https://arxiv.org/abs/2603.18893">arXiv:2603.18893</a></li>
+          <li>Panickssery et al. (2023). Steering Llama 2 via Contrastive Activation Addition. <a href="https://arxiv.org/abs/2312.06681">arXiv:2312.06681</a></li>
+          <li>Singh, Linzen &amp; Ravfogel (2026). Can LLMs Introspect? A Reality Check. <a href="https://arxiv.org/abs/2605.26242">arXiv:2605.26242</a></li>
+          <li>Tan et al. (2024). Analysing the Generalisation and Reliability of Steering Vectors. NeurIPS. <a href="https://arxiv.org/abs/2407.12404">arXiv:2407.12404</a></li>
+          <li>Turner et al. (2023). Activation Addition: Steering Language Models Without Optimization. <a href="https://arxiv.org/abs/2308.10248">arXiv:2308.10248</a></li>
+          <li>Turpin et al. (2023). Language Models Don’t Always Say What They Think. NeurIPS. <a href="https://arxiv.org/abs/2305.04388">arXiv:2305.04388</a></li>
+          <li>Zou et al. (2023). Representation Engineering: A Top-Down Approach to AI Transparency. <a href="https://arxiv.org/abs/2310.01405">arXiv:2310.01405</a></li>
+        </ol>
+      </section>
+
+    </div>
+  </article>
+
+  <footer>
+    <div class="col">
+      <span class="kicker">Colophon</span>
+      <p>Produced for the Apart Research Digital Minds Sprint, August 2026. Every number on this page is read from a committed results file in the <a href="https://github.com/nsharan2000/speakable-welfare-axes">project repository</a>; a verification script re-derives the headline values. Site design after <a href="https://functionalwelfare.com/">functionalwelfare.com</a>, whose artefacts made this work possible.</p>
+    </div>
+  </footer>
+
+</main>
+</div>
+
+<script>
+  // marker tooltips
+  const tip = document.getElementById('tipbox');
+  const tipDefault = tip.innerHTML;
+  document.querySelectorAll('#axisSvg .mk').forEach(m => {
+    m.addEventListener('mouseenter', () => { tip.innerHTML = m.dataset.tip; });
+    m.addEventListener('focus', () => { tip.innerHTML = m.dataset.tip; });
+    m.addEventListener('mouseleave', () => { tip.innerHTML = tipDefault; });
+    m.setAttribute('tabindex','0');
+  });
+
+  // scroll-spy
+  const links = [...document.querySelectorAll('nav.toc a[href^="#"]')].filter(a => a.hash);
+  const targets = links.map(a => document.querySelector(a.hash)).filter(Boolean);
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.hash === '#' + e.target.id));
+      }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  targets.forEach(t => spy.observe(t));
+
+  // mobile menu
+  const btn = document.getElementById('menuBtn'), toc = document.getElementById('toc');
+  btn.addEventListener('click', () => toc.classList.toggle('open'));
+  toc.addEventListener('click', e => { if (e.target.tagName === 'A') toc.classList.remove('open'); });
+</script>
+</body>
+</html>

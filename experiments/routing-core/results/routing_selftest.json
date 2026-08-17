@@ -1,0 +1,49 @@
+{
+  "L12": {
+    "T1_pure_lens_vector": {
+      "var_fraction": 1.0000009536743164,
+      "selected_first3": [
+        " France",
+        "!",
+        "\u0e1e"
+      ],
+      "target_in_first3": true
+    },
+    "T2_random_direction": {
+      "var_fraction": 0.025220446288585663
+    },
+    "pass": true
+  },
+  "L20": {
+    "T1_pure_lens_vector": {
+      "var_fraction": 1.0000007152557373,
+      "selected_first3": [
+        " France",
+        "!",
+        "istani"
+      ],
+      "target_in_first3": true
+    },
+    "T2_random_direction": {
+      "var_fraction": 0.03220728412270546
+    },
+    "pass": true
+  },
+  "L28": {
+    "T1_pure_lens_vector": {
+      "var_fraction": 1.0,
+      "selected_first3": [
+        " France",
+        "!",
+        "\""
+      ],
+      "target_in_first3": true
+    },
+    "T2_random_direction": {
+      "var_fraction": 0.043293874710798264
+    },
+    "pass": true
+  },
+  "seconds": 63.3,
+  "all_pass": true
+}
