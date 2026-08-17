@@ -4,15 +4,15 @@
 state get wired into the model's speakable channel?**
 
 This repository contains the complete code, data, and audit trail behind the
-paper *"Is functional welfare speakable?"* (Apart Research — Digital Minds
-Research Sprint, 2026). Every number in the paper traces to a results file
+paper *"Is functional welfare speakable?"*, submitted to Apart Research — Digital Minds
+Research Sprint Hackaton, 2026. Every number in the paper traces to a results file
 committed here, and one command re-checks all of them.
 
 **TL;DR of the findings:** maze-RL-trained welfare directions in
 Qwen3-4B-Instruct-2507 occupy the Jacobian-lens verbalizable subspace far
 above chance (0/100 norm-matched random directions reach either pole) while
-matched naive controls sit at chance; over training the *distress* pole gains
-verbalizable share while the flourishing pole only gains amplitude; the
+matched naive controls sit at chance. Over training the *distress* pole gains
+verbalizable share while the flourishing pole only gains amplitude. The
 speakable component alone causally carries the sentiment effect; and steering
 toward flourishing specifically dissolves the model's "as an AI, I don't have
 feelings" boilerplate (37.5% vs 95% clean, blind-judged). A pre-registered
@@ -47,13 +47,13 @@ export DM_WELFARE_VECTORS="$PWD/artifacts/welfare-vectors"
 python3 experiments/common/dm_paths.py   # prints resolved paths, flags anything missing
 ```
 
-Then any experiment runs standalone, e.g. the paper's spine (§4.2):
+Then any experiment runs standalone, e.g. the paper's spine (Section 4.2):
 
 ```bash
 python3 experiments/routing-core/f2_jshare_cohort.py
 ```
 
-Two things to know before re-running:
+Three things to know before re-running:
 
 - **Path resolution** is centralized in `experiments/common/dm_paths.py` —
   every external location is overridable with a `DM_*` environment variable,
@@ -63,7 +63,7 @@ Two things to know before re-running:
   committed results are append-only history; scripts that would overwrite a
   primary result write to new filenames instead. If you want a pristine
   comparison, work on a branch.
-- Generation-scoring experiments (steering, D2) used **blind LLM judges**
+- Generation-scoring experiments (steering, D2) uses **blind LLM judges**
   (Claude, via shuffled `{idx, question, response}` chunks with an independent
   second judge). The judged labels are committed, so analyses re-run without
   any API access; re-judging from scratch requires your own judge setup —
@@ -129,7 +129,7 @@ GitHub's limits: the two fitted Jacobian lenses for Qwen3-4B-Instruct-2507
 (final-layer target + penultimate-target robustness refit, ~875 MB each) and
 the trained/naive welfare vectors. `download_artifacts.py` fetches and places
 them. The lenses can alternatively be re-fitted from scratch with
-`experiments/jlens-fit-2507/` (~4 h on one GPU, WikiText-103 prompts, official
+`experiments/jlens-fit-2507/` (~4 h on one GPU, WikiText-103 prompts, as per the official
 Gurnee et al. implementation).
 
 ## Provenance and third-party components
