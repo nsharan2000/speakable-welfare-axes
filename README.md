@@ -1,5 +1,7 @@
 # Is functional welfare speakable?
 
+Read the full paper here -> https://latentmindsinstitute.com/speakable-welfare/
+
 **When RL training installs a welfare-like state in a language model, does that
 state get wired into the model's speakable channel?**
 
